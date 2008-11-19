@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
-  
+  include ModelControllerMethods
+     
   def new
     @user = User.new
+    @users = User.find(:all, :conditions => [ "state = ?", "pending" ] )
   end
  
   def create
-    logout_keeping_session!
+    # logout_keeping_session!
     if using_open_id?
       authenticate_with_open_id(params[:openid_url], :return_to => open_id_create_url, 
         :required => [:nickname, :email]) do |result, identity_url, registration|
@@ -58,7 +60,7 @@ class UsersController < ApplicationController
   end
   
   def successful_creation(user)
-    redirect_back_or_default(root_path)
+    redirect_to new_user_url
     flash[:notice] = "Thanks for signing up!"
     flash[:notice] << " We're sending you an email with your activation code." if @user.not_using_openid?
     flash[:notice] << " You can now login with your OpenID." unless @user.not_using_openid?

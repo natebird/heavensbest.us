@@ -1,0 +1,25 @@
+h1. Todo list
+
+[] Fix signup form
+[] Move subscription models from Directory app
+[] Move services models and views from directory app
+[] Add images (attribute_fu?) to services model (need to research how to do this)
+[] Move testimonial models and views from HB app
+[] Move specials model and views HB app
+[] Create tips in Admin section
+[] Outline text for Tiffany to write and edit
+[] Write/Format email to be sent on account creation
+[] Write/Format emails to be received on successful billing/area setup
+[] Write/Format Privacy Policy and ToS
+[] Add restriction on Specials for Plus plan accounts
+[] If an area is a premium area then send email to admin to create email account in Google Apps
+[] Design frontpage content
+[] render final artwork (gifs)
+[] Separate CSS files into progressive system
+[] Contact Braintree about Merchant account setup (http://www.braintreepaymentsolutions.com/)
+[] Testing in Firefox
+[] Testing in IE 6 & 7 
+[x] Add exception handler 
+[] Add 404 and 500 redirects
+[] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
+[] Add RPM for testing, staging and production environments

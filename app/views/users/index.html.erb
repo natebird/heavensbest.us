@@ -1,0 +1,14 @@
+<%= title "User List", :h2 %>
+
+<table>
+  <% for user in @users %>
+    <tr>
+      <td><%= user.name %> &nbsp;</td>
+      <td><%= link_to "Edit", edit_user_path(user) %></td>
+	  <td><%= link_to "Remove", user, :confirm => 'Are you sure?', :method => :delete %>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+<p><%= link_to "New Page", new_user_path %></p>
