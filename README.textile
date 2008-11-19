@@ -1,19 +1,4 @@
-!http://clients.fudgestudios.com/chester.jpg!
 
-h1. Bort
-
-Bort is a base Rails 2.1 application that makes creating new projects easier and faster. Bort is developed and maintained by "Fudge Studios":http://www.fudgestudios.com, "Jim Neath":http://jimneath.org and "Matt Hall":http://matthall.wordpress.com
-
-If you have any suggestions for improvements then feel free to leave a request on "User Voice":http://bort.uservoice.com
-
-h2. Install
-
-* Download and unzip Bort
-* Edit the database.yml and the settings.yml files
-* Changed the default password in the bort migration
-* Edit the REST_AUTH_SITE_KEY in each of the environment files
-* Rake db:migrate
-* Have a brew and celebrate
 
 h2. Plugins Installed
 
@@ -90,6 +75,3 @@ h2. Misc
 * a few changes have been made to the default views
 * a default css file with blank selectors for common rails elements
 
-h2. Credits
-
-Bort put together by people at "Fudge":http://www.fudgestudios.com/ 
