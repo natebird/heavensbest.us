@@ -1,10 +1,14 @@
 <% @user.password = @user.password_confirmation = nil %>
-<%= title "Signup", :h2 %>
+<%= title "Create new applicant", :h2 %>
 <% form_for @user do |f| %>
 	<%= f.error_messages %>
 	<fieldset>
 		<legend>Your Details</legend>
 		<ol>
+			<li>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</li>
 			<li>
 				<%= f.label :login, 'Username' %>
 				<%= f.text_field :login %>
@@ -13,26 +17,23 @@
 				<%= f.label :email %>
 				<%= f.text_field :email %>
 			</li>
-			<li>
-				<%= f.label :password %>
-				<%= f.password_field :password %>
-			</li>
-			<li>
-				<%= f.label :password_confirmation, 'Confirm Password' %>
-				<%= f.password_field :password_confirmation %>
-			</li>
+				<%= f.hidden_field :password, :value => "123456" %>
+				<%= f.hidden_field :password_confirmation, :value => "123456" %>
 		</ol>
 	</fieldset>
-	<fieldset>
-		<legend>Signup with OpenID</legend>
-		<ol>
-			<li>
-				<label for="openid_url">OpenID URL</label>
-				<%= text_field_tag :openid_url, params[:openid_url] || params['openid.identity'] %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
 		<%= submit_tag 'Sign up' %>
 	</div>
+<% end %>
+
+<% if @users %>
+<h2>Inactive Applicants</h2>
+<table>
+	<% for user in @users %>
+  	<tr>
+		<td><%= user.name %></td>
+		<td><%= mail_to user.email, user.email %></td>
+		<td><%= link_to "Remove", @user, :confirm => 'Are you sure?', :method => :delete %>
+	</tr>
+	<% end %>
+</table>
 <% end %>
