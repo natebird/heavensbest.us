@@ -1,0 +1,29 @@
+<h1>Contact Us</h1>
+
+<p>If you have questions not answered by the FAQ then fill out the form below and we will do our best to resolve the issue. If you are logged in then your profile contact information will be sent with your request. Please allow us 24 hours to respond to questions and up to 48 hours for any technical issues.</p>
+	
+<% if logged_in? %>
+	<% form_for :ticket, :url => { :action => "create" } do |f| %>
+  		<%= f.error_messages %>
+
+		<%= f.hidden_field :status, :value => "Open" %>	
+		<%= f.select( :account_id, current_client.accounts.to_dropdown, :prompt => "Choose an Area")  %>	
+		<%= f.text_area :comment, :rows => 5 %>
+		<br />
+
+		<p><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></p>
+	<% end %>
+<% end %>
+		
+<% unless logged_in? %>
+	<% form_for :ticket, :url => { :action => "create" } do |f| %>
+		<%= f.error_messages %>
+  		
+		<%= f.select( :account_id, @accounts.collect {|s| [s.name, s.id]}, :prompt => "Choose an Area")  %>	
+		<%= f.hidden_field :status, :value => "Open" %>	
+		<%= f.text_area :comment, :rows => 5 %>
+		<br />
+
+		<p><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></p>
+	<% end %>
+<% end %>
