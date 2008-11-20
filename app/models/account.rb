@@ -5,7 +5,7 @@ class Account < ActiveRecord::Base
   has_many :subscription_payments
   has_many :phones, :attributes => true, :discard_if => :blank?
   has_many :operators, :attributes => true, :discard_if => :blank?
-  # has_many :services
+  has_many :services
   # has_many :specials
   # has_many :testimonials
   
