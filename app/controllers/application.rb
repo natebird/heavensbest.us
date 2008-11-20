@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SslRequirement
 
   helper :all # include all helpers, all the time
-  helper_method :current_account
+  helper_method :current_account, :admin_only
 
   protect_from_forgery :secret => 'b0a876313f3f9195e9bd01473bc5cd06'
   filter_parameter_logging :password, :password_confirmation, :creditcard
@@ -30,6 +30,15 @@ class ApplicationController < ActionController::Base
         raise ActiveRecord::RecordNotFound unless @accounts
       end
     end
+  end
+
+  def admin_only
+    current_user.has_role?('admin') || not_authorized
+  end
+
+  def not_authorized
+    store_location
+    render :file => File.join(RAILS_ROOT, 'public', '404.html'), :status => 404
   end
 
 end
