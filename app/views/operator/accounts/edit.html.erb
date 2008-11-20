@@ -1,0 +1,28 @@
+<div id="admin-left-content">
+	<div class="text-content">
+	<h1><%= @page_title = 'Change area settings' %></h1>
+
+	<% form_for @account, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
+	  <%= f.error_messages %>
+
+		<%= render :partial => 'fields', :locals => {:f => f} %>   
+
+	  	<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
+	<% end %>
+	</div>
+</div>
+
+<div id="admin-right-content">
+	<div class="text-content">
+	<h1>Subscription Information</h1>
+	<p> The <%= @account.name %>, <%= @account.region.abbreviation %> area is currently subscribed to the 
+		<strong><%= @account.subscription.subscription_plan.name %> Plan</strong> at 
+		<strong><%= number_to_currency(@account.subscription.subscription_plan.amount) %> / month</strong>.</p>
+
+	<p> Your next billing will be on <strong><%= @account.subscription.next_renewal_at.to_s(:long_day) %></strong>. 
+		You will receive a receipt by email.</p>
+
+	<p> You can change this area's <%= link_to('Subscription', :action => 'plan') %> or 
+		<%= link_to('Billing', :action => 'billing') %> information at anytime.</p>
+	</div>
+</div>

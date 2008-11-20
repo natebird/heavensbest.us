@@ -29,6 +29,7 @@ class BortMigration < ActiveRecord::Migration
       t.string :identity_url      
       t.string :name, :limit => 100, :default => '', :null => true
       t.string :email, :limit => 100
+      t.string :phone, :limit => 20
       t.string :crypted_password, :limit => 40
       t.string :salt, :limit => 40
       t.string :remember_token, :limit => 40
@@ -50,7 +51,7 @@ class BortMigration < ActiveRecord::Migration
       t.timestamps
     end
     
-    # Create Roles Databases
+    # Create Roles Tables
     create_table :roles do |t|
       t.string :name
     end
