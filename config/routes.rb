@@ -28,9 +28,9 @@ ActionController::Routing::Routes.draw do |map|
   map.cancel '/operator/areas/:id/cancel', :controller => 'operator/accounts', :action => 'cancel'
   map.billing '/operator/areas/:id/billing', :controller => 'operator/accounts', :action => 'billing'
 
-  map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }#, :has_many => :services
+  map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }, :has_many => :services
 
-  # map.resources :services
+  map.resources :services
 
   # Operator Resources
   map.operator '/operator', :controller => 'sessions', :action => 'new'
@@ -38,8 +38,8 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :operator do |operator|
     operator.resources :accounts, :as => 'areas', 
       :member => { :billing => :any, :paypal => :any, :plan => :any, :cancel => :any }, 
-      :collection => { :canceled => :get }#,
-      # :has_many => :services
+      :collection => { :canceled => :get },
+      :has_many => :services
       #:has_many => [ :services, :specials, :testimonials, :tips ]
   end
   

@@ -1,0 +1,20 @@
+<% form_for([:operator, @account, @service]) do |f| %>
+	<table>
+	  <tr><td colspan="2"><%= f.text_field :title, :size => 20 %>
+							  <%= f.hidden_field :account_id, :value => current_account.id %></td>
+							
+		  <td colspan="2"><%= f.text_field :title, :size => 20, :label => "Choose an image:" %></td>
+		
+	  <tr><td colspan="4"><%= f.text_area :body, :cols => 50, :rows => 10 %></td></tr>
+	
+	  <tr><td><%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
+				[:operator, @account, @service],
+			 	:confirm => 'Are you sure?', :method => :delete) %></td>
+		  <td><%= f.check_box :active, :label => 'Published' %>
+		  <td><%= link_to(image_tag("/images/buttons/cancel.png", :class => 'button' ), 
+							operator_account_services_path(@account) ) %></td>
+		  <td align="right"><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></td>
+	</table>
+<% end %>
+
+	<%= error_messages_for :service %>
