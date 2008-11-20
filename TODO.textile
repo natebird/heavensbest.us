@@ -1,10 +1,12 @@
 h1. Todo list
 
-[] Fix signup form
+[x] Fix signup form
+[] Fix gateway variable in the subscription model (line 180?)
 [x] Move account models (and dependencies) from Directory app
 [x] Move subscription models from Directory app
 [x] Move plugins from Directory app
-[] Move services models and views from directory app
+[x] Move services models and views from directory app
+[x] Add CSS style for input, select, text objects to break afterwards
 [] Add images (attribute_fu?) to services model (need to research how to do this)
 [] Move testimonial models and views from HB app
 [] Move specials model and views HB app
@@ -22,6 +24,9 @@ h1. Todo list
 [] Testing in Firefox
 [] Testing in IE 6 & 7 
 [x] Add exception handler 
-[] Add 404 and 500 redirects
+[x] Add 404 and 500 redirects
 [] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
 [] Add RPM for testing, staging and production environments
+[] Add custom meta tags based on services offered
+[] Add custom meta keyword line based on keywords for area
+[] Add custom html code block to account model (maybe)
