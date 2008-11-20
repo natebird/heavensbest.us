@@ -46,3 +46,10 @@ div.fieldWithErrors textarea
 {
 	
 }
+
+form label {
+	width: 125px;
+	float: left;
+}
+form input {
+	float: left;

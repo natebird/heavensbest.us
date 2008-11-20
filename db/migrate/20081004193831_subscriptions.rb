@@ -40,7 +40,7 @@ class Subscriptions < ActiveRecord::Migration
     t.string   :state,                :default => "trial"
     t.integer  :subscription_plan_id, :limit => 11
     t.integer  :account_id,           :limit => 11
-    t.integer  :user_limit,           :limit => 11
+    t.integer  :specials_limit,       :limit => 11
     t.integer  :renewal_period,       :limit => 11, :default => 1
     t.string   :billing_id
     t.timestamps

@@ -6,7 +6,7 @@
 	      <td><%= link_to(h(account.name), edit_operator_account_url(account)) %></td>
 	      <td><%= account.subscription.subscription_plan.name %> Plan
 				<%= link_to('(Change Subscription)', :action => 'plan', :id => account.id) %></td>
-	      <td>renews<%= account.subscription.next_renewal_at.to_s(:short_day) %>
+	      <td>renews <%= account.subscription.next_renewal_at.to_s(:short_day) %>
 				<%= link_to('(Change Billing)', :action => 'billing', :id => account.id) %></td>
 	    </tr>
 	  <% end %>

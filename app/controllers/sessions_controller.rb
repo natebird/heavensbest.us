@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
+  layout "operator"
   
   def new
   end
@@ -16,7 +17,7 @@ class SessionsController < ApplicationController
   def destroy
     logout_killing_session!
     flash[:notice] = "You have been logged out."
-    redirect_back_or_default(root_path)
+    redirect_back_or_default(login_path)
   end
   
   def open_id_authentication
@@ -49,7 +50,7 @@ class SessionsController < ApplicationController
   def successful_login
     new_cookie_flag = (params[:remember_me] == "1")
     handle_remember_cookie! new_cookie_flag
-    redirect_back_or_default(root_path)
+    redirect_back_or_default(operator_accounts_url)
     flash[:notice] = "Logged in successfully"
   end
 
