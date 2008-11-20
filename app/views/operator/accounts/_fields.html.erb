@@ -3,10 +3,13 @@
 
 <%= f.label :street %>
 <%= f.text_field :street %><br />
+<%= f.label :street2, "&nbsp;" %>
 <%= f.text_field :street2 %><br />
 
-<%= f.label :city, "City, State, Zip Code" %>
-<%= f.text_field :city %> 
+<%= f.label :city, "City" %>
+<%= f.text_field :city %><br />
+
+<%= f.label :State, "State & Zip Code" %>
 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
 <%= f.text_field :postal_code, :size => '10px' %><br />
 
@@ -17,7 +20,7 @@
 <%= f.text_field :email %><br />
 
 <div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
-<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %><br/>
+<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %>
 
 <div id="operators" class="attribute" ><%= f.render_associated_form(@account.operators) %></div>
 <% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
