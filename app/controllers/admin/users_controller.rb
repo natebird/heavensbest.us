@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+  before_filter :admin_only, :except => :edit
   skip_before_filter :verify_authenticity_token, :only => :create
   include ModelControllerMethods
   layout "operator"
@@ -8,6 +9,21 @@ class Admin::UsersController < ApplicationController
     @users = User.find(:all, :conditions => [ "state = ?", "pending" ] )
   end
  
+  def edit
+    @user = current_user if !current_user.has_role?('admin')
+    @user = User.find(params[:id]) if current_user.has_role?('admin')
+  end
+  
+  def update
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Successfully updated service."
+      redirect_to :action => 'edit'
+    else
+      render :action => 'edit'
+    end
+  end
+  
   def create
     # logout_keeping_session!
     if using_open_id?
