@@ -12,6 +12,7 @@ SubscriptionPlan.seed do |s|
   s.amount = 100    
   s.renewal_period = 12
   s.trial_period = 0
+  s.special_limit = 0
 end
 
 # SubscriptionPlan.seed do |s|
@@ -28,6 +29,7 @@ SubscriptionPlan.seed do |s|
   s.amount = 200    
   s.renewal_period = 12
   s.trial_period = 0
+  s.special_limit = 1
 end
 
 # SubscriptionPlan.seed do |s|
@@ -44,4 +46,5 @@ SubscriptionPlan.seed do |s|
   s.amount = 300    
   s.renewal_period = 12
   s.trial_period = 0
+  s.special_limit = 20
 end

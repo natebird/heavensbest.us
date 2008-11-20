@@ -41,7 +41,7 @@ describe Subscription do
   it "should set values from the assigned plan" do
     s = Subscription.new(:plan => @basic)
     s.amount.should == @basic.amount
-    s.user_limit.should == @basic.user_limit
+    s.special_limit.should == @basic.special_limit
   end
   
   it "should need payment info when no card is saved and the plan is not free" do
