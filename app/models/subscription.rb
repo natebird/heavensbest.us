@@ -15,12 +15,12 @@ class Subscription < ActiveRecord::Base
   validate_on_create :card_storage
   
   Limits = {
-    Proc.new {|account, plan| !plan.special_limit || plan.special_limit >= Account::Limits['special_limit'].call(account) } => 
-      'Special limit for new plan would be exceeded.  You may only have 1 Special at a time with the selected plan.'
+    # Proc.new {|account, plan| !plan.special_limit || plan.special_limit >= Account::Limits['special_limit'].call(account) } => 
+    #   'Special limit for new plan would be exceeded.  You may only have 1 Special at a time with the selected plan.'
   }
   
   def plan=(plan)
-    [:amount, :user_limit, :renewal_period].each do |f|
+    [:amount, :renewal_period].each do |f| #:special_limit, 
       self.send("#{f}=", plan.send(f))
     end
     self.subscription_plan = plan
@@ -177,7 +177,7 @@ class Subscription < ActiveRecord::Base
     end
     
     def cc
-      @cc ||= ActiveMerchant::Billing::Base.gateway(APP_CONFIG['gateway']).new(config_from_file('gateway.yml'))
+      @cc ||= ActiveMerchant::Billing::Base.gateway('brain_tree').new(config_from_file('gateway.yml'))
     end
 
     def destroy_gateway_record(gw = gateway)
