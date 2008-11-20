@@ -1,4 +1,4 @@
-h1. Todo list
+h1. To-do list
 
 [x] Fix signup form
 [] Fix gateway variable in the subscription model (line 180?)

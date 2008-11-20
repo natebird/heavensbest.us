@@ -1,6 +1,8 @@
 <div class="operator">
-	<%= f.label :name, "Operator name & title" %>
-	<%= f.text_field :name, :size => "19px" %>
+	<%= f.label :name, "Operator name" %>
+	<%= f.text_field :name, :size => "19px" %><br />
+
+	<%= f.label :title, "Operator title" %>
 	<%= f.text_field :title, :size => "15px", :label => "" %>
 	<% f.remove_link(image_tag("/images/buttons/remove.gif")) %>
 </div>
