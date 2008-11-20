@@ -1,7 +1,9 @@
 h1. Todo list
 
 [] Fix signup form
-[] Move subscription models from Directory app
+[x] Move account models (and dependencies) from Directory app
+[x] Move subscription models from Directory app
+[x] Move plugins from Directory app
 [] Move services models and views from directory app
 [] Add images (attribute_fu?) to services model (need to research how to do this)
 [] Move testimonial models and views from HB app
