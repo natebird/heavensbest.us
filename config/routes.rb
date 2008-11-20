@@ -28,7 +28,6 @@ ActionController::Routing::Routes.draw do |map|
   map.cancel '/operator/areas/:id/cancel', :controller => 'operator/accounts', :action => 'cancel'
   map.billing '/operator/areas/:id/billing', :controller => 'operator/accounts', :action => 'billing'
 
-  # map.resource :client, :collection => { :thanks => :get, :cancel => :any, :canceled => :get }
   map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }#, :has_many => :services
 
   # map.resources :services
@@ -48,14 +47,13 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
   admin.resources :users    
     admin.resources :pages
-  #   admin.resources :tickets
-  #   admin.resource :client, :collection => { :thanks => :get, :cancel => :any, :canceled => :get }
+    admin.resources :tickets
   #   admin.resources :tips
   end
 
   # Public Help Rewrites
   map.page 'page/:permalink', :controller => 'pages', :action => 'show'
-  # map.support '/support', :controller => 'tickets', :action => 'new'
+  map.support '/support', :controller => 'tickets', :action => 'new'
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
