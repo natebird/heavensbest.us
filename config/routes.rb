@@ -35,7 +35,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Operator Resources
   map.operator '/operator', :controller => 'sessions', :action => 'new'
-  map.profile '/operator/profile', :controller => 'admin/users', :action => 'edit'
+  map.profile '/operator/profile/:id', :controller => 'admin/users', :action => 'edit'
   map.namespace :operator do |operator|
     operator.resources :accounts, :as => 'areas', 
       :member => { :billing => :any, :paypal => :any, :plan => :any, :cancel => :any }, 
