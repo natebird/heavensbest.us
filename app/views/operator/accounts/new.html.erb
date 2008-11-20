@@ -12,8 +12,8 @@
 	  <fieldset>
 	    <% fields_for :account do |f| %>
     
-		<label>Plan</label>
-	    <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s) %>
+		<%= f.label :plan_id, 'Plan' %>
+	    <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %><br />
 
 		<%= render :partial => 'fields', :locals => {:f => f} %>   
 

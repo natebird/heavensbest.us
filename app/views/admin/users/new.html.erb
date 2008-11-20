@@ -1,5 +1,36 @@
 <h1><%= @page_title = 'Create User' %></h1>
 
-<% form_for :operator, @user do |f| -%>
-  <%= render :partial => "form", :locals => { :f => f } %>
+<% form_for [:admin, @user] do |f| -%>
+	<%= f.error_messages %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %><br />
+
+	<%= f.label :login, 'Username' %>
+	<%= f.text_field :login %><br />
+
+	<%= f.label :email %>
+	<%= f.text_field :email %><br />
+
+	<%= f.label :phone %>
+	<%= f.text_field :phone %><br />
+
+	<%= f.hidden_field :password, :value => "123456" %>
+	<%= f.hidden_field :password_confirmation, :value => "123456" %>
+
+	<%= submit_or_cancel %>
+
 <% end -%>
+
+<% if @users %>
+<h2>Inactive Applicants</h2>
+<table>
+	<% for user in @users %>
+  	<tr>
+		<td><%= user.name %></td>
+		<td><%= mail_to user.email, user.email %></td>
+		<td><%= link_to "Remove", [:admin, @user], :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+<% end %>

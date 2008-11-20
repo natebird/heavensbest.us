@@ -1,20 +1,32 @@
-<%= f.text_field :name %>
+<%= f.label :name %>
+<%= f.text_field :name %><br />
 
-<%= f.text_field :street %>
-<%= f.text_field :street2 %>
+<%= f.label :street %>
+<%= f.text_field :street %><br />
+<%= f.text_field :street2 %><br />
+
+<%= f.label :city, "City, State, Zip Code" %>
 <%= f.text_field :city %> 
 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
-<%= f.text_field :postal_code, :size => '10px' %>
+<%= f.text_field :postal_code, :size => '10px' %><br />
 
-<%= f.text_field :company %>
+<%= f.label :company %>
+<%= f.text_field :company %><br />
 
+<%= f.label :email %>
 <%= f.text_field :email %><br />
-<div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
-<%= f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %><br/>
-<div id="operators" class="attribute" ><%= f.render_associated_form(@account.operators) %></div>
-<%= f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
 
+<div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
+<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %><br/>
+
+<div id="operators" class="attribute" ><%= f.render_associated_form(@account.operators) %></div>
+<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
+
+
+<%= f.label :locations %>
 <%= f.text_area :locations, :size => "30x4" %>
-<small>Enter postal codes and city names that your area services</small>
+<small>Enter postal codes and city names that your area services</small><br />
+
+<%= f.label :keywords %>
 <%= f.text_area :keywords, :size => "30x3" %>
-<small>Enter any custom keywords you want to be displayed to search engines.</small>
+<small>Enter any custom keywords you want to be displayed to search engines.</small><br />

@@ -12,7 +12,7 @@
 
 <fieldset>
   <label>Plan:</label>
-  <%= @subscription.subscription_plan.name %> (<a href="/operator/account/plan">Change plan</a>)
+  <%= @subscription.subscription_plan.name %> (<%= link_to 'Change plan', plan_path %>)<br />
   
   <% if @subscription.state == 'trial' %>
     <label>Trial expiration date:</label>

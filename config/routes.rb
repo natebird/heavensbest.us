@@ -2,16 +2,16 @@ ActionController::Routing::Routes.draw do |map|
   # Restful Authentication Rewrites
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
-  map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
+  map.register '/register', :controller => 'admin/users', :action => 'create'
+  # map.signup '/signup', :controller => 'users', :action => 'new'
+  map.activate '/signup/:activation_code', :controller => 'admin/users', :action => 'activate', :activation_code => nil
   map.forgot_password '/forgot_password', :controller => 'passwords', :action => 'new'
   map.change_password '/change_password/:reset_code', :controller => 'passwords', :action => 'reset'
   map.open_id_complete '/opensession', :controller => "sessions", :action => "create", :requirements => { :method => :get }
   map.open_id_create '/opencreate', :controller => "users", :action => "create", :requirements => { :method => :get }
   
   # Restful Authentication Resources
-  map.resources :users
+  # map.resources :users
   map.resources :passwords
   map.resource :session
   
@@ -27,6 +27,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.cancel '/operator/areas/:id/cancel', :controller => 'operator/accounts', :action => 'cancel'
   map.billing '/operator/areas/:id/billing', :controller => 'operator/accounts', :action => 'billing'
+  map.plan '/operator/areas/:id/plan', :controller => 'operator/accounts', :action => 'plan'
 
   map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }, :has_many => :services
 
@@ -45,7 +46,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # Admin Resources
   map.namespace :admin do |admin|
-  admin.resources :users    
+    admin.resources :users    
     admin.resources :pages
     admin.resources :tickets
   #   admin.resources :tips

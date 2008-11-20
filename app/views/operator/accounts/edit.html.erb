@@ -15,14 +15,14 @@
 <div id="admin-right-content">
 	<div class="text-content">
 	<h1>Subscription Information</h1>
-	<p> The <%= @account.name %>, <%= @account.region.abbreviation %> area is currently subscribed to the 
+	<p> The <%= @account.name %>, <%= @account.region.name %> area is currently subscribed to the 
 		<strong><%= @account.subscription.subscription_plan.name %> Plan</strong> at 
-		<strong><%= number_to_currency(@account.subscription.subscription_plan.amount) %> / month</strong>.</p>
+		<strong><%= number_to_currency(@account.subscription.subscription_plan.amount) %>/year</strong>.</p>
 
-	<p> Your next billing will be on <strong><%= @account.subscription.next_renewal_at.to_s(:long_day) %></strong>. 
+	<p> Your next billing date is <strong><%= @account.subscription.next_renewal_at.to_s(:short_day) %></strong>. 
 		You will receive a receipt by email.</p>
 
-	<p> You can change this area's <%= link_to('Subscription', :action => 'plan') %> or 
-		<%= link_to('Billing', :action => 'billing') %> information at anytime.</p>
+	<p> You can change the <%= link_to('Subscription', :action => 'plan') %> or 
+		<%= link_to('Billing', :action => 'billing') %> information anytime.</p>
 	</div>
 </div>

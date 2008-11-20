@@ -17,9 +17,9 @@
 			<div id="header">
 				<ul>
 					<% if logged_in? %>
-					<li>Welcome <%= link_to current_user.name, edit_user_path(current_user) %></li>
+					<li>Welcome <%= link_to current_user.name, edit_admin_user_path(current_user) %></li>
 					<% if current_user.has_role?('admin') %>
-						<li><%= link_to 'Invitations', new_user_path %></li>
+						<li><%= link_to 'Invitations', new_admin_user_path %></li>
 					<% end %>
 					<li><%= link_to 'Logout', logout_path %></li>
 					<% else %>

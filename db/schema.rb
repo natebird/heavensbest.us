@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 200811200202505) do
+ActiveRecord::Schema.define(:version => 20081120203136) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(:version => 200811200202505) do
     t.datetime "updated_at"
   end
 
+  create_table "pages", :force => true do |t|
+    t.string   "category"
+    t.string   "name"
+    t.string   "permalink"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "passwords", :force => true do |t|
     t.integer  "user_id"
     t.string   "reset_code"
@@ -91,6 +100,15 @@ ActiveRecord::Schema.define(:version => 200811200202505) do
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer "role_id"
     t.integer "user_id"
+  end
+
+  create_table "services", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "active"
+    t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sessions", :force => true do |t|
@@ -143,9 +161,18 @@ ActiveRecord::Schema.define(:version => 200811200202505) do
     t.string   "state",                                                             :default => "trial"
     t.integer  "subscription_plan_id", :limit => 11
     t.integer  "account_id",           :limit => 11
-    t.integer  "user_limit",           :limit => 11
+    t.integer  "specials_limit",       :limit => 11
     t.integer  "renewal_period",       :limit => 11,                                :default => 1
     t.string   "billing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.integer  "account_id"
+    t.string   "status"
+    t.string   "priority"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

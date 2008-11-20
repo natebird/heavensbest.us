@@ -69,6 +69,7 @@ class BortMigration < ActiveRecord::Migration
       u.login = 'nate'
       u.password = u.password_confirmation = '123456'
       u.email = APP_CONFIG[:admin_email]
+      u.name = 'Nate Bird'
     end
     
     # Activate user
