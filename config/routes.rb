@@ -47,14 +47,14 @@ ActionController::Routing::Routes.draw do |map|
   # Admin Resources
   map.namespace :admin do |admin|
   admin.resources :users    
-  #   admin.resources :pages
+    admin.resources :pages
   #   admin.resources :tickets
   #   admin.resource :client, :collection => { :thanks => :get, :cancel => :any, :canceled => :get }
   #   admin.resources :tips
   end
 
   # Public Help Rewrites
-  # map.page 'page/:permalink', :controller => 'pages', :action => 'show'
+  map.page 'page/:permalink', :controller => 'pages', :action => 'show'
   # map.support '/support', :controller => 'tickets', :action => 'new'
 
   # Install the default routes as the lowest priority.
