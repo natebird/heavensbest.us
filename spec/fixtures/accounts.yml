@@ -1,0 +1,6 @@
+localhost:
+  name: My first account
+  client: one
+otherhost:
+  name: Another account
+  client: two

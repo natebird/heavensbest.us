@@ -1,0 +1,63 @@
+
+<div id="welcome">
+	Welcome to Heaven's Best in <%=h @account.name %>!</div>
+
+
+<div id="content">
+	<div class="service">
+		<h1>Carpet Cleaning</h1>
+		<p> Franchise’s Dry-In-One-Hour carpet cleaning removes soil and stains that other cleaners leave behind.
+			First, our powerful dry vacuum system removes the loose soil.
+			Our exclusive cleaning solution then penetrates carpet fibers and gently loosens trapped soil and stains.
+			Next, our powerful buffer, specially designed with absorbent pads, gently lifts away soil and moisture.
+			Finally, we groom the carpet fibers to look and feel like new.
+		</p>
+		<img src="/images/content/carpet/testcarpet.jpg">
+	</div>
+	<div class="service">
+		<h1>Upholstery Cleaning</h1>
+		<p> Cleaning your carpets every 6 to 12 months doubles the life of your carpet. 
+			Even if you vacuum regularly, dirt works its way deep into the fibers of your carpet where it 
+			grinds and rubs. While the do-it-yourself approaches are less expensive, they are almost never as 
+			effective as professional cleaning and involve a considerable amount of time and hard work. 
+			Our experts can help you avoid the hassle and costly mistakes like over-wetting and the residue 
+			left from over-shampooing.
+		</p>
+		<img src="/images/content/furniture/testcouch.jpg">
+	</div>
+</div>
+
+<div id="cards">
+	
+	<div id="tips">
+		<h2>Tip Heading</h2>
+		<ul>
+			<li>Habitasse platea dictumst.</li>
+			<li>Aliquam ipsum Sed ante risus.</li> 
+			<li>Volutpat at feugiat pulvinar.</li>
+			<li>Odio malesuada gravida.</li>
+		</ul>
+	</div>
+
+	<div class="special">
+		<div id="speciallogo">&nbsp;</div>
+		<div id="specialcontent">
+			<p>printable coupon</p>
+			<p class="specialtitle">$10 Off!</span>
+			<p class="specialtext">Any carpet or upholstery cleaning</p>
+			<p class="specialphone"><%= number_to_phone(@account.phones.first.number) %></p>
+		</div>
+		<div class="specialfooter">
+			<span style="float:left">www.heavensbest.us</span>
+			<span style="float:right">Expires December 31, 2008</span>
+		</div>
+	</div>
+	
+	<div class="card_c">
+		<p class="testimonial_text">In hac habitasse platea dictumst. Proin eleifend sagittis leo. Quisque et purus.
+			Aliquam ipsum. Sed pulvinar, egestas non. Volutpat at, egestas non, tellus. odio malesuada gravida.<br />
+		</p>
+		<span class="testimonial-name">- Jennifer Anniston</span>
+	</div>
+
+</div>

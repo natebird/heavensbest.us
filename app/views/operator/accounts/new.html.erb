@@ -1,0 +1,34 @@
+<div id="content">
+	<h1><%= @page_title = 'Create a new area' %></h1>
+
+	<% form_tag :action => 'create' do %>
+	  <% if @account.errors.any? %>
+	    <div class="errorExplanation">
+	      <h2>Errors encountered with your area information:</h2>
+	      <ul><%= @account.errors.full_messages.map {|m| content_tag('li', m)} %></ul>
+	    </div>
+	  <% end %>
+  
+	  <fieldset>
+	    <% fields_for :account do |f| %>
+    
+		<label>Plan</label>
+	    <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s) %>
+
+		<%= render :partial => 'fields', :locals => {:f => f} %>   
+
+	    <% end %>
+	  </fieldset>
+  
+	  <% if @account.needs_payment_info? %>
+	    <p>Enter your payment info</p>
+	    <%= render :partial => "shared/credit_card_form" %>
+	  <% end %>
+  
+	  <br/>
+	  <input type="submit" value="Create my area" />
+	<% end %>
+
+	<div id="plans"><%= render :partial => "plans" %></div>
+	<div class="clearfix"></div>
+</div>

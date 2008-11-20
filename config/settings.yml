@@ -2,6 +2,14 @@ development: &non_production_settings
   site_url: http://localhost:3000
   site_name: Heaven's Best Local Operators
   admin_email: development@heavensbest.us
+  # Set this to true if you want to require CC info when creating a trial account for a paid plan
+  require_payment_info_for_trials: false
+  # Credit card gateway: One of brain_tree, authorize_net_cim, payment_express, or trust_commerce
+  gateway: brain_tree
+  # Subscription email settings (subscription_notifier.rb) => Remove these later
+  app_name: Heaven's Best Local Operators
+  from_email: support@heavensbest.us
+  base_domain: heavensbest.us
   
 test:
   <<: *non_production_settings
@@ -15,3 +23,11 @@ production:
   site_url: http://heavensbest.us
   site_name: Heaven's Best Local Operators
   admin_email: info@heavensbest.us
+  # Set this to true if you want to require CC info when creating a trial account for a paid plan
+  require_payment_info_for_trials: false
+  # Credit card gateway: One of brain_tree, authorize_net_cim, payment_express, or trust_commerce
+  gateway: brain_tree
+  # Subscription email settings (subscription_notifier.rb) => Remove these later
+  app_name: Heaven's Best Local Operators
+  from_email: support@heavensbest.us
+  base_domain: heavensbest.us

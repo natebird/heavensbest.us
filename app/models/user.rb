@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   validate :normalize_identity_url
   
   # Relationships
+  has_many :accounts
   has_and_belongs_to_many :roles
 
   # prevents a user from submitting a crafted form that bypasses activation

@@ -1,0 +1,20 @@
+<div id="welcome">
+	Welcome to Heaven's Best Carpet Cleaning!</div>
+
+<div id="content">
+	<div id="search">
+		<h2>Find Your Local Operator</h2>
+
+		<div class="instructions">Enter your zip code or city name</div>
+		<%= text_field_with_auto_complete :account, :locations, { :size => 20 }, :skip_style => true, 
+			:method => :get, :with => "Object.toQueryString({search: element.value})" %>
+	
+		<% submit_tag "Go" %>
+	</div>
+	
+	<div id="frontpage">
+		
+		
+	</div>
+	
+</div>

@@ -1,0 +1,5 @@
+<ul class="autocomplete_list">
+  <% for account in @accounts.to_a -%>
+    <li class="autocomplete_item"><%= link_to account.name, account_path(account) %></li>
+  <% end -%>
+</ul>

@@ -1,0 +1,8 @@
+<h1><%= "Subscription information for #{@account.name}" %></h1>
+
+<ul>
+  <li><%= link_to('Edit area', :action => 'edit') %></li>
+  <li><%= link_to('Change plan', :action => 'plan') %></li>
+  <li><%= link_to('Billing info', :action => 'billing') %></li>
+  <li><%= link_to('Cancel area', :action => 'cancel') %></li>
+</ul>

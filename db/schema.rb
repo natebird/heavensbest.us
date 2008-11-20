@@ -9,7 +9,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080929171348) do
+ActiveRecord::Schema.define(:version => 200811200202505) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+    t.integer  "subscription_discount_id", :limit => 11
+    t.string   "street"
+    t.string   "street2"
+    t.string   "city"
+    t.string   "postal_code"
+    t.integer  "user_id"
+    t.integer  "region_id"
+    t.integer  "country_id",                             :default => 1
+    t.string   "company"
+    t.string   "email"
+    t.string   "locations"
+    t.string   "keywords"
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -26,10 +52,34 @@ ActiveRecord::Schema.define(:version => 20080929171348) do
     t.string  "salt",       :null => false
   end
 
+  create_table "operators", :force => true do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.string   "title"
+    t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "passwords", :force => true do |t|
     t.integer  "user_id"
     t.string   "reset_code"
     t.datetime "expiration_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "phones", :force => true do |t|
+    t.integer  "number"
+    t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.integer  "country_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,11 +103,59 @@ ActiveRecord::Schema.define(:version => 20080929171348) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "subscription_discounts", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.decimal  "amount",     :precision => 6, :scale => 2, :default => 0.0
+    t.boolean  "percent"
+    t.date     "start_on"
+    t.date     "end_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscription_payments", :force => true do |t|
+    t.integer  "account_id",      :limit => 11
+    t.integer  "subscription_id", :limit => 11
+    t.decimal  "amount",                        :precision => 10, :scale => 2, :default => 0.0
+    t.string   "transaction_id"
+    t.boolean  "setup"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscription_plans", :force => true do |t|
+    t.string   "name"
+    t.decimal  "amount",                       :precision => 10, :scale => 2
+    t.integer  "special_limit",  :limit => 11
+    t.integer  "renewal_period", :limit => 11,                                :default => 12
+    t.decimal  "setup_amount",                 :precision => 10, :scale => 2
+    t.integer  "trial_period",   :limit => 11,                                :default => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.decimal  "amount",                             :precision => 10, :scale => 2
+    t.datetime "next_renewal_at"
+    t.string   "card_number"
+    t.string   "card_expiration"
+    t.string   "state",                                                             :default => "trial"
+    t.integer  "subscription_plan_id", :limit => 11
+    t.integer  "account_id",           :limit => 11
+    t.integer  "user_limit",           :limit => 11
+    t.integer  "renewal_period",       :limit => 11,                                :default => 1
+    t.string   "billing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
     t.string   "identity_url"
     t.string   "name",                      :limit => 100, :default => ""
     t.string   "email",                     :limit => 100
+    t.string   "phone",                     :limit => 20
     t.string   "crypted_password",          :limit => 40
     t.string   "salt",                      :limit => 40
     t.string   "remember_token",            :limit => 40
