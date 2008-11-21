@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @tip.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @tip.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_tip_path(@tip) %> |
+<%= link_to 'Back', :back %>
