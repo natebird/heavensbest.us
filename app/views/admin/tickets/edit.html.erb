@@ -1,7 +1,9 @@
 <% form_for([:admin, @ticket]) do |f| %>
+	<%= f.error_messages %>
+	
 	<% text_field_with_auto_complete :account, :locations, { :size => 20 }, :skip_style => true, :method => :get %>
 	<%= f.select( :account_id, @accounts.map {|u| [u.name,u.id]})  %>	
-	<%= f.hidden_field :status, :value => "Open" %>	
+	<%= f.select :status %>	
 	<%= f.text_area :comment, :rows => 5 %>	
 
 	<br />

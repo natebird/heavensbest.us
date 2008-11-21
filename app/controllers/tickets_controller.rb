@@ -3,7 +3,6 @@ class TicketsController < ApplicationController
 
   def new
     @accounts = Account.find(:all)
-    # render :layout => 'public' # Uncomment if your "public" site has a different layout than the one used for logged-in users
   end
   
   def create
@@ -13,7 +12,7 @@ class TicketsController < ApplicationController
       flash[:notice] = "Your request has been received. We will contact you shortly if necessary."
       redirect_to :action => "new"
     else
-      render :action => 'new'#, :layout => 'public' # Uncomment if your "public" site has a different layout than the one used for logged-in users
+      render :action => 'new'
     end
   end
 

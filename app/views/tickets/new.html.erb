@@ -6,24 +6,33 @@
 	<% form_for :ticket, :url => { :action => "create" } do |f| %>
   		<%= f.error_messages %>
 
+		<%= f.label :account_id, "&nbsp;" %>
+		<%= f.select( :account_id, current_user.accounts.to_dropdown, :prompt => "Choose an Area")  %><br />
 		<%= f.hidden_field :status, :value => "Open" %>	
-		<%= f.select( :account_id, current_user.accounts.to_dropdown, :prompt => "Choose an Area")  %>	
+
+		<%= f.label :comment, "Description" %>
 		<%= f.text_area :comment, :rows => 5 %>
 		<br />
 
-		<p><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></p>
+		<p><label>&nbsp;</label>
+		<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></p>
 	<% end %>
-<% end %>
-		
-<% unless logged_in? %>
+<% else %>
 	<% form_for :ticket, :url => { :action => "create" } do |f| %>
 		<%= f.error_messages %>
   		
-		<%= f.select( :account_id, @accounts.collect {|s| [s.name, s.id]}, :prompt => "Choose an Area")  %>	
+		<%= f.label :account_id, "&nbsp;" %>
+		<%= f.select( :account_id, @accounts.collect {|s| [s.name, s.id]}, :prompt => "Choose an Area")  %><br />
 		<%= f.hidden_field :status, :value => "Open" %>	
+
+		<%= f.label :name, "Name" %>
+		<%= f.text_field :name %><br />
+
+		<%= f.label :comment, "Description" %>
 		<%= f.text_area :comment, :rows => 5 %>
 		<br />
 
-		<p><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></p>
+		<p><label>&nbsp;</label>
+		<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></p>
 	<% end %>
 <% end %>

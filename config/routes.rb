@@ -49,7 +49,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users    
     admin.resources :pages
     admin.resources :tickets
-  #   admin.resources :tips
+    admin.resources :tips
   end
 
   # Public Help Rewrites
