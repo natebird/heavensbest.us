@@ -3,10 +3,10 @@
 <% if @subscription.state == 'trial' %>
   <% if @subscription.next_renewal_at > Time.now %>
     <p>
-      Thank you for trying <%= APP_CONFIG['app_name'] %>!  Your trial account will expire in <%= pluralize(@subscription.trial_days, 'day', 'days') %>, at which time your areas will not be publicly accessible. To maintain public access to your account, enter your credit card information below.  Your first charge will happen on <%= @subscription.next_renewal_at.to_s(:long_day) %>.
+      Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account will expire in <%= pluralize(@subscription.trial_days, 'day', 'days') %>, at which time your areas will not be publicly accessible. To maintain public access to your account, enter your credit card information below.  Your first charge will happen on <%= @subscription.next_renewal_at.to_s(:long_day) %>.
     </p>
   <% else %>
-    Thank you for trying <%= APP_CONFIG['app_name'] %>!  Your trial account has expired.  To regain access to your account, enter your credit card information below.  Your first charge will happen immediately, and you will be billed monthly thereafter.
+    Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account has expired.  To regain access to your account, enter your credit card information below.  Your first charge will happen immediately, and you will be billed monthly thereafter.
   <% end %>
 <% end %>
 

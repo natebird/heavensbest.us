@@ -12,7 +12,7 @@
 
 <div class='left' style="width: 400px">
 	<p> You can change your subscription plan at any time. New plan features will be available immediately, 
-		but your bill amount will not change until your next bill date.</p>
+		and you will be billed a prorated amount based on the time left before your next billing date.</p>
 
 	<% form_tag plan_operator_account_url do %>
 		<% if @subscription.card_number %>
@@ -36,8 +36,12 @@
 		<%= @subscription.next_renewal_at.to_s(:short_day) %>
 	
 		<br />	<br />
-		<%= link_to(image_tag("/images/buttons/cancel_plan.gif"), cancel_path ) %>
-		<%= link_to(image_tag("/images/buttons/back.gif"), :back) %>
+		<%= link_to "Cancel Plan", cancel_path %>
+		<% link_to(image_tag("/images/buttons/cancel_plan.gif"), cancel_path ) %>
+		
+		<%= link_to "Back", :back %>
+		<% link_to(image_tag("/images/buttons/back.gif"), :back) %>
+		
 		<%= submit_tag "Change Plan", :id => "commit", :disabled => true %>
 		<% image_submit_tag("/images/buttons/change_plan.gif", :class => 'button', :disabled => true) %>
 	
@@ -51,7 +55,7 @@
 	<% end %>
 </div>
 
-	<div id="plans"><%= render :partial => "plans" %></div>
+	<div id="plans"><% render :partial => "plans" %></div>
 <div class="clearfix"></div>
 </div>
 

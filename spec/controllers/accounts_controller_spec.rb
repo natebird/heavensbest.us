@@ -25,7 +25,7 @@ describe AccountsController do
   
   describe "with an existing account" do
     before(:each) do
-      @client.accounts.expects(:find).with(@account.id.to_s).returns(@account)
+      @user.accounts.expects(:find).with(@account.id.to_s).returns(@account)
     end
     
     it 'should allow updates' do

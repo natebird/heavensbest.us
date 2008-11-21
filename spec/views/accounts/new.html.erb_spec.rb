@@ -19,7 +19,7 @@ describe "accounts/new" do
   end
 
   it "should omit the credit card form when creating a paid account without payment info required up-front" do
-    APP_CONFIG['require_payment_info_for_trials'] = false
+    APP_CONFIG[:require_payment_info_for_trials] = false
     assigns[:plan] = @plan = subscription_plans(:basic)
     assigns[:creditcard] = @card = ActiveMerchant::Billing::CreditCard.new
     assigns[:address] = @address = SubscriptionAddress.new

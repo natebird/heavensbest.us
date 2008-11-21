@@ -67,7 +67,7 @@ class Subscription < ActiveRecord::Base
   end
   
   def start_paypal(return_url, cancel_url)
-    if (@response = paypal.setup_authorization(:return_url => return_url, :cancel_return_url => cancel_url, :description => APP_CONFIG['app_name'])).success?
+    if (@response = paypal.setup_authorization(:return_url => return_url, :cancel_return_url => cancel_url, :description => APP_CONFIG[:site_name])).success?
       paypal.redirect_url_for(@response.params['token'])
     else
       errors.add_to_base("PayPal Error: #{@response.message}")

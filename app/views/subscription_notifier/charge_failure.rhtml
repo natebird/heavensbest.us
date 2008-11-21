@@ -3,13 +3,12 @@ Uh-oh!
 We were unable to charge your credit card <%= @subscription.card_number %> 
 <%= number_to_currency(@subscription.amount) %> for your <%= @subscription.subscription_plan.name %> plan. 
 
-Please visit your account page at the following URL to update
-your payment information as soon as possible:
+Please visit your account page to update your payment information as soon as possible. You will need to login.
 
-http://<%= @subscription.account.full_domain %>/account/billing
+http://<%= full_domain %>/login
 
 
 If you have any questions about this email, please contact 
-<%= APP_CONFIG['from_email'] %>.
+<%= APP_CONFIG[:from_email] %>.
 
 Thank you for your business!

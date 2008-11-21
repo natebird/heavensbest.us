@@ -1,4 +1,4 @@
-This is a confirmation email to let you know your <%= APP_CONFIG['app_name'] %>
+This is a confirmation email to let you know your <%= APP_CONFIG[:site_name] %>
 subscription for <%= @subscription.account.name %> has been changed 
 to the <%= @subscription.subscription_plan.name %> plan.
 
@@ -13,6 +13,6 @@ date to prevent an interruption in service.
 
 
 If you have any questions about this email, please contact 
-<%= APP_CONFIG['from_email'] %>.
+<%= APP_CONFIG[:from_email] %>.
 
 Thank you for your business!
