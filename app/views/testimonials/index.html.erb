@@ -1,0 +1,13 @@
+<div id="welcome">Satisfied Customers a Plenty!</div>
+
+<div id="content">
+<% for testimonial in @testimonials %>
+	<div class="testimonial">
+		<div class="testimonial-top">&nbsp;</div>
+		<div class="testimonial-quote"><%= textilize (testimonial.quote) %></div>
+		<div class="testimonial-bottom"></div>
+		<div class="name"><%= testimonial.name %></div>
+		<div class="location"><%= testimonial.location %></div>
+	</div>
+<% end %>
+</div>

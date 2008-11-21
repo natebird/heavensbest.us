@@ -29,7 +29,7 @@ ActionController::Routing::Routes.draw do |map|
   map.plan '/operator/areas/:id/plan', :controller => 'operator/accounts', :action => 'plan'
 
   map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }, 
-                :has_many => [:services, :specials]#, :testimonials, :tips ]
+                :has_many => [:services, :specials, :testimonials]
 
   map.resources :services
   map.resources :specials
@@ -41,7 +41,7 @@ ActionController::Routing::Routes.draw do |map|
     operator.resources :accounts, :as => 'areas', 
       :member => { :billing => :any, :paypal => :any, :plan => :any, :cancel => :any }, 
       :collection => { :canceled => :get },
-      :has_many => [:services, :specials]#, :testimonials, :tips ]
+      :has_many => [:services, :specials, :testimonials]
   end
   
   # Admin Resources

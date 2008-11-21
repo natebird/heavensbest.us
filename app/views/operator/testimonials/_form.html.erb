@@ -1,0 +1,32 @@
+
+<div id="col2">	
+	<% if @account.testimonials.new %>
+		<h1>New Testimonial</h1>
+		<% else %>
+		<h1>Testimonial</h1>
+	<% end %>
+
+	<% form_for([:operator, @account, @testimonial]) do |f| %>
+		<table>
+		<tr><td colspan="4"><%= f.text_area :quote, :cols => 40, :rows => 12 %>
+							  <%= f.hidden_field :account_id, :value => current_account.id %></td></tr>
+		  
+		<tr><td colspan="2"><%= f.text_field :name, :size => 20 %></td>
+			  <td colspan="2"><%= f.text_field :location, :size => 20 %></td></tr>
+		  
+		<tr><% if @account.testimonials.new %>
+			<td colspan="2"><%= f.check_box :active %> <label>Published</label></td>
+			<% else %>
+			<td><%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), [:operator, @account, @testimonial], 
+				:confirm => 'Are you sure?', :method => :delete) %></td>
+			<td><%= f.check_box :active %> <label>Published</label></td>
+			<% end %>
+			
+			<td><%= link_to(image_tag("/images/buttons/cancel.png", 
+					:class => 'button' ), operator_account_testimonials_path(@account) ) %></td>
+			<td align="right"><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></td></tr>
+		</table>
+	<% end %>
+	<%= error_messages_for :testimonial %>
+
+</div>
