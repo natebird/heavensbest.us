@@ -1,0 +1,6 @@
+
+<p><%= textilize(@testimonial.quote) %></p>
+<p><%=h @testimonial.name %> <%=h @testimonial.location %></p>
+
+<%= link_to 'Back', :back %> | 
+<%= link_to 'Edit', edit_operator_account_testimonial_path(@account, @testimonial) %>

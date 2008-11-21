@@ -7,7 +7,7 @@ class Account < ActiveRecord::Base
   has_many :operators, :attributes => true, :discard_if => :blank?
   has_many :services
   has_many :specials
-  # has_many :testimonials
+  has_many :testimonials
   # has_many :tips
   
   validates_uniqueness_of :name

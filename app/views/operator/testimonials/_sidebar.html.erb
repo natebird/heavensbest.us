@@ -1,0 +1,8 @@
+<div id="sidebar">
+	<h1><%= link_to 'Testimonials', operator_account_testimonials_path(@account) %></h1>
+		<ul><% for testimonial in @testimonials %>
+		<li><%= link_to testimonial.name, edit_operator_account_testimonial_path(@account, testimonial) %></li>
+		<% end %></ul><br /><br /><br />
+
+		<div id="add"><%= link_to 'Add a testimonial', new_operator_account_testimonial_path(@account) %></div>
+</div>
