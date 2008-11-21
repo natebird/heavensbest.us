@@ -1,0 +1,24 @@
+<h1>Listing tips</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+
+<% for tip in @tips %>
+  <tr>
+    <td><%=h tip.title %></td>
+    <td><%=h tip.body %></td>
+    <td><%= link_to 'Show', [:admin, tip] %></td>
+    <td><%= link_to 'Edit', edit_admin_tip_path(tip) %></td>
+    <td><%= link_to 'Destroy', [:admin, tip], 
+					:confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'New tip', new_admin_tip_path %>
