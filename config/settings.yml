@@ -11,12 +11,12 @@ test:
   <<: *non_production_settings
 
 staging:
-  site_url: http://staging.heavensbest.us
-  site_name: Heaven's Best Local Operators
-  admin_email: staging@heavensbest.us
+  site_url: 'http://staging.heavensbest.us'
+  site_name: "Heaven's Best Local Operators"
+  admin_email: 'staging@heavensbest.us'
   
 production:
-  site_url: http://heavensbest.us
+  site_url: 'http://heavensbest.us'
   site_name: "Heaven's Best Local Operators"
   admin_email: 'info@heavensbest.us'
   from_email: 'support@heavensbest.us'
