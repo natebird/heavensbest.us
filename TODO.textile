@@ -1,7 +1,7 @@
 h1. To-do list
 
 [x] Fix signup form
-[] Fix gateway variable in the subscription model (line 180?)
+[x] Fix gateway variable in the subscription model (line 180?)
 [x] Move account models (and dependencies) from Directory app
 [x] Move subscription models from Directory app
 [x] Move plugins from Directory app
@@ -16,12 +16,13 @@ h1. To-do list
 [] Write/Format emails to be received on successful billing/area setup
 [] Write/Format Privacy Policy and ToS
 [] Add restriction on Specials for Plus plan accounts
+[] Write proration code
 [] If an area is a premium area then send email to admin to create email account in Google Apps
-[] Design frontpage content
+[] Design front-page content
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
 [] Contact Braintree about Merchant account setup (http://www.braintreepaymentsolutions.com/)
-[] Buy SSL certificate for heavensbest.us (Godaddy?)
+[] Buy SSL certificate for www.heavensbest.us (Godaddy?)
 [] Testing in Firefox
 [] Testing in IE 6 & 7 
 [x] Add exception handler 
@@ -31,4 +32,4 @@ h1. To-do list
 [] Add custom meta tags based on services offered
 [] Add custom meta keyword line based on keywords for area
 [] Add custom html code block to account model (maybe)
-[] set up a cron job to run script/daily_mailer on a daily basis
+[] set up a CRON job to run script/daily_mailer on a daily basis

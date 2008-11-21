@@ -177,7 +177,7 @@ class Subscription < ActiveRecord::Base
     end
     
     def cc
-      @cc ||= ActiveMerchant::Billing::Base.gateway('brain_tree').new(config_from_file('gateway.yml'))
+      @cc ||= ActiveMerchant::Billing::Base.gateway(APP_CONFIG[:gateway]).new(config_from_file('gateway.yml'))
     end
 
     def destroy_gateway_record(gw = gateway)
