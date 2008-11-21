@@ -6,7 +6,6 @@
   #   s.password = "123456"
   #   s.password_confirmation = "123456"
   #   s.admin = true
-  #   s.client_id = 1
   # end
   # 
   # User.seed do |s|
@@ -17,15 +16,5 @@
   #   s.password = "123456"
   #   s.password_confirmation = "123456"
   #   s.admin = true
-  #   s.client_id = 2
   # end
   # 
-  # Client.seed do |s|
-  #   s.id = 1
-  #   s.name = "Admin"
-  # end
-  # 
-  # Client.seed do |s|
-  #   s.id = 2
-  #   s.name = "Randy Bird"
-  # end

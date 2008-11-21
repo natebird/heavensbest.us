@@ -5,7 +5,7 @@ describe Account do
   before(:each) do
     @account = accounts(:localhost)
     @plan = subscription_plans(:basic)
-    APP_CONFIG['require_payment_info_for_trials'] = true
+    APP_CONFIG[:require_payment_info_for_trials] = true
   end
   
   it "should require payment info when being created with a paid plan when the app configuration requires it" do
@@ -14,7 +14,7 @@ describe Account do
   end
   
   it "should not require payment info when being created with a paid plan when the app configuration does not require it" do
-    APP_CONFIG['require_payment_info_for_trials'] = false
+    APP_CONFIG[:require_payment_info_for_trials] = false
     @account = Account.new(:plan => @plan)
     @account.needs_payment_info?.should be_false
   end
@@ -45,7 +45,7 @@ describe Account do
   
   describe "when being created with payment info" do
     before(:each) do
-      @account = clients(:one).accounts.build(:plan => @plan, :creditcard => @card = CreditCard.new(valid_card), :address => @address = SubscriptionAddress.new(valid_address))
+      @account = users(:one).accounts.build(:plan => @plan, :creditcard => @card = CreditCard.new(valid_card), :address => @address = SubscriptionAddress.new(valid_address))
       @account.expects(:build_subscription).with(:plan => @plan, :next_renewal_at => nil, :creditcard => @card, :address => @address).returns(@account.subscription = @subscription = Subscription.new(:plan => @plan, :creditcard => @card, :address => @address))
       @subscription.stubs(:gateway).returns(@gw = BogusGateway.new)
       

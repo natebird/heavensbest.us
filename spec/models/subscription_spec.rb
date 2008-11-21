@@ -410,7 +410,7 @@ describe Subscription do
       end
       
       it "should set up the authorization redirect to start the process" do
-        @gw.expects(:setup_authorization).with(:return_url => 'foo', :cancel_return_url => 'bar', :description => APP_CONFIG['app_name']).returns(@response)
+        @gw.expects(:setup_authorization).with(:return_url => 'foo', :cancel_return_url => 'bar', :description => APP_CONFIG[:site_name]).returns(@response)
         @gw.expects(:redirect_url_for).with('start').returns('http://go')
         @sub.start_paypal('foo', 'bar').should == 'http://go'
       end

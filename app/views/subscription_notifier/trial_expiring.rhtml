@@ -1,10 +1,10 @@
 <%- if @subscription.needs_payment_info? -%>
-Your <%= APP_CONFIG['app_name'] %> trial period will be ending soon. If you'd
-like to continue to use your <%= APP_CONFIG['app_name'] %> account, please log
+Your <%= APP_CONFIG[:site_name] %> trial period will be ending soon. If you'd
+like to continue to use your <%= APP_CONFIG[:site_name] %> account, please log
 in to your account and enter your billing information. Otherwise,
 your account will be disabled when your trial period ends.
 <%- else -%>
-Your <%= APP_CONFIG['app_name'] %> trial period will be ending soon. If your account remains
+Your <%= APP_CONFIG[:site_name] %> trial period will be ending soon. If your account remains
 open beyond the trial expiration date, your credit card on file will
 be charged <%= number_to_currency(@subscription.amount) %> monthly.  
 <%- end -%>
@@ -16,4 +16,4 @@ Trial Expiration Date:
 <%= @subscription.next_renewal_at.to_s(:long_day).squeeze(' ') %>
 
 
-If you have any questions, please email <%= APP_CONFIG['from_email'] %>.
+If you have any questions, please email <%= APP_CONFIG[:from_email] %>.

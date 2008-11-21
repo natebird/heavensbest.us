@@ -21,6 +21,7 @@ h1. To-do list
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
 [] Contact Braintree about Merchant account setup (http://www.braintreepaymentsolutions.com/)
+[] Buy SSL certificate for heavensbest.us (Godaddy?)
 [] Testing in Firefox
 [] Testing in IE 6 & 7 
 [x] Add exception handler 
@@ -30,3 +31,4 @@ h1. To-do list
 [] Add custom meta tags based on services offered
 [] Add custom meta keyword line based on keywords for area
 [] Add custom html code block to account model (maybe)
+[] set up a cron job to run script/daily_mailer on a daily basis

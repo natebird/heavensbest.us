@@ -9,7 +9,7 @@
 	    </div>
 	  <% end %>
   
-	  <fieldset>
+	  <fieldset><legend>Area Information</legend>
 	    <% fields_for :account do |f| %>
     
 		<%= f.label :plan_id, 'Plan' %>
@@ -21,14 +21,16 @@
 	  </fieldset>
   
 	  <% if @account.needs_payment_info? %>
-	    <p>Enter your payment info</p>
-	    <%= render :partial => "shared/credit_card_form" %>
 	  <% end %>
-  
-	  <br/>
+  	  <fieldset><legend>Payment Information</legend>
+	    <%= render :partial => "shared/credit_card_form" %>
+	  </fieldset>
+
+	  <br />
+	  <label>&nbsp;</label>
 	  <input type="submit" value="Create my area" />
 	<% end %>
 
-	<div id="plans"><%= render :partial => "plans" %></div>
+	<div id="plans"><% render :partial => "plans" %></div>
 	<div class="clearfix"></div>
 </div>

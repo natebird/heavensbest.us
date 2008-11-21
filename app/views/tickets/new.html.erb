@@ -7,7 +7,7 @@
   		<%= f.error_messages %>
 
 		<%= f.hidden_field :status, :value => "Open" %>	
-		<%= f.select( :account_id, current_client.accounts.to_dropdown, :prompt => "Choose an Area")  %>	
+		<%= f.select( :account_id, current_user.accounts.to_dropdown, :prompt => "Choose an Area")  %>	
 		<%= f.text_area :comment, :rows => 5 %>
 		<br />
 

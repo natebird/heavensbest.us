@@ -1,6 +1,6 @@
 localhost:
   name: My first account
-  client: one
+  user: one
 otherhost:
   name: Another account
-  client: two
+  user: two

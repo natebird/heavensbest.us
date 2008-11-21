@@ -41,7 +41,7 @@ class Account < ActiveRecord::Base
   
   def needs_payment_info?
     if new_record?
-      APP_CONFIG['require_payment_info_for_trials'] && @plan && @plan.amount > 0
+      APP_CONFIG[:require_payment_info_for_trials] && @plan && @plan.amount > 0
     else
       self.subscription.needs_payment_info?
     end

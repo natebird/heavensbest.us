@@ -11,7 +11,7 @@ SubscriptionPlan.seed do |s|
   s.name = "Basic"
   s.amount = 100    
   s.renewal_period = 12
-  s.trial_period = 0
+  s.trial_period = nil
   s.special_limit = 0
 end
 
@@ -28,7 +28,7 @@ SubscriptionPlan.seed do |s|
   s.name = "Plus"
   s.amount = 200    
   s.renewal_period = 12
-  s.trial_period = 0
+  s.trial_period = nil
   s.special_limit = 1
 end
 
@@ -45,6 +45,6 @@ SubscriptionPlan.seed do |s|
   s.name = "Premium"
   s.amount = 300    
   s.renewal_period = 12
-  s.trial_period = 0
+  s.trial_period = nil
   s.special_limit = 20
 end

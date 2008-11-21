@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_filter :admin_only, :except => :edit
+  before_filter :admin_only, :except => [:edit, :activate]
   skip_before_filter :verify_authenticity_token, :only => :create
   include ModelControllerMethods
   layout "operator"
