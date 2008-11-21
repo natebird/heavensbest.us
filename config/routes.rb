@@ -3,7 +3,6 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'admin/users', :action => 'create'
-  # map.signup '/signup', :controller => 'users', :action => 'new'
   map.activate '/signup/:activation_code', :controller => 'admin/users', :action => 'activate', :activation_code => nil
   map.forgot_password '/forgot_password', :controller => 'passwords', :action => 'new'
   map.change_password '/change_password/:reset_code', :controller => 'passwords', :action => 'reset'
@@ -18,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   # Home Page
   map.root :controller => "accounts", :action => "index"
 
-  # Area (Account) Rewrites
+  # Account Rewrites
   # map.country "/area/:country", :controller => "countries", :action => "show"
   # map.region "/area/:country/:region", :controller => "regions", :action => "show"
   # map.area "/area/:country/:region/:area", :controller => "areas", :action => "show" 
@@ -29,9 +28,11 @@ ActionController::Routing::Routes.draw do |map|
   map.billing '/operator/areas/:id/billing', :controller => 'operator/accounts', :action => 'billing'
   map.plan '/operator/areas/:id/plan', :controller => 'operator/accounts', :action => 'plan'
 
-  map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }, :has_many => :services
+  map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }, 
+                :has_many => [:services, :specials]#, :testimonials, :tips ]
 
   map.resources :services
+  map.resources :specials
 
   # Operator Resources
   map.operator '/operator', :controller => 'sessions', :action => 'new'
@@ -40,8 +41,7 @@ ActionController::Routing::Routes.draw do |map|
     operator.resources :accounts, :as => 'areas', 
       :member => { :billing => :any, :paypal => :any, :plan => :any, :cancel => :any }, 
       :collection => { :canceled => :get },
-      :has_many => :services
-      #:has_many => [ :services, :specials, :testimonials, :tips ]
+      :has_many => [:services, :specials]#, :testimonials, :tips ]
   end
   
   # Admin Resources

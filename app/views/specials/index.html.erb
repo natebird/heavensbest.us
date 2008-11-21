@@ -1,0 +1,19 @@
+
+<div id="welcome">Even the Best offer Specials</div>
+
+<div id="content">
+	<% for special in @specials %>
+	<div class="special">
+		<%= link_to "Click here to print", account_special_path(@account, special), 
+					:popup => ['Current Special', 'height=300,width=600'] %>
+		<div class="special1_small">
+			<div class="specialcontent"><%= textilize (special.body) %>
+				<label class="special-phone"><%= number_to_phone(special.phone) %></label></div>
+			<div class="specialfooter">
+				<span style="float:left">www.heavensbest.us</span>
+				<span style="float:right">Expires <%= special.end.to_s(:long) %></span>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
