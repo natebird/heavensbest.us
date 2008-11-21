@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081120203136) do
+ActiveRecord::Schema.define(:version => 20081121203138) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -121,6 +121,18 @@ ActiveRecord::Schema.define(:version => 20081120203136) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "specials", :force => true do |t|
+    t.string   "title"
+    t.string   "phone"
+    t.text     "body"
+    t.integer  "account_id"
+    t.date     "start"
+    t.date     "end"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "subscription_discounts", :force => true do |t|
     t.string   "name"
     t.string   "code"
@@ -168,11 +180,29 @@ ActiveRecord::Schema.define(:version => 20081120203136) do
     t.datetime "updated_at"
   end
 
+  create_table "testimonials", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.text     "quote"
+    t.boolean  "active"
+    t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tickets", :force => true do |t|
     t.integer  "account_id"
     t.string   "status"
     t.string   "priority"
     t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tips", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
