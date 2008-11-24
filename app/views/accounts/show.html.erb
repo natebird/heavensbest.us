@@ -34,25 +34,38 @@
 			<%= textilize(Tip.random.body) %>
 	</div>
 
-	<div class="special">
-		<div id="speciallogo">&nbsp;</div>
-		<div id="specialcontent">
-			<p>printable coupon</p>
-			<p class="specialtitle">$10 Off!</span>
-			<p class="specialtext">Any carpet or upholstery cleaning</p>
-			<p class="specialphone"><%= number_to_phone(@account.phones.first.number) %></p>
+	<% if @special %>
+		<div class="special">
+			<div id="speciallogo">&nbsp;</div>
+			<div id="specialcontent">
+				<p>printable coupon</p>
+				<p class="specialtitle">$10 Off!</span>
+				<p class="specialtext">Any carpet or upholstery cleaning</p>
+				<p class="specialphone"><%= number_to_phone(@account.phones.first.number) %></p>
+			</div>
+			<div class="specialfooter">
+				<span style="float:left">www.heavensbest.us</span>
+				<span style="float:right">Expires December 31, 2008</span>
+			</div>
+			<div class="clearfix"></div>
 		</div>
-		<div class="specialfooter">
-			<span style="float:left">www.heavensbest.us</span>
-			<span style="float:right">Expires December 31, 2008</span>
-		</div>
-	</div>
+		<% else %>
+		<div id="ad"><%= link_to(image_tag("/images/content/franchise_ad.gif"), 
+		"http://www.heavensbest.com/index.php?customernumber=704858618478429&pr=Franchise_Information", 
+		:popup => true) %></div>
+	<% end %>
 	
-	<div class="card_c">
+	<div id="testimonials">
+		<% if @testimonials %>
+			<p class="testimonial_text"><% Testimonial.random.quote %> <br />
+			</p>
+			<span class="testimonial-name">- <% Testimonial.random.name %>, <% Testimonial.random.location %></span>
+		<% else %>
 		<p class="testimonial_text">In hac habitasse platea dictumst. Proin eleifend sagittis leo. Quisque et purus.
-			Aliquam ipsum. Sed pulvinar, egestas non. Volutpat at, egestas non, tellus. odio malesuada gravida.<br />
+			Aliquam ipsum. Sed pulvinar, egestas non. Volutpat at, egestas non, tellus. odio malesuada gravida.
 		</p>
-		<span class="testimonial-name">- Jennifer Anniston</span>
+		<span class="testimonial-name">- Jennifer Anniston, Hollywood, CA</span>
+		<% end %>
 	</div>
 
 </div>
