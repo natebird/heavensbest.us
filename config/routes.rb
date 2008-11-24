@@ -18,10 +18,9 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "accounts", :action => "index"
 
   # Account Rewrites
-  # map.country "/area/:country", :controller => "countries", :action => "show"
   # map.region "/area/:country/:region", :controller => "regions", :action => "show"
-  # map.area "/area/:country/:region/:area", :controller => "areas", :action => "show" 
-  # map.area ":region/:area", :controller => "areas", :action => "show"
+  # map.account ":account", :controller => "accounts", :action => "show" 
+  # map.area ":region/:account", :controller => "accounts", :action => "show"
 
 
   map.cancel '/operator/areas/:id/cancel', :controller => 'operator/accounts', :action => 'cancel'

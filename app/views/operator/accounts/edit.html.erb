@@ -17,8 +17,8 @@
 	<div class="text-content">
 	<h1>Subscription Information</h1>
 	<p> The <%= @account.name %>, <%= @account.region.name %> area is currently subscribed to the 
-		<strong><%= @account.subscription.subscription_plan.name %> Plan</strong> at 
-		<strong><%= number_to_currency(@account.subscription.subscription_plan.amount) %>/year</strong>.</p>
+		<strong><%= @account.subscription.subscription_plan.name %> Plan 
+		(<%= number_to_currency(@account.subscription.subscription_plan.amount) %>/year)</strong>.</p>
 
 	<p> Your next billing date is <strong><%= @account.subscription.next_renewal_at.to_s(:short_day) %></strong>. 
 		You will receive a receipt by email.</p>

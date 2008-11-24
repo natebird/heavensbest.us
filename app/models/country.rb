@@ -3,11 +3,11 @@ class Country < ActiveRecord::Base
   has_many :accounts, :through => :regions
 
 
-  def area_locations
-    account.location if area
+  def account_locations
+    account.location if account
   end
 
-  def area_locations=(locations)
+  def account_locations=(locations)
     self.account = Account.find_by_locations(locations) unless locations.blank?
   end
 end

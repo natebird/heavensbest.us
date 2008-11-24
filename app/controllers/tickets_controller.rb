@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+  layout "operator"
   include ModelControllerMethods
 
   def new
