@@ -1,24 +1,17 @@
-<%= title "Login", :h2 %>
-<% form_tag session_path do %>
-	<fieldset>
-		<legend>Your Details</legend>
-		<ol>
-			<li>
-				<%= label_tag 'login', 'Username' %>
-				<%= text_field_tag 'login', @login %>
-			</li>
-			<li>
-				<%= label_tag 'password' %>
-				<%= password_field_tag 'password', nil %>
-			</li>
-			<li>
-				<%= label_tag 'remember_me', 'Remember me' %>
-				<%= check_box_tag 'remember_me', '1', @remember_me %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
-		<%= submit_tag 'Login' %>
-		<%= link_to 'Forgotten Password', forgot_password_path %>
-	</div>
-<% end -%>
+<%= title "Login" %>
+<div id="login_box">
+	
+	<% form_tag session_path do -%>
+		<table >
+			<tr><td></td><td colspan=2>&nbsp;<%= render :partial => "error" if flash[:error] %></td></tr>
+			<tr><td width="80px"><label for="login">Username</label></td>
+					<td colspan=2><%= text_field_tag 'login' %></td></tr>
+			<tr><td><label for="password">Password</label></td>
+				<td colspan=2><%= password_field_tag 'password' %></td></tr>
+			<tr><td></td><td><%= check_box_tag 'remember_me' %>
+				<label for="remember_me" class="remember">Remember me</label></td>
+				<td align="right"><%= image_submit_tag("/images/buttons/login.gif", :class => 'button' ) %></td></tr>
+		</table>
+	<% end -%>
+	
+</div>

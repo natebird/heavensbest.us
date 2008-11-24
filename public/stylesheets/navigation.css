@@ -1,0 +1,213 @@
+
+#main_tabnav {
+	float: right;
+	width: 100%;
+	line-height: normal;
+	margin-top: -50px;
+	position: relative;
+}
+#main_tabnav ul {
+	padding: 10px 10px 0;
+	list-style: none;
+	margin-right: 18px;
+	margin-top: 0;
+}
+#main_tabnav li {
+	float: right;
+	background: url(/images/navigation/left_both.png) no-repeat left top;
+	margin: 0;
+	padding: 0 5px 0 9px;
+}
+#main_tabnav a {
+	float: right;
+	display: block;
+	width: .1em;
+	background: url(/images/navigation/right_both.png) no-repeat right top;
+	padding: 5px 15px 20px 6px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #666;
+	font-size: 1.2em;
+}
+#main_tabnav > ul a {width: auto;}
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+#main_tabnav a {float: none;}
+    /* End IE5-Mac hack */
+#main_tabnav a:hover {
+	color: #666;
+}
+
+#main_tabnav a:active {
+	background-position: 0 -150px;
+	border-width: 0;
+	color: #333;
+}
+#main_tabnav li:hover, #main_tabnav li:hover a {
+	background-position: 0% -150px;
+	color: #666;
+}
+#main_tabnav li:hover a {
+	background-position: 100% -150px;
+}
+
+
+/* Admin area select list */
+#header select {
+	position: relative;
+	top: 35px;
+	left: 200px;
+	width: 210px;
+	float: left;
+}
+
+/* Account navigation*/
+#account_navigation {
+	float: right;
+	position: relative;
+	top:  30px;
+	margin-right: 30px;
+	color: white;
+}
+#account_navigation ul {
+	list-style: none;
+}
+#account_navigation li {
+	float: left;
+}
+#account_navigation a {
+	display: inline;
+	text-decoration: none;
+	color: white;
+	padding-right: 10px;
+	padding-left: 7px;
+	font-size: 12px;
+}
+#account_navigation > ul a {width: auto;}
+
+#account_navigation a:hover {
+	text-decoration: underline;
+}
+
+
+/* Navigation TabNav */
+#navigation_tabnav { width: 600px; margin: 18px auto; position: relative; z-index: 9998; top: 25px; left: 185px; }
+#navigation_tabnav { margin: 0px; padding: 0; }
+#navigation_tabnav li { display: inline; }
+#navigation_tabnav li a { float: left; width: 100px; height: 0; padding-top: 42px; overflow: hidden; }
+#navivation_tabnav li a.home, #navivation_tabnav li a.testimonials { width: 103px; }
+#navigation_tabnav li a, #navigation_tabnav { background-image: url(/images/navigation/navigation.png); _background-image: url(/images/navigation/public_menu.gif); background-repeat: no-repeat; }
+
+ /*BUTTONS*/ 
+#navigation_tabnav li a.home { background-position: 0px 0px; }
+#navigation_tabnav li a.services { background-position: -103px 0px; }
+#navigation_tabnav li a.specials { background-position: -203px 0px; }
+#navigation_tabnav li a.evaluations { background-position: -303px 0px; }
+#navigation_tabnav li a.testimonials { background-position: -403px 0px; }
+
+/* OVER STATES */
+#navigation_tabnav li a:hover.home { background-position: 0px 0px; }
+#navigation_tabnav li a:hover.services { background-position: -103px -43px; }
+#navigation_tabnav li a:hover.specials { background-position: -203px -43px; }
+#navigation_tabnav li a:hover.evaluations { background-position: -303px -43px; }
+#navigation_tabnav li a:hover.testimonials { background-position: -403px -43px; }
+
+/* PRESSED STATES */
+#navigation_tabnav li a:current.home { background-position: 0px 0px; }
+#navigation_tabnav li a:current.services { background-position: -103px -86px; }
+#navigation_tabnav li a:current.specials { background-position: -203px -86px; }
+#navigation_tabnav li a:current.evaluations { background-position: -303px -86px; }
+#navigation_tabnav li a:current.testimonials { background-position: -403px -86px; }
+
+/* Admin Menubar */
+#admin_menubar { width: 750px; margin: 18px auto; position: relative; z-index: 9998; float: left; top: 60px;
+	left: -55px;
+}
+#admin_menubar { margin: 0px; padding: 0; }
+#admin_menubar li { display: inline;}
+#admin_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
+#admin_menubar li a.information, #admin_menubar li a.tips { width: 102px; }
+#admin_menubar li a { background-image: url(/images/navigation/admin_menubar.png); _background-image: url(/images/navigation/admin_menubar.gif); background-repeat: no-repeat;}
+
+ /*BUTTONS*/ 
+#admin_menubar li a.information { background-position: 0px 0px; }
+#admin_menubar li a.services { background-position: -102px 0px; }
+#admin_menubar li a.specials { background-position: -197px 0px; }
+#admin_menubar li a.testimonials { background-position: -292px 0px; }
+#admin_menubar li a.evaluations { background-position: -387px 0px; }
+#admin_menubar li a.tips { background-position: -482px 0px; }
+
+/* OVER STATES */
+#admin_menubar li a:hover.information { background-position: 0px -41px;}
+#admin_menubar li a:hover.services { background-position: -102px -41px; }
+#admin_menubar li a:hover.specials { background-position: -197px -41px; }
+#admin_menubar li a:hover.testimonials { background-position: -292px -41px; }
+#admin_menubar li a:hover.evaluations { background-position: -387px -41px; }
+#admin_menubar li a:hover.tips { background-position: -482px -41px; }
+
+/* PRESSED STATES */
+#admin_menubar li a:current.information { background-position: 0px -82px; }
+#admin_menubar li a:current.services { background-position: -102px -82px; }
+#admin_menubar li a:current.specials { background-position: -197px -82px; }
+#admin_menubar li a:current.testimonials { background-position: -292px -82px; }
+#admin_menubar li a:current.evaluations { background-position: -387px -82px; }
+#admin_menubar li a:current.tips { background-position: -482px -82px; }
+
+
+/* Home Menubar */
+#home_menubar { width: 490px; margin: 18px auto; position: absolute; z-index: 9998; top: 25px; left: 280px; }
+#home_menubar { margin: 0px; padding: 0; }
+#home_menubar li { display: inline;}
+#home_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
+#home_menubar li a.home, #home_menubar li a.contact_us { width: 102px; }
+#home_menubar li a { background-image: url(/images/navigation/home_menubar.png); _background-image: url(/images/navigation/home_menubar.gif); background-repeat: no-repeat;}
+
+ /*BUTTONS*/ 
+#home_menubar li a.home { background-position: 0px 0px; }
+#home_menubar li a.franchises { background-position: -102px 0px; }
+#home_menubar li a.services { background-position: -197px 0px; }
+#home_menubar li a.testimonials { background-position: -292px 0px; }
+#home_menubar li a.contact_us { background-position: -387px 0px; }
+
+/* OVER STATES */
+#home_menubar li a:hover.home { background-position: 0px 0px;}
+#home_menubar li a:hover.franchises { background-position: -102px -41px; }
+#home_menubar li a:hover.services { background-position: -197px -41px; }
+#home_menubar li a:hover.testimonials { background-position: -292px -41px; }
+#home_menubar li a:hover.contact_us { background-position: -387px -41px; }
+
+/* PRESSED STATES */
+#home_menubar li a:current.home { background-position: 0px -82px; }
+#home_menubar li a:current.franchises { background-position: -102px -82px; }
+#home_menubar li a:current.services { background-position: -197px -82px; }
+#home_menubar li a:current.testimonials { background-position: -292px -82px; }
+#home_menubar li a:current.contact_us { background-position: -387px -82px; }
+
+
+/* Area Menubar */
+#area_menubar { width: 490px; margin: 18px auto; position: absolute; z-index: 9998; top: 20px; left: 210px; }
+#area_menubar { margin: 0px; padding: 0; }
+#area_menubar li { display: inline;}
+#area_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
+#area_menubar li a.home, #area_menubar li a.testimonials { width: 102px; }
+#area_menubar li a { background-image: url(/images/navigation/area_menubar.png); _background-image: url(/images/navigation/area_menubar.gif); background-repeat: no-repeat;}
+
+ /*BUTTONS*/ 
+#area_menubar li a.home { background-position: 0px 0px; }
+#area_menubar li a.services { background-position: -102px 0px; }
+#area_menubar li a.specials { background-position: -197px 0px; }
+#area_menubar li a.evaluations { background-position: -292px 0px; }
+#area_menubar li a.testimonials { background-position: -387px 0px; }
+
+/* OVER STATES */
+#area_menubar li a:hover.home { background-position: 0px 0px;}
+#area_menubar li a:hover.services { background-position: -102px -41px; }
+#area_menubar li a:hover.specials { background-position: -197px -41px; }
+#area_menubar li a:hover.evaluations { background-position: -292px -41px; }
+#area_menubar li a:hover.testimonials { background-position: -387px -41px; }
+
+/* PRESSED STATES */
+#area_menubar li a:current.home { background-position: 0px -82px; }
+#area_menubar li a:current.services { background-position: -102px -82px; }
+#area_menubar li a:current.specials { background-position: -197px -82px; }
+#area_menubar li a:current.evaluations { background-position: -292px -82px; }
+#area_menubar li a:current.testimonials { background-position: -387px -82px; }
