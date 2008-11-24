@@ -1,3 +1,3 @@
 class Testimonial < ActiveRecord::Base
-  belongs_to :area
+  belongs_to :account
 end

@@ -8,9 +8,11 @@ h1. To-do list
 [x] Move services models and views from directory app
 [x] Add CSS style for input, select, text objects to break afterwards
 [] Add images (attribute_fu?) to services model (need to research how to do this)
-[] Move testimonial models and views from HB app
-[] Move specials model and views HB app
-[] Create tips in Admin section
+[x] Move testimonial models and views from HB app
+[x] Move specials model and views HB app
+[x] Create tips in Admin section
+[] Add validations to all forms
+[] Add hints to all forms
 [] Outline text for Tiffany to write and edit
 [] Write/Format email to be sent on account creation
 [] Write/Format emails to be received on successful billing/area setup
@@ -22,7 +24,9 @@ h1. To-do list
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
 [] Contact Braintree about Merchant account setup (http://www.braintreepaymentsolutions.com/)
-[] Buy SSL certificate for www.heavensbest.us (Godaddy?)
+[x] Buy SSL certificate for www.heavensbest.us (Godaddy?)
+[] Setup staging domain on Lucidius slice (staging.heavensbest.us)
+[] Setup new slice for www.heavensbest.us domain
 [] Testing in Firefox
 [] Testing in IE 6 & 7 
 [x] Add exception handler 

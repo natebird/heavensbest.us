@@ -30,13 +30,8 @@
 <div id="cards">
 	
 	<div id="tips">
-		<h2>Tip Heading</h2>
-		<ul>
-			<li>Habitasse platea dictumst.</li>
-			<li>Aliquam ipsum Sed ante risus.</li> 
-			<li>Volutpat at feugiat pulvinar.</li>
-			<li>Odio malesuada gravida.</li>
-		</ul>
+		<h2><%= Tip.random.title %></h2>
+			<%= textilize(Tip.random.body) %>
 	</div>
 
 	<div class="special">

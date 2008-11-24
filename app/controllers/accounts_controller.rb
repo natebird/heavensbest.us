@@ -17,15 +17,15 @@ class AccountsController < ApplicationController
     # @region = Account.region_id.find_by_abbreviation(params[:region])
     # @country = Country.find_by_abbreviation(params[:country])
     @account = Account.find(params[:id])
-    # redirect_to :action => "index" unless @account.active?
+    # redirect_to :action => "index"
   end
   
 
   protected
   
-    def redirect_url
-      { :action => 'show', :id => @account }
-    end
+    # def redirect_url
+    #   { :action => 'show', :account => @account }
+    # end
     
     def load_subscription
       load_object
