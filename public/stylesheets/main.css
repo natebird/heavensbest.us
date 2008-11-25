@@ -1,3 +1,5 @@
+/* @override http://hbapp.local/stylesheets/main.css?1227561088 */
+
 
 /*Colors:
 	Dark Blue:	0069AA	(links, input borders,)
@@ -200,7 +202,7 @@ label {
 #header {
 	width: 972px;
 	height: 172px;
-	background-color: #444ffc;
+	background: url(/images/navigation/operator.gif) no-repeat;
 }
 
 #p-header {
@@ -318,7 +320,7 @@ div.auto_complete ul strong.highlight {
 	position: relative;
 }
 
-#admin-container {
+#operator {
 	width: 972px;
 	background-color: #fff;
 	margin-left: auto;
@@ -493,6 +495,23 @@ div.auto_complete ul strong.highlight {
 	color: white;
 	font: 18px/20px Helvetica, Arial, Verdana, sans-serif;
 }
+/* @end */
+
+
+/* @group Tips */
+#tip {
+	position: relative;
+	width: 720px;
+	float: left;
+	left: 25px;
+
+}
+
+#new_tip, .edit_tip {
+	float: right;
+	position: relative;
+}
+
 /* @end */
 
 
