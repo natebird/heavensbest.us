@@ -1,5 +1,3 @@
-/* @override http://hbapp.local/stylesheets/main.css?1227561088 */
-
 
 /*Colors:
 	Dark Blue:	0069AA	(links, input borders,)
@@ -81,17 +79,39 @@ body {
 	float: right;
 }
 
-
 /* @group Forms */
+
+.hint {
+    border: 1px solid #cc0d0c;
+    width: 400px;
+    padding: 10px 12px;
+    background: #fdded8 url(/images/signup/pointer.gif) no-repeat -10px 5px;
+	display: inline;
+	position: absolute;
+	left: 500px;
+}
+
+/* The pointer image is added by using another span */
+.hint .pointer {
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 19px;
+    background: url(/images/signup/pointer.gif) left top no-repeat;
+}
+
 
 #content form {
 	float: left;
 }
 
 form label {
-	display: block;
 	/*font-weight: bold;*/
-	margin: .5em 0 .2em;
+	margin: .25em 0 .25em;
+	width: 125px;
+	position: relative;
+	float: left;
 }
 
 #login_box {
@@ -147,13 +167,14 @@ dd select#area_region_id {
 }
 
 #address_country, #area_region_id {
-	width: 250px;
+	/*width: 250px;*/
 } 
 
 input, textarea {
 	border: 2px solid #999;
 	background-color: #ffffff;
 	color: #595959;
+	margin-bottom: 1em;
 	font: 18px Helvetica, Arial, Verdana, sans-serif;
 }
  
@@ -619,6 +640,8 @@ div.auto_complete ul strong.highlight {
 	padding: 15px;
 	height: 130px;
 	background-image: url(/images/content/card_tips.gif);
+	left: 50px;
+	position: relative;
 }
 
 #tips h2 {
@@ -796,11 +819,13 @@ fieldset {
 	border-style: hidden;
 	border-top: 2px solid #b2b2b2;
 	background-color: #dfedf9;
-	width: 350px;
+	width: 425px;
 	margin-bottom: 15px;
 	padding-bottom: 20px;
 	padding-left: 20px;
 	padding-right: 15px;
+	clear: left;
+	position: relative;
 }
 
 #content-middle form, h1{
@@ -809,13 +834,14 @@ fieldset {
 }
 
 fieldset input {
-	font-size: 12px;
+	font-size: 16px;
 }
 
 fieldset select {
 	font-size: 14px;
 	background-color: #gray;
 	color: fff;
+	margin-bottom: .5em;
 }
 
 table a,
@@ -832,6 +858,7 @@ fieldset img {
 
 table {
 	border-collapse:collapse;
+	position: relative;
 }
 
 caption {
