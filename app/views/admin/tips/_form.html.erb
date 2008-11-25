@@ -1,6 +1,6 @@
 <% form_for([:admin, @tip]) do |f| %>
 	<table>
-	  <tr><td colspan="4"><%= f.text_field :title, :size => 17 %></td>		
+	  <tr><td colspan="4"><%= f.text_field :title, :size => 36 %></td>		
 	  <tr><td colspan="4"><%= f.text_area :body, :cols => 34, :rows => 8 %></td></tr>
 	
 	  <tr><td><%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), [:admin, @tip],

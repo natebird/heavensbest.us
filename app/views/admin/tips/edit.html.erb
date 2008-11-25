@@ -2,14 +2,14 @@
 
 <div id="content-middle">
 	<%= render :partial => 'sidebar' %>
-	<div id="tip">
-		<%= render :partial => 'form' %>
-		
-		<div id="tips">
-			<h2><%= @tip.title %></h2>
-				<%= textilize(@tip.body) %>
-		</div>
+
+	<%= render :partial => 'form' %>
+	
+	<div id="tips">
+		<h2><%= @tip.title %></h2>
+			<%= textilize(@tip.body) %>
 	</div>
+	
 	<div class="clearfix">&nbsp;</div>		
 </div>
 
