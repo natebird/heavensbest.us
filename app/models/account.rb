@@ -11,6 +11,7 @@ class Account < ActiveRecord::Base
   # has_many :tips
   
   validates_uniqueness_of :name
+  validates_presence_of :email
 
   validate_on_create :valid_plan?
   validate_on_create :valid_payment_info?

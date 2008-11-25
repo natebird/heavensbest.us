@@ -45,6 +45,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # Admin Resources
   map.namespace :admin do |admin|
+    admin.resources :accounts    
     admin.resources :users    
     admin.resources :pages
     admin.resources :tickets
