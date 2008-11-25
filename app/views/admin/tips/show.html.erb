@@ -1,13 +1,11 @@
-<p>
-  <b>Title:</b>
-  <%=h @tip.title %>
-</p>
+<div id="content-top"></div>
 
-<p>
-  <b>Body:</b>
-  <%=h @tip.body %>
-</p>
+<div id="content-middle">
+	<%= render :partial => 'sidebar' %>
+	<div id="tip">
+		<div id="text"><%= textilize(@tip.body) %></div>
+	</div>
+	<div class="clearfix">&nbsp;</div>		
+</div>
 
-
-<%= link_to 'Edit', edit_admin_tip_path(@tip) %> |
-<%= link_to 'Back', :back %>
+<div id="content-bottom"></div>

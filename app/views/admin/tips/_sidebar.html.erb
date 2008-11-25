@@ -1,0 +1,11 @@
+<div id="sidebar">
+	<h1><%= link_to 'Tips', admin_tips_path %></h1>
+		<ul>
+			<% for tip in @tips %>
+				<li><%= layout_link_to tip.title, edit_admin_tip_path(tip) %></li>
+			<% end %>
+		</ul>
+		
+		<br /><br /><br />
+		<div id="add"><%= link_to 'Add a Tip', new_admin_tip_path %></div>
+</div>
