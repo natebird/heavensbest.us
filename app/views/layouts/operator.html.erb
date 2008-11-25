@@ -23,7 +23,7 @@
 					@account ? @account.id : nil), {:onchange => "jumpToArea(this);"} ) if logged_in? %>
 			<% end %>
 		</div>
-		<%= render :partial => "shared/operator_tabs" unless logged_in? %>
+		<%= render :partial => "shared/operator_tabs" if !logged_in? %>
 
 		<% if flash[:notice] %><div class='notice'><%= flash[:notice] %></div><% end %>
 		
