@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_only
-    current_user.has_role?('admin') || not_authorized
+    current_user.has_role?('admin')
   end
 
   def not_authorized

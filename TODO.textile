@@ -18,7 +18,6 @@ h1. To-do list
 [] Write/Format emails to be received on successful billing/area setup
 [] Write/Format Privacy Policy and ToS
 [] Add restriction on Specials for Plus plan accounts
-[] Write proration code
 [] If an area is a premium area then send email to admin to create email account in Google Apps
 [] Design front-page content
 [] render final artwork (gifs)
@@ -37,3 +36,4 @@ h1. To-do list
 [] Add custom meta keyword line based on keywords for area
 [] Add custom html code block to account model (maybe)
 [] set up a CRON job to run script/daily_mailer on a daily basis
+
