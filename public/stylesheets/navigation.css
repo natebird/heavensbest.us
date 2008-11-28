@@ -1,59 +1,34 @@
-/* @override http://hbapp.local/stylesheets/navigation.css?1226600171 */
 
+/* @group Tabbed Navigation */
 
-#main_tabnav {
-	float: right;
-	width: 100%;
-	line-height: normal;
-	margin-top: -50px;
-	position: relative;
-}
-#main_tabnav ul {
-	padding: 10px 10px 0;
-	list-style: none;
-	margin-right: 18px;
-	margin-top: 0;
-}
-#main_tabnav li {
-	float: right;
-	background: url(/images/navigation/left_both.png) no-repeat left top;
-	margin: 0;
-	padding: 0 5px 0 9px;
-}
-#main_tabnav a {
-	float: right;
-	display: block;
-	width: .1em;
-	background: url(/images/navigation/right_both.png) no-repeat right top;
-	padding: 5px 15px 20px 6px;
-	text-decoration: none;
-	font-weight: bold;
-	color: #666;
-	font-size: 1.2em;
-}
-#main_tabnav > ul a {width: auto;}
-    /* Commented Backslash Hack hides rule from IE5-Mac \*/
-#main_tabnav a {float: none;}
-    /* End IE5-Mac hack */
-#main_tabnav a:hover,
-#main_tabnav a .current {
-	color: #666;
-}
+/* Public Tabbed Navigation */
+#tab_nav { width: 416px; margin: 18px auto; position: relative; z-index: 9998; bottom: 45px; right: 25px; float: right; }
+#tab_nav { margin: 0px; padding: 0; }
+#tab_nav li { display: inline; }
+#tab_nav li a { float: left; width: 104px; height: 0; padding-top: 42px; overflow: hidden; }
+#tab_nav li a#login, 
+#tab_nav li a#features { width: 103px; }
+#tab_nav li a, #tab_nav { background-image: url(/images/navigation/tabs.gif); _background-image: url(/images/navigation/tabs.gif); background-repeat: no-repeat; }
 
-#main_tabnav a:active {
-	background-position: 0 -150px;
-	border-width: 0;
-	color: #333;
-}
-#main_tabnav li:hover, 
-#main_tabnav li:hover a {
-	background-position: 0% -150px;
-	color: #666;
-}
-#main_tabnav li:hover a, 
-#main_tabnav li .current {
-	background-position: 100% -150px;
-}
+ /*BUTTONS*/ 
+#tab_nav li a#login { background-position: 0px 0px; }
+#tab_nav li a#support { background-position: -312px 0px; }
+#tab_nav li a#faq { background-position: -208px 0px; }
+#tab_nav li a#features { background-position: -104px 0px; }
+
+/* Hover States */
+#tab_nav li a:hover#login { background-position: 0px -47px; }
+#tab_nav li a:hover#support { background-position: -312px -47px; }
+#tab_nav li a:hover#faq { background-position: -208px -47px; }
+#tab_nav li a:hover#features { background-position: -104px -47px; }
+
+/* Current States */
+#tab_nav li a.current#login { background-position: 0px -47px; }
+#tab_nav li a.current#support { background-position: -312px -47px; }
+#tab_nav li a.current#faq { background-position: -208px -47px; }
+#tab_nav li a.current#features { background-position: -104px -47px; }
+
+/* @end */
 
 
 /* Admin area select list */

@@ -86,7 +86,7 @@ body {
     width: 400px;
     padding: 10px 12px;
     background: #fdded8 url(/images/signup/pointer.gif) no-repeat -10px 5px;
-	display: inline;
+	display: none;
 	position: absolute;
 	left: 500px;
 }
@@ -116,8 +116,8 @@ form label {
 
 #login_box {
 	width: 487px;
-	height: 286px;
-	margin: 5em auto 0;
+	height: 225px;
+	margin: 5em auto 5em;
 	background: url(/images/content/login_box.png) no-repeat;
 	padding-top: 75px;
 	padding-left: 0;
@@ -125,23 +125,23 @@ form label {
 
 #login_box label {
 	display: inline;
+	width: 90px;
 }
 
 #login_box form {
 	margin-left: 90px;
-	vertical-align: middle;
-	/*font-size: 15px;*/
-	line-height: 18px;
 }
 
-#login_box table {
-	text-align: left;
-	position: relative;
-	vertical-align: middle;
+#login_box input#remember_me {
+	margin-top: 4px;
+}
+
+#login_box input {
+	margin-bottom: 0.25em;
 }
 
 .remember {
-	font-size: 12px;
+	font-size: 1em;
 }
 
 #login_error {
@@ -816,6 +816,7 @@ legend {
 }
 
 fieldset {
+	/*float: left;*/
 	border-style: hidden;
 	border-top: 2px solid #b2b2b2;
 	background-color: #dfedf9;
@@ -829,8 +830,8 @@ fieldset {
 }
 
 #content-middle form, h1{
-	margin-left: 25px;
-	width: 400px;
+	/*margin-left: 5px;*/
+	/*width: 400px;*/
 }
 
 fieldset input {

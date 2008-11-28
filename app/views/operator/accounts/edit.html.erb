@@ -1,16 +1,16 @@
 <div id="admin-left-content">
-	<div class="text-content">
+  <div class="text-content">
 	<h1><%= @page_title = 'Change area settings' %></h1>
 
-	<% form_for @account, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
-	  <%= f.error_messages %>
-
-		<%= render :partial => 'fields', :locals => {:f => f} %>   
-
+	<fieldset><legend>Area Information</legend>
+		<% form_for @account, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
+			<%= f.error_messages %>	
+			<%= render :partial => 'fields', :locals => {:f => f} %>
+	</fieldset>
 	  	<label>&nbsp;</label>
 	  	<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
-	<% end %>
-	</div>
+		<% end %>
+  </div>
 </div>
 
 <div id="admin-right-content">
