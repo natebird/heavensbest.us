@@ -22,10 +22,11 @@ h1. To-do list
 [] Design front-page content
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
-[] Contact Braintree about Merchant account setup (http://www.braintreepaymentsolutions.com/)
+[x] Contact Braintree about Merchant account setup
+[] Setup Braintree account with Bryan
 [x] Buy SSL certificate for www.heavensbest.us (Godaddy?)
 [] Setup staging domain on Lucidius slice (staging.heavensbest.us)
-[] Setup new slice for www.heavensbest.us domain
+[x] Setup new slice for www.heavensbest.us domain
 [] Testing in Firefox
 [] Testing in IE 6 & 7 
 [x] Add exception handler 
@@ -36,4 +37,5 @@ h1. To-do list
 [] Add custom meta keyword line based on keywords for area
 [] Add custom html code block to account model (maybe)
 [] set up a CRON job to run script/daily_mailer on a daily basis
+[] Check that analytics is running
 

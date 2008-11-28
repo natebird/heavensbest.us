@@ -21,8 +21,6 @@
 	<% form_for :ticket, :url => { :action => "create" } do |f| %>
 		<%= f.error_messages %>
   		
-		<%= f.label :account_id, "&nbsp;" %>
-		<%= f.select( :account_id, @accounts.collect {|s| [s.name, s.id]}, :prompt => "Choose an Area")  %><br />
 		<%= f.hidden_field :status, :value => "Open" %>	
 
 		<%= f.label :name, "Name" %>

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  # layout "operator"
+  layout "operator"
 
   def show
     if params[:permalink]

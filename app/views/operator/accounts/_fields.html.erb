@@ -3,27 +3,27 @@
 <%= f.text_field :name %>
 
 <%= f.label :street %>
-<%= f.text_field :street %>
 <span class="hint">Enter the street address where your business is located. The second line is not required.<span class="pointer">&nbsp;</span></span>
+<%= f.text_field :street %>
 <%= f.label :street2, "&nbsp;" %>
 <%= f.text_field :street2 %>
 
 <%= f.label :city, "City" %>
-<%= f.text_field :city %>
 <span class="hint">Enter the city where your business is located.<span class="pointer">&nbsp;</span></span>
+<%= f.text_field :city %>
 
 <%= f.label :State, "State & Zip Code" %>
+<span class="hint">Enter the state and postal code where your business is located.<span class="pointer">&nbsp;</span></span>
 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
 <%= f.text_field :postal_code, :size => '10px' %><br />
-<span class="hint">Enter the state and postal code where your business is located.<span class="pointer">&nbsp;</span></span>
 
 <%= f.label :company %>
-<%= f.text_field :company %>
 <span class="hint">Enter the name of your company.<span class="pointer">&nbsp;</span></span>
+<%= f.text_field :company %>
 
 <%= f.label :email %>
-<%= f.text_field :email %>
 <span class="hint">Enter the email address for this area. If you have a Premium plan you will receive an email address in the form of areaname.state@heavensbest.us<span class="pointer">&nbsp;</span></span>
+<%= f.text_field :email %>
 
 <div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
 <% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %>
@@ -33,9 +33,9 @@
 
 
 <%= f.label :locations %>
-<%= f.text_area :locations, :size => "27x4" %>
 <span class="hint">Enter postal codes and city names that your area services.<span class="pointer">&nbsp;</span></span>
+<%= f.text_area :locations, :size => "27x4" %>
 
 <%= f.label :keywords %>
-<%= f.text_area :keywords, :size => "27x3" %>
 <span class="hint">Enter any custom keywords you want to be displayed to search engines.<span class="pointer">&nbsp;</span></span>
+<%= f.text_area :keywords, :size => "27x3" %>
