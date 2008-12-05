@@ -32,7 +32,7 @@ h1. To-do list
 [x] Add exception handler 
 [x] Add 404 and 500 redirects
 [] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
-[] Add RPM for testing, staging and production environments
+[] Add RPM for staging and production environments
 [] Add custom meta tags based on services offered
 [] Add custom meta keyword line based on keywords for area
 [] Add custom html code block to account model (maybe)

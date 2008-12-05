@@ -11,9 +11,10 @@
 	  <fieldset><legend>Area Information</legend>
 	    <% fields_for :account do |f| %>
     
-		<%= f.label :plan_id, 'Plan' %>
-	    <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %><br />
-		<% render :partial => "plans" %>
+		<div><%= f.label :plan_id, 'Plan' %>
+			 <span class="plan"><%= render :partial => "plans" %></span>
+			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, 
+				:id, :to_s ) %></div>
 
 		<%= render :partial => 'fields', :locals => {:f => f} %>   
 

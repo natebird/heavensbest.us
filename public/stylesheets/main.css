@@ -82,13 +82,13 @@ body {
 /* @group Forms */
 
 .hint {
-    border: 1px solid #cc0d0c;
-    width: 400px;
+    border: 1px solid #0069AA;
+    width: 175px;
     padding: 10px 12px;
-    background: #fdded8 url(/images/signup/pointer.gif) no-repeat -10px 5px;
+    background: #c4d8ff url(/images/signup/pointer.gif) no-repeat -10px 5px;
 	display: none;
 	position: absolute;
-	left: 500px;
+	left: 475px;
 }
 
 /* The pointer image is added by using another span */
@@ -800,6 +800,52 @@ div.clearallrule {
 
 
 /* @group Signup */
+
+.plan {
+    width: 475px;
+	position: absolute;
+	left: 490px;
+}
+
+.plan thead th {
+	background: #1685d8;
+	color: white;
+	font-size: 1.25em;
+	width: 80px;
+}
+
+.plan th {
+	font-size: 1.25em;
+	padding: 7px 5px 7px 10px;
+	width: 175px;
+}
+
+.plan td {
+	font-weight: bold;
+	font-size: 1.05em;
+}
+
+.plan .even, .plan .even th {
+	background: #dfedf9;
+	color: #595959;
+}
+
+.plan table {
+	border: 2px solid #1685d8;
+}
+
+.plan td {
+	vertical-align: middle;
+	padding: .25em;
+}				
+
+thead th {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.5em;
+}
+
 .content .right {
 	width: 40%;
 }
@@ -844,66 +890,7 @@ fieldset select {
 	color: fff;
 	margin-bottom: .5em;
 }
-
-table a,
-table a:link,
-table a:visited {
-	border:none;
-}							
 	
-fieldset img {
-	border:0;
-	margin-left: 1.25em;
-	margin-right: 1.2em;
-}
-
-table {
-	border-collapse:collapse;
-	position: relative;
-}
-
-caption {
-	color: #blue;
-	font-size:1em;
-	letter-spacing:.1em;
-	margin:1em 0 0 0;
-	padding:0;
-	caption-side:top;
-	text-align:center;
-}	
-
-tr.odd td	{
-	background:#fff;
-}
-
-tr.odd .column1	{
-	background:#fff;
-}	
-
-.column1	{
-	background:#fff;
-}
-
-td {
-	vertical-align: middle;
-	padding: .25em;
-}				
-
-fieldset th {
-	font-weight: normal;
-	color: #575757;
-	text-align:left;
-	font-size: 1.25em;
-	vertical-align: top;
-	padding: .5em;
-	width: 110px;
-}							
-
-thead th {
-	background:#fff;
-	font:bold 1.2em/2em Helvetica, Arial, Verdana, sans-serif;
-	color: gray
-}
 /* @end */
 
 

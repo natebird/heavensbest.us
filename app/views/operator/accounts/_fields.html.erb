@@ -1,29 +1,34 @@
-<%= f.label :name %>
-<span class="hint">Enter the name of your area.<span class="pointer">&nbsp;</span></span>
-<%= f.text_field :name %>
+<div><%= f.label :name %>
+	 <%= f.text_field :name %>
+	 <span class="hint">Enter the name of your area.<span class="pointer">&nbsp;</span></span></div>
+	
+<div><%= f.label :street %>
+	<span class="hint">Enter the street address where your business is located. 
+		The second line is optional.<span class="pointer">&nbsp;</span></span>
+	<%= f.text_field :street %>
+	<%= f.label :street2, "&nbsp;" %>
+	<%= f.text_field :street2 %></div>
+	
+<div><%= f.label :city, "City" %>
+	<span class="hint">Enter the city where your business is located.
+	<span class="pointer">&nbsp;</span></span>
+	<%= f.text_field :city %></div>
 
-<%= f.label :street %>
-<span class="hint">Enter the street address where your business is located. The second line is not required.<span class="pointer">&nbsp;</span></span>
-<%= f.text_field :street %>
-<%= f.label :street2, "&nbsp;" %>
-<%= f.text_field :street2 %>
+<div><%= f.label :State, "State & Zip Code" %>
+	 <span class="hint">Enter the state and postal code where your business is located.
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
+	 <%= f.text_field :postal_code, :size => '10px' %></div>
 
-<%= f.label :city, "City" %>
-<span class="hint">Enter the city where your business is located.<span class="pointer">&nbsp;</span></span>
-<%= f.text_field :city %>
+<div><%= f.label :company %>
+	 <span class="hint">Enter the name of your company.<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_field :company %></div>
 
-<%= f.label :State, "State & Zip Code" %>
-<span class="hint">Enter the state and postal code where your business is located.<span class="pointer">&nbsp;</span></span>
-<%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
-<%= f.text_field :postal_code, :size => '10px' %><br />
-
-<%= f.label :company %>
-<span class="hint">Enter the name of your company.<span class="pointer">&nbsp;</span></span>
-<%= f.text_field :company %>
-
-<%= f.label :email %>
-<span class="hint">Enter the email address for this area. If you have a Premium plan you will receive an email address in the form of areaname.state@heavensbest.us<span class="pointer">&nbsp;</span></span>
-<%= f.text_field :email %>
+<div><%= f.label :email %>
+	 <span class="hint">Enter the email address for this area. If you have a Premium plan you 
+		will receive an email address in the form of areaname.state@heavensbest.us
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_field :email %></div>
 
 <div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
 <% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %>
@@ -31,11 +36,12 @@
 <div id="operators" class="attribute" ><%= f.render_associated_form(@account.operators) %></div>
 <% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
 
-
-<%= f.label :locations %>
-<span class="hint">Enter postal codes and city names that your area services.<span class="pointer">&nbsp;</span></span>
-<%= f.text_area :locations, :size => "27x4" %>
-
-<%= f.label :keywords %>
-<span class="hint">Enter any custom keywords you want to be displayed to search engines.<span class="pointer">&nbsp;</span></span>
-<%= f.text_area :keywords, :size => "27x3" %>
+<div><%= f.label :locations %>
+	 <span class="hint">Enter postal codes and city names that your area services.
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_area :locations, :size => "25x4" %></div>
+	
+<div><%= f.label :keywords %>
+	 <span class="hint">Enter any custom keywords you want to be displayed to search engines.
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_area :keywords, :size => "25x3" %></div>

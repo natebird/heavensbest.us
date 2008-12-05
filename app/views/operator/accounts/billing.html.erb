@@ -1,16 +1,22 @@
 <h1><%= @page_title = 'View / Change Billing Information' %></h1>
 
+<fieldset><legend>Plan Details</legend>
 <% if @subscription.state == 'trial' %>
   <% if @subscription.next_renewal_at > Time.now %>
     <p>
-      Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account will expire in <%= pluralize(@subscription.trial_days, 'day', 'days') %>, at which time your areas will not be publicly accessible. To maintain public access to your account, enter your credit card information below.  Your first charge will happen on <%= @subscription.next_renewal_at.to_s(:long_day) %>.
+    Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account will expire in 
+	<%= pluralize(@subscription.trial_days, 'day', 'days') %>, at which time this area will not be publicly accessible. 
+	To maintain public access to your area, enter your credit card information below.  Your first charge will happen on 
+	<%= @subscription.next_renewal_at.to_s(:long_day) %>.
     </p>
   <% else %>
-    Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account has expired.  To regain access to your account, enter your credit card information below.  Your first charge will happen immediately, and you will be billed monthly thereafter.
+    Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account has expired. 
+	To regain access to your account, enter your credit card information below. 
+	Your first charge will happen immediately, and you will be billed monthly thereafter.
   <% end %>
 <% end %>
 
-<fieldset>
+  <br />
   <label>Plan:</label>
   <%= @subscription.subscription_plan.name %> (<%= link_to 'Change plan', plan_path %>)<br />
   
@@ -32,8 +38,10 @@
 </fieldset>
 
 <% if @subscription.amount > 0 %>
-  <% form_for :creditcard, @creditcard, :url => { :action => 'billing' } do |f| %>
-    <%= render :partial => 'shared/credit_card_form' %>
-    <%= submit_or_cancel operator_account_url(@account), 'Update billing information' %>
+	<fieldset><legend>Credit Card Information</legend>
+		<% form_for :creditcard, @creditcard, :url => { :action => 'billing' } do |f| %>
+		<%= render :partial => 'shared/credit_card_form' %>
+		<label>&nbsp;</label><%= submit_or_cancel operator_account_url(@account), 'Update billing information' %>
+	</fieldset>
   <% end %>
 <% end %>
