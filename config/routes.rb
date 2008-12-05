@@ -21,6 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   # map.region "/area/:country/:region", :controller => "regions", :action => "show"
   # map.account ":account", :controller => "accounts", :action => "show" 
   # map.area ":region/:account", :controller => "accounts", :action => "show"
+  # map.area ":account", :controller => "accounts", :action => "show" 
 
 
   map.cancel '/operator/areas/:id/cancel', :controller => 'operator/accounts', :action => 'cancel'
