@@ -17,20 +17,18 @@
 	<% form_tag plan_operator_account_url do %>
 		<% if @subscription.card_number %>
 			<label>Card ends with </label> <%= @subscription.card_number %>
-		<% else %>
+			<%= link_to "Change Billing", billing_path %>
+			<% else %>
 			<label>No card on file</label>
+			<%= link_to "Add card", billing_path %>
 		<% end %>
-		<%= link_to "Change", billing_path %>
-	
+
 	    <label>Subscription</label>
 	    <select name="plan_id" onChange="enableButton()">
 		 	<option value=""></option>
 	    	<%= SubscriptionPlan.find(:all, :conditions => ['id <> ?', @subscription.subscription_plan_id], 
 				:order => 'amount desc').map {|p| content_tag(:option, p, :value => p.id) } %>
 	    </select> <!-- #, :disabled => !current_account.qualifies_for?(p) -->
-
-		<!-- <label>Account Balance</label>
-		$xx.xx -->
 
 		<label>Next Billing Date</label>
 		<%= @subscription.next_renewal_at.to_s(:short_day) %>
@@ -56,7 +54,7 @@
 </div>
 
 	<div id="plans"><% render :partial => "plans" %></div>
-<div class="clearfix"></div>
+	<div class="clearfix"></div>
 </div>
 
 <script type="text/javascript" charset="utf-8">

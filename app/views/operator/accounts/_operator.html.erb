@@ -1,10 +1,9 @@
 <div class="operator">
 	<%= f.label :name, "Operator name" %>
-	<span class="hint">The name of the operator for this area. This name will be displayed prominently on every page of your site.<span class="pointer">&nbsp;</span></span>
+	<span class="hint">The name and title of the operator for this area. Both will be displayed prominently on each page of your site.<span class="pointer">&nbsp;</span></span>
 	<%= f.text_field :name %>
 
 	<%= f.label :title, "Operator title" %>
-	<span class="hint">This is the title of the operator. Generally this is "Operator" or "Owner". This title will be displayed prominently on every page of your site.<span class="pointer">&nbsp;</span></span>
 	<%= f.text_field :title %>
 	<% f.remove_link(image_tag("/images/buttons/remove.gif")) %>
 </div>
