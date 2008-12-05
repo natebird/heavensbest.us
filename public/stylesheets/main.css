@@ -640,7 +640,6 @@ div.auto_complete ul strong.highlight {
 	padding: 15px;
 	height: 130px;
 	background-image: url(/images/content/card_tips.gif);
-	left: 50px;
 	position: relative;
 }
 
@@ -805,6 +804,7 @@ div.clearallrule {
     width: 475px;
 	position: absolute;
 	left: 490px;
+	display: none;
 }
 
 .plan thead th {

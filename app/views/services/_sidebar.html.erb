@@ -1,8 +1,8 @@
 <div id="sidebar">
-	<h1><%= link_to 'Services', account_service_path(@account, @services.first) %></h1>
+	<h1><%= link_to 'Services', account_service_path(@account, @services.first.title) %></h1>
 		<ul>
 			<% for service in @services %>
-				<li><%= layout_link_to service.title, account_service_path(@account, service) %></li>
+				<li><%= layout_link_to service.title, account_service_path(@account, service.title) %></li>
 			<% end %>
 		</ul>
 </div>
