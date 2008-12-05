@@ -8,6 +8,7 @@ class SpecialsController < ApplicationController
 
   def show
     @special = current_account.specials.find(params[:id])
+    render :partial => 'special'
   end
 
 end
