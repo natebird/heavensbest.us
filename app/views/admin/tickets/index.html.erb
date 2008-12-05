@@ -6,9 +6,6 @@
   <% for ticket in @tickets %>
     <tr>
       <td><%= ticket.account_id %><br /></td>
-	  <% #form_remote_tag ticket, :url => { :action => 'update' }, :html => { :method => :put } %>
-	  <td><%#= select( :ticket, :status, { "Open" => 1, "In Progress" => 2, "Closed" => 3 }) %>	</td>
-	  <% #end %>
       <td><%= ticket.created_at.to_s(:short_day) %></td>
       <td><%= textilize(ticket.comment) %></td>
       <td><%= link_to "Edit", edit_admin_ticket_path(ticket) %></td>
