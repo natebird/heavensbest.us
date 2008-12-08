@@ -12,7 +12,7 @@ h1. To-do list
 [x] Move specials model and views HB app
 [x] Create tips in Admin section
 [] Add validations to all forms
-[] Add hints to all forms
+[x] Add hints to all forms
 [] Outline text for Tiffany to write and edit
 [] Write/Format email to be sent on account creation
 [] Write/Format emails to be received on successful billing/area setup
@@ -25,7 +25,7 @@ h1. To-do list
 [x] Contact Braintree about Merchant account setup
 [] Setup Braintree account with Bryan
 [x] Buy SSL certificate for www.heavensbest.us (Godaddy?)
-[] Setup staging domain on Lucidius slice (staging.heavensbest.us)
+[] Setup staging domain on slice (staging.heavensbest.us)
 [x] Setup new slice for www.heavensbest.us domain
 [] Testing in Firefox
 [] Testing in IE 6 & 7 

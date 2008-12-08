@@ -348,6 +348,10 @@ div.auto_complete ul strong.highlight {
 	margin-right: auto;
 }
 
+.content {
+	text-align: center;
+}
+
 #content {
 	padding: 15px;
 	margin-left: 25px;
