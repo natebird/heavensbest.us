@@ -31,7 +31,7 @@ h1. To-do list
 [] Testing in IE 6 & 7 
 [x] Add exception handler 
 [x] Add 404 and 500 redirects
-[] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
+[x] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
 [] Add RPM for staging and production environments
 [] Add custom meta tags based on services offered
 [] Add custom meta keyword line based on keywords for area

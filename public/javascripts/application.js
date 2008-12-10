@@ -1,6 +1,7 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
+// Area drop down selector
 function jumpToArea(sel) {
 	if (sel.selectedIndex < 1) return;
 	area = sel.options[sel.selectedIndex].value;
@@ -12,18 +13,7 @@ function jumpToArea(sel) {
 	}
 }
 
-// function addLoadEvent(func) {
-//   var oldonload = window.onload;
-//   if (typeof window.onload != 'function') {
-//     window.onload = func;
-//   } else {
-//     window.onload = function() {
-//       oldonload();
-//       func();
-//     }
-//   }
-// }
-
+// Hints code
 function prepareInputsForHints() {
 	var inputs = document.getElementsByTagName("input");
 	var selects = document.getElementsByTagName("select");
@@ -51,4 +41,9 @@ function attachHintsTo(collection){
 }
 document.observe("dom:loaded", function() {
 	prepareInputsForHints();
+});
+
+// Liquid Canvas objects
+$(document).ready(function() {
+  $("#content").liquidCanvas("[shadow fill ] => roundedRect{radius:15}");
 });
