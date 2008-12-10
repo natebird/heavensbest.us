@@ -2,7 +2,8 @@ class ServicesController < ApplicationController
 
   def index
     @services = current_account.services.find(:all)
-    redirect_to account_service_path(@account, @services.first.title)
+    @region = @account.region.abbreviation.downcase
+    redirect_to service_path(@region, @account.name.downcase, @services.first.title)
   end
 
 

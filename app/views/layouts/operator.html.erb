@@ -11,7 +11,7 @@
 	<div id="operator">
 
 		<div id="header">
-			<div id="admin_logo"></div>
+			<a href="/"><div id="admin_logo"></div></a>
 			<% if logged_in? %> 
 				<% if current_user.login == 'nate' %>
 					<%= render :partial => "shared/admin_nav" %>

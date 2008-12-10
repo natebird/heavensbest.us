@@ -305,7 +305,7 @@ div.auto_complete ul li.selected {
 }   
 
 div.auto_complete ul li a:hover {   
-	background-color: #508FC1;
+	background-color: #1684ca;
 }   
 
 div.auto_complete ul li a	{
@@ -358,7 +358,6 @@ div.auto_complete ul strong.highlight {
 	width: 890px;
 	height: 320px;
 	position: relative;
-	background-image: url(/images/content/content-test.gif);
 	top: -10px;
 }
 
@@ -410,7 +409,7 @@ div.auto_complete ul strong.highlight {
 	color: 0069AA;
 }
 
-#search input, #search #account_locations {
+#search #account_locations {
 	font-size: 22px;
 }
 
@@ -506,7 +505,8 @@ div.auto_complete ul strong.highlight {
 }
 
 #sidebar h1 {
-	font: bold 2em Helvetica, Arial, Verdana, sans-serif;
+	color: white;
+	font: 18px/20px Helvetica, Arial, Verdana, sans-serif;
 	width: 200px;
 	text-transform: none;
 	margin: 0;
@@ -792,7 +792,7 @@ div.clearallrule {
 	font-size: 1em;
 	position: absolute;
 	right: 32px;
-	top: -4px;
+	top: 2px;
 }
 
 #footer a {

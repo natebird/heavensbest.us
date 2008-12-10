@@ -5,8 +5,8 @@
 	<% for special in @specials %>
 	<div class="special">
 		<div class="special1_small">
-			<%= link_to "Click here to print", account_special_path(@account, special), 
-						:popup => ['Current Special', 'height=300,width=600'] %>
+			<%= link_to "Click here to print", special_path(params[:region], params[:account], special), 
+						:popup => [special.title, 'height=300,width=600'] %>
 			<div class="specialcontent"><%= textilize (special.body) %>
 				<label class="special-phone"><%= number_to_phone(special.phone) %></label></div>
 			<div class="specialfooter">

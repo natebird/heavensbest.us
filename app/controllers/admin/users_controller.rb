@@ -45,6 +45,7 @@ class Admin::UsersController < ApplicationController
     user = User.find_by_activation_code(params[:activation_code]) unless params[:activation_code].blank?
     case
     when (!params[:activation_code].blank?) && user && !user.active?
+      user.populate_defaults
       user.activate!
       flash[:notice] = "Signup complete! Please sign in to continue."
       redirect_to login_path
@@ -86,5 +87,9 @@ class Admin::UsersController < ApplicationController
   def failed_creation(message = 'Sorry, there was an error creating your account')
     flash[:error] = message
     render :action => :new
+  end
+  
+  def populate_defaults(user)
+    rake db:populate
   end
 end

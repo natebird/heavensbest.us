@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery :secret => 'b0a876313f3f9195e9bd01473bc5cd06'
   filter_parameter_logging :password, :password_confirmation, :creditcard
-  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+  # rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   
   protected
   
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   # Find the current_account
   def current_account
     if params[:account]
-      @account = Account.find(params[:account])
+      @account = Account.find_by_name(params[:account].titlecase)
     else
       if params[:account_id]
         @account = Account.find(params[:account_id])
