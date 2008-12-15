@@ -1,3 +1,5 @@
+/* @override http://hbapp.local/stylesheets/navigation.css?1229112704 */
+
 
 /* @group Tabbed Navigation */
 
@@ -33,19 +35,19 @@
 
 /* Admin area select list */
 #header select {
-	position: relative;
-	top: 35px;
-	left: 200px;
-	width: 210px;
-	float: left;
+	position: absolute;
+	right: 47px;
+	top: 55px;
+	width: 200px;
 }
+
 
 /* Account navigation*/
 #account_navigation {
 	float: right;
 	position: relative;
 	top:  30px;
-	margin-right: 30px;
+	margin-right: 40px;
 	color: white;
 }
 #account_navigation ul {
@@ -61,6 +63,7 @@
 	padding-right: 10px;
 	padding-left: 7px;
 	font-size: 12px;
+	font-weight: bold;
 }
 #account_navigation > ul a {width: auto;}
 
@@ -99,38 +102,37 @@
 #navigation_tabnav li a:current.testimonials { background-position: -403px -86px; }
 
 /* Admin Menubar */
-#admin_menubar { width: 750px; margin: 18px auto; position: relative; z-index: 9998; float: left; top: 60px;
-	left: -55px;
+#operator_menubar { width: 500px; margin: 18px auto; position: relative; z-index: 9998; float: left; top: 90px; left: 175px;
 }
-#admin_menubar { margin: 0px; padding: 0; }
-#admin_menubar li { display: inline;}
-#admin_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
-#admin_menubar li a.information, #admin_menubar li a.tips { width: 102px; }
-#admin_menubar li a { background-image: url(/images/navigation/admin_menubar.png); _background-image: url(/images/navigation/admin_menubar.gif); background-repeat: no-repeat;}
+#operator_menubar { margin: 0px; padding: 0; }
+#operator_menubar li { display: inline;}
+#operator_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
+#operator_menubar li a.information, #operator_menubar li a.tips { width: 102px; }
+#operator_menubar li a { background-image: url(/images/navigation/admin_menubar.png); _background-image: url(/images/navigation/admin_menubar.gif); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
-#admin_menubar li a.information { background-position: 0px 0px; }
-#admin_menubar li a.services { background-position: -102px 0px; }
-#admin_menubar li a.specials { background-position: -197px 0px; }
-#admin_menubar li a.testimonials { background-position: -292px 0px; }
-#admin_menubar li a.evaluations { background-position: -387px 0px; }
-#admin_menubar li a.tips { background-position: -482px 0px; }
+#operator_menubar li a.home { background-position: 0px 0px; }
+#operator_menubar li a.services { background-position: -102px 0px; }
+#operator_menubar li a.specials { background-position: -197px 0px; }
+#operator_menubar li a.testimonials { background-position: -292px 0px; }
+#operator_menubar li a.evaluations { background-position: -387px 0px; }
+#operator_menubar li a.tips { background-position: -482px 0px; }
 
 /* OVER STATES */
-#admin_menubar li a:hover.information { background-position: 0px -41px;}
-#admin_menubar li a:hover.services { background-position: -102px -41px; }
-#admin_menubar li a:hover.specials { background-position: -197px -41px; }
-#admin_menubar li a:hover.testimonials { background-position: -292px -41px; }
-#admin_menubar li a:hover.evaluations { background-position: -387px -41px; }
-#admin_menubar li a:hover.tips { background-position: -482px -41px; }
+#operator_menubar li a:hover.home { background-position: 0px -41px;}
+#operator_menubar li a:hover.services { background-position: -102px -41px; }
+#operator_menubar li a:hover.specials { background-position: -197px -41px; }
+#operator_menubar li a:hover.testimonials { background-position: -292px -41px; }
+#operator_menubar li a:hover.evaluations { background-position: -387px -41px; }
+#operator_menubar li a:hover.tips { background-position: -482px -41px; }
 
 /* PRESSED STATES */
-#admin_menubar li a:current.information { background-position: 0px -82px; }
-#admin_menubar li a:current.services { background-position: -102px -82px; }
-#admin_menubar li a:current.specials { background-position: -197px -82px; }
-#admin_menubar li a:current.testimonials { background-position: -292px -82px; }
-#admin_menubar li a:current.evaluations { background-position: -387px -82px; }
-#admin_menubar li a:current.tips { background-position: -482px -82px; }
+#operator_menubar li a:current.home { background-position: 0px -82px; }
+#operator_menubar li a:current.services { background-position: -102px -82px; }
+#operator_menubar li a:current.specials { background-position: -197px -82px; }
+#operator_menubar li a:current.testimonials { background-position: -292px -82px; }
+#operator_menubar li a:current.evaluations { background-position: -387px -82px; }
+#operator_menubar li a:current.tips { background-position: -482px -82px; }
 
 
 /* Home Menubar */

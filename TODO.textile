@@ -16,7 +16,7 @@ h1. To-do list
 [] Outline text for Tiffany to write and edit
 [] Write/Format email to be sent on account creation
 [] Write/Format emails to be received on successful billing/area setup
-[] Write/Format Privacy Policy and ToS
+[x] Write/Format Privacy Policy and ToS
 [] Add restriction on Specials for Plus plan accounts
 [] If an area is a premium area then send email to admin to create email account in Google Apps
 [] Design front-page content
@@ -38,4 +38,5 @@ h1. To-do list
 [] Add custom html code block to account model (maybe)
 [] set up a CRON job to run script/daily_mailer on a daily basis
 [] Check that analytics is running
+[] Add favicon (version on heavensbest.biz)
 

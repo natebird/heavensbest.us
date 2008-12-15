@@ -1,6 +1,5 @@
 
-<div id="welcome">
-	Welcome to Heaven's Best in <%=h @account.name %>!</div>
+<div id="welcome">Welcome to Heaven's Best in <%=h @account.name %>!</div>
 
 
 <div id="content">
@@ -51,8 +50,7 @@
 		</div>
 		<% else %>
 		<div id="ad"><%= link_to(image_tag("/images/content/franchise_ad.gif"), 
-		"http://www.heavensbest.com/index.php?customernumber=704858618478429&pr=Franchise_Information", 
-		:popup => true) %></div>
+		"http://heavensbest.com/index.php?&pr=Take_Control", :popup => true) %></div>
 	<% end %>
 	
 	<div id="testimonials">
