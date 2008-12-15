@@ -10,7 +10,7 @@
 */	
 	
 /* definition lists */ 
-dl {
+/*dl {
 }
  
 dt {
@@ -23,49 +23,43 @@ dt {
 dd {
 	padding-bottom: 10px;
 	padding-left: 40px;
+}*/
+
+/* @group Basics */
+
+body {
+	color: #595959;
+	font: 12px/14px Helvetica, Arial, Verdana, sans-serif;
 }
- 
- 
-/* text styles */
+
 h1 {
 	font: 14px/16px Helvetica, Arial, Verdana, sans-serif;
 	font-weight: bold;
 	color: #C32127;
-	text-transform: none;
-	margin: 0;
 	padding-bottom: 15px;
 }
  
 h2 {
 	font: 14px/16px Helvetica, Arial, Verdana, sans-serif;
 	font-weight: bold;
-	color: gray;
-	text-transform: none;
-	margin: 0;
+	color: 0069AA;
 	padding-bottom: 10px;
 }
  
+q {
+	font-style: italic;
+}
+
 .email {
-	font: 12px/14px Helvetica, Arial, Verdana, sans-serif;
 	color: #595959;
 	text-transform: none;
 }
 
 a {
-	font: 12px/14px Helvetica, Arial, Verdana, sans-serif;
 	color: #0069AA;
 	text-decoration: none;
-}
-
-a img {
-	position: relative;
-	top: 3px;
 } 
 
-body {
-	color: #595959;
-	font: 12px/14px Helvetica, Arial, Verdana, sans-serif;
-}
 
 .attribute {
 	display: inline-block;
@@ -78,6 +72,12 @@ body {
 .right {
 	float: right;
 }
+
+.hide {
+	display: none;
+}
+
+/* @end */
 
 /* @group Forms */
 
@@ -162,14 +162,6 @@ select {
 	color: white;
 }
 
-dd select#area_region_id {
-	width: 60px;
-}
-
-#address_country, #area_region_id {
-	/*width: 250px;*/
-} 
-
 input, textarea {
 	border: 2px solid #999;
 	background-color: #ffffff;
@@ -204,10 +196,6 @@ label {
 
 /* @end */
 
-
-.hide {
-	display: none;
-}
 /* @group Header styles */
 #admin_logo {
 	margin-left: 25px;
@@ -221,6 +209,7 @@ label {
 }
 
 #header {
+	position: relative;
 	width: 972px;
 	height: 172px;
 	background: url(/images/navigation/operator.gif) no-repeat;
@@ -320,29 +309,16 @@ div.auto_complete ul strong.highlight {
 	padding: 0px;   
 }   
 /* @end */
-
-
-/* @group frontpage */
-
-#frontpage {
-	float: left;
-	width: 740px;
-}
-
-/* @end */
  
 /* @group layouts */
 
 #container {
-	width: 972px;
-	background-color: #fff;
+	/*background-color: #fff;*/
 	float: left;
-	top: -6px;
 	position: relative;
 }
 
 #operator {
-	width: 972px;
 	background-color: #fff;
 	margin-left: auto;
 	margin-right: auto;
@@ -385,12 +361,23 @@ div.auto_complete ul strong.highlight {
 /* @group frontpage */
 
 #frontpage {
-	float: right;
-	width: 525px;
-	position: relative;
-	top: 10px;
-	padding-right: 25px;
+ /*border: 2px double #97d0fe;*/
 }
+
+#frontpage img {
+	width: 280px;
+	height: 180px;
+}
+
+#intro {
+	height: 400px;
+}
+
+#intro p {
+	/*padding-top: 10px;*/
+	height: 190px;
+}
+
 
 /* @end */
 
@@ -398,59 +385,22 @@ div.auto_complete ul strong.highlight {
 /* @group Search */	
 
 #search {
-	float: left;
-	position: relative;
-	left: 30px;
-	top: 10px;
+	height: 400px;
+}
+
+#search q {
+	/*padding-left: 30px;*/
 }
 
 #search h2 {
 	font: 24px/32px Helvetica, Arial, Verdana, sans-serif;
-	color: 0069AA;
+	/*padding-left: 30px;*/
 }
 
 #search #account_locations {
-	font-size: 22px;
+	font-size: 24px;
 }
 
-#search .instructions {
-	margin-bottom: 5px;
-	font-style: italic;
-}
-
-/* @end */
-
-/* @group Frontpage */	
-
-#content input {
-	color: 0069AA;
-	/*background-color: #f1f5fa;*/
-	font: 14px Helvetica, Arial, Verdana, sans-serif;
-}
-
-#content-top {
-	height: 16px;
-	background: url(/images/content/content-top.png) no-repeat;
-}
-
-#content-middle {
-	background: url(/images/content/content-middle.png) repeat-y;
-	position: relative;
-	/*padding-right: 35px;*/
-}	
-
-.content-form {
-	position: relative;
-	left: 25px;
-	padding-top: 10px;
-	margin: 0;
-}	
-
-#content-bottom {
-	height: 28px;
-	background: url(/images/content/content-bottom.png) no-repeat;
-	position: relative;
-}
 /* @end */
 
 /* @group Sidebar */	
@@ -462,6 +412,7 @@ div.auto_complete ul strong.highlight {
 	left: 7px;
 	top: -8px;
 	float: left;
+	margin-right: 20px;
 }
 
 #add {
@@ -580,7 +531,6 @@ div.auto_complete ul strong.highlight {
 	float: left;
 	width: 263px;
 	font: 13px/18px Helvetica, Arial, Verdana, sans-serif;
-	/*margin-left: 40px;*/
 	margin-bottom: 10px;
 	position: relative;
 }
@@ -622,82 +572,64 @@ div.auto_complete ul strong.highlight {
 	padding-top: 5px;
 }
 
-.testimonial_text {
-	font-size: 13px;
-	line-height: 16px;
-	padding: 8px;
+#testimonial .text {
+	font-size: 14px;
+	line-height: 18px;
+	padding: 10px;
 }
 
-.testimonial-name {
-	position: absolute;
-	bottom: 0;
+#testimonial .name {
 	font-size: 14px;
-	padding-left: 10px;
+	padding: 10px;
 }
 
 /* @end */
 
 /* @group tips */
 #tips {
-	float: left;
-	width: 245px;
-	padding: 15px;
-	height: 130px;
-	background-image: url(/images/content/card_tips.gif);
-	position: relative;
+	height: 160px;
+	/*background: url(/images/content/card_tips.gif) no-repeat;*/
 }
 
 #tips h2 {
-	font: bold 16px/20px "Lucida Grande", Arial, Verdana, sans-serif;
+	font: bold 18px/20px "Lucida Grande", Arial, Verdana, sans-serif;
 	color: #fff;
-	text-transform: none;
 	margin: 0;
 	padding-bottom: 10px;
 	text-align: center;
+	background-color: #ac0908;
+	padding-top: 7px;
 }
 
 #tips ul {
-	padding: 5px 5px 5px 20px;
+	padding: 10px 10px 10px 25px;
 }
 
 #tips li {
 	list-style-type: disc;
+	list-style-position: outside;
 }
 
-#tips .text {
+#tips p {
 	font-size: 13px;
 	line-height: 16px;
-	padding: 8px;
+	padding: 8px 8px 8px 10px;
 }
 
 /* @end */
 
 
 #cards {
-	margin-left: 25px;
-	width: 920px;
-	height: 140px;
-	position: relative;
-	margin-bottom: 10px;
-	top: -10px;
 }
 
-#cards #testimonials {
-	float: right;
-	width: 245px;
-	padding: 15px;
-	height: 130px;
-	background-image: url(/images/content/card_testimonials.gif);
+#testimonial {
+	height: 160px;
+	background-color: #c7ecfe;
 }
 
 #ad {
-	float: left;
-	height: 130px;
-	width: 340px;
-}
-
-#ad a img {
-	top: 0px;
+	height: 160px;
+	background-color: #2c86fd;
 }
 
 .special {
@@ -706,7 +638,7 @@ div.auto_complete ul strong.highlight {
 	width: 340px;
 	padding: 15px;
 	position: relative;
-	background-image: url(/images/content/special.gif);
+	background: url(/images/content/special.gif) no-repeat;
 }
 #speciallogo {
 	float: left;
@@ -780,23 +712,15 @@ div.clearallrule {
 
 /* @group Footer */
 #footer {
-	float: left;
-	width: 940px;
-	color: gray;
-	font-size: .9em;
-	margin-left: 35px;
+	height: 40px;
+	color: #7e7e7e;
+	font-size: 1em;
 	position: relative;
+	margin-top: 10px;
 }
 
 #footer a img {
-	font-size: 1em;
-	position: absolute;
-	right: 32px;
-	top: 2px;
-}
-
-#footer a {
-	font-size: 1em;
+	float: right;
 }
 
 /* @end */

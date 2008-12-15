@@ -3,7 +3,7 @@
 	<head>
 		<title><%= @page_title ? "#{@page_title} | #{APP_CONFIG[:site_name]}" : APP_CONFIG[:site_name] %></title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<%= stylesheet_link_tag 'reset.css', 'main', 'navigation' %>
+		<%= stylesheet_link_tag 'reset', 'main', 'navigation', '960' %>
 		<%= javascript_include_tag :defaults, :cache => true %>
 	</head>
 	<body>
@@ -21,6 +21,9 @@
 				
 				<%= select_tag(nil, options_for_select([[nil]] + current_user.accounts.to_dropdown, 
 					@account ? @account.id : nil), {:onchange => "jumpToArea(this);"} ) if logged_in? %>
+				
+				<%= render :partial => "shared/operator_bar" if @account %>
+					
 			<% end %>
 		</div>
 		<%= render :partial => "shared/operator_tabs" if !logged_in? %>

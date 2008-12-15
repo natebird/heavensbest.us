@@ -1,19 +1,50 @@
 <div id="welcome">
 	Welcome to Heaven's Best Carpet Cleaning!</div>
 
-<div id="content">
-	<div id="search">
+<div id="frontpage" class="container_16">
+	<div id="search" class="grid_5">
 		<h2>Find Your Local Operator</h2>
 
-		<div class="instructions">Enter your zip code or city name</div>
+		<p><q>Enter your zip code or city name</q></p>
 		<%= text_field_with_auto_complete :account, :locations, { :size => 20 }, :skip_style => true, 
-			:method => :get, :with => "Object.toQueryString({search: element.value})" %>
+			:method => :get, :auto_complete => :off, :with => "Object.toQueryString({search: element.value})" %>
 	
-		<%= submit_tag "Go" %>
+		<% submit_tag "Go" %>
 	</div>
 	
-	<div id="frontpage">
-		
-	</div>
+	<div id="intro">
+		<img class="grid_5" src="/images/content/pictures/testcarpet.jpg">
+		<p class="grid_6"> Franchise’s Dry-In-One-Hour carpet cleaning removes soil and stains that other cleaners 
+		leave behind. First, our powerful dry vacuum system removes the loose soil. Our exclusive cleaning solution then
+		penetrates carpet fibers and gently loosens trapped soil and stains. Next, our powerful buffer, 
+		specially designed with absorbent pads, gently lifts away soil and moisture.</p>
 	
+		<img class="grid_5" src="/images/content/furniture/testcouch.jpg">
+		<p class="grid_6"> Cleaning your carpets every 6 to 12 months doubles the life of your carpet. 
+		Even if you vacuum regularly, dirt works its way deep into the fibers of your carpet where it 
+		grinds and rubs. While the do-it-yourself approaches are less expensive, they are almost never as 
+		effective as professional cleaning and involve a considerable amount of time and hard work.</p>
+	</div>	
 </div>
+
+<div id="cards" class="container_16">
+	
+	<div id="tips" class="grid_5">
+		<h2><%= Tip.random.title %></h2>
+			<%= textilize(Tip.random.body) %>
+	</div>
+
+	<div id="ad" class="grid_6">
+		<% link_to(image_tag("/images/content/franchise_ad.gif"), 
+		"http://heavensbest.com/index.php?&pr=Take_Control", :popup => true) %>
+	</div>
+	
+	<div id="testimonial" class="grid_5">
+		<p class="text">In hac habitasse platea dictumst. Proin eleifend sagittis leo. Quisque et purus.
+			Aliquam ipsum. Sed pulvinar, egestas non. Volutpat at, egestas non, tellus. odio malesuada gravida.</p>
+		
+		<p class="name">- Jennifer Anniston, Hollywood, CA</p>
+	</div>
+
+</div>
+<div class="clear"></div>
