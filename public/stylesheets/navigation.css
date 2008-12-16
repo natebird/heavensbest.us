@@ -1,3 +1,5 @@
+/* @override http://hbapp.local/stylesheets/navigation.css?1229114777 */
+
 /* @override http://hbapp.local/stylesheets/navigation.css?1229112704 */
 
 
@@ -35,10 +37,11 @@
 
 /* Admin area select list */
 #header select {
-	position: absolute;
-	right: 47px;
-	top: 55px;
-	width: 200px;
+	float: right;
+	position: relative;
+	top:  40px;
+	right: 10px;
+	color: white;
 }
 
 
@@ -47,21 +50,20 @@
 	float: right;
 	position: relative;
 	top:  30px;
-	margin-right: 40px;
 	color: white;
 }
 #account_navigation ul {
 	list-style: none;
 }
 #account_navigation li {
-	float: left;
+	float: right;
 }
 #account_navigation a {
 	display: inline;
 	text-decoration: none;
 	color: white;
 	padding-right: 10px;
-	padding-left: 7px;
+	padding-left: 10px;
 	font-size: 12px;
 	font-weight: bold;
 }
@@ -102,8 +104,7 @@
 #navigation_tabnav li a:current.testimonials { background-position: -403px -86px; }
 
 /* Admin Menubar */
-#operator_menubar { width: 500px; margin: 18px auto; position: relative; z-index: 9998; float: left; top: 90px; left: 175px;
-}
+#operator_menubar { margin: 18px auto; z-index: 9998; position: relative; top: 50px; }
 #operator_menubar { margin: 0px; padding: 0; }
 #operator_menubar li { display: inline;}
 #operator_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }

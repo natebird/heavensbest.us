@@ -1,16 +1,11 @@
 <div id="welcome">
 	Welcome to Heaven's Best Carpet Cleaning!</div>
 
-<div id="content-top"></div>
-
-<div id="content-middle">
+<div id="content">
 	<%= render :partial => 'sidebar' %>
 	<div id="service">
-		<h2><%= textilize(@service.title) %></h2>
-		<div id="text"><%= textilize(@service.body) %></div>
-		<img src="/images/content/furniture/testcouch.jpg">
+		<div id="text" class="grid_5"><%= textilize(@service.body) %></div>
+		<img class="grid_5" src="/images/content/furniture/testcouch.jpg">
 	</div>
 	<div class="clearfix">&nbsp;</div>		
 </div>
-
-<div id="content-bottom"></div>

@@ -1,24 +1,8 @@
 <div id="content">
-	<div id="content-top"></div>
-	
-    <div id="content-middle">
-		<%= render :partial => 'sidebar' %>
+	<%= render :partial => 'sidebar' %>
 
-		<%= render :partial => 'form' %>
+	<%= render :partial => 'form' %>
 
-		<%= render :partial => 'preview' %>	
-		<div class="clearfix">&nbsp;</div>		
-	</div>
-	
-	<div id="content-bottom"></div>
+	<%= render :partial => 'preview' %>	
+	<div class="clearfix">&nbsp;</div>		
 </div>
-
-<% observe_field :testimonial_quote,
- 				  :function => "reset_if_match('quote', #{@testimonial.quote})", 
-				  :on => :focus %>
-<% observe_field :testimonial_name,
- 				  :function => "reset_if_match('name', #{@testimonial.name})", 
-				  :on => :focus %>
-<% observe_field :testimonial_location,
- 				  :function => "reset_if_match('location', #{@testimonial.location})", 
-				  :on => :focus %>

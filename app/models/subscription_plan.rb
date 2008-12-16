@@ -6,11 +6,11 @@ class SubscriptionPlan < ActiveRecord::Base
   validates_numericality_of :renewal_period, :only_integer => true, :greater_than => 0
 
   def to_s
-    "#{self.name} - #{number_to_currency(self.amount)}/year"
+    "#{self.name} - #{number_to_currency(self.amount)}/month"
   end
 
   def self.to_dropdown
-    all(:order => 'name').collect {|s| [s.name + " - #{s.number_to_currency(s.amount)}/year", s.id]}
+    all(:order => 'name').collect {|s| [s.name + " - #{s.number_to_currency(s.amount)}/month", s.id]}
   end
     
   def to_param

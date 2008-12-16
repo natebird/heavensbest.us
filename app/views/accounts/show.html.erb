@@ -1,9 +1,8 @@
 
 <div id="welcome">Welcome to Heaven's Best in <%=h @account.name %>!</div>
 
-
-<div id="content">
-	<div class="service">
+<div id="homepage">
+	<div class="grid_7 prefix_1">	
 		<h1>Carpet Cleaning</h1>
 		<p> Franchise’s Dry-In-One-Hour carpet cleaning removes soil and stains that other cleaners leave behind.
 			First, our powerful dry vacuum system removes the loose soil.
@@ -13,7 +12,7 @@
 		</p>
 		<img src="/images/content/pictures/testcarpet.jpg">
 	</div>
-	<div class="service">
+	<div class="grid_7 suffix_1">	
 		<h1>Upholstery Cleaning</h1>
 		<p> Cleaning your carpets every 6 to 12 months doubles the life of your carpet. 
 			Even if you vacuum regularly, dirt works its way deep into the fibers of your carpet where it 
@@ -25,45 +24,37 @@
 		<img src="/images/content/furniture/testcouch.jpg">
 	</div>
 </div>
+<div class="clear"></div>
 
 <div id="cards">
 	
-	<div id="tips">
+	<div id="tips" class="grid_4 prefix_1">
 		<h2><%= Tip.random.title %></h2>
-			<%= textilize(Tip.random.body) %>
-	</div>
+			<%= textilize(Tip.random.body) %></div>
 
-	<% if @special %>
-		<div class="special">
-			<div id="speciallogo">&nbsp;</div>
-			<div id="specialcontent">
-				<p>printable coupon</p>
-				<p class="specialtitle">$10 Off!</span>
-				<p class="specialtext">Any carpet or upholstery cleaning</p>
-				<p class="specialphone"><%= number_to_phone(@account.phones.first.number) %></p>
-			</div>
-			<div class="specialfooter">
-				<span style="float:left">www.heavensbest.us</span>
-				<span style="float:right">Expires December 31, 2008</span>
-			</div>
-			<div class="clearfix"></div>
-		</div>
+	<% if @specials %>
+		<%= render :partial => @special %>
 		<% else %>
-		<div id="ad"><%= link_to(image_tag("/images/content/franchise_ad.gif"), 
+		<div id="ad" class="grid_6"><%= link_to(image_tag("/images/content/franchise_ad.gif"), 
 		"http://heavensbest.com/index.php?&pr=Take_Control", :popup => true) %></div>
 	<% end %>
 	
-	<div id="testimonials">
-		<% if @testimonials %>
-			<p class="testimonial_text"><% Testimonial.random.quote %> <br />
-			</p>
-			<span class="testimonial-name">- <% Testimonial.random.name %>, <% Testimonial.random.location %></span>
+	<div id="testimonial" class="grid_5">
+		<% if @testimonial %>
+			<div class="testimonial">
+				<div class="top">&nbsp;</div>
+				<div class="middle" style="height:93px"><%= @testimonial.quote %></div>
+				<div class="bottom"></div>
+				<span class="name"><%= @testimonial.name %></span>
+				<span class="location">in <%= @testimonial.location %></span>
+			</div>
 		<% else %>
-		<p class="testimonial_text">In hac habitasse platea dictumst. Proin eleifend sagittis leo. Quisque et purus.
+		<p class="text">In hac habitasse platea dictumst. Proin eleifend sagittis leo. Quisque et purus.
 			Aliquam ipsum. Sed pulvinar, egestas non. Volutpat at, egestas non, tellus. odio malesuada gravida.
 		</p>
-		<span class="testimonial-name">- Jennifer Anniston, Hollywood, CA</span>
+		<span class="name">- Jennifer Anniston, Hollywood, CA</span>
 		<% end %>
 	</div>
-
+	
 </div>
+<div class="clear"></div>
