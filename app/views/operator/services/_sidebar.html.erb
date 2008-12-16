@@ -1,11 +1,9 @@
-<div id="sidebar">
+<div id="sidebar" class="grid_4">
 	<h1><%= link_to 'Services', operator_account_services_path(@account) %></h1>
 		<ul>
 			<% for service in @services %>
 				<li><%= layout_link_to service.title, edit_operator_account_service_path(@account, service) %></li>
 			<% end %>
+			<li class="add"><%= link_to 'Add a Service', new_operator_account_service_path(@account) %></li>
 		</ul>
-		
-		<br /><br /><br />
-		<div id="add"><%= link_to 'Add a Service', new_operator_account_service_path(@account) %></div>
 </div>

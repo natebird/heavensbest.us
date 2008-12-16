@@ -1,6 +1,5 @@
-<div id="admin-left-content">
-  <div class="text-content">
-	<h1><%= @page_title = 'Change area settings' %></h1>
+<div class="grid_12">
+	<h1><%= @page_title = 'Area Settings' %></h1>
 
 	<fieldset><legend>Area Information</legend>
 		<% form_for @account, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
@@ -8,22 +7,8 @@
 			<%= render :partial => 'fields', :locals => {:f => f} %>
 	</fieldset>
 	  	<label>&nbsp;</label>
-	  	<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
+	  	<span class="prefix_2 grid_2"><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></span>
 		<% end %>
-  </div>
 </div>
 
-<div id="admin-right-content">
-	<div class="text-content">
-	<h1>Subscription Information</h1>
-	<p> The <%= @account.name %>, <%= @account.region.name %> area is currently subscribed to the 
-		<strong><%= @account.subscription.subscription_plan.name %> Plan 
-		(<%= number_to_currency(@account.subscription.subscription_plan.amount) %>/year)</strong>.</p>
-
-	<p> Your next billing date is <strong><%= @account.subscription.next_renewal_at.to_s(:short_day) %></strong>. 
-		You will receive a receipt by email.</p>
-
-	<p> You can change the <%= link_to('Subscription', :action => 'plan') %> or 
-		<%= link_to('Billing', :action => 'billing') %> information anytime.</p>
-	</div>
-</div>
+<%= render :partial => @account %>

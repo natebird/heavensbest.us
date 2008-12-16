@@ -1,9 +1,7 @@
-<div id="sidebar">
+<div id="sidebar" class="grid_4 prefix_1">
 	<h1>Services</h1>
-		<ul>
-			<% for service in @services %>
-				<li><%= layout_link_to service.title, 
-						service_path(params[:region], params[:account], @services.first.title) %></li>
+		<ul><% for service in @services %>
+			<li><%= layout_link_to service.title, service_path(params[:region], params[:account], service.title) %></li>
 			<% end %>
 		</ul>
 </div>

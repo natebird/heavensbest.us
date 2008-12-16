@@ -1,8 +1,9 @@
-<div id="sidebar">
+<div id="sidebar" class="grid_4">
 	<h1><%= link_to 'Specials', operator_account_specials_path(@account) %></h1>
-		<ul><% for special in @specials %>
-			<li><%= link_to special.title, edit_operator_account_special_path(@account, special) %></li>
-		<% end %></ul>	<br /><br /><br />
-		
-		<div id="add"><%= link_to 'Add a Special', new_operator_account_special_path(@account) %></div>
+		<ul>
+			<% for special in @specials %>
+				<li><%= link_to special.title, edit_operator_account_special_path(@account, special) %></li>
+			<% end %>
+			<li class="add"><%= link_to 'Add a Special', new_operator_account_special_path(@account) %></li>
+		</ul>
 </div>

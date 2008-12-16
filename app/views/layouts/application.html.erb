@@ -11,17 +11,18 @@
 	<body>
 
 	<div id="container" class="container_16">
-		<div id="p-header">
-			<%= render :partial => "shared/home_menubar" if !@account %>
-			<%= render :partial => "shared/area_menubar" if @account %>
-			
+		<div id="p-header">			
 			<% if @account %>
-			<div id="contact">
-				<span class="phone">
-					<%= number_to_phone(@account.phones.first.number, :area_code => true) %></span><br />
-				<span class="name"><%= @account.operators.first.name %> </span>
-				<span class="title">(<%= @account.operators.first.title %>) </span>
-			</div>
+				<%= render :partial => "shared/area_menubar" if @account %>
+			
+				<div id="contact" class="grid_4">
+					<span class="phone">
+						<%= number_to_phone(@account.phones.first.number, :area_code => true) %></span><br />
+					<span class="name"><%= @account.operators.first.name %> </span>
+					<span class="title">(<%= @account.operators.first.title %>) </span>
+				</div>
+				<% else %>
+				<%= render :partial => "shared/home_menubar" %>
 			<% end %>
 		</div>
 		

@@ -39,4 +39,5 @@ h1. To-do list
 [] set up a CRON job to run script/daily_mailer on a daily basis
 [] Check that analytics is running
 [] Add favicon (version on heavensbest.biz)
-
+[] Add feature to change welcome text on services, testimonials, homepage, and specials
+[] Add feature to show contact information when clicking on operator name

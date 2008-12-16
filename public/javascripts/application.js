@@ -9,7 +9,7 @@ function jumpToArea(sel) {
 	if (document.location.pathname.match(/^\/areas\/\d+/)) {
 		document.location.href = document.location.pathname.replace(/\d+/, area)
 	} else {
-		document.location.href = '/operator/areas/' + area
+		document.location.href = '/operator/areas/' + area + '/edit'
 	}
 }
 

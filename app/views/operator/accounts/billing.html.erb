@@ -1,38 +1,43 @@
+<div class="grid_12">
 <h1><%= @page_title = 'View / Change Billing Information' %></h1>
+
 
 <fieldset><legend>Plan Details</legend>
 <% if @subscription.state == 'trial' %>
   <% if @subscription.next_renewal_at > Time.now %>
-    <p>
-    Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account will expire in 
-	<%= pluralize(@subscription.trial_days, 'day', 'days') %>, at which time this area will not be publicly accessible. 
-	To maintain public access to your area, enter your credit card information below.  Your first charge will happen on 
-	<%= @subscription.next_renewal_at.to_s(:long_day) %>.
-    </p>
+    <p> Thank you for trying the www.heavensbest.us site!  Your trial account will expire in 
+		<%= pluralize(@subscription.trial_days, 'day', 'days') %>, at which time this area will not be publicly accessible. 
+		To maintain public access to your area, enter your credit card information below.</p><br />
+	
+	<p> Your credit card will be charged <b><%= number_to_currency(@subscription.subscription_plan.amount) %>/month</b>
+		beginning the <b><%= @subscription.next_renewal_at.to_s(:short_day) %></b>. 
+		A receipt will be sent to <b><%= @account.user.email %></b></p>
   <% else %>
-    Thank you for trying <%= APP_CONFIG[:site_name] %>!  Your trial account has expired. 
+    Thank you for trying the www.heavensbest.us site!  Your trial account has expired. 
 	To regain access to your account, enter your credit card information below. 
-	Your first charge will happen immediately, and you will be billed monthly thereafter.
+	Your credit card will be charged immediately and you will be billed 
+	<b><%= number_to_currency(@subscription.subscription_plan.amount) %>/month</b> thereafter. A receipt will be sent to 
+	<b><%= @account.user.email %></b>
   <% end %>
 <% end %>
 
   <br />
-  <label>Plan:</label>
-  <%= @subscription.subscription_plan.name %> (<%= link_to 'Change plan', plan_path %>)<br />
+  <label>Plan</label>
+  <p><%= @subscription.subscription_plan.name %> <% link_to 'Change plan', plan_path %></p><br />
   
   <% if @subscription.state == 'trial' %>
-    <label>Trial expiration date:</label>
-    <%= @subscription.next_renewal_at.to_s(:long_day) %>
+    <label>Trial expiration</label>
+    <p><%= @subscription.next_renewal_at.to_s(:long_day) %></p>
   <% else %>
     <% if @subscription.amount > 0 %>
-      <label>Next charge date:</label>
-      <%= @subscription.next_renewal_at.to_s(:long_day) %>
+      <label>Next charge date</label>
+      <p><%= @subscription.next_renewal_at.to_s(:long_day) %></p>
       <br/>
-      <label>Next charge amount:</label>
-      <%= number_to_currency @subscription.amount %>
+      <label>Next charge amount</label>
+      <p><%= number_to_currency @subscription.amount %></p>
       <br/>
-      <label>Current payment method:</label>
-      <%= @subscription.paypal? ? 'PayPal' : "#{@subscription.card_number} / #{@subscription.card_expiration}" %>
+      <label>Current payment method</label>
+      <p><%= @subscription.paypal? ? 'PayPal' : "#{@subscription.card_number} / #{@subscription.card_expiration}" %></p>
     <% end %>
   <% end %>
 </fieldset>
@@ -45,3 +50,6 @@
 	</fieldset>
   <% end %>
 <% end %>
+</div>
+
+<%= render :partial => @account %>
