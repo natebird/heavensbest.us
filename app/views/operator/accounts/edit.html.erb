@@ -1,4 +1,5 @@
-<div class="grid_12">
+<div class="grid_12 blur">
+	<div id="content">
 	<h1><%= @page_title = 'Area Settings' %></h1>
 
 	<fieldset><legend>Area Information</legend>
@@ -6,9 +7,9 @@
 			<%= f.error_messages %>	
 			<%= render :partial => 'fields', :locals => {:f => f} %>
 	</fieldset>
-	  	<label>&nbsp;</label>
-	  	<span class="prefix_2 grid_2"><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></span>
+	  	<span class="prefix_5 grid_2"><%= image_submit_tag("/images/buttons/save.png", :class => 'button right' ) %></span>
 		<% end %>
+	</div>
 </div>
 
 <%= render :partial => @account %>

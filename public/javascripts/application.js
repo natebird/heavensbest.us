@@ -44,6 +44,7 @@ document.observe("dom:loaded", function() {
 });
 
 // Liquid Canvas objects
-$(document).ready(function() {
-  $("#content").liquidCanvas("[shadow fill ] => roundedRect{radius:15}");
-});
+// $(document).ready(function() {
+//   $(".blur").liquidCanvas(
+//       "[shadow fill ] => roundedRect{radius:15}");
+// });

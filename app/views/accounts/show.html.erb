@@ -28,11 +28,11 @@
 
 <div id="cards">
 	
-	<div id="tips" class="grid_4 prefix_1">
-		<h2><%= Tip.random.title %></h2>
+	<div id="tips" class="grid_5 blur">
+		<h2 class="blur2"><%= Tip.random.title %></h2>
 			<%= textilize(Tip.random.body) %></div>
 
-	<% if @specials %>
+	<% if @special %>
 		<%= render :partial => @special %>
 		<% else %>
 		<div id="ad" class="grid_6"><%= link_to(image_tag("/images/content/franchise_ad.gif"), 

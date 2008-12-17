@@ -1,4 +1,6 @@
 class PasswordsController < ApplicationController
+  layout "operator"
+
   def new
     @password = Password.new
   end

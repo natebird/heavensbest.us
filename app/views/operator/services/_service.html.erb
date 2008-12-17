@@ -15,12 +15,12 @@
 	<div class="clear"></div>
 	<br />
 		<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
-		[:operator, @account, @service], :confirm => 'Are you sure?', :method => :delete) %>
+			[:operator, @account, @service], :confirm => 'Are you sure?', :method => :delete) %>
 	    <%= f.check_box :active %> <%= f.label :active, "Published" %>
 
 		<%= link_to(image_tag("/images/buttons/cancel.png", :class => 'button' ), 
 			operator_account_services_path(@account) ) %>
-		<%= image_submit_tag("/images/buttons/save.png", :class => 'button right' ) %>
+		<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
   <% end %>
 </div>
 <%= error_messages_for :service %>

@@ -21,12 +21,12 @@
 
 <div id="cards">
 	
-	<div id="tips" class="grid_5">
+	<div id="tips" class="grid_5 blur">
 		<h2><%= Tip.random.title %></h2>
 			<%= textilize(Tip.random.body) %>
 	</div>
 
-	<div id="ad" class="grid_6">
+	<div id="ad" class="grid_6 blur">
 		<% link_to(image_tag("/images/content/franchise_ad.gif"), 
 		"http://heavensbest.com/index.php?&pr=Take_Control", :popup => true) %>
 	</div>

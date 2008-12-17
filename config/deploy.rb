@@ -1,37 +1,40 @@
-set :stages, %w(staging production)
-set :default_stage, "production"
-require File.expand_path("#{File.dirname(__FILE__)}/../vendor/gems/capistrano-ext-1.2.1/lib/capistrano/ext/multistage")
+set :application, "heavensbest"
+set :domain,      "heavensbest.us"
+set :use_sudo,    false
+set :deploy_to,   "/home/etandrib/public_html/#{application}"
 
+default_run_options[:pty] = true
+set :scm,         "git"
+# set :scm_passphrase, "luc1datr2yu3" #This is your custom users password
+set :repository,  "git@github.com:etandrib/heavensbest.us.git"
+set :branch,      "master"
+set :deploy_via, :remote_cache
+ 
+ 
+set :user,        "etandrib"
+set :ssh_options, { :forward_agent => true }
+set :port,        "29000"
+ 
+role :app, domain
+role :web, domain
+role :db,  domain, :primary => true
 
 namespace :db do
-  desc 'Dumps the production database to db/production_data.sql on the remote server'
-  task :remote_db_dump, :roles => :db, :only => { :primary => true } do
-    run "cd #{deploy_to}/#{current_dir} && " +
-      "rake RAILS_ENV=#{rails_env} db:database_dump --trace" 
+  desc "Add seed data"
+  task :seed, :roles => :environment do
+    Rake::Task["db:seed"].invoke
   end
+end
 
-  desc 'Downloads db/production_data.sql from the remote production environment to your local machine'
-  task :remote_db_download, :roles => :db, :only => { :primary => true } do  
-    execute_on_servers(options) do |servers|
-      self.sessions[servers.first].sftp.connect do |tsftp|
-        tsftp.download!("#{deploy_to}/#{current_dir}/db/production_data.sql", "db/production_data.sql")
-      end
-    end
+namespace :deploy do
+  desc "Restart Application"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
   end
-
-  desc 'Cleans up data dump file'
-  task :remote_db_cleanup, :roles => :db, :only => { :primary => true } do
-    execute_on_servers(options) do |servers|
-      self.sessions[servers.first].sftp.connect do |tsftp|
-        tsftp.remove! "#{deploy_to}/#{current_dir}/db/production_data.sql" 
-      end
-    end
-  end 
-
-  desc 'Dumps, downloads and then cleans up the production data dump'
-  task :remote_db_runner do
-    remote_db_dump
-    remote_db_download
-    remote_db_cleanup
+  
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
   end
+ 
 end
