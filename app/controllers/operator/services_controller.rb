@@ -20,7 +20,7 @@ class Operator::ServicesController < Operator::ApplicationController
     @service = @account.services.new(params[:service])
     if @service.save
       flash[:notice] = "Successfully created service."
-      redirect_to operator_account_service_path(@account, @service)
+      redirect_to edit_operator_account_service_path(@account, @service)
     else
       render :action => 'new'
     end
@@ -44,8 +44,8 @@ class Operator::ServicesController < Operator::ApplicationController
   def destroy
     @service = @account.services.find(params[:id])
     @service.destroy
-    flash[:notice] = "Successfully destroyed service."
-    redirect_to operator_services_url
+    flash[:notice] = "Successfully deleted service."
+    redirect_to :action => 'index'
   end
 
   def preview

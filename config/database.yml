@@ -24,7 +24,7 @@ staging:
   encoding: utf8
   database: hb_staging
   username: etandrib
-  password:
+  password: sqlluc1d1u5
   pool: 5
   
 production:
@@ -39,5 +39,5 @@ production:
   encoding: utf8
   database: hb_production
   username: etandrib
-  password:
+  password: sqlluc1d1u5
   pool: 5

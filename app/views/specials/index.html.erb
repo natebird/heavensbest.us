@@ -3,9 +3,9 @@
 
 <div id="content">
 	<% for special in @specials %>
-		<div class="grid_6">
+		<div class="grid_6 blur">
 			<div class="special">
-				<div><%= link_to "Printable coupon", special_path(params[:region], params[:account], special), 
+				<div class="print"><%= link_to "Printable coupon", special_path(params[:region], params[:account], special), 
 							:popup => [special.title, 'height=300,width=600'] %></div>
 				<div class="logo">&nbsp;</div>
 

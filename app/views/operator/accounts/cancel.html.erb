@@ -1,10 +1,10 @@
 <h1><%= @page_title = "Cancel Subscription for #{h(@account.name)}" %></h1>
 
 <h2>Another Option</h2>
-<p>Instead of canceling your account, perhaps you'd like to just switch your plan. <%= link_to "Change your subscription now", cancel_path %> .</p>
+<p>Instead of canceling your account, perhaps you'd like to just <%= link_to "switch your plan", cancel_path %>.</p>
 
 <h2>Cancel Account</h2>
-<p>You are about to cancel your account. This will permanently delete all your billing information. However your area will be turned “inactive” meaning your data will remain in place if you decide to activate it again. Your login and password will also remain the same.</p>
+<p>You are about to cancel your account. This will permanently delete all your billing information. However your area will become “inactive” meaning your data will remain in place if you decide to activate it again. Your login and password will also remain the same.</p>
 
 
 <h2>CANCEL CONFIRMATION</h2>
@@ -16,5 +16,6 @@
   </fieldset>
 
   <%= link_to 'Back', :back %>
-  <%= image_submit_tag("/images/buttons/cancel_subscription.png", :class => 'button') %>
+  <%= submit_tag "Cancel Subscription" %>
+  <% image_submit_tag("/images/buttons/cancel_subscription.png", :class => 'button') %>
 <% end %>

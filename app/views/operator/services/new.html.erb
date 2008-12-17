@@ -1,10 +1,7 @@
-<div id="content-top"></div>
-
-<div id="content-middle">
+<div id="content" class="blur">
 	<%= render :partial => 'sidebar' %>
-	<div class="clearfix">&nbsp;</div>
+	<div id="text" class="grid_5"><%= textilize(@service.body) %></div>
 </div>
 
-<div id="content-bottom"></div>
-
-<%= render :partial => 'form' %>
+<div class="clear"></div>
+<%= render :partial => @service %>

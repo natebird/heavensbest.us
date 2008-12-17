@@ -1,24 +1,28 @@
-<%= title "Login" %>
-<div id="login_box">
+<%= title "Operator Login" %>
+<div class="grid_8 prefix_4 suffix_4">
 	
-	<% if !current_user %>
-		<% form_tag session_path do -%>
-			<table >
-				<tr><td></td><td colspan=2>&nbsp;<%= render :partial => "error" if flash[:error] %></td></tr>
-				<tr><td width="80px"><label for="login">Username</label></td>
-						<td colspan=2><%= text_field_tag 'login' %></td></tr>
-				<tr><td><label for="password">Password</label></td>
-					<td colspan=2><%= password_field_tag 'password' %></td></tr>
-				<tr><td></td><td><%= check_box_tag 'remember_me' %>
-					<label for="remember_me" class="remember">Remember me</label></td>
-					<td align="right"><%= image_submit_tag("/images/buttons/login.gif", :class => 'button' ) %></td></tr>
-			</table>
-		<% end -%>
-	<% else %>
-		<div class="content">
+	<div id="login_box" class="blur">
+		<% if !current_user %>
+			<fieldset>
+				<% form_tag session_path do -%>
+				<ol>
+					<li><label for="error">&nbsp;</label>
+						&nbsp;<%= render :partial => "error" if flash[:error] %></li>
+					<li><label for="login">Username</label>
+						<%= text_field_tag 'login' %></li>
+					<li><label for="password">Password</label>
+						<%= password_field_tag 'password' %></li>
+					<li><label>&nbsp;</label>
+						<%= check_box_tag 'remember_me', :class => "remember" %>
+						<label for="remember_me" class="remember">Remember me</label>
+						<%= image_submit_tag("/images/buttons/login.gif", :class => 'button' ) %></li>
+				</ol>
+				<% end -%>
+			</fieldset>
+		<% else %>
 			<p>You are currently logged in.</p>
 			<p>Would you like to <%= link_to "logout", logout_path %>?</p>
-		</div>
-	<% end %>
+		<% end %>
+	</div>
 	
 </div>

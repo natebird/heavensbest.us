@@ -10,7 +10,7 @@
 
 	<div class="container_16">
 
-		<div id="header">
+		<div id="header" class="grid_16">
 			<a href="/"><div id="admin_logo" class="grid_3"></div></a>
 			<% if logged_in? %> 
 				<% if current_user.login == 'nate' %>
@@ -33,7 +33,7 @@
 		<%= yield  %>
 		<div class="clear"></div>
 
-		<%= render :partial => "shared/footer" %>
+		<% render :partial => "shared/footer" %>
 	</div>
 	
 

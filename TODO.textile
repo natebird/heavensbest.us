@@ -17,9 +17,8 @@ h1. To-do list
 [] Write/Format email to be sent on account creation
 [] Write/Format emails to be received on successful billing/area setup
 [x] Write/Format Privacy Policy and ToS
-[] Add restriction on Specials for Plus plan accounts
 [] If an area is a premium area then send email to admin to create email account in Google Apps
-[] Design front-page content
+[x] Design front-page content
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
 [x] Contact Braintree about Merchant account setup
@@ -36,7 +35,7 @@ h1. To-do list
 [] Add custom meta tags based on services offered
 [] Add custom meta keyword line based on keywords for area
 [] Add custom html code block to account model (maybe)
-[] set up a CRON job to run script/daily_mailer on a daily basis
+[] set up a CRON job to run script/daily_mailer
 [] Check that analytics is running
 [] Add favicon (version on heavensbest.biz)
 [] Add feature to change welcome text on services, testimonials, homepage, and specials
