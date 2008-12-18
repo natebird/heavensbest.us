@@ -1,7 +1,7 @@
 <% title "New Page" %>
 
 <% form_for([:admin, @page]) do |f| %>
-	<%= render :partial => "form", :locals => { :f => f } %>
+	<%= render :partial => @page, :locals => { :f => f } %>
 	<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
   	
 <% end %>

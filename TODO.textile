@@ -7,7 +7,7 @@ h1. To-do list
 [x] Move plugins from Directory app
 [x] Move services models and views from directory app
 [x] Add CSS style for input, select, text objects to break afterwards
-[] Add images (attribute_fu?) to services model (need to research how to do this)
+[x] Add images (paperclip) to services model
 [x] Move testimonial models and views from HB app
 [x] Move specials model and views HB app
 [x] Create tips in Admin section

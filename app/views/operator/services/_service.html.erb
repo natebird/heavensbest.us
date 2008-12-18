@@ -4,10 +4,10 @@
 	<%= f.hidden_field :account_id, :value => current_account.id %>
 
 	<%= f.label :title, {}, :class=> "twohundred" %>
-	<%= f.label :title, "Choose an image", :class=> "twohundred" %>
+	<%= f.label :photo_id, "Choose an image", :class=> "twohundred" %>
 
 	<%= f.text_field :title, :size => 18 %>&nbsp;
-	<%= f.text_field :title, :size => 19 %>
+	<%= f.collection_select :photo_id, Photo.all, :id, :name %>
 
 	<%= f.label :body, {}, :class=> "twohundred" %>
 	<%= f.text_area :body, :cols => 37, :rows => 10 %>

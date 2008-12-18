@@ -1,4 +1,4 @@
-ActionController::Routing::Routes.draw do |map| 
+ActionController::Routing::Routes.draw do |map|
 
   # Home Page
   map.root :controller => "accounts", :action => "index"
@@ -40,7 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # Admin Resources
   map.namespace :admin do |admin|
-    admin.resources :accounts, :users, :pages, :tickets, :tips
+    admin.resources :accounts, :users, :pages, :tickets, :tips, :photos
   end
 
   # Public Help Rewrites
