@@ -1,7 +1,7 @@
 <% title "Edit Page" %>
 
 <% form_for @page, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
-	<%= render :partial => 'form', :locals => { :f => f } %>
+	<%= render :partial => @page, :locals => { :f => f } %>
 <br />
 <p>
   <%= link_to "Destroy", [:admin, @page], :confirm => 'Are you sure?', :method => :delete %> |

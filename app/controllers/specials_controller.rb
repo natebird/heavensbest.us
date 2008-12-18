@@ -2,7 +2,7 @@ class SpecialsController < ApplicationController
   # layout "print", :except => :index
   
   def index
-    @specials = current_account.specials.find(:all)
+    @specials = current_account.specials.find(:all, :conditions => [ "start <= ? and end >= ?", Date.today, Date.today ] )
   end
 
 

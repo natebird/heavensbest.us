@@ -1,7 +1,7 @@
 class ServicesController < ApplicationController
 
   def index
-    @services = current_account.services.find(:all)
+    @services = current_account.services.find(:all, :conditions => [ "active = ?", "t" ] )
     @region = @account.region.abbreviation.downcase
     redirect_to service_path(@region, @account.name.downcase, @services.first.title)
   end
@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = current_account.services.find_by_title(params[:id])
-    @services = current_account.services.find(:all)
+    @services = current_account.services.find(:all, :conditions => [ "active = ?", "t" ] )
   end
 
 end
