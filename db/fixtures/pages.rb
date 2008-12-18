@@ -136,12 +136,12 @@ end
 #   For additional information and to get your free copy of the promotional DVD call 1.800.359.2095 or send a request using the form below."
 # end
 
-Page.seed do |s|
-  s.id = 4
-  s.name = "Frequently Asked Questions"
-  s.permalink = "faq"
-  s.content = "h1. Coming Soon"
-end
+# Page.seed do |s|
+#   s.id = 4
+#   s.name = "Frequently Asked Questions"
+#   s.permalink = "faq"
+#   s.content = "h1. Coming Soon"
+# end
 
 Page.seed do |s|
   s.id = 5
