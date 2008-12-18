@@ -42,9 +42,3 @@ function attachHintsTo(collection){
 document.observe("dom:loaded", function() {
 	prepareInputsForHints();
 });
-
-// Liquid Canvas objects
-// $(document).ready(function() {
-//   $(".blur").liquidCanvas(
-//       "[shadow fill ] => roundedRect{radius:15}");
-// });

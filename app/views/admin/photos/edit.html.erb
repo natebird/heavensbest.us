@@ -1,0 +1,7 @@
+<h1>Editing photo</h1>
+
+<%= render :partial => @photo %>
+
+<p> <%= link_to "Remove", [:admin, @photo], :confirm => 'Are you sure?', :method => :delete %> |
+	<%= link_to "View", [:admin, @photo] %> |
+	<%= link_to 'Back', admin_photos_path %></p>
