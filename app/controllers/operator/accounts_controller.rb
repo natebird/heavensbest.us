@@ -9,7 +9,7 @@ class Operator::AccountsController < ApplicationController
   ssl_allowed :plans, :canceled, :paypal
   
   def new
-    @account = current_user.accounts.build
+    # @account = current_user.accounts.build
     @account.phones.build
     @account.operators.build
   end
@@ -42,7 +42,7 @@ class Operator::AccountsController < ApplicationController
       flash[:notice] = 'Area was successfully updated.'
       redirect_to(edit_operator_account_url(@account))
     else
-      format.html { render :action => "edit" }
+      render :action => "edit"
     end
   end
 

@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
 
   # Find the current_account
   def current_account
-    if params[:account]
-      @account = Account.find_by_name(params[:account].titlecase)
+    if params[:accountlink]
+      @account = Account.find_by_accountlink(params[:accountlink])
     else
       if params[:account_id]
         @account = Account.find(params[:account_id])

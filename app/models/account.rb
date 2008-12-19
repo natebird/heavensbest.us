@@ -3,20 +3,22 @@ class Account < ActiveRecord::Base
   belongs_to :region
   has_one :subscription, :dependent => :destroy
   has_many :subscription_payments
-  has_many :phones, :attributes => true, :discard_if => :blank?
+  has_many :phones, :attributes => true
   has_many :operators, :attributes => true, :discard_if => :blank?
   has_many :services
   has_many :specials
   has_many :testimonials
   has_many :tickets
   
+  has_permalink :name, :accountlink
+  
   validates_uniqueness_of :name
-  validates_presence_of :email, :street, :city, :region_id, :postal_code, :locations
+  validates_presence_of :name, :email, :street, :city, :region_id, :postal_code, :locations
 
   validate_on_create :valid_plan?
   validate_on_create :valid_payment_info?
   validate_on_create :valid_subscription?
-  
+    
   # after_create :seed_data
   
   # attr_accessible :name, :plan, :plan_start, :creditcard, :address
