@@ -1,6 +1,8 @@
 <div><%= f.label :name %>
 	 <%= f.text_field :name %>
-	 <span class="hint">Enter the name of your area.<span class="pointer">&nbsp;</span></span></div>
+	 <span class="hint">Enter the name of your area. This name will be used in many spots in the website and 
+		needs to be unique. It is usually the name of the major city where your business operates.
+		<span class="pointer">&nbsp;</span></span></div>
 	
 <div><%= f.label :street %>
 	<span class="hint">Enter the street address where your business is located. 
@@ -14,14 +16,14 @@
 	<span class="pointer">&nbsp;</span></span>
 	<%= f.text_field :city %></div>
 
-<div><%= f.label :State, "State & Zip Code" %>
+<div><%= f.label :region_id, "State & Zip Code" %>
 	 <span class="hint">Enter the state and postal code where your business is located.
 		<span class="pointer">&nbsp;</span></span>
 	 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
 	 <%= f.text_field :postal_code, :size => '10px' %></div>
 
 <div><%= f.label :company %>
-	 <span class="hint">Enter the name of your company.<span class="pointer">&nbsp;</span></span>
+	 <span class="hint">Enter the name of your company. This field is optional.<span class="pointer">&nbsp;</span></span>
 	 <%= f.text_field :company %></div>
 
 <div><%= f.label :email %>
@@ -37,11 +39,13 @@
 <% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
 
 <div><%= f.label :locations %>
-	 <span class="hint">Enter postal codes and city names that your area services.
+	 <span class="hint">Enter postal codes and city names that your area services. The more complete the list 
+		the more accurate the area locator on the homepage will work. Separate locations with a comma. 
+		(city1, city2, zip1, zip2, etc.)
 		<span class="pointer">&nbsp;</span></span>
 	 <%= f.text_area :locations, :size => "25x4" %></div>
 	
-<div><%= f.label :keywords %>
+<div><% f.label :keywords %>
 	 <span class="hint">Enter any custom keywords you want to be displayed to search engines.
 		<span class="pointer">&nbsp;</span></span>
-	 <%= f.text_area :keywords, :size => "25x3" %></div>
+	 <% f.text_area :keywords, :size => "25x3" %></div>

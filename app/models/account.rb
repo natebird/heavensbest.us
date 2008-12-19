@@ -11,7 +11,7 @@ class Account < ActiveRecord::Base
   has_many :tickets
   
   validates_uniqueness_of :name
-  validates_presence_of :email
+  validates_presence_of :email, :street, :city, :region_id, :postal_code, :locations
 
   validate_on_create :valid_plan?
   validate_on_create :valid_payment_info?
