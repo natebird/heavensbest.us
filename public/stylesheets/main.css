@@ -66,6 +66,37 @@ a {
 
 /* @group Forms */
 
+/* LiveValidation classes */
+
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+}
+
+.LV_valid {
+    color:#00CC00;
+}
+	
+.LV_invalid {
+    color:#CC0000;
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active {
+    border: 2px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+    border: 2px solid #CC0000;
+}
+
 .hint {
     border: 1px solid #0069AA;
     width: 200px;
@@ -76,7 +107,6 @@ a {
 	left: 455px;
 }
 
-/* The pointer image is added by using another span */
 .hint .pointer {
     position: absolute;
     left: -10px;
@@ -84,6 +114,17 @@ a {
     width: 10px;
     height: 19px;
     background: url(/images/signup/pointer.gif) left top no-repeat;
+}
+
+/* Error Messages */
+.errorExplanation {
+	color: #ba0c0b;
+	margin-bottom: 15px;
+}
+
+.errorExplanation li {
+	list-style-type: disc;
+	list-style-position: inside;
 }
 
 .onehundred {
@@ -172,6 +213,8 @@ label {
 	border: none;
 	padding: 2px;
  }
+ 
+ 
 
 /* @end */
 
@@ -711,7 +754,7 @@ legend {
 fieldset {
 	/*border-bottom: 2px solid #b2b2b2;*/
 	/*background-color: #dfedf9;*/
-	width: 410px;
+	width: 530px;
 	position: relative;
 	margin-left: 15px;
 	margin-bottom: 10px;
