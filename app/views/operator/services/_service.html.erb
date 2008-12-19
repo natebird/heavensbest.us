@@ -1,5 +1,6 @@
 <div class="grid_7 prefix_4">
   <% form_for([:operator, @account, @service]) do |f| %>
+	<%= f.error_messages %>
 
 	<%= f.hidden_field :account_id, :value => current_account.id %>
 
