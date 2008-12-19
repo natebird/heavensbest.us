@@ -32,13 +32,21 @@ h1. To-do list
 [x] Add 404 and 500 redirects
 [x] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
 [] Add RPM for staging and production environments
-[] Add custom meta tags based on services offered
-[] Add custom meta keyword line based on keywords for area
-[] Add custom html code block to account model (maybe)
+[] Move heavensbest.us dns to new slice
+[] setup backup slice in case of server overload.
+[] On contact page use getsatisfaction template
+[] Perhaps use Exceptional for exceptions - lighthouse for ticket handling?
+[] Verify server can send mail
 [] set up a CRON job to run script/daily_mailer
+[] check server time settings
+[] Setup monitoring service (pingdom, exception notifyer.)
 [] Check that analytics is running
 [x] Add favicon (version on heavensbest.biz)
 [] Add feature to change welcome text on services, testimonials, homepage, and specials
 [] Add feature to show contact information when clicking on operator name
 [] Add acceptance to Terms and Policies on account creation
-[] Fix account and service permalink problems
+[x] Fix account and service permalink problems
+[] Add Behavior Driven Tests
+[] Add custom meta tags based on services offered
+[] Add custom meta keyword line based on keywords for area
+[] Add custom html code block to account model (maybe)
