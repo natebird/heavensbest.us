@@ -2,7 +2,6 @@ class Operator::SpecialsController < ApplicationController
   layout "operator"
   before_filter :login_required
   before_filter :current_account
-  # before_filter :account_areas
 
   def index
     @specials = @account.specials.find(:all)
@@ -11,6 +10,7 @@ class Operator::SpecialsController < ApplicationController
 
   def show
     @special = @account.specials.find(params[:id])
+    @specials = @account.specials.find(:all)
   end
 
 
@@ -27,6 +27,7 @@ class Operator::SpecialsController < ApplicationController
 
 
   def create
+    @specials = @account.specials.find(:all)
     @special = @account.specials.new(params[:special])
 
     if @special.save
@@ -39,6 +40,7 @@ class Operator::SpecialsController < ApplicationController
 
 
   def update
+    @specials = @account.specials.find(:all)
     @special = @account.specials.find(params[:id])
 
     if @special.update_attributes(params[:special])

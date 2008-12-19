@@ -1,4 +1,4 @@
-<h1><%= @page_title = 'Users' %></h1>
+<h1><%= @page_title = 'Active Users' %></h1>
 
 <table id="users">
   <tr>
@@ -8,9 +8,9 @@
   </tr>
   <% for user in @users %>
     <tr>
-      <td><%=h user.name %></td>
+      <td><%= link_to user.name, edit_admin_user_path(user) %></td>
       <td><%=h user.email %></td>
-      <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
+      <td><%= link_to "Areas (#{user.accounts.count})", edit_admin_user_path(user) %>&nbsp;|&nbsp;</td>
 	  <td><%= link_to 'Remove', [:admin, user], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>

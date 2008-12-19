@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081218205228) do
+ActiveRecord::Schema.define(:version => 20081219205931) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20081218205228) do
     t.string   "email"
     t.string   "locations"
     t.string   "keywords"
+    t.string   "permalink"
+    t.string   "accountlink"
   end
 
   create_table "countries", :force => true do |t|
@@ -117,7 +119,9 @@ ActiveRecord::Schema.define(:version => 20081218205228) do
     t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
     t.integer  "photo_id"
+    t.string   "servicelink"
   end
 
   create_table "sessions", :force => true do |t|

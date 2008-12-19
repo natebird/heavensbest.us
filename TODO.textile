@@ -37,6 +37,8 @@ h1. To-do list
 [] Add custom html code block to account model (maybe)
 [] set up a CRON job to run script/daily_mailer
 [] Check that analytics is running
-[] Add favicon (version on heavensbest.biz)
+[x] Add favicon (version on heavensbest.biz)
 [] Add feature to change welcome text on services, testimonials, homepage, and specials
 [] Add feature to show contact information when clicking on operator name
+[] Add acceptance to Terms and Policies on account creation
+[] Fix account and service permalink problems

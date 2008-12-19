@@ -19,7 +19,7 @@ class AccountsController < ApplicationController
   # end
   
   def show
-    @account = Account.find_by_name(params[:account].titlecase)
+    @account = Account.find_by_accountlink(params[:accountlink])
     @region = Region.find_by_abbreviation(params[:region].upcase)
     @testimonial ||= current_account.testimonials.find(:first, :order => "RANDOM()")
     @special ||= current_account.specials.find(:first, :order => "RANDOM()")

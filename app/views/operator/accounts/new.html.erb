@@ -12,7 +12,7 @@
 	    <% fields_for :account do |f| %>
     
 		<div><%= f.label :plan_id, 'Plan' %>
-			 <span class="plan"><%= render :partial => "plans" %></span>
+			 <span class="plan"><% render :partial => "plans" %></span>
 			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, 
 				:id, :to_s ) %></div>
 

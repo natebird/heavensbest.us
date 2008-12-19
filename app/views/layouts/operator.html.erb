@@ -22,7 +22,7 @@
 				<%= select_tag(nil, options_for_select([[nil]] + current_user.accounts.to_dropdown, 
 					@account ? @account.id : nil), {:class => "grid_4", :onchange => "jumpToArea(this);"} ) if logged_in? %>
 				
-				<%= render :partial => "shared/operator_bar" if @account %>
+			
 					
 			<% end %>
 		</div>

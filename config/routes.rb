@@ -23,9 +23,9 @@ ActionController::Routing::Routes.draw do |map|
   map.plan '/operator/areas/:id/plan', :controller => 'operator/accounts', :action => 'plan'
 
   # Account Resources
-  map.resources :accounts, :as => 'areas', :collection => { :auto_complete_for_account_locations => :get }, 
+  map.resources :accounts, :collection => { :auto_complete_for_account_locations => :get }, 
   :has_many => [:services, :specials, :testimonials]
-  map.resources :services, :specials, :testimonials, :path_prefix => ":region/:account"
+  map.resources :services, :specials, :testimonials, :path_prefix => ":region/:accountlink"
                 
 
   # Operator Resources
@@ -48,7 +48,7 @@ ActionController::Routing::Routes.draw do |map|
   map.support '/support', :controller => 'tickets', :action => 'new'
 
   # Account Rewrites
-  map.area ":region/:account", :controller => "accounts", :action => "show"
+  map.area ":region/:accountlink", :controller => "accounts", :action => "show"
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
