@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20081219205931) do
   create_table "regions", :force => true do |t|
     t.string   "name"
     t.string   "abbreviation"
-    t.integer  "country_id",   :limit => 11
+    t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
