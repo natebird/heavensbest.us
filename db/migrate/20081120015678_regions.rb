@@ -3,7 +3,7 @@ class Regions < ActiveRecord::Migration
     create_table :regions do |t|
       t.string :name
       t.string :abbreviation
-      t.integer :country_id,  :limit => 11
+      t.integer :country_id
 
       t.timestamps
     end
