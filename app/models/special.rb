@@ -6,7 +6,7 @@ class Special < ActiveRecord::Base
   validates_presence_of :phone, :message=>"number can't be blank"
   
   def self.random
-    @special ||= Special.find(:first, :order => "RAND()")
+    @special ||= Special.find(:first, :order => APP_CONFIG[:random_query])
   end
   
 end

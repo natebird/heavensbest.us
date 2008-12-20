@@ -17,7 +17,7 @@ Page.seed do |s|
   # Your account may only be used by one person – a single login shared by multiple people is not permitted.
   # You are responsible for maintaining the security of your account and password. Lucidius cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.
   # You are responsible for all Content posted and activity that occurs under your account.
-  # Pages being "Public" shared may be promoted and linked by Lucidius as example uses of the Service.
+  # Pages being “Public” shared may be promoted and linked by Lucidius as example uses of the Service.
   # You may not use the Service for any illegal or unauthorized purpose. You must not, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright laws).
 
   Violation of any of these agreements will result in the termination of your Account. While Lucidius prohibits such conduct and Content on the Service, you understand and agree that Lucidius cannot be responsible for the Content posted on the Service and you nonetheless may be exposed to such materials. You agree to use the Service at your own risk.
