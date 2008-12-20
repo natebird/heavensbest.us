@@ -6,6 +6,7 @@ class SubscriptionNotifier < ActionMailer::Base
     @subject = subject
     @recipients = to.respond_to?(:email) ? to.email : to
     @from = from.respond_to?(:email) ? from.email : from
+    @bcc = APP_CONFIG[:from_email]
   end
  
  # Remove this 

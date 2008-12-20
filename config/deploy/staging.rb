@@ -13,16 +13,15 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 set :use_sudo, true
 set :scm_verbose, true
-set :rails_env, "production" 
+set :rails_env, "staging" 
 
 #############################################################
 #	Servers
 #############################################################
 
 set :user, "etandrib"
-set :ssh_options, { :forward_agent => true }
 set :port, "29000"
-set :domain, "www.heavensbest.us"
+set :domain, "staging.heavensbest.us"
 server domain, :app, :web
 role :db, domain, :primary => true
 
@@ -50,17 +49,17 @@ namespace :deploy do
       encoding: utf8
       username: etandrib
       password: sqlluc1d1u5
-      database: hb_production
+      database: hb_staging
       host: localhost
     EOF
     
     put db_config, "#{release_path}/config/database.yml"
     
-    # desc "Symlink the upload directories"
-    # task :before_symlink do
-    #   run "mkdir -p #{shared_path}/uploads"
-    #   run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
-    # end
+    desc "Symlink the upload directories"
+    task :before_symlink do
+      run "mkdir -p #{shared_path}/uploads"
+      run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
+    end
   
   end
 
