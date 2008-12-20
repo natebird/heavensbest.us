@@ -6,6 +6,7 @@ development:
   gateway: 'brain_tree'
   base_domain: 'heavensbest.us'
   require_payment_info_for_trials: 'true'
+  random_query: 'RANDOM()'
   
 test:
   <<: *non_production_settings
@@ -14,7 +15,8 @@ staging:
   site_url: 'http://staging.heavensbest.us'
   site_name: "Heaven's Best Local Operators"
   admin_email: 'staging@heavensbest.us'
-  
+  random_query: 'RAND()'
+      
 production:
   site_url: 'http://heavensbest.us'
   site_name: "Heaven's Best Local Operators"
@@ -23,3 +25,4 @@ production:
   gateway: 'brain_tree'
   base_domain: 'heavensbest.us'
   require_payment_info_for_trials: 'true'
+  random_query: 'RAND()'
