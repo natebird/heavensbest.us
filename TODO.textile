@@ -11,13 +11,13 @@ h1. To-do list
 [x] Move testimonial models and views from HB app
 [x] Move specials model and views HB app
 [x] Create tips in Admin section
-[] Add validations to all forms
+[x] Add validations to all forms
 [x] Add hints to all forms
 [] Outline text for Tiffany to write and edit
 [] Write/Format email to be sent on account creation
 [] Write/Format emails to be received on successful billing/area setup
 [x] Write/Format Privacy Policy and ToS
-[] If an area is a premium area then send email to admin to create email account in Google Apps
+[x] If an area is a premium area then send email to admin to create email account in Google Apps
 [x] Design front-page content
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
