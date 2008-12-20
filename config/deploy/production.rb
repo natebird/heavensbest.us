@@ -20,6 +20,7 @@ set :rails_env, "production"
 #############################################################
 
 set :user, "etandrib"
+set :password, "hbluc1d1u5"
 set :ssh_options, { :forward_agent => true }
 set :port, "29000"
 set :domain, "www.heavensbest.us"
