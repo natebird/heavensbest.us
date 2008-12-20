@@ -21,8 +21,8 @@ class AccountsController < ApplicationController
   def show
     @account = Account.find_by_accountlink(params[:accountlink])
     @region = Region.find_by_abbreviation(params[:region].upcase)
-    @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
-    @special ||= current_account.specials.find(:first, :order => APP_CONFIG[:random_query])
+    @testimonial ||= current_account.testimonials.find(:first, :order => "RAND()")
+    @special ||= current_account.specials.find(:first, :order => "RAND()")
     # @country = Country.find_by_abbreviation(params[:country])
     # @account = Account.find(params[:id])
     # redirect_to :action => "index"

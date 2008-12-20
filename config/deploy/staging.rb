@@ -72,11 +72,7 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
   end
-  
-  task :start do 
-      # nothing 
-  end
-       
+         
   [:start, :stop].each do |t|
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
