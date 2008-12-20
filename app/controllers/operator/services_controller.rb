@@ -1,4 +1,4 @@
-class Operator::ServicesController < Operator::ApplicationController
+class Operator::ServicesController < ApplicationController
   layout "operator"
   include ModelControllerMethods
 

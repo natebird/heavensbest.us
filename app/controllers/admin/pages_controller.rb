@@ -1,4 +1,4 @@
-class Admin::PagesController < Operator::ApplicationController
+class Admin::PagesController < ApplicationController
   layout "operator"
   include ModelControllerMethods
   before_filter :admin_only

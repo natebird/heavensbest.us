@@ -1,4 +1,4 @@
-class Admin::TicketsController < Operator::ApplicationController
+class Admin::TicketsController < ApplicationController
   layout "operator"
   include ModelControllerMethods
   before_filter :admin_only
