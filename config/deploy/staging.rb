@@ -55,11 +55,11 @@ namespace :deploy do
     
     put db_config, "#{release_path}/config/database.yml"
     
-    desc "Symlink the upload directories"
-    task :before_symlink do
-      run "mkdir -p #{shared_path}/uploads"
-      run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
-    end
+    # desc "Symlink the upload directories"
+    # task :before_symlink do
+    #   run "mkdir -p #{shared_path}/uploads"
+    #   run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
+    # end
   
   end
 
@@ -73,6 +73,10 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
   
+  task :start do 
+      # nothing 
+  end
+       
   [:start, :stop].each do |t|
     desc "#{t} task is a no-op with mod_rails"
     task t, :roles => :app do ; end
