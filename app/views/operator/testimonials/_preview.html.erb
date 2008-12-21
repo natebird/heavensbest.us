@@ -1,6 +1,6 @@
 <div class="testimonial grid_5">
 	<div class="testimonial-top">&nbsp;</div>
-	<div class="testimonial-quote"><%= textilize (@testimonial.quote) %></div>
+	<div class="testimonial-quote"><%= simple_format (@testimonial.quote) %></div>
 	<div class="testimonial-bottom"></div>
 	<span class="name"><%= @testimonial.name %></span>
 	<span class="location">in <%= @testimonial.location %></span>

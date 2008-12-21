@@ -1,6 +1,6 @@
 <div id="content" class="blur">
 	<%= render :partial => 'sidebar' %>
-	<div id="text" class="grid_5"><%= textilize(@service.body) %></div>
+	<div id="text" class="grid_5"><%= simple_format(@service.body) %></div>
 </div>
 
 <div class="clear"></div>

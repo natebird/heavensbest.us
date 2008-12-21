@@ -3,7 +3,7 @@
 <div id="content-middle">
 	<%= render :partial => 'sidebar' %>
 	<div id="tip">
-		<div id="text"><%= textilize(@tip.body) %></div>
+		<div id="text"><%= simple_format(@tip.body) %></div>
 	</div>
 	<div class="clearfix">&nbsp;</div>		
 </div>

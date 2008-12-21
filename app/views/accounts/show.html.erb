@@ -30,7 +30,7 @@
 	
 	<div id="tips" class="grid_5 blur">
 		<h2 class="blur2"><%= Tip.random.title %></h2>
-			<%= textilize(Tip.random.body) %></div>
+			<%= simple_format(Tip.random.body) %></div>
 
 	<% if @special %>
 		<%= render :partial => @special %>

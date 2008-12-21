@@ -2,7 +2,7 @@
 	<h3>Preview</h3>
 <div class="special">
 	<div class="special1_small">
-		<div class="specialcontent"><%= textilize (@special.body) %>
+		<div class="specialcontent"><%= simple_format (@special.body) %>
 			<label class="special-phone"><%= number_to_phone(@special.phone) %></label></div>
 		<div class="specialfooter">
 			<span style="float:left">www.heavensbest.us</span>

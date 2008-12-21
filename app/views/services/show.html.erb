@@ -4,7 +4,7 @@
 <div id="content">
 	<%= render :partial => 'sidebar' %>
 	<div id="service">
-		<div id="text" class="grid_5"><%= textilize(@service.body) %></div>
+		<div id="text" class="grid_5"><%= simple_format(@service.body) %></div>
 		<img class="grid_5" src="/images/content/furniture/testcouch.jpg">
 	</div>
 	<div class="clearfix">&nbsp;</div>		

@@ -7,7 +7,7 @@
     <tr>
       <td><%= ticket.account_id %><br /></td>
       <td><%= ticket.created_at.to_s(:short_day) %></td>
-      <td><%= textilize(ticket.comment) %></td>
+      <td><%= simple_format(ticket.comment) %></td>
       <td><%= link_to "Edit", edit_admin_ticket_path(ticket) %></td>
     </tr>
   <% end %>
