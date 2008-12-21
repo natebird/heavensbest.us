@@ -29,3 +29,13 @@ REST_AUTH_DIGEST_STRETCHES = 10
 
 # Exception Notifier
 ExceptionNotifier.exception_recipients = %w(help@lucidi.us)
+
+# Gmail SMTP Settings
+config.action_mailer.smtp_settings = {
+  :address        => "smtp.gmail.com",
+  :port           => 587,
+  :domain         => "support@heavensbest.us",
+  :authentication => :plain,
+  :user_name      => "natebird@heavensbest.us",
+  :password       => "hbluc1d1u5" 
+}
