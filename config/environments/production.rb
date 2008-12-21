@@ -37,5 +37,5 @@ config.action_mailer.smtp_settings = {
   :domain         => "support@heavensbest.us",
   :authentication => :plain,
   :user_name      => "natebird@heavensbest.us",
-  :password       => "hbluc1d1u5" 
+  :password       => "hbatr2yu3" 
 }
