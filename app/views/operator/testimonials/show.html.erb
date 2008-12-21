@@ -1,5 +1,5 @@
 
-<p><%= textilize(@testimonial.quote) %></p>
+<p><%= simple_format(@testimonial.quote) %></p>
 <p><%=h @testimonial.name %> <%=h @testimonial.location %></p>
 
 <%= link_to 'Back', :back %> | 

@@ -7,7 +7,7 @@
 	
 	<div id="tips">
 		<h2><%= @tip.title %></h2>
-			<%= textilize(@tip.body) %>
+			<%= simple_format(@tip.body) %>
 	</div>
 	
 	<div class="clearfix">&nbsp;</div>		

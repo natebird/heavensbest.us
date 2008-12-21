@@ -23,7 +23,7 @@
 	
 	<div id="tips" class="grid_5 blur">
 		<h2><%= Tip.random.title %></h2>
-			<%= textilize(Tip.random.body) %>
+			<%= simple_format(Tip.random.body) %>
 	</div>
 
 	<div id="ad" class="grid_6 blur">
