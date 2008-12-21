@@ -1,0 +1,53 @@
+/* @override http://localhost:3000/stylesheets/splash.css */
+
+/* layout styles */
+body {
+    font: 14px/20px Verdana, Arial, Helvetica, sans-serif;
+    color: #333;
+    text-transform: none;
+}
+
+#wrapper {
+    width: 800px;
+    margin: 100px auto 0px auto;
+}
+
+#logo {
+    width: 260px;
+	height: 260px;
+	background-image: url("../images/logos/HB_large.jpg"); 
+    background-repeat: no-repeat;
+    margin: 0px auto 0px auto;
+}
+
+
+#text {
+    text-align: center;
+	margin-top: 35px;
+}
+
+#footer {
+    text-align: center;
+    font: 10px/14px Verdana, Arial, Helvetica, sans-serif;
+    color: #333;
+    text-transform: none;
+}
+
+#footer a {
+    font: 10px/14px Verdana, Arial, Helvetica, sans-serif;	
+}
+
+a {
+	font: 12px/14px Verdana, Arial, Helvetica, sans-serif;
+	color: #0069AA;
+	text-decoration: none;
+    text-align: center;
+}
+
+h1 {
+	font: 18px/22px Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #C32127;
+    text-align: center;
+	text-transform: none;
+}
