@@ -6,7 +6,7 @@
 		There are currently no specials running. Check back later.
 	<% else %>
 		<% for special in @specials %>
-			<div class="grid_6 blur">
+			<div class="grid_7 prefix_1">
 				<div class="special">
 					<div class="print"><%= link_to "Printable coupon", special_path(params[:region], 
 						params[:accountlink], special), :popup => [special.title, 'height=300,width=600'] %></div>
