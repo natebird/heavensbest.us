@@ -3,7 +3,7 @@
 		<li><%= link_to "Home", edit_operator_account_path(@account), :class => "home" %></li>
 		<li><%= link_to "Services", operator_account_services_path(@account), :class => "services" %></li>
 		<li><%= link_to "Specials", operator_account_specials_path(@account), :class => "specials" %></li>
-		<li><%= link_to "Evaluations", operator_account_testimonials_path(@account), :class => "evaluations" %></li>
+		<li><% link_to "Evaluations", operator_account_testimonials_path(@account), :class => "evaluations" %></li>
 		<li><%= link_to "Testimonials", operator_account_testimonials_path(@account), :class => "testimonials" %></li>
 	</ul>
 </div>

@@ -2,31 +2,28 @@
 /* @group Tabbed Navigation */
 
 /* Public Tabbed Navigation */
-#tab_nav { width: 416px; margin: 18px auto; position: relative; z-index: 9998; bottom: 45px; right: 25px; float: right; }
+#tab_nav { width: 310; margin: 18px auto; position: relative; z-index: 9998; bottom: 35px; right: 25px; float: right; }
 #tab_nav { margin: 0px; padding: 0; }
 #tab_nav li { display: inline; }
 #tab_nav li a { float: left; width: 104px; height: 0; padding-top: 42px; overflow: hidden; }
 #tab_nav li a#login, 
 #tab_nav li a#features { width: 103px; }
-#tab_nav li a, #tab_nav { background-image: url(/images/navigation/tabs.gif); _background-image: url(/images/navigation/tabs.gif); background-repeat: no-repeat; }
+#tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs.png); _background-image: url(/images/nav/operator_tabs.png); background-repeat: no-repeat; }
 
  /*BUTTONS*/ 
 #tab_nav li a#login { background-position: 0px 0px; }
-#tab_nav li a#support { background-position: -312px 0px; }
-#tab_nav li a#faq { background-position: -208px 0px; }
 #tab_nav li a#features { background-position: -104px 0px; }
+#tab_nav li a#support { background-position: -208px 0px; }
 
 /* Hover States */
-#tab_nav li a:hover#login { background-position: 0px -47px; }
-#tab_nav li a:hover#support { background-position: -312px -47px; }
-#tab_nav li a:hover#faq { background-position: -208px -47px; }
-#tab_nav li a:hover#features { background-position: -104px -47px; }
+#tab_nav li a:hover#login { background-position: 0px -41px; }
+#tab_nav li a:hover#features { background-position: -104px -41px; }
+#tab_nav li a:hover#support { background-position: -208px -41px; }
 
 /* Current States */
-#tab_nav li a.current#login { background-position: 0px -47px; }
-#tab_nav li a.current#support { background-position: -312px -47px; }
-#tab_nav li a.current#faq { background-position: -208px -47px; }
-#tab_nav li a.current#features { background-position: -104px -47px; }
+#tab_nav li a.current#login { background-position: 0px -41px; }
+#tab_nav li a.current#features { background-position: -104px -41px; }
+#tab_nav li a.current#support { background-position: -208px -41px; }
 
 /* @end */
 
@@ -99,94 +96,104 @@
 #navigation_tabnav li a:current.evaluations { background-position: -303px -86px; }
 #navigation_tabnav li a:current.testimonials { background-position: -403px -86px; }
 
-/* Admin Menubar */
+
+/* @group Operator Menubar */
+
 #operator_menubar { margin: 18px auto; z-index: 9998; position: relative; top: 40px; }
 #operator_menubar { margin: 0px; padding: 0; }
 #operator_menubar li { display: inline;}
-#operator_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
-#operator_menubar li a.information, #operator_menubar li a.tips { width: 102px; }
-#operator_menubar li a { background-image: url(/images/navigation/admin_menubar.png); _background-image: url(/images/navigation/admin_menubar.gif); background-repeat: no-repeat;}
+#operator_menubar li a { float: left; width: 94px; height: 0px; padding-top: 35px; overflow: hidden; }
+#operator_menubar li a.home, #operator_menubar li a.testimonials { width: 99px; }
+#operator_menubar li a { background-image: url(/images/nav/area_menubar.png); _background-image: url(/images/nav/area_menubar.gif); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #operator_menubar li a.home { background-position: 0px 0px; }
-#operator_menubar li a.services { background-position: -102px 0px; }
-#operator_menubar li a.specials { background-position: -197px 0px; }
-#operator_menubar li a.testimonials { background-position: -292px 0px; }
-#operator_menubar li a.evaluations { background-position: -387px 0px; }
-#operator_menubar li a.tips { background-position: -482px 0px; }
+#operator_menubar li a.services { background-position: -100px -0px; }
+#operator_menubar li a.specials { background-position: -198px -0px; }
+#operator_menubar li a.evaluations { background-position: -296px -0px; }
+#operator_menubar li a.testimonials { background-position: -394px -0px; }
 
 /* OVER STATES */
-#operator_menubar li a:hover.home { background-position: 0px -41px;}
-#operator_menubar li a:hover.services { background-position: -102px -41px; }
-#operator_menubar li a:hover.specials { background-position: -197px -41px; }
-#operator_menubar li a:hover.testimonials { background-position: -292px -41px; }
-#operator_menubar li a:hover.evaluations { background-position: -387px -41px; }
-#operator_menubar li a:hover.tips { background-position: -482px -41px; }
+#operator_menubar li a:hover.home { background-position: 0px -35px;}
+#operator_menubar li a:hover.services { background-position: -100px -35px; }
+#operator_menubar li a:hover.specials { background-position: -197px -35px; }
+#operator_menubar li a:hover.evaluations { background-position: -292px -35px; }
+#operator_menubar li a:hover.testimonials { background-position: -387px -35px; }
 
 /* PRESSED STATES */
-#operator_menubar li a:current.home { background-position: 0px -82px; }
-#operator_menubar li a:current.services { background-position: -102px -82px; }
-#operator_menubar li a:current.specials { background-position: -197px -82px; }
-#operator_menubar li a:current.testimonials { background-position: -292px -82px; }
-#operator_menubar li a:current.evaluations { background-position: -387px -82px; }
-#operator_menubar li a:current.tips { background-position: -482px -82px; }
+#operator_menubar li a:current.home { background-position: 0px -70px; }
+#operator_menubar li a:current.services { background-position: -102px -70px; }
+#operator_menubar li a:current.specials { background-position: -197px -70px; }
+#operator_menubar li a:current.evaluations { background-position: -292px -70px; }
+#operator_menubar li a:current.testimonials { background-position: -387px -70px; }
+/* @end */
 
 
-/* Home Menubar */
+/* @group Home Menubar */
+
 #home_menubar { width: 490px; margin: 18px auto; position: absolute; z-index: 9998; top: 25px; left: 280px; }
 #home_menubar { margin: 0px; padding: 0; }
 #home_menubar li { display: inline;}
-#home_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
-#home_menubar li a.home, #home_menubar li a.contact_us { width: 102px; }
-#home_menubar li a { background-image: url(/images/navigation/home_menubar.png); _background-image: url(/images/navigation/home_menubar.gif); background-repeat: no-repeat;}
+#home_menubar li a { float: left; width: 92px; height: 0; padding-top: 35px; overflow: hidden; }
+#home_menubar li a.home, #home_menubar li a.contact_us { width: 99px; }
+#home_menubar li a { background-image: url(/images/nav/home_menubar.png); _background-image: url(/images/nav/home_menubar.gif); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
-#home_menubar li a.home { background-position: 0px 0px; }
-#home_menubar li a.franchises { background-position: -102px 0px; }
-#home_menubar li a.services { background-position: -197px 0px; }
-#home_menubar li a.testimonials { background-position: -292px 0px; }
-#home_menubar li a.contact_us { background-position: -387px 0px; }
+#home_menubar li a.home { background-position: 0px -1px; }
+#home_menubar li a.franchises { background-position: -102px -1px; }
+#home_menubar li a.services { background-position: -197px -1px; }
+#home_menubar li a.testimonials { background-position: -292px -1px; }
+#home_menubar li a.contact_us { background-position: -387px -1px; }
 
 /* OVER STATES */
-#home_menubar li a:hover.home { background-position: 0px 0px;}
-#home_menubar li a:hover.franchises { background-position: -102px -41px; }
-#home_menubar li a:hover.services { background-position: -197px -41px; }
-#home_menubar li a:hover.testimonials { background-position: -292px -41px; }
-#home_menubar li a:hover.contact_us { background-position: -387px -41px; }
+#home_menubar li a:hover.home { background-position: 0px -36px;}
+#home_menubar li a:hover.franchises { background-position: -102px -36px; }
+#home_menubar li a:hover.services { background-position: -197px -36px; }
+#home_menubar li a:hover.testimonials { background-position: -292px -36px; }
+#home_menubar li a:hover.contact_us { background-position: -387px -36px; }
 
 /* PRESSED STATES */
-#home_menubar li a:current.home { background-position: 0px -82px; }
-#home_menubar li a:current.franchises { background-position: -102px -82px; }
-#home_menubar li a:current.services { background-position: -197px -82px; }
-#home_menubar li a:current.testimonials { background-position: -292px -82px; }
-#home_menubar li a:current.contact_us { background-position: -387px -82px; }
+#home_menubar li a:current.home { background-position: 0px -4px; }
+#home_menubar li a:current.franchises { background-position: -102px -74px; }
+#home_menubar li a:current.services { background-position: -197px -74px; }
+#home_menubar li a:current.testimonials { background-position: -292px -74px; }
+#home_menubar li a:current.contact_us { background-position: -387px -74px; }
+
+/* @end */
 
 
 /* Area Menubar */
-#area_menubar { width: 490px; margin: 18px auto; position: absolute; z-index: 9998; top: 20px; left: 210px; }
+#area_menubar { margin: 18px auto; z-index: 9998; position: absolute; left: 220px; top: 25px; }
 #area_menubar { margin: 0px; padding: 0; }
 #area_menubar li { display: inline;}
-#area_menubar li a { float: left; width: 95px; height: 0; padding-top: 40px; overflow: hidden; }
-#area_menubar li a.home, #area_menubar li a.testimonials { width: 102px; }
-#area_menubar li a { background-image: url(/images/navigation/area_menubar.png); _background-image: url(/images/navigation/area_menubar.gif); background-repeat: no-repeat;}
+#area_menubar li a { float: left; width: 92px; height: 0px; padding-top: 35px; overflow: hidden; }
+#area_menubar li a.home, #area_menubar li a.reviews { width: 99px; }
+#area_menubar li a { background-image: url(/images/nav/area_menubar.png); _background-image: url(/images/nav/area_menubar.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
-#area_menubar li a.home { background-position: 0px 0px; }
-#area_menubar li a.services { background-position: -102px 0px; }
-#area_menubar li a.specials { background-position: -197px 0px; }
-#area_menubar li a.evaluations { background-position: -292px 0px; }
-#area_menubar li a.testimonials { background-position: -387px 0px; }
+#area_menubar li a.home { background-position: 0px -2px; }
+#area_menubar li a.services { background-position: -102px -2px; }
+#area_menubar li a.specials { background-position: -197px -2px; }
+#area_menubar li a.testimonials { background-position: -292px -2px; }
+#area_menubar li a.reviews { background-position: -387px -2px; }
 
 /* OVER STATES */
-#area_menubar li a:hover.home { background-position: 0px 0px;}
-#area_menubar li a:hover.services { background-position: -102px -41px; }
-#area_menubar li a:hover.specials { background-position: -197px -41px; }
-#area_menubar li a:hover.evaluations { background-position: -292px -41px; }
-#area_menubar li a:hover.testimonials { background-position: -387px -41px; }
+#area_menubar li a:hover.home { background-position: 0px -72px;}
+#area_menubar li a:hover.services { background-position: -102px -72px; }
+#area_menubar li a:hover.specials { background-position: -197px -72px; }
+#area_menubar li a:hover.testimonials { background-position: -292px -72px; }
+#area_menubar li a:hover.reviews { background-position: -387px -72px; }
 
 /* PRESSED STATES */
-#area_menubar li a:current.home { background-position: 0px -82px; }
-#area_menubar li a:current.services { background-position: -102px -82px; }
-#area_menubar li a:current.specials { background-position: -197px -82px; }
-#area_menubar li a:current.evaluations { background-position: -292px -82px; }
-#area_menubar li a:current.testimonials { background-position: -387px -82px; }
+#area_menubar li a:current.home { background-position: 0px -74px; }
+#area_menubar li a:current.services { background-position: -102px -74px; }
+#area_menubar li a:current.specials { background-position: -197px -74px; }
+#area_menubar li a:current.testimonials { background-position: -292px -74px; }
+#area_menubar li a:current.reviews { background-position: -387px -74px; }
+
+/* CURRENT STATES */
+/*#area_menubar li a:current.home { background-position: 0px -123px; }
+#area_menubar li a:current.services { background-position: -102px -123px; }
+#area_menubar li a:current.specials { background-position: -197px -123px; }
+#area_menubar li a:current.evaluations { background-position: -292px -123px; }
+#area_menubar li a:current.testimonials { background-position: -387px -123px; }*/

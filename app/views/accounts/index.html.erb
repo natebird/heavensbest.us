@@ -3,8 +3,7 @@
 
 <div id="frontpage">
 	<div id="intro" class="grid_10 prefix_1">	
-		<p> Heaven's Best is a world leader in carpet cleaning, upholstery cleaning, and carpet cleaning franchise opportunities. Our unique "dry in one hour" process yields exceptional results and greatly reduces typical carpet cleaning dry times. Heaven's Best carpet cleaning experts can tackle the toughest stains and dirt leaving your carpets clean and renewed.</p>
-		<img src="/images/content/furniture/testcouch.jpg">
+		<p> Heaven's Best is a world leader in carpet and upholstery cleaning. Our unique "dry in one hour" process yields exceptional results and greatly reduces typical carpet cleaning dry times. Heaven's Best carpet cleaning experts can tackle the toughest stains and dirt leaving your carpets clean and renewed.</p>
 	</div>	
 	
 	<div id="search" class="grid_5 ">
@@ -27,15 +26,16 @@
 	</div>
 
 	<div id="ad" class="grid_6 blur">
-		<% link_to(image_tag("/images/content/franchise_ad.gif"), 
-		"http://heavensbest.com/index.php?&pr=Take_Control", :popup => true) %>
+		<%= render :partial => "shared/ad" %>
 	</div>
 	
 	<div id="testimonials" class="grid_5">
 		<div class="testimonial">
 			<div class="top">&nbsp;</div>
-			<div class="middle" style="height:93px">In hac habitasse platea dictumst. Proin eleifend leo. Quisque et purus.
-				Aliquam ipsum. Sed pulvinar, egestas non. Volutpat at, egestas non, tellus. odio malesuada gravida</div>
+			<div class="middle" style="height:93px">
+				<p>In hac habitasse platea dictumst. Proin eleifend leo. Quisque et purus.
+				Aliquam ipsum. Sed pulvinar, egestas non. Volutpat at, egestas non, tellus. odio malesuada gravida</p>
+			</div>
 			<div class="bottom"></div>
 			<span class="name">Jennifer Anniston</span>
 			<span class="location">in Hollywood, CA</span>
