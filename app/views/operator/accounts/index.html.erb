@@ -1,17 +1,40 @@
-<div id="content" class="blur">
-	<h1><%= @page_title = 'Areas' %></h1>
-	<table width="700px">
-	  <% current_user.accounts.each do |account| %>
-	    <tr>
-	      <td><%= link_to(h(account.name), edit_operator_account_url(account)) %></td>
-	      <td><%= account.subscription.subscription_plan.name %> Plan
-				<%= link_to('(Change Subscription)', :action => 'plan', :id => account.id) %></td>
-	      <td>renews <%= account.subscription.next_renewal_at.to_s(:short_day) %>
-				<%= link_to('(Change Billing)', :action => 'billing', :id => account.id) %></td>
-	    </tr>
-	  <% end %>
-	</table>
+<div class="clear"></div>
 
-	<br />
-	<%= link_to('Create a new area', new_operator_account_url) %>
+<br />
+<h1 class="indent20"><%= @page_title = 'Areas' %></h1>
+
+<% for account in @accounts %>
+<div class="grid_5">
+	<div class="top">&nbsp;</div>
+	<div class="middle">
+		<h1><%= account.name %>, <%= account.region.name %></h1>
+		<div class="area">
+			<p><label>Subscription:</label>
+			<b><%= account.subscription.subscription_plan.name %></b></p>
+		
+			<p><label>Cost:</label>
+			<b>(<%= number_to_currency(account.subscription.subscription_plan.amount) %>/month)</b></p>
+
+			<p><label>Next billing date: </label>
+			<b><%= account.subscription.next_renewal_at.to_s(:short_day) %></b></p>
+		</div>
+		
+		<div class="area center">
+			<%= link_to('Settings', edit_operator_account_url(account)) %> |
+			<%= link_to('Subscription', :action => 'plan') %> |
+			<%= link_to('Billing', :action => 'billing') %>
+		</div>
+	</div>
+	<div class="bottom"></div>
+	
+</div>
+<% end %>
+
+<div class="grid_5">
+	<div class="top">&nbsp;</div>
+	<div class="middle" style="height:132px">
+		<br /><br />
+		<h1><%= link_to('Create a new area', new_operator_account_url) %></h1>
+	</div>
+	<div class="bottom"></div>
 </div>

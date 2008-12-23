@@ -7,6 +7,10 @@ class Operator::AccountsController < ApplicationController
   
   ssl_required :billing, :cancel, :new, :create
   ssl_allowed :plans, :canceled, :paypal
+
+  def index
+    @accounts = current_user.accounts.find(:all)
+  end
   
   def new
     # @account = current_user.accounts.build

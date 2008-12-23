@@ -14,6 +14,7 @@ class Account < ActiveRecord::Base
   
   validates_uniqueness_of :name
   validates_presence_of :name, :email, :street, :city, :region_id, :postal_code, :locations
+  validates_acceptance_of :accept
 
   validate_on_create :valid_plan?
   validate_on_create :valid_payment_info?

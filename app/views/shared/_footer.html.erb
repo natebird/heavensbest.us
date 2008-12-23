@@ -1,13 +1,25 @@
 <div id="footer">
-	
-	<div class="grid_12">
-		&#169; <%= Date.today.year %> Lucidius LLC. All Rights Reserved.
-		Design by <a href="http://www.lucidi.us">Lucidius</a> <br />
-		Heaven’s Best Logo &#169; M-Co Inc. All rights reserved. Used With Permission.
-	</div>
+	<% if logged_in? %>
+			<div class="grid_12">
+				Franchise operators interested in participating can email 
+				<%= mail_to "info@heavensbest.us", "info@heavensbest.us", :encode => :hex, 
+				:subject => "Please send information about www.heavensbest.us" %> for an invitation.
 
-	<div class="grid_4">
-		<%= link_to(image_tag("/images/buttons/operator_login.gif"), login_path) %>
-	</div>
+				&#169; <%= Date.today.year %> <a href="http://www.lucidi.us">Lucidius LLC.</a> All Rights Reserved.
+				<%= link_to "Terms of Service", page_path('tos') %> |
+				<%= link_to "Privacy Policy", page_path('privacy') %> <br />
+				<span class="center">Heaven’s Best Logo &#169; M-Co Inc. All rights reserved. Used With Permission.</span>
+			</div>
+		<% else %>	
+		<div class="grid_12">
+			&#169; <%= Date.today.year %> Lucidius LLC. All Rights Reserved.
+			Design by <a href="http://www.lucidi.us">Lucidius</a> <br />
+			Heaven’s Best Logo &#169; M-Co Inc. All rights reserved. Used With Permission.
+		</div>
+
+		<div class="grid_4">
+			<%= link_to(image_tag("/images/buttons/operator_login.gif"), login_path) %>
+		</div>
+	<% end %>
 
 </div>

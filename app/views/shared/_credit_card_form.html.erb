@@ -28,20 +28,20 @@
 
 
 <div><%= label :creditcard, :first_name, "Name on Card" %>
-	 <%= text_field :creditcard, :first_name, :size => 15 %>
+	 <%= text_field :creditcard, :first_name, :size => 13 %>
 	 <span class="hint">Enter the name as it appears on the card. The text boxes are for the first and last name respectively.<span class="pointer">&nbsp;</span></span>
 	 <%= text_field :creditcard, :last_name, :size => 13 %></div>
 
 <div><%= label :creditcard, :number, "Card Number" %>
 	 <span class="hint">Enter your Credit Card number. <span class="pointer">&nbsp;</span></span>
-	 <%= text_field :creditcard, :number, :size => 20 %></div>
+	 <%= text_field :creditcard, :number, :size => 16 %></div>
 	
 <div><%= label :creditcard, :type, "Card Type" %>
 	 <span class="hint">Choose your Credit Card type. <span class="pointer">&nbsp;</span></span>
 	 <%= select :creditcard, :type, [['Visa', 'visa'], ['MasterCard', 'master'], 
 	  ['American Express', 'american_express']] %></div>
 	
-<div><%= label :creditcard, :month, "Expiration" %>
+<div><%= label :creditcard, :year, "Expiration" %>
 	 <span class="hint">Choose the expiration date. <span class="pointer">&nbsp;</span></span>
 	 <%= select :creditcard, :month, (1 .. 12) %> /
 	 <%= select :creditcard, :year, (Time.now.year .. 10.years.from_now.year) %></div>
@@ -54,26 +54,26 @@
 <div><%= label :address, :address1, "Address" %>
 	 <span class="hint">Enter the billing address. The 2nd line is optional. 
 		<span class="pointer">&nbsp;</span></span>
-	 <%= text_field :address, :address1 %><br/>
+	 <%= text_field :address, :address1, :size => 28 %><br/>
 	 <%= label :address, :address2, "&nbsp;" %>
-	 <%= text_field :address, :address2 %></div>
+	 <%= text_field :address, :address2, :size => 28 %></div>
 
 <div><%= label :address, :city %>
 	<span class="hint">Enter the city name of the billing address. <span class="pointer">&nbsp;</span></span>
-	<%= text_field :address, :city %></div>
+	<%= text_field :address, :city, :size => 28 %></div>
 	
 <div><%= label :address, :state, "State" %>
 	 <span class="hint">Enter the state of the billing address. <span class="pointer">&nbsp;</span></span>
-	 <%= text_field :address, :state %></div>
+	 <%= text_field :address, :state, :size => 28 %></div>
 	
 <div><%= label :address, :zip, "Postal Code" %>
 	 <span class="hint">Enter the postal code of the billing address. <span class="pointer">&nbsp;</span></span>
-	 <%= text_field :address, :zip %></div>
+	 <%= text_field :address, :zip, :size => 28 %></div>
 	
 <div><%= label :address, :country %>
 	 <span class="hint">Enter the country name of the billing address. <span class="pointer">&nbsp;</span></span>
-	 <%= text_field :address, :country %></div>
+	 <%= text_field :address, :country, :size => 28 %></div>
 
 <div><%= label :address, :phone %>
 	 <span class="hint">Enter the phone number associated with this card. <span class="pointer">&nbsp;</span></span>
-	 <%= text_field :address ,:phone %></div>
+	 <%= text_field :address ,:phone, :size => 28 %></div>

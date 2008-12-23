@@ -20,15 +20,15 @@
 			<% end %>
 			
 			<div id="area_options">
-				<% if !@account.nil? %>
+				<% if @account ? @account.id : nil %>
 					<% link_to "View", area_path(@account.region.abbreviation.downcase, @account.accountlink) %>
-					<%= link_to "Settings", operator_account_path(@account) %>
+					<% link_to "Settings", operator_account_path(@account) %>
 				<% end %>
 				<%= select_tag(nil, options_for_select([[nil]] + current_user.accounts.to_dropdown, 
 					@account ? @account.id : nil), {:class => "grid_4", :onchange => "jumpToArea(this);"} ) %>
 			</div>
 			
-			<%= render :partial => "shared/operator_bar" if @account %>
+			<%= render :partial => "shared/operator_bar" if @account ? @account.id : nil %>
 		<% end %>
 	</div>
 	<%= render :partial => "shared/operator_tabs" if !logged_in? %>
@@ -38,7 +38,7 @@
 	<%= yield  %>
 	<div class="clear"></div>
 
-	<% render :partial => "shared/footer" %>
+	<%= render :partial => "shared/admin_footer" %>
 </div>
 
 
