@@ -1,10 +1,15 @@
-<div id="content" class="blur">
-	<%= render :partial => 'sidebar' %>
-	<div id="text" class="grid_5"><%= simple_format(@service.body) %></div>
-	<div class="grid_5"><%= image_tag @service.photo.image.url if @service.photo %> </div>
-	
-</div>
-
 <div class="clear"></div>
-<%= render :partial => @service %>
+<div id="grid14-top">&nbsp;</div>
 
+<div id="grid14-middle">
+	<%= render :partial => 'sidebar' %>
+	<div id="service">
+		<div id="text" class="grid_5"><%= simple_format(@service.body) %></div>
+		<div class="grid_5"><%= image_tag @service.photo.image.url if @service.photo %> </div>
+	</div>
+	<div class="clear"></div>
+		
+</div>
+<div id="grid14-bottom">&nbsp;</div>
+
+<%= render :partial => @service %>
