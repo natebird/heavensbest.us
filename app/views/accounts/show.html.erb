@@ -43,7 +43,9 @@
 		<% if @testimonial %>
 			<div class="testimonial">
 				<div class="top">&nbsp;</div>
-				<div class="middle" style="height:93px"><p><%= @testimonial.quote %></p></div>
+				<div class="middle" style="height:93px">
+					<p><%= truncate(@testimonial.quote, :length => 195, :ommission => "…") %>
+					   <%= link_to "Read More", testimonials_path(params[:region], params[:accountlink]) %></p></div>
 				<div class="bottom"></div>
 				<span class="name"><%= @testimonial.name %></span>
 				<span class="location">in <%= @testimonial.location %></span>
