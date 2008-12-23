@@ -2,6 +2,6 @@
 	<%= f.label :number, "Phone number" %>
 	<span class="hint">Enter a phone number for this area. Don't use parenthesis, dashes, or spaces - i.e. 8885551234.
 		This will be displayed prominently on each page of your site.<span class="pointer">&nbsp;</span></span>
-	<%= f.text_field :number %>
+	<%= f.text_field :number, :size => 28 %>
 	<% f.remove_link(image_tag("/images/buttons/remove.gif")) %>
 </div>

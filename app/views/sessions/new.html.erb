@@ -1,28 +1,27 @@
 <%= title "Operator Login" %>
 <div class="grid_8 prefix_4 suffix_4">
 	
-	<div id="login_box" class="blur">
+	<div id="grid8-top"></div>
+	<div id="grid8-middle">
 		<% if !current_user %>
-			<fieldset>
+			<fieldset id="login_box">
 				<% form_tag session_path do -%>
 				<ol>
-					<li><label for="error">&nbsp;</label>
-						&nbsp;<%= render :partial => "error" if flash[:error] %></li>
+					<li>&nbsp;<%= render :partial => "error" if flash[:error] %></li><br />
 					<li><label for="login">Username</label>
-						<%= text_field_tag 'login' %></li>
+						<%= text_field_tag 'login', '', :size => 30 %></li><br />
 					<li><label for="password">Password</label>
-						<%= password_field_tag 'password' %></li>
-					<li><label>&nbsp;</label>
-						<%= check_box_tag 'remember_me', :class => "remember" %>
+						<%= password_field_tag 'password', '', :size => 30 %></li><br />
+					<li><%= check_box_tag 'remember_me', :class => "remember" %>
 						<label for="remember_me" class="remember">Remember me</label>
 						<%= image_submit_tag("/images/buttons/login.gif", :class => 'button' ) %></li>
 				</ol>
 				<% end -%>
-			</fieldset>
+			</fieldset><br />
 		<% else %>
-			<p>You are currently logged in.</p>
-			<p>Would you like to <%= link_to "logout", logout_path %>?</p>
+			<p class="center"> You are logged in as <%= current_user.name %>.<br /><br />
+				Would you like to <%= link_to "logout?", logout_path %></p>
 		<% end %>
 	</div>
-	
+	<div id="grid8-bottom"></div>
 </div>

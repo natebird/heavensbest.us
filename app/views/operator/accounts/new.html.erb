@@ -1,6 +1,12 @@
-	<h1><%= @page_title = 'Create a new area' %></h1>
+<div class="clear"></div>
+<div id="grid16-top" class="indent10">&nbsp;</div>
+
+<div id="grid16-middle" class="indent10">
+	<h1 class="indent20"><%= @page_title = 'Create a new area' %></h1>
 
 	<% form_tag :action => 'create' do %>
+
+	  <fieldset><legend>Area Information</legend>
 	  <% if @account.errors.any? %>
 	    <div class="errorExplanation">
 	      <h2>Errors encountered with your area information:</h2>
@@ -8,7 +14,6 @@
 	    </div>
 	  <% end %>
   
-	  <fieldset><legend>Area Information</legend>
 	    <% fields_for :account do |f| %>
     
 		<div><%= f.label :plan_id, 'Plan' %>
@@ -28,9 +33,24 @@
 	  </fieldset>
 
 	  <br />
-	  <label>&nbsp;</label>
-	  <input type="submit" value="Create my area" />
-	<% end %>
+	
+	  <fieldset><legend>Review and Accept terms</legend>
+		<p> You have chosen the premium plan for $30/month. 
+			Your credit card will be charged immediately and you will have access to your new area.</p><br />
+		
+		<p> Please review our <%= link_to "Terms of Service", page_path('tos') %>, 
+			<%= link_to "Privacy Policy", page_path('privacy') %>, and
+			<%= link_to "Refund Policy", page_path('refund') %>. If you have questions please 
+			<%= mail_to "billing@heavensbest.us", "email support", :encode => :hex, :subject => "Question about policies" %>.</p><br />
 
-	<div id="plans"><% render :partial => "plans" %></div>
-	<div class="clearfix"></div>
+			<% fields_for :account do |f| %>
+			<p><%= f.check_box :accept %>
+				<%= f.label :accept, "I agree to the Terms of Service, Privacy, & Refund policies", :class => "accept" %></p>
+			<% end %>
+
+		  <input type="submit" value="Create my area" />
+	  </fieldset>
+  	<% end %>
+</div>
+<div id="grid16-bottom" class="indent10"></div>
+<div class="clearfix"></div>

@@ -1,7 +1,7 @@
 <h1><%= @page_title = "Cancel Subscription for #{h(@account.name)}" %></h1>
 
-<h2>Another Option</h2>
-<p>Instead of canceling your account, perhaps you'd like to just <%= link_to "switch your plan", cancel_path %>.</p>
+<!-- <h2>Another Option</h2>
+<p>Instead of canceling your account, perhaps you'd like to just <%#= link_to "switch your plan", cancel_path %>.</p> -->
 
 <h2>Cancel Account</h2>
 <p>You are about to cancel your account. This will permanently delete all your billing information. However your area will become “inactive” meaning your data will remain in place if you decide to activate it again. Your login and password will also remain the same.</p>
@@ -11,7 +11,7 @@
 <% form_tag :action => 'cancel' do %>
   <fieldset>
     <input type="checkbox" name="confirm" class="checkbox" value="1" />
-    I really do want to cancel my subscription and permanently delete all my billing data.
+    I really do want to cancel my subscription and permanently delete all billing data associated with this area.
 	I understand that I can reactivate this area at a later time but only with new billing information.
   </fieldset>
 

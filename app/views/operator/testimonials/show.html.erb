@@ -1,6 +1,10 @@
+<div class="clear"></div>
+<div id="grid16-top-sidebar" class="indent10">&nbsp;</div>
 
-<p><%= simple_format(@testimonial.quote) %></p>
-<p><%=h @testimonial.name %> <%=h @testimonial.location %></p>
+<div id="grid16-middle-sidebar" class="indent10">
+	<%= render :partial => 'sidebar' %>
 
-<%= link_to 'Back', :back %> | 
-<%= link_to 'Edit', edit_operator_account_testimonial_path(@account, @testimonial) %>
+	<%= render :partial => 'preview' %>	
+	<div class="clear"></div>
+</div>
+<div id="grid16-bottom-sidebar" class="indent10">&nbsp;</div>
