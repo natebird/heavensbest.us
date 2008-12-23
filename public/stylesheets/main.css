@@ -1,3 +1,7 @@
+/* @override http://hbapp.local/stylesheets/main.css?1229984067 */
+
+/* @override http://hbapp.local/stylesheets/main.css?1229982643 */
+
 
 /*Colors:
 	Dark Blue:	0069AA	(links, input borders,)
@@ -302,6 +306,25 @@ label {
 	padding: 25px;
 }
 
+#grid14-top {
+	background: url(/images/content/890-top.png) no-repeat;
+	height: 15px;
+	left: 70px;
+	position: relative;
+}
+
+#grid14-middle {
+	background: url(/images/content/890-middle.png) repeat-y;
+	left: 70px;
+	position: relative;	
+}
+
+#grid14-bottom {
+	background: url(/images/content/890-bottom.png) repeat-y;
+	height: 20px;
+	left: 70px;
+	position: relative;	
+}
 /* @end */
 
 
@@ -441,8 +464,7 @@ div.auto_complete ul strong.highlight {
 /* @group Sidebar */	
 
 #sidebar {
-	/*border-right: 1px solid #508FC1;*/
-	margin-top: 5px;
+	margin-top: -7px;
 	margin-bottom: 5px;
 }
 
@@ -455,7 +477,6 @@ div.auto_complete ul strong.highlight {
 #sidebar ul {
 	position: relative;
 	display: inline;
-	/*padding: 5px;*/
 }
 
 #sidebar li {
@@ -463,6 +484,7 @@ div.auto_complete ul strong.highlight {
 	text-align: left;
 	margin-bottom: 1px;
 	margin-top: 1px;
+	margin-left: -1px;
 }
 
 #sidebar li .current {
@@ -494,11 +516,14 @@ div.auto_complete ul strong.highlight {
 }
 
 #sidebar h1 {
-	font: 18px/20px Helvetica, Arial, Verdana, sans-serif;
+	font: bold 18px/20px Helvetica, Arial, sans-serif;
+	color: #fff;
 	text-transform: none;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
+	background-color: #4295fd;
+	margin-left: -1px;
 }	
 .full {
 background-color: #444;}
@@ -512,7 +537,6 @@ background-color: #444;}
 
 /* @group Services */
 #service {
-	margin-top: 15px;
 }
 #service p {
 	font-size: 14px;
