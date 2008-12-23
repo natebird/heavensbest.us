@@ -1,4 +1,4 @@
-<div class="grid_6">
+<div class="grid_5">
 <% form_for([:operator, @account, @special]) do |f| %>
 <%= f.error_messages %>
 
@@ -17,7 +17,7 @@
 	<%= f.text_field :phone, :size => 23 %><br />
 
 	<%= f.label :body, "Text" %><br />	
-	<%= f.text_area :body, :cols => 31, :rows => 7 %><br />
+	<%= f.text_area :body, :cols => 25, :rows => 7 %><br />
 	
 	<div class="right">
 	<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), [:operator, @account, @special],
