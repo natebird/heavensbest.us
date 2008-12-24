@@ -1,9 +1,16 @@
-<% title "New Page" %>
+<div class="clear"></div>
+<div id="grid16-top" class="indent10">&nbsp;</div>
 
-<% form_for([:admin, @page]) do |f| %>
-	<%= render :partial => @page, :locals => { :f => f } %>
-	<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
-  	
-<% end %>
-	
-<p><%= link_to "Back to List", admin_pages_path %></p>
+<div id="grid16-middle" class="indent10">
+	<h1 class="indent20"><%= @page_title = 'New Page' %></h1>
+
+	<% form_for([:admin, @page]) do |f| %>
+		<%= render :partial => @page, :locals => { :f => f } %>
+		<%= image_submit_tag("/images/buttons/save.png", :class => 'button indent20' ) %>
+
+	<% end %>
+	<br />
+	<p class="indent20"><%= link_to "Back to List", admin_pages_path %></p>
+</div>
+
+<div id="grid16-bottom" class="indent10">&nbsp;</div>
