@@ -15,7 +15,8 @@ class Admin::UsersController < ApplicationController
   end
   
   def update
-    @user = current_user
+    @user = current_user if !admin?
+    @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated service."
       redirect_to :action => 'edit'
