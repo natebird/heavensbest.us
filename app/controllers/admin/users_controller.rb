@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_filter :admin_only, :except => [:edit, :activate]
+  before_filter :admin?, :except => [:edit, :activate]
   skip_before_filter :verify_authenticity_token, :only => :create
   include ModelControllerMethods
   layout "operator"
@@ -10,8 +10,8 @@ class Admin::UsersController < ApplicationController
   end
  
   def edit
-    @user = current_user if !current_user.has_role?('admin')
-    @user = User.find(params[:id]) if current_user.has_role?('admin')
+    @user = current_user if !admin?
+    @user = User.find(params[:id]) if admin?
   end
   
   def update
