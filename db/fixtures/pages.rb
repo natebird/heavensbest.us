@@ -2,6 +2,7 @@ Page.seed do |s|
   s.id = 1
   s.name = "Terms of Service"
   s.permalink = "terms"
+  s.category = "operator"
   s.content = "h1. HeavensBest.us Terms of Service
 
   By using the Heavensbest.us web site (“Service”), a service of Lucidius, LLC (“Lucidius”), you are agreeing to be bound by the following terms and conditions (“Terms of Service”).
@@ -71,7 +72,7 @@ Page.seed do |s|
   s.id = 2
   s.name = "Privacy Policy"
   s.permalink = "privacy"
-  s.category = "Legal"
+  s.category = "operator"
   s.content = "h1. HeavensBest.us Privacy Policy
 
   We collect the e-mail addresses of those who communicate with us via e-mail, aggregate information on what pages consumers access or visit, and information volunteered by the consumer (such as survey information and/or site registrations). The information we collect is used to improve the content of our Web pages and the quality of our service, and is not shared with or sold to other organizations for commercial purposes, except to provide products or services you've requested, when we have your permission, or under the following circumstances:
@@ -111,6 +112,7 @@ end
 #   s.id = 3
 #   s.name = "Franchise Information"
 #   s.permalink = "franchises"
+#   s.category = "application"
 #   s.content = "h1. What it costs
 # 
 #   | |_. Heaven's Best |_. Competitor A |_. Competitor B |
@@ -140,6 +142,7 @@ end
 #   s.id = 4
 #   s.name = "Frequently Asked Questions"
 #   s.permalink = "faq"
+#   s.category = "operator"
 #   s.content = "h1. Coming Soon"
 # end
 
@@ -147,6 +150,7 @@ Page.seed do |s|
   s.id = 5
   s.name = "Features"
   s.permalink = "features"
+  s.category = "operator"
   s.content = "h1. Coming Soon"
 end
 
@@ -154,6 +158,6 @@ end
 #   s.id = 6
 #   s.name = "Contact Inforamtion"
 #   s.permalink = "contact"
-#   s.category = "public"
+# s.category = "application"
 #   s.content = "fadffafd"
 # end

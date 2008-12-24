@@ -1,4 +1,4 @@
-
+<fieldset>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
@@ -6,8 +6,8 @@
 <%= f.text_field :permalink %>
 
 <%= f.label :category %>
-<%= f.text_field :category %>
-<!-- <%#= f.select( :category, { "Public" => 1, "Operator" => 2, "Legal" => 3 }) %> -->
+<%= f.select(:category, ["application", "operator"]) %><br />
 
 <%= f.label :content %>
 <%= f.text_area :content %>
+</fieldset>

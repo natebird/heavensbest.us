@@ -1,12 +1,19 @@
-<% title "Edit Page" %>
+<div class="clear"></div>
+<div id="grid16-top" class="indent10">&nbsp;</div>
 
-<% form_for @page, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
-	<%= render :partial => @page, :locals => { :f => f } %>
-<br />
-<p>
-  <%= link_to "Destroy", [:admin, @page], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "Show", [:admin, @page] %> |
-  <%= link_to "View All", admin_pages_path %> |
-  <%= f.submit "Save" %>
-</p>
-<% end %>
+<div id="grid16-middle" class="indent10">
+	<h1 class="indent20"><%= @page_title = 'Edit Page' %></h1>
+
+	<% form_for @page, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
+		<%= render :partial => @page, :locals => { :f => f } %>
+	<br />
+	<p class="indent20">
+	  <%= link_to "Delete", [:admin, @page], :confirm => 'Are you sure?', :method => :delete %> |
+	  <%= link_to "Show", [:admin, @page] %> |
+	  <%= link_to "View All", admin_pages_path %> |
+	  <%= f.submit "Save" %>
+	</p>
+	<% end %>
+</div>
+
+<div id="grid16-bottom" class="indent10">&nbsp;</div>
