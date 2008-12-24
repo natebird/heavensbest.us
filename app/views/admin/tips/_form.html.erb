@@ -1,4 +1,6 @@
+<div class="grid_7 indent-20">
 <% form_for([:admin, @tip]) do |f| %>
+	<%= error_messages_for :tip %>
 	<table>
 	  <tr><td colspan="4"><%= f.text_field :title, :size => 36 %></td>		
 	  <tr><td colspan="4"><%= f.text_area :body, :cols => 34, :rows => 8 %></td></tr>
@@ -10,5 +12,4 @@
 		  <td align="right"><%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %></td>
 	</table>
 <% end %>
-
-	<%= error_messages_for :service %>
+</div>
