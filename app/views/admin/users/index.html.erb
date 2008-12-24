@@ -1,19 +1,28 @@
-<h1><%= @page_title = 'Active Users' %></h1>
+<div class="clear"></div>
+<div id="grid16-top" class="indent10">&nbsp;</div>
 
-<table id="users">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th></th>
-  </tr>
-  <% for user in @users %>
-    <tr>
-      <td><%= link_to user.name, edit_admin_user_path(user) %></td>
-      <td><%=h user.email %></td>
-      <td><%= link_to "Areas (#{user.accounts.count})", edit_admin_user_path(user) %>&nbsp;|&nbsp;</td>
-	  <td><%= link_to 'Remove', [:admin, user], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<div id="grid16-middle" class="indent10">
+	<h1 class="indent20"><%= @page_title = 'Active Users' %></h1>
 
-<%= link_to('Add a new user', new_admin_user_url) %>
+	<table id="users" class="indent20">
+	  <tr>
+	    <th width="125">Name</th>
+	    <th width="225">Email</th>
+	    <th></th>
+	  </tr>
+	  <% for user in @users %>
+	    <tr>
+	      <td><%= link_to user.name, edit_admin_user_path(user) %></td>
+	      <td><%=h user.email %></td>
+	      <td><%= link_to "Areas (#{user.accounts.count})", edit_admin_user_path(user) %>&nbsp;|&nbsp;</td>
+		  <td><%= link_to 'Remove', [:admin, user], :confirm => 'Are you sure?', :method => :delete %></td>
+	    </tr>
+	  <% end %>
+	</table>
+	
+	<br />
+	<p class="indent20"><%= link_to('Add a new user', new_admin_user_url) %></p>
+	
+</div>
+
+<div id="grid16-bottom" class="indent10">&nbsp;</div>
