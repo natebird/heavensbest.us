@@ -2,7 +2,7 @@
 /* @group Tabbed Navigation */
 
 /* Public Tabbed Navigation */
-#tab_nav { width: 310; margin: 18px auto; position: relative; z-index: 9998; bottom: 35px; right: 25px; float: right; }
+#tab_nav { width: 310; margin: 18px auto; position: relative; z-index: 9998; top: 100px; right: 25px; float: right; }
 #tab_nav { margin: 0px; padding: 0; }
 #tab_nav li { display: inline; }
 #tab_nav li a { float: left; width: 104px; height: 0; padding-top: 42px; overflow: hidden; }

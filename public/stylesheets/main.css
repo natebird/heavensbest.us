@@ -494,6 +494,39 @@ div.auto_complete ul strong.highlight {
 
 .content {
 	padding-left: 15px;
+	padding-right: 30px;
+}
+
+.page {
+	padding-left: 20px;
+	padding-right: 40px;
+	padding-top: 5px;
+	width: 600px;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.page h2 {
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+
+.page p {
+	padding-bottom: 5px;
+}
+
+.page ul {
+	list-style-type: disc;
+	list-style-position: outside;
+	margin-left: 15px;
+	padding-bottom: 10px;
+}
+
+.page ol {
+	list-style-type: decimal;
+	list-style-position: outside;
+	margin-left: 30px;
+	padding-bottom: 10px;
 }
 
 #content {
@@ -841,6 +874,8 @@ background-color: #444;}
 	color: #C32127;
 	text-align: center;
 	font: bold 14px Helvetica, Arial, Verdana, sans-serif;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 hr {
