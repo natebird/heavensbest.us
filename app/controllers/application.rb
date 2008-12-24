@@ -34,6 +34,9 @@ class ApplicationController < ActionController::Base
 
   def admin?
     current_user.has_role?('admin')
+    rescue 
+      flash[:notice] = "You are not authorized to access that area"
+      redirect_to login_path
   end
 
   def not_authorized
