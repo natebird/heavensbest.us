@@ -698,22 +698,10 @@ background-color: #444;}
 	font: 13px/18px Helvetica, Arial, Verdana, sans-serif;
 }
 
-.testimonial .top {
-	height: 10px;
-	background: url(/images/content/testimonial-top.png) no-repeat;
-}	
-	
-.testimonial .middle {
-	background: url(/images/content/testimonial-middle.png) repeat-y;
-	/*margin-top: -7px;
-	padding-top: 3px;
-	padding-bottom: 3px;*/
-}	
-
 .testimonial .bottom {
 	height: 24px;
 	background: url(/images/content/testimonial-bottom.png) no-repeat;
-	/*text-align: center;*/
+	text-align: center;
 	/*margin-top: -5px;*/
 }
 
@@ -732,7 +720,6 @@ background-color: #444;}
 	width: 720px;
 	float: left;
 	left: 25px;
-
 }
 
 #new_tip, .edit_tip {
