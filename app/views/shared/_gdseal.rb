@@ -1,0 +1,1 @@
+<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=971500363051ac87d12711e1de0e87317e2509843540430708618816"></script><br/><a style="font-family:arial;font-size:9px" href="https://www.godaddy.com/gdshop/ssl/ssl.asp" target="_blank">SSL Certs</a></span>

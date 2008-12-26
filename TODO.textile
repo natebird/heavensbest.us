@@ -34,7 +34,7 @@ h1. To-do list
 [] Add RPM for staging and production environments
 [] Move heavensbest.us dns to new slice
 [] setup backup slice in case of server overload.
-[] On contact page use getsatisfaction template
+[x] On contact page use getsatisfaction template
 [] Perhaps use Exceptional for exceptions - lighthouse for ticket handling?
 [] Verify server can send mail
 [] set up a CRON job to run script/daily_mailer
