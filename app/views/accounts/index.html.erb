@@ -19,12 +19,12 @@
 
 <div id="cards">
 	
-	<div id="tips" class="grid_5 blur">
+	<div id="tips" class="grid_5">
 		<h2><%= Tip.random.title %></h2>
 			<%= simple_format(Tip.random.body) %>
 	</div>
 
-	<div id="ad" class="grid_6 blur">
+	<div id="ad" class="grid_6">
 		<%= render :partial => "shared/ad" %>
 	</div>
 	
