@@ -1,15 +1,21 @@
 <div class="grid_11">
-	<div id="content">
-	<h1><%= @page_title = 'Area Settings' %></h1>
+	<div id="grid12-top">&nbsp;</div>
 
-	<fieldset><legend>Area Information</legend>
-		<% form_for @account, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
-			<%= f.error_messages %>	
-			<%= render :partial => 'fields', :locals => {:f => f} %>
-	</fieldset>
-	  	<span class="prefix_5 grid_2"><%= image_submit_tag("/images/buttons/save.png", :class => 'button right' ) %></span>
-		<% end %>
+	<div id="grid12-middle">
+		<h1 class="indent20"><%= @page_title = 'Area Settings' %></h1>
+
+		<fieldset class="indent10"><legend>Basic Information</legend>
+			<% form_for @account, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
+				<%= f.error_messages %>	
+				<%= render :partial => 'fields', :locals => {:f => f} %>
+		</fieldset>
+		  	<span class="prefix_5 grid_2"><%= image_submit_tag("/images/buttons/save.png", :class => 'button right' ) %></span>
+			<% end %>
+		<div class="clear"></div>
 	</div>
+
+	<div id="grid12-bottom">&nbsp;</div>
+	
 </div>
 
 <%= render :partial => @account %>
