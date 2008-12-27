@@ -203,7 +203,7 @@ input, textarea {
 	border: 2px solid #999;
 	background-color: #ffffff;
 	color: #595959;
-	font: 18px Helvetica, Arial, Verdana, sans-serif;
+	font: 16px Helvetica, Arial, Verdana, sans-serif;
 	/*margin-bottom: 10px;*/
 }
  
@@ -821,6 +821,7 @@ background-color: #444;}
 	position: relative;
 	background: url(/images/logos/HB_small.png) no-repeat;
 	margin-left: 10px;
+	margin-top: -5px;
 }
 
 .special .text {
@@ -974,10 +975,6 @@ fieldset p {
 	width: 400px;
 }
 
-
-fieldset input {
-	font-size: 16px;
-}
 
 fieldset select {
 	/*font-size: 14px;*/

@@ -38,9 +38,8 @@
 		<p> You have chosen the premium plan for $30/month. 
 			Your credit card will be charged immediately and you will have access to your new area.</p><br />
 		
-		<p> Please review our <%= link_to "Terms of Service", page_path('tos') %>, 
-			<%= link_to "Privacy Policy", page_path('privacy') %>, and
-			<%= link_to "Refund Policy", page_path('refund') %>. If you have questions please 
+		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %>, 
+			<%= link_to "Privacy Policy", page_path('privacy') %>. If you have questions please 
 			<%= mail_to "billing@heavensbest.us", "email support", :encode => :hex, :subject => "Question about policies" %>.</p><br />
 
 			<% fields_for :account do |f| %>

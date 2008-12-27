@@ -7,52 +7,55 @@
   </div>
 <% end %>
 
-<div id="content" class="grid_12">
-	<h1><%= @page_title = "Subscription Information for #{h(@account.name)}" %></h1>
+<div class="grid_11">
+	<div id="grid12-top">&nbsp;</div>
 
-	<div class='left content' style="width: 400px">
-		<p> You can change your plan at any time. New plan features will be available immediately, 
-			and you will be billed the new subscription price beginning 
-			<b><%= @account.subscription.next_renewal_at.to_s(:short_day) %></b>.</p><br />
+	<div id="grid12-middle">
+		<h1 class="indent20"><%= @page_title = "Subscription Settings" %></h1>
 
-		<% form_tag plan_operator_account_url do %>
-			<% if @subscription.card_number %>
-				<label>Card ends with </label> <%= @subscription.card_number %>
-				<%= link_to "Change Billing", billing_path %>
-				<% else %>
-				<label>No card on file. </label>
-				<%= link_to "Would you like to add one?", billing_path %>
-			<% end %><br />
+		<div class="indent20" style="width: 400px">
+			<p> You can change your plan at any time. New plan features will be available immediately, 
+				and you will be billed the new subscription price beginning 
+				<b><%= @account.subscription.next_renewal_at.to_s(:short_day) %></b>.</p><br />
 
-		    <label>Plan</label>
-			<%= @subscription.subscription_plan.name %>
-		    <!-- <select name="plan_id" onChange="enableButton()">
-			 	<option value=""></option>
-		    	<% SubscriptionPlan.find(:all, :conditions => ['id <> ?', @subscription.subscription_plan_id], 
-					:order => 'amount desc').map {|p| content_tag(:option, p, :value => p.id) } %>
-		    </select> #, :disabled => !current_account.qualifies_for?(p) -->
-			<br />
-			<label>Next Billing Date</label>
-			<%= @subscription.next_renewal_at.to_s(:short_day) %>
+			<% form_tag plan_operator_account_url do %>
+				<% if @subscription.card_number %>
+					<label>Card ends with </label> <%= @subscription.card_number %>
+					<%= link_to "Change Billing", billing_path %>
+					<% else %>
+					<label>No card on file. </label>
+					<%= link_to "Would you like to add one?", billing_path %>
+				<% end %><br />
+
+			    <!-- <label>Plan</label> -->
+				<!-- <% #@subscription.subscription_plan.name %> -->
+			    <!-- <select name="plan_id" onChange="enableButton()">
+				 	<option value=""></option>
+			    	<% #SubscriptionPlan.find(:all, :conditions => ['id <> ?', @subscription.subscription_plan_id], :order => 'amount desc').map {|p| content_tag(:option, p, :value => p.id) } %>
+			    </select> #, :disabled => !current_account.qualifies_for?(p) -->
+				<label>Next Billing Date</label>
+				<%= @subscription.next_renewal_at.to_s(:short_day) %>
 	
-			<br />	<br />
-			<% link_to "Cancel Plan", cancel_path %>
-			<%= link_to(image_tag("/images/buttons/cancel_plan.gif"), cancel_path ) %>
+				<br />	<br />
+				<% link_to "Back", :back %>
+				<%= link_to(image_tag("/images/buttons/back.gif"), :back) %>
+				
+				<% link_to "Cancel Plan", cancel_path %>
+				<%= link_to(image_tag("/images/buttons/cancel_plan.gif"), cancel_path ) %>
 		
-			<% link_to "Back", :back %>
-			<%= link_to(image_tag("/images/buttons/back.gif"), :back) %>
-		
-			<% submit_tag "Change Plan", :id => "commit", :disabled => true %>
-			<% image_submit_tag("/images/buttons/change_plan.gif", :class => 'button', :disabled => true) %>
+				<% submit_tag "Change Plan", :id => "commit", :disabled => true %>
+				<% image_submit_tag("/images/buttons/change_plan.gif", :class => 'button', :disabled => true) %>
 	
-			<br /><br />
-			<p>	Refunds will not be issued for canceled subscriptions. 
-				Please review the <%= link_to "Terms of Service", page_path('tos') %>
-				or email <%= mail_to "billing@heavensbest.us", "billing@heavensbest.us", :encode => :hex, 
-				:subject => "Question about billing policies" %> with questions.</p><br />
-		<% end %>
+				<br /><br />
+				<p>	Refunds will not be issued for canceled subscriptions. 
+					Please review the <%= link_to "Terms of Service", page_path('terms') %>
+					or email <%= mail_to "billing@heavensbest.us", "billing@heavensbest.us", :encode => :hex, 
+					:subject => "Question about billing policies" %> with questions.</p><br />
+			<% end %>
+		</div>
 	</div>
 	
+	<div id="grid12-bottom">&nbsp;</div>
 	<div id="plans"><% render :partial => "plans" %></div>
 </div>
 <%= render :partial => @account %>

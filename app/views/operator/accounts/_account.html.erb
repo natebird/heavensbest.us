@@ -1,19 +1,25 @@
 <div class="grid_5">
 	<div class="top">&nbsp;</div>
 	<div class="middle">
-		<h1>Subscription Information</h1>
-		<p> The <%= account.name %>, <%= account.region.name %> area is currently subscribed to the 
-			<b><%= account.subscription.subscription_plan.name %> Plan 
-			(<%= number_to_currency(account.subscription.subscription_plan.amount) %>/month)</b>.</p>
+		<h1><%= account.name %>, <%= account.region.name %></h1>
+		<div class="area">
+			<p><label><% if account.subscription.state == 'trial' %>Trial <% end %>Subscription:</label>
+			<b><%= account.subscription.subscription_plan.name %> Plan</b>
+			</p>
+		
+			<p><label>Cost:</label>
+			<b>(<%= number_to_currency(account.subscription.subscription_plan.amount) %>/month)</b></p>
 
-		<p> Your next billing date is
-			<b><%= account.subscription.next_renewal_at.to_s(:short_day) %></b>. 
-			Your card will be charged automatically and a receipt sent to <b><%= account.user.email %></b>.</p>
-
-		<p> You can update this area's
-			<b><%= link_to('Settings', edit_operator_account_url(account)) %></b>, 
-			<b><%= link_to('Subscription', :action => 'plan') %></b>, or
-			<b><%= link_to('Billing Information', :action => 'billing') %></b> at anytime.</p>
+			<p><label>Next billing date: </label>
+			<b><%= account.subscription.next_renewal_at.to_s(:short_day) %></b></p>
+		</div>
+		
+		<div class="area center">
+			<%= link_to('Settings', edit_operator_account_url(account) ) %> |
+			<%= link_to('Subscription', plan_path(account) ) %> |
+			<%= link_to('Billing', billing_path(account) ) %>
+		</div>
 	</div>
 	<div class="bottom"></div>
+	<br />
 </div>
