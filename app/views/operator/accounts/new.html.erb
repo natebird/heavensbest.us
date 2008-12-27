@@ -6,7 +6,7 @@
 
 	<% form_tag :action => 'create' do %>
 
-	  <fieldset><legend>Area Information</legend>
+	  <fieldset class="indent10"><legend>Area Information</legend>
 	  <% if @account.errors.any? %>
 	    <div class="errorExplanation">
 	      <h2>Errors encountered with your area information:</h2>
@@ -18,8 +18,7 @@
     
 		<div><%= f.label :plan_id, 'Plan' %>
 			 <span class="plan"><% render :partial => "plans" %></span>
-			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, 
-				:id, :to_s ) %></div>
+			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %></div>
 
 		<%= render :partial => 'fields', :locals => {:f => f} %>   
 
@@ -28,23 +27,24 @@
   
 	  <% if @account.needs_payment_info? %>
 	  <% end %>
-  	  <fieldset><legend>Payment Information</legend>
+  	  <fieldset class="indent10"><legend>Payment Information</legend>
 	    <%= render :partial => "shared/credit_card_form" %>
 	  </fieldset>
 
 	  <br />
 	
-	  <fieldset><legend>Review and Accept terms</legend>
+	  <fieldset class="indent10"><legend>Review and Accept terms</legend>
 		<p> You have chosen the premium plan for $30/month. 
 			Your credit card will be charged immediately and you will have access to your new area.</p><br />
 		
-		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %>, 
-			<%= link_to "Privacy Policy", page_path('privacy') %>. If you have questions please 
-			<%= mail_to "billing@heavensbest.us", "email support", :encode => :hex, :subject => "Question about policies" %>.</p><br />
+		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
+			<%= link_to "Privacy Policy", page_path('privacy') %>. <br />
+			If you have questions please <%= mail_to "billing@heavensbest.us", "email support", :encode => :hex, 
+			:subject => "Question about policies" %>.</p><br />
 
 			<% fields_for :account do |f| %>
 			<p><%= f.check_box :accept %>
-				<%= f.label :accept, "I agree to the Terms of Service, Privacy, & Refund policies", :class => "accept" %></p>
+				<%= f.label :accept, "I agree to the Terms of Service & Privacy Policy", :class => "accept" %></p>
 			<% end %>
 
 		  <input type="submit" value="Create my area" />
