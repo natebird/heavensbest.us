@@ -298,7 +298,7 @@ label {
 	padding-right: 50px;
 }
 #homepage {
-	height: 400px;
+	min-height: 400px;
 }
 
 #admin-left-content {
@@ -432,6 +432,10 @@ label {
 .area label {
 	width: 125px;
 	float: left;
+}
+
+.area {
+	font-size: 13px;
 }
 
 .area a {
@@ -605,6 +609,7 @@ div.auto_complete ul strong.highlight {
 #sidebar {
 	margin-top: -7px;
 	margin-bottom: 5px;
+	min-height: 400px;
 }
 
 #sidebar p {
@@ -818,7 +823,7 @@ background-color: #444;}
 	margin-left: 10px;
 }
 
-.special .content {
+.special .text {
 	float: left;
 	width: 190px;
 	height: 110px;

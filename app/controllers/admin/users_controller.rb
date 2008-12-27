@@ -3,10 +3,14 @@ class Admin::UsersController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :create
   include ModelControllerMethods
   layout "operator"
-     
+
+  def index
+    @users = User.find(:all)
+    @inactive_users = User.find(:all, :conditions => [ "state = ?", "pending" ] )
+  end
+    
   def new
     @user = User.new
-    @users = User.find(:all, :conditions => [ "state = ?", "pending" ] )
   end
  
   def edit
@@ -90,7 +94,4 @@ class Admin::UsersController < ApplicationController
     render :action => :new
   end
   
-  def populate_defaults(user)
-    rake db:populate
-  end
 end
