@@ -1,7 +1,7 @@
 
 <div id="welcome">Even the Best offer Specials</div>
 
-<div id="content">
+<div id="homepage">
 	<% if @specials.empty? %>
 		There are currently no specials running. Check back later.
 	<% else %>
@@ -26,5 +26,9 @@
 			</div>
 		<% end %>
 	<% end %>
+</div>
+
+<div id="cards">
+	<%= render :partial => "shared/cards" %>
 </div>
 
