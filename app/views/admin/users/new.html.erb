@@ -2,7 +2,7 @@
 <div id="grid16-top" class="indent10">&nbsp;</div>
 
 <div id="grid16-middle" class="indent10">
-	<h1 class="indent20"><%= @page_title = 'Create User' %></h1>
+	<h1 class="indent20"><%= @page_title = 'Create a User' %></h1>
 
 	<fieldset>
 	<% form_for [:admin, @user] do |f| -%>
@@ -26,22 +26,7 @@
 		<label>&nbsp;</label><%= submit_or_cancel %>
 
 	<% end -%>
-	</fieldset>
-	
-	<br /><br />
-	<% if @users %>
-	<h2 class="indent20">Inactive Applicants</h2>
-	<table>
-		<% for user in @users %>
-	  	<tr>
-			<td><%= user.name %></td>
-			<td><%= mail_to user.email, user.email %></td>
-			<td><%= link_to "Remove", [:admin, @user], :confirm => 'Are you sure?', :method => :delete %></td>
-		</tr>
-		<% end %>
-	</table>
-	<% end %>
-	
+	</fieldset>	
 </div>
 
 <div id="grid16-bottom" class="indent10">&nbsp;</div>
