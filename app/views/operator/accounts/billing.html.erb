@@ -12,18 +12,19 @@
 			<%= pluralize(@subscription.trial_days, 'day', 'days') %>, at which time this area will not be publicly accessible. 
 			To maintain public access to your area, enter your credit card information below.</p><br />
 
-		<p> Your credit card will be charged <b><%= number_to_currency(@subscription.subscription_plan.amount) %>/month</b>
+		<p> The credit card will be charged <b><%= number_to_currency(@subscription.subscription_plan.amount) %>/month</b>
 			beginning <b><%= @subscription.next_renewal_at.to_s(:short_day) %></b>. 
 			A receipt will be sent to <b><%= @account.user.email %></b></p>
 	  <% else %>
-	    Thank you for trying heavensbest.us! Your trial area has expired. 
-		To regain public access to your area, enter your credit card information below. 
-		Your credit card will be charged immediately and you will be billed 
-		<b><%= number_to_currency(@subscription.subscription_plan.amount) %>/month</b> thereafter. A receipt will be sent to 
-		<b><%= @account.user.email %></b>
+	    <p> Thank you for trying heavensbest.us! Your trial area has expired. 
+			To regain public access to your area, enter your credit card information below. 
+			Your credit card will be charged immediately and you will be billed 
+			<b><%= number_to_currency(@subscription.subscription_plan.amount) %>/month</b> thereafter. 
+			A receipt will be sent to <b><%= @account.user.email %></b></p>
 	  <% end %>
 	<% end %>
-
+	
+	  <br />
 	  <label>Subscription</label>
 	  <p><%= @subscription.subscription_plan.name %> Plan <% link_to '(Change)', plan_path %></p><br />
 
