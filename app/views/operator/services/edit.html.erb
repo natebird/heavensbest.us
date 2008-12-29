@@ -5,7 +5,7 @@
 	<%= render :partial => 'sidebar' %>
 	<div id="service">
 		<div id="text" class="grid_5"><%= simple_format(@service.body) %></div>
-		<div class="grid_5"><%= image_tag @service.photo.image.url if @service.photo %> </div>
+		<div class="grid_5"><% image_tag @service.photo.image.url if @service.photo %> </div>
 	</div>
 	<div class="clear"></div>
 		
