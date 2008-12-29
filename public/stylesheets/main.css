@@ -158,6 +158,12 @@ textarea.LV_invalid_field:active {
 	float: left;
 }
 
+.up10 {
+	display: inline;
+	position: relative;
+	top: -10px;
+}
+
 #content form {
 }
 

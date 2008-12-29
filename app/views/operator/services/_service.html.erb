@@ -17,7 +17,7 @@
 	<br />
 		<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
 			[:operator, @account, @service], :confirm => 'Are you sure?', :method => :delete) %>
-	    <%= f.check_box :active %> <%= f.label :active, "Published" %>
+	    <div class="up10"><%= f.select(:active, { "Not Published" => false, "Published" => true } ) %></div>
 
 		<%= link_to(image_tag("/images/buttons/cancel.png", :class => 'button' ), 
 			operator_account_services_path(@account) ) %>
