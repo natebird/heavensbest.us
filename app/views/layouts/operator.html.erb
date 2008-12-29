@@ -24,7 +24,7 @@
 					<% link_to "View", area_path(@account.region.abbreviation.downcase, @account.accountlink) %>
 					<% link_to "Settings", operator_account_path(@account) %>
 				<% end %>
-				<%= select_tag(nil, options_for_select([[nil]] + current_user.accounts.to_dropdown, 
+				<%= select_tag(nil, options_for_select(["No Area Selected"] + current_user.accounts.to_dropdown, 
 					@account ? @account.id : nil), {:class => "grid_4", :onchange => "jumpToArea(this);"} ) %>
 			</div>
 			
