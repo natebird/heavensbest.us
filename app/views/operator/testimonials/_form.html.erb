@@ -15,10 +15,11 @@
 	  
 	<div class="clear"></div>
 	<br />
-	    <span class="onehundred">
-		<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
-		[:operator, @account, @testimonial], :confirm => 'Are you sure?', :method => :delete) %></span>
-	    <span class="onehundred"><%= f.check_box :active %> <%= f.label :active, "Published" %></span>
+		<span class="twohundred">
+			<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
+			[:operator, @account, @testimonial], :confirm => 'Are you sure?', :method => :delete) %>
+			<div class="up10"><%= f.select(:active, { "Not Published" => false, "Published" => true } ) %></div>
+	    </span>
 		
 		<span class="onehundred">
 			<%= link_to(image_tag("/images/buttons/cancel.png", :class => 'button' ), 

@@ -31,14 +31,14 @@ h1. To-do list
 [x] Add exception handler 
 [x] Add 404 and 500 redirects
 [x] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
-[] Add RPM for staging and production environments
-[] Move heavensbest.us dns to new slice
+[] Add RPM for testing
+[x] Move heavensbest.us dns to new slice
 [] setup backup slice in case of server overload.
 [x] On contact page use getsatisfaction template
 [] Perhaps use Exceptional for exceptions - lighthouse for ticket handling?
-[] Verify server can send mail
+[x] Verify server can send mail
 [] set up a CRON job to run script/daily_mailer
-[] check server time settings
+[x] check server time settings
 [] Setup monitoring service (pingdom, exception notifyer.)
 [] Check that analytics is running
 [x] Add favicon (version on heavensbest.biz)
