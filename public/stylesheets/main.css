@@ -914,6 +914,10 @@ div.clearallrule {
 
 
 /* @group Signup */
+#siteseal {
+	position: absolute;
+	left: 425px;
+}
 
 .plan {
     width: 475px;

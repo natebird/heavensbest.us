@@ -17,8 +17,8 @@
 	    <% fields_for :account do |f| %>
     
 		<div><%= f.label :plan_id, 'Plan' %>
-			 <span class="plan"><% render :partial => "plans" %></span>
-			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %></div>
+			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
+			 <%= link_to "Features", page_path('features'), :popup => true %></div>
 
 		<%= render :partial => 'fields', :locals => {:f => f} %>   
 
@@ -34,13 +34,15 @@
 	  <br />
 	
 	  <fieldset class="indent10"><legend>Review and Accept terms</legend>
+		<%= render :partial => "shared/gdseal" %>
+		
 		<p> You have chosen the premium plan for $30/month. 
 			Your credit card will be charged immediately and you will have access to your new area.</p><br />
 		
 		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
 			<%= link_to "Privacy Policy", page_path('privacy') %>. <br />
-			If you have questions please <%= mail_to "billing@heavensbest.us", "email support", :encode => :hex, 
-			:subject => "Question about policies" %>.</p><br />
+			If you have questions please email <%= mail_to "billing@heavensbest.us", "billing@heavensbest.us", 
+			:encode => :hex, :subject => "Question about policies" %>.</p><br />
 
 			<% fields_for :account do |f| %>
 			<p><%= f.check_box :accept %>
@@ -50,6 +52,7 @@
 		  <input type="submit" value="Create my area" />
 	  </fieldset>
   	<% end %>
+
 </div>
 <div id="grid16-bottom" class="indent10"></div>
 <div class="clearfix"></div>
