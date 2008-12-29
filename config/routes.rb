@@ -45,7 +45,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Public Help Rewrites
   map.page 'page/:permalink', :controller => 'pages', :action => 'show'
-  map.support '/support', :controller => 'tickets', :action => 'new'
+  map.support '/support', :controller => 'pages', :action => 'show', :permalink => 'support'
 
   # Account Rewrites
   map.area ":region/:accountlink", :controller => "accounts", :action => "show"
