@@ -1,6 +1,6 @@
 development:
   site_url: 'http://hbapp.local'
-  site_name: "Heaven's Best Local Operators"
+  site_name: "heavensbest.us"
   admin_email: 'development@heavensbest.us'
   from_email: 'support@heavensbest.us'
   gateway: 'brain_tree'
@@ -13,13 +13,13 @@ test:
 
 staging:
   site_url: 'http://staging.heavensbest.us'
-  site_name: "Heaven's Best Local Operators"
+  site_name: "heavensbest.us"
   admin_email: 'staging@heavensbest.us'
   random_query: 'RAND()'
       
 production:
   site_url: 'http://heavensbest.us'
-  site_name: "Heaven's Best Local Operators"
+  site_name: "heavensbest.us"
   admin_email: 'info@heavensbest.us'
   from_email: 'support@heavensbest.us'
   gateway: 'brain_tree'
