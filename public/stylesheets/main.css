@@ -266,17 +266,18 @@ label {
 	height: 160px;
 	width: 965px;
 	background: url(/images/nav/header.png) no-repeat;
+	margin-bottom: 10px;
 }
 
 #contact {
 	color: #fff;
 	position: absolute;
-	right: 10px;
+	right: 0px;
 	top: 15px;
 }
 
 #contact .phone {
-	font: 30px/40px Helvetica, Arial, Verdana, sans-serif;
+	font: 28px/40px Helvetica, Arial, Verdana, sans-serif;
 }
 
 #contact .name {
