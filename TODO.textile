@@ -21,8 +21,9 @@ h1. To-do list
 [x] Design front-page content
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
+[] Check into creating account without payment information
 [x] Contact Braintree about Merchant account setup
-[] Setup Braintree account with Bryan
+[x] Submit Braintree application
 [x] Buy SSL certificate for www.heavensbest.us (Godaddy?)
 [] Setup staging domain on slice (staging.heavensbest.us)
 [x] Setup new slice for www.heavensbest.us domain
