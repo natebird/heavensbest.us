@@ -43,7 +43,7 @@
 </div>
 
 
-<%= render :partial => "shared/analytics" unless ENV['RAILS_ENV'] = 'development' %>	
-<%= render :partial => "shared/getsatisfaction" %>	
+<%= render :partial => "shared/analytics" if !ENV['RAILS_ENV'] = 'development' %>	
+<%= render :partial => "shared/getsatisfaction" if !ENV['RAILS_ENV'] = 'development' %>	
 </body>
 </html>
