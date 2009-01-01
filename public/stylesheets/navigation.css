@@ -147,14 +147,14 @@
 #area_menubar li a.schedule { background-position: -403px 0px; }
 
 /* OVER STATES */
-#area_menubar li a:hover.home { background-position: 0px -35px;}
+#area_menubar li a:hover.home, #area_menubar li a:hover.current.home { background-position: 0px -35px;}
 #area_menubar li a:hover.services { background-position: -103px -35px; }
 #area_menubar li a:hover.specials { background-position: -203px -35px; }
 #area_menubar li a:hover.testimonials { background-position: -303px -35px; }
 #area_menubar li a:hover.schedule { background-position: -403px -35px; }
 
 /* CURRENT STATES */
-#area_menubar li a.current.home { background-position: 0px -70px; }
+#area_menubar li a.current.home { background-position: 0px 0px; }
 #area_menubar li a.current.services { background-position: -103px -70px; }
 #area_menubar li a.current.specials { background-position: -203px -70px; }
 #area_menubar li a.current.testimonials { background-position: -303px -70px; }
