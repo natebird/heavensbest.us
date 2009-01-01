@@ -252,20 +252,20 @@ label {
 	margin-left: 20px;
 	/*width: 129px;*/
 	height: 120px;
-	background: url(/images/logos/HB_small.png) no-repeat;
+	background: url(/images/logos/HB_small-trans.png) no-repeat;
 	z-index: 1;
 }
 
 #header {
 	height: 140px;
-	background: url(/images/nav/admin_header.png) no-repeat;
+	background: url(/images/nav/admin_header-trans.png) no-repeat;
 	position: relative;
 }
 
 #p-header {
 	height: 160px;
 	width: 965px;
-	background: url(/images/nav/header.png) no-repeat;
+	background: url(/images/nav/header-trans.png) no-repeat;
 	margin-bottom: 10px;
 }
 
@@ -350,89 +350,89 @@ label {
 }
 
 .grid_5 .top {
-	background: url(/images/content/280-top.png) no-repeat;
+	background: url(/images/content/280-top-trans.png) no-repeat;
 	height: 15px;
 }
 
 .grid_5 .middle {
-	background: url(/images/content/280-middle.png) repeat-y;
+	background: url(/images/content/280-middle-trans.png) repeat-y;
 }
 
 .grid_5 .bottom {
-	background: url(/images/content/280-bottom.png) no-repeat;
+	background: url(/images/content/280-bottom-trans.png) no-repeat;
 	height: 15px;
 }
 
 #grid8-top {
-	background: url(/images/content/460-top.png) no-repeat;
+	background: url(/images/content/460-top-trans.png) no-repeat;
 	height: 15px;
 }
 
 #grid8-middle {
-	background: url(/images/content/460-middle.png) repeat-y;
+	background: url(/images/content/460-middle-trans.png) repeat-y;
 }
 
 #grid8-bottom {
-	background: url(/images/content/460-bottom.png) no-repeat;
+	background: url(/images/content/460-bottom-trans.png) no-repeat;
 	height: 15px;
 }
 
 #grid12-top {
-	background: url(/images/content/640-top.png) no-repeat;
+	background: url(/images/content/640-top-trans.png) no-repeat;
 	height: 15px;
 	width: 640px;
 }
 
 #grid12-middle {
-	background: url(/images/content/640-middle.png) repeat-y;
+	background: url(/images/content/640-middle-trans.png) repeat-y;
 	width: 640px;
 }
 
 #grid12-bottom {
-	background: url(/images/content/640-bottom.png) no-repeat;
+	background: url(/images/content/640-bottom-trans.png) no-repeat;
 	height: 15px;
 	width: 640px;
 }
 
 #grid14-top {
-	background: url(/images/content/890-top.png) no-repeat;
+	background: url(/images/content/890-top-trans.png) no-repeat;
 	height: 15px;
 }
 
 #grid14-middle {
-	background: url(/images/content/890-middle.png) repeat-y;
+	background: url(/images/content/890-middle-trans.png) repeat-y;
 }
 
 #grid14-bottom {
-	background: url(/images/content/890-bottom.png) no-repeat;
+	background: url(/images/content/890-bottom-trans.png) no-repeat;
 	height: 20px;
 }
 
 #grid16-top {
-	background: url(/images/content/940-top.png) no-repeat;
+	background: url(/images/content/940-top-trans.png) no-repeat;
 	height: 15px;
 }
 
 #grid16-middle {
-	background: url(/images/content/940-middle.png) repeat-y;
+	background: url(/images/content/940-middle-trans.png) repeat-y;
 }
 
 #grid16-bottom {
-	background: url(/images/content/940-bottom.png) no-repeat;
+	background: url(/images/content/940-bottom-trans.png) no-repeat;
 	height: 20px;
 }
 
 #grid16-top-sidebar {
-	background: url(/images/content/940-top-sidebar.png) no-repeat;
+	background: url(/images/content/940-top-sidebar-trans.png) no-repeat;
 	height: 15px;
 }
 
 #grid16-middle-sidebar {
-	background: url(/images/content/940-middle-sidebar.png) repeat-y;
+	background: url(/images/content/940-middle-sidebar-trans.png) repeat-y;
 }
 
 #grid16-bottom-sidebar {
-	background: url(/images/content/940-bottom-sidebar.png) no-repeat;
+	background: url(/images/content/940-bottom-sidebar-trans.png) no-repeat;
 	height: 15px;
 }
 
@@ -556,11 +556,6 @@ div.auto_complete ul strong.highlight {
 	padding-right: 15px;
 	padding-left: 15px;
 	padding-bottom: 10px;
-}
-
-.grid_5 .testimonial .bottom {
-	height: 25px;
-	background: url(/images/content/testimonial-bottom.png) no-repeat;
 }
 
 /* @end */
@@ -712,7 +707,7 @@ background-color: #444;}
 
 .testimonial .bottom {
 	height: 24px;
-	background: url(/images/content/testimonial-bottom.png) no-repeat;
+	background: url(/images/content/testimonial-bottom-trans.png) no-repeat;
 	text-align: center;
 	/*margin-top: -5px;*/
 }
@@ -741,7 +736,7 @@ background-color: #444;}
 
 #tips {
 	height: 160px;
-	background: url(/images/content/tip_box.png) no-repeat;
+	background: url(/images/content/tip_box-trans.png) no-repeat;
 }
 
 #tips h2 {
@@ -788,7 +783,7 @@ background-color: #444;}
 	height: 160px;
 	position: relative;
 	text-align: center;
-	background: url(/images/content/ad.png);
+	background: url(/images/content/ad-trans.png);
 }
 
 .ad h2 {
@@ -814,7 +809,7 @@ background-color: #444;}
 	height: 160px;
 	position: relative;
 	text-align: center;
-	background: url(/images/content/ad.png);
+	background: url(/images/content/ad-trans.png);
 }
 .special .print {
 	padding-top: 5px;
@@ -826,7 +821,7 @@ background-color: #444;}
 	width: 130px;
 	height: 130px;
 	position: relative;
-	background: url(/images/logos/HB_small.png) no-repeat;
+	background: url(/images/logos/HB_small-trans.png) no-repeat;
 	margin-left: 10px;
 	margin-top: -5px;
 }

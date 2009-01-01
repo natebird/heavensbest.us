@@ -6,24 +6,24 @@
 #tab_nav { margin: 0px; padding: 0; }
 #tab_nav li { display: inline; }
 #tab_nav li a { float: left; width: 104px; height: 0; padding-top: 42px; overflow: hidden; }
-#tab_nav li a#login, 
-#tab_nav li a#features { width: 103px; }
-#tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs.png); _background-image: url(/images/nav/operator_tabs.png); background-repeat: no-repeat; }
+#tab_nav li a.login, 
+#tab_nav li a.features { width: 103px; }
+#tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs-trans.png); background-repeat: no-repeat; }
 
  /*BUTTONS*/ 
-#tab_nav li a#login { background-position: 0px 0px; }
-#tab_nav li a#features { background-position: -104px 0px; }
-#tab_nav li a#support { background-position: -208px 0px; }
+#tab_nav li a.login { background-position: 0px 0px; }
+#tab_nav li a.features { background-position: -104px 0px; }
+#tab_nav li a.support { background-position: -208px 0px; }
 
 /* Hover States */
-#tab_nav li a:hover#login { background-position: 0px -41px; }
-#tab_nav li a:hover#features { background-position: -104px -41px; }
-#tab_nav li a:hover#support { background-position: -208px -41px; }
+#tab_nav li a:hover.login { background-position: 0px -41px; }
+#tab_nav li a:hover.features { background-position: -104px -41px; }
+#tab_nav li a:hover.support { background-position: -208px -41px; }
 
 /* Current States */
-#tab_nav li a.current#login { background-position: 0px -41px; }
-#tab_nav li a.current#features { background-position: -104px -41px; }
-#tab_nav li a.current#support { background-position: -208px -41px; }
+#tab_nav li a.current.login { background-position: 0px -41px; }
+#tab_nav li a.current.features { background-position: -104px -41px; }
+#tab_nav li a.current.support { background-position: -208px -41px; }
 
 /* @end */
 
@@ -67,36 +67,6 @@
 }
 
 
-/* Navigation TabNav */
-#navigation_tabnav { width: 600px; margin: 18px auto; position: relative; z-index: 9998; top: 25px; left: 185px; }
-#navigation_tabnav { margin: 0px; padding: 0; }
-#navigation_tabnav li { display: inline; }
-#navigation_tabnav li a { float: left; width: 100px; height: 0; padding-top: 42px; overflow: hidden; }
-#navivation_tabnav li a.home, #navivation_tabnav li a.testimonials { width: 103px; }
-#navigation_tabnav li a, #navigation_tabnav { background-image: url(/images/navigation/navigation.png); _background-image: url(/images/navigation/public_menu.gif); background-repeat: no-repeat; }
-
- /*BUTTONS*/ 
-#navigation_tabnav li a.home { background-position: 0px 0px; }
-#navigation_tabnav li a.services { background-position: -103px 0px; }
-#navigation_tabnav li a.specials { background-position: -203px 0px; }
-#navigation_tabnav li a.evaluations { background-position: -303px 0px; }
-#navigation_tabnav li a.testimonials { background-position: -403px 0px; }
-
-/* OVER STATES */
-#navigation_tabnav li a:hover.home { background-position: 0px 0px; }
-#navigation_tabnav li a:hover.services { background-position: -103px -43px; }
-#navigation_tabnav li a:hover.specials { background-position: -203px -43px; }
-#navigation_tabnav li a:hover.evaluations { background-position: -303px -43px; }
-#navigation_tabnav li a:hover.testimonials { background-position: -403px -43px; }
-
-/* PRESSED STATES */
-#navigation_tabnav li a:current.home { background-position: 0px 0px; }
-#navigation_tabnav li a:current.services { background-position: -103px -86px; }
-#navigation_tabnav li a:current.specials { background-position: -203px -86px; }
-#navigation_tabnav li a:current.evaluations { background-position: -303px -86px; }
-#navigation_tabnav li a:current.testimonials { background-position: -403px -86px; }
-
-
 /* @group Operator Menubar */
 
 #operator_menubar { margin: 18px auto; z-index: 9998; position: relative; top: 40px; }
@@ -104,7 +74,7 @@
 #operator_menubar li { display: inline;}
 #operator_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
 #operator_menubar li a.home, #operator_menubar li a.settings { width: 103px; }
-#operator_menubar li a { background-image: url(/images/nav/operator_menubar.png); _background-image: url(/images/nav/operator_menubar.gif); background-repeat: no-repeat;}
+#operator_menubar li a { background-image: url(/images/nav/operator_menubar-trans.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #operator_menubar li a.home { background-position: 0px 0px; }
@@ -136,7 +106,7 @@
 #home_menubar li { display: inline;}
 #home_menubar li a { float: left; width: 100px; height: 0; padding-top: 35px; overflow: hidden; }
 #home_menubar li a.home, #home_menubar li a.contact { width: 103px; }
-#home_menubar li a { background-image: url(/images/nav/home_menubar.png); _background-image: url(/images/nav/home_menubar.gif); background-repeat: no-repeat;}
+#home_menubar li a { background-image: url(/images/nav/home_menubar-trans.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #home_menubar li a.home { background-position: 0px 0px; }
@@ -168,7 +138,7 @@
 #area_menubar li { display: inline;}
 #area_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
 #area_menubar li a.home, #area_menubar li a.reviews { width: 103px; }
-#area_menubar li a { background-image: url(/images/nav/area_menubar.png); _background-image: url(/images/nav/area_menubar.png); background-repeat: no-repeat;}
+#area_menubar li a { background-image: url(/images/nav/area_menubar-trans.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #area_menubar li a.home { background-position: 0px 0px; }
