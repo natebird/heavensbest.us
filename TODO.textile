@@ -13,40 +13,39 @@ h1. To-do list
 [x] Create tips in Admin section
 [x] Add validations to all forms
 [x] Add hints to all forms
-[] Outline text for Tiffany to write and edit
-[] Write/Format email to be sent on account creation
-[] Write/Format emails to be received on successful billing/area setup
 [x] Write/Format Privacy Policy and ToS
 [x] If an area is a premium area then send email to admin to create email account in Google Apps
 [x] Design front-page content
-[] render final artwork (gifs)
-[] Separate CSS files into progressive system
-[] Check into creating account without payment information
 [x] Contact Braintree about Merchant account setup
 [x] Submit Braintree application
 [x] Buy SSL certificate for www.heavensbest.us (Godaddy?)
-[] Setup staging domain on slice (staging.heavensbest.us)
 [x] Setup new slice for www.heavensbest.us domain
-[] Testing in Firefox
-[] Testing in IE 6 & 7 
 [x] Add exception handler 
 [x] Add 404 and 500 redirects
 [x] Create custom pages for 404 redirects. (Follow www.alistapart.com guide)
-[] Add RPM for testing
+[x] Add RPM for performance testing
 [x] Move heavensbest.us dns to new slice
-[] setup backup slice in case of server overload.
 [x] On contact page use getsatisfaction template
-[] Perhaps use Exceptional for exceptions - lighthouse for ticket handling?
 [x] Verify server can send mail
-[] set up a CRON job to run script/daily_mailer
 [x] check server time settings
+[x] Add favicon (version on heavensbest.biz)
+[x] Add acceptance to Terms and Policies on account creation
+[x] Fix account and service permalink problems
+[] Outline text for Tiffany to write and edit
+[] Write/Format email to be sent on account creation
+[] Write/Format emails to be received on successful billing/area setup
+[] render final artwork (gifs)
+[] Separate CSS files into progressive system
+[] Check into creating account without payment information
+[] Setup staging domain on slice (staging.heavensbest.us)
+[] Testing in Firefox
+[] Testing in IE 6 & 7 
+[] setup backup slice in case of server overload.
+[] set up a CRON job to run script/daily_mailer
 [] Setup monitoring service (pingdom, exception notifyer.)
 [] Check that analytics is running
-[x] Add favicon (version on heavensbest.biz)
 [] Add feature to change welcome text on services, testimonials, homepage, and specials
 [] Add feature to show contact information when clicking on operator name
-[] Add acceptance to Terms and Policies on account creation
-[x] Fix account and service permalink problems
 [] Add Behavior Driven Tests
 [] Add custom meta tags based on services offered
 [] Add custom meta keyword line based on keywords for area

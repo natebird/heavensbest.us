@@ -1,9 +1,9 @@
 <div class="operator_menubar grid_10 prefix_1" id="operator_menubar">
 	<ul>
-		<li><%= link_to "Home", edit_operator_account_path(@account), :class => "home" %></li>
-		<li><%= link_to "Services", operator_account_services_path(@account), :class => "services" %></li>
-		<li><%= link_to "Specials", operator_account_specials_path(@account), :class => "specials" %></li>
-		<li><%= link_to "Testimonials", operator_account_testimonials_path(@account), :class => "testimonials" %></li>
-		<li><%= link_to "Settings", edit_operator_account_path(@account), :class => "settings" %></li>
+		<%= tab_for "", edit_operator_account_path(@account), 'home' %>
+		<%= tab_for "", operator_account_services_path(@account), 'services' %>
+		<%= tab_for "", operator_account_specials_path(@account), 'specials' %>
+		<%= tab_for "", operator_account_testimonials_path(@account), 'testimonials' %>
+		<%= tab_for "", edit_operator_account_path(@account), 'settings' %>
 	</ul>
 </div>

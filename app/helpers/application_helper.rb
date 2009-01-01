@@ -29,7 +29,7 @@ module ApplicationHelper
   def tab_for(link_text, path, extra_class)
     curl = url_for(:controller => request.path_parameters['controller'], :action => request.path_parameters['action'])
     html = ''
-    options = path == curl ? {:class => 'current', :id => extra_class} : {:id => extra_class}
+    options = path == curl ? {:class => "current #{extra_class}"} : {:class => extra_class}
     html << content_tag("li", link_to(link_text, path, options))
   end
 
