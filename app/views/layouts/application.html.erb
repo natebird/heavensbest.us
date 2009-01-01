@@ -33,6 +33,6 @@
 		<%= render :partial => "shared/footer" %>
 	</div>
 
-	<%= render :partial => "shared/analytics" if !ENV['RAILS_ENV'] = 'development' %>
+	<%= render :partial => "shared/analytics" if RAILS_ENV == 'production' %>
 	</body>
 </html>
