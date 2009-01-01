@@ -1,4 +1,13 @@
 
+/* Admin area select list */
+#header select {
+	float: right;
+	position: relative;
+	top:  25px;
+	right: 10px;
+	color: white;
+}
+
 /* @group Tabbed Navigation */
 
 /* Public Tabbed Navigation */
@@ -27,18 +36,7 @@
 
 /* @end */
 
-
-/* Admin area select list */
-#header select {
-	float: right;
-	position: relative;
-	top:  25px;
-	right: 10px;
-	color: white;
-}
-
-
-/* Account navigation*/
+/* @group Account navigation */
 #account_navigation {
 	float: right;
 	position: relative;
@@ -65,6 +63,7 @@
 #account_navigation a:hover {
 	text-decoration: underline;
 }
+/* @end */
 
 
 /* @group Operator Menubar */
@@ -91,11 +90,11 @@
 #operator_menubar li a:hover.settings { background-position: -403px -35px; }
 
 /* PRESSED STATES */
-#operator_menubar li a:current.home { background-position: 0px -70px; }
-#operator_menubar li a:current.services { background-position: -103px -70px; }
-#operator_menubar li a:current.specials { background-position: -203px -70px; }
-#operator_menubar li a:current.testimonials { background-position: -303px -70px; }
-#operator_menubar li a:current.settings { background-position: -403px -70px; }
+#operator_menubar li a.current.home { background-position: 0px -70px; }
+#operator_menubar li a.current.services { background-position: -103px -70px; }
+#operator_menubar li a.current.specials { background-position: -203px -70px; }
+#operator_menubar li a.current.testimonials { background-position: -303px -70px; }
+#operator_menubar li a.current.settings { background-position: -403px -70px; }
 /* @end */
 
 
@@ -123,21 +122,21 @@
 #home_menubar li a:hover.contact { background-position: -403px -35px; }
 
 /* PRESSED STATES */
-#home_menubar li a:current.home { background-position: 0px -70px; }
-#home_menubar li a:current.services { background-position: -103px -70px; }
-#home_menubar li a:current.testimonials { background-position: -203px -70px; }
-#home_menubar li a:current.franchising { background-position: -303px -70px; }
-#home_menubar li a:current.contact { background-position: -403px -70px; }
+#home_menubar li a.current.home { background-position: 0px -70px; }
+#home_menubar li a.current.services { background-position: -103px -70px; }
+#home_menubar li a.current.testimonials { background-position: -203px -70px; }
+#home_menubar li a.current.franchising { background-position: -303px -70px; }
+#home_menubar li a.current.contact { background-position: -403px -70px; }
 
 /* @end */
 
+/* @group Area Menubar */
 
-/* Area Menubar */
 #area_menubar { margin: 18px auto; z-index: 9998; position: absolute; left: 215px; top: 25px; }
 #area_menubar { margin: 0px; padding: 0; }
 #area_menubar li { display: inline;}
 #area_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
-#area_menubar li a.home, #area_menubar li a.reviews { width: 103px; }
+#area_menubar li a.home, #area_menubar li a.schedule { width: 103px; }
 #area_menubar li a { background-image: url(/images/nav/area_menubar-trans.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
@@ -145,25 +144,20 @@
 #area_menubar li a.services { background-position: -103px 0px; }
 #area_menubar li a.specials { background-position: -203px 0px; }
 #area_menubar li a.testimonials { background-position: -303px 0px; }
-#area_menubar li a.reviews { background-position: -403px 0px; }
+#area_menubar li a.schedule { background-position: -403px 0px; }
 
 /* OVER STATES */
 #area_menubar li a:hover.home { background-position: 0px -35px;}
 #area_menubar li a:hover.services { background-position: -103px -35px; }
 #area_menubar li a:hover.specials { background-position: -203px -35px; }
 #area_menubar li a:hover.testimonials { background-position: -303px -35px; }
-#area_menubar li a:hover.reviews { background-position: -403px -35px; }
-
-/* PRESSED STATES */
-#area_menubar li a:current.home { background-position: 0px -70px; }
-#area_menubar li a:current.services { background-position: -103px -70px; }
-#area_menubar li a:current.specials { background-position: -203px -70px; }
-#area_menubar li a:current.testimonials { background-position: -303px -70px; }
-#area_menubar li a:current.reviews { background-position: -403px -70px; }
+#area_menubar li a:hover.schedule { background-position: -403px -35px; }
 
 /* CURRENT STATES */
-/*#area_menubar li a:current.home { background-position: 0px -123px; }
-#area_menubar li a:current.services { background-position: -102px -123px; }
-#area_menubar li a:current.specials { background-position: -197px -123px; }
-#area_menubar li a:current.evaluations { background-position: -292px -123px; }
-#area_menubar li a:current.testimonials { background-position: -387px -123px; }*/
+#area_menubar li a.current.home { background-position: 0px -70px; }
+#area_menubar li a.current.services { background-position: -103px -70px; }
+#area_menubar li a.current.specials { background-position: -203px -70px; }
+#area_menubar li a.current.testimonials { background-position: -303px -70px; }
+#area_menubar li a.current.schedule { background-position: -403px -70px; }
+
+/* @end */

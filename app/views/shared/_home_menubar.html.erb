@@ -1,10 +1,10 @@
 <div class="home_menubar" id="home_menubar">
 	<ul>
 		<li><%= link_to "Home", root_path, :class => 'home' %></li>
-		<li><%= link_to "Services", page_path('services'), :class => 'services' %></li>
-		<li><%= link_to "Testimonials", page_path('testimonials'), :class => 'testimonials' %></li>
+		<li><%= link_to "Services", "/services.html", :class => 'services' %></li>
+		<li><%= link_to "Testimonials", "/testimonials.html", :class => 'testimonials' %></li>
 		<li><%= link_to "Franchises", "http://heavensbest.com/index.php?&pr=Take_Control", 
 				:popup => true, :class => 'franchising' %></li>
-		<li><%= link_to "Contact Us", support_path, :class => 'contact' %></li>
+		<li><%= link_to "Contact Us", page_path('about'), :class => 'contact' %></li>
 	</ul>
 </div>

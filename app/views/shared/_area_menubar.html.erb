@@ -1,9 +1,9 @@
 <div class="area_menubar" id="area_menubar">
 	<ul>
-		<li><%= link_to "Home", area_path(params[:region], params[:accountlink]), :class => 'home' %></li>
-		<li><%= link_to "Services", services_path(params[:region], params[:accountlink]), :class => 'services' %></li>
-		<li><%= link_to "Specials", specials_path(params[:region], params[:accountlink]), :class => 'specials' %></li>
-		<li><%= link_to "Testimonials", testimonials_path(params[:region], params[:accountlink]), :class => 'testimonials' %></li>
-		<li><%= link_to "Reviews", area_path(params[:region], params[:accountlink]), :class => 'reviews' %></li>
+		<%= layout_link_to "", area_path(params[:region], params[:accountlink]), 'home' %>
+		<%= tab_for "", services_path(params[:region], params[:accountlink]), 'services' %>
+		<%= tab_for "", specials_path(params[:region], params[:accountlink]), 'specials' %>
+		<%= tab_for "", testimonials_path(params[:region], params[:accountlink]), 'testimonials' %>
+		<%= tab_for "", area_path(params[:region], params[:accountlink]), 'schedule' %>
 	</ul>
 </div>
