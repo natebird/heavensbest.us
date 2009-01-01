@@ -39,6 +39,3 @@ config.action_mailer.smtp_settings = {
   :user_name      => "natebird@heavensbest.us",
   :password       => "hbatr2yu3" 
 }
-
-require 'rubygems'
-require 'RedCloth'
