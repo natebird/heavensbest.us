@@ -40,4 +40,4 @@ config.action_mailer.smtp_settings = {
   :password       => "hbatr2yu3" 
 }
 
-require 'redcloth'
+require 'RedCloth'
