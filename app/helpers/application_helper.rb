@@ -18,16 +18,16 @@ module ApplicationHelper
   end
 
   # Sets a link with a class of current when the url is matched
-  def layout_link_to(link_text, path)
+  def layout_link_to(link_text, path, extra_class)
     curl = url_for(:controller => request.path_parameters['controller'], :action => request.path_parameters['action'])
     html = ''
-    options = path == curl ? {:class => 'current'} : {}
+    options = path == curl ? {:class => "current #{extra_class}"} : {:class => extra_class}
     html << content_tag("li", link_to(link_text, path, options))
   end
 
   # Creates a list of links and sets the css class to current when the url is matches  
   def tab_for(link_text, path, extra_class)
-    curl = url_for(:controller => request.path_parameters['controller'], :action => request.path_parameters['action'])
+    curl = url_for(:controller => request.path_parameters['controller'])
     html = ''
     options = path == curl ? {:class => "current #{extra_class}"} : {:class => extra_class}
     html << content_tag("li", link_to(link_text, path, options))

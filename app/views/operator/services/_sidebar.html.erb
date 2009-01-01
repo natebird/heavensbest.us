@@ -2,7 +2,7 @@
 	<h1>Services</h1>
 		<ul>
 			<% for service in @services %>
-				<li><%= layout_link_to service.title, edit_operator_account_service_path(@account, service) %></li>
+				<%= layout_link_to service.title, edit_operator_account_service_path(@account, service), "" %>
 			<% end %>
 			<li class="add"><%= link_to 'Add a Service', new_operator_account_service_path(@account) %></li>
 		</ul>
