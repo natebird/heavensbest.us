@@ -25,7 +25,7 @@ class Subscriptions < ActiveRecord::Migration
     t.string   :name
     t.decimal  :amount,               :precision => 10, :scale => 2
     t.integer  :special_limit,        :limit => 11
-    t.integer  :renewal_period,       :limit => 11, :default => 12
+    t.integer  :renewal_period,       :limit => 11, :default => 1
     t.decimal  :setup_amount,         :precision => 10, :scale => 2
     t.integer  :trial_period,         :limit => 11, :default => 1
     t.timestamps

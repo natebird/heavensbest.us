@@ -24,12 +24,12 @@ class Operator::AccountsController < ApplicationController
   end
   
   def create
-    # if @account.needs_payment_info?
+    if @account.needs_payment_info?
       @address.first_name = @creditcard.first_name
       @address.last_name = @creditcard.last_name
       @account.address = @address
       @account.creditcard = @creditcard
-    # end
+    end
     @account.plan = SubscriptionPlan.find(params[:plan_id])
     
     if @account.save
