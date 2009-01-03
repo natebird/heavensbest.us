@@ -15,41 +15,40 @@
 	  <% end %>
   
 	    <% fields_for :account do |f| %>
-    
 		<div><%= f.label :plan_id, 'Plan' %>
 			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
 			 <%= link_to "Features", page_path('features'), :popup => true %></div>
 
-		<%= render :partial => 'fields', :locals => {:f => f} %>   
-
+			<%= render :partial => 'fields', :locals => {:f => f} %>   
 	    <% end %>
 	  </fieldset>
   
 	  <% if @account.needs_payment_info? %>
+	  	  <fieldset class="indent10"><legend>Payment Information</legend>
+		    <%= render :partial => "shared/credit_card_form" %>
+		  </fieldset>
 	  <% end %>
-  	  <fieldset class="indent10"><legend>Payment Information</legend>
-	    <%= render :partial => "shared/credit_card_form" %>
-	  </fieldset>
 
 	  <br />
 	
 	  <fieldset class="indent10"><legend>Review and Accept terms</legend>
-		<%= render :partial => "shared/gdseal" %>
+		<% render :partial => "shared/gdseal" %>
 		
-		<p> You have chosen the premium plan for $30/month. 
-			Your credit card will be charged immediately and you will have access to your new area.</p><br />
+		<p> You have a 30 day free trial. Before your 30 day trial ends you will be asked for 
+			billing information to continue your site. If you decide to continue using heavensbest.us your credit card 
+			will be charged $30/month. You can cancel at anytime.</p><br />
 		
 		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
-			<%= link_to "Privacy Policy", page_path('privacy') %>. <br />
+			<%= link_to "Privacy Policy", page_path('privacy') %> for details. <br />
 			If you have questions please email <%= mail_to "billing@heavensbest.us", "billing@heavensbest.us", 
 			:encode => :hex, :subject => "Question about policies" %>.</p><br />
 
-			<% fields_for :account do |f| %>
-			<p><%= f.check_box :accept %>
-				<%= f.label :accept, "I agree to the Terms of Service & Privacy Policy", :class => "accept" %></p>
-			<% end %>
-
-		  <input type="submit" value="Create my area" />
+		<% fields_for :account do |f| %>
+		<p> <%= f.check_box :accept %>
+			<%= f.label :accept, "I agree to the Terms of Service & Privacy Policy", :class => "accept" %></p>
+		<% end %>
+		
+		<input type="submit" value="Create my area" />
 	  </fieldset>
   	<% end %>
 
