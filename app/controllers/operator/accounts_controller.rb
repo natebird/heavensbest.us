@@ -1,5 +1,6 @@
 class Operator::AccountsController < ApplicationController
   layout "operator"
+  before_filter :authorize
   include ModelControllerMethods
   
   before_filter :load_billing, :only => [ :new, :create, :billing, :paypal ]
@@ -123,6 +124,12 @@ class Operator::AccountsController < ApplicationController
     def load_subscription
       load_object
       @subscription = @account.subscription
+    end
+    
+    def authorize
+      authenticate_or_request_with_http_basic do |username, password|
+        username == "admin" && password == "secret"
+      end
     end
   
 end

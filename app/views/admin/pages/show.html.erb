@@ -1,6 +1,6 @@
 <% title @page.name %>
 
-<%= textilize(@page.content) %>
+<%= simple_format(@page.content) %>
 
 <p id="controls">
   <%= link_to "Edit", edit_admin_page_path(@page) %> |
