@@ -4,6 +4,7 @@
 <div id="frontpage">
 	<div id="intro" class="grid_10 prefix_1">	
 		<p> Heaven's Best is a world leader in carpet and upholstery cleaning. Our unique "dry in one hour" process yields exceptional results and greatly reduces typical carpet cleaning dry times. Heaven's Best carpet cleaning experts can tackle the toughest stains and dirt leaving your carpets clean and renewed.</p>
+		<%= image_tag("/images/content/services/yellowcouch.jpg", :size => "380x252")%>
 	</div>	
 	
 	<div id="search" class="grid_5 ">
@@ -12,7 +13,6 @@
 		
 		<%= text_field_with_auto_complete :account, :locations, { :size => 20 }, :skip_style => true, 
 			:method => :get, :auto_complete => :off, :with => "Object.toQueryString({search: element.value})" %>
-		<% submit_tag "Go" %>
 	</div>
 	
 </div>
