@@ -4,6 +4,6 @@
 		<%= link_to account.name, area_path(account.region.abbreviation.downcase, account.accountlink) %></li>
   <% end -%>
 	<% if !params[:search.blank?] && @accounts.blank? %>
-		<li class="autocomplete_item"><a>No Local Areas Found</a></li>
+		<li class="autocomplete_item"><a>No Areas Found</a></li>
 	<% end%>
 </ul>
