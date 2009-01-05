@@ -53,5 +53,3 @@ class Subscriptions < ActiveRecord::Migration
     drop_table :subscriptions
   end
 end
-
-
