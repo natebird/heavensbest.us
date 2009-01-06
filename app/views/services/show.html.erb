@@ -7,12 +7,15 @@
 	<%= render :partial => 'sidebar' %>
 	<div id="service">
 		<div id="text" class="grid_5"><%= simple_format(@service.body) %></div>
-		<img class="grid_5" src="/images/content/furniture/testcouch.jpg">
+		<div id="image" class="grid_5"><%= image_tag @service.photo.image.url if @service.photo %> </div>
 	</div>
 	<div class="clearfix"></div>
 </div>
 <div id="grid14-bottom" class="indent70">&nbsp;</div>
 
+
 <div id="cards">
 	<%= render :partial => "shared/cards" %>
 </div>
+
+<div class="clear"></div>

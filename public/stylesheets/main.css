@@ -304,9 +304,17 @@ label {
 	width: 300px;
 	padding-left: 50px;
 	padding-right: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
+
 #homepage {
 	min-height: 400px;
+}
+
+#homepage p {
+	font-size: 14px;
+	line-height: 20px;
 }
 
 #admin-left-content {
@@ -327,7 +335,7 @@ label {
 
 .indent70 {
 	position: relative;
-	left: 70px;
+	left: 77px;
 }
 
 .indent10 {
@@ -667,7 +675,7 @@ div.auto_complete ul strong.highlight {
 }
 
 #sidebar h1 {
-	font: bold 18px/20px Helvetica, Arial, sans-serif;
+	font: bold 20px Helvetica, Arial, sans-serif;
 	color: #fff;
 	text-transform: none;
 	padding-top: 10px;
@@ -689,6 +697,8 @@ background-color: #444;}
 /* @group Services */
 #service {
 }
+
+
 #service p {
 	font-size: 14px;
 	line-height: 20px;
@@ -696,6 +706,8 @@ background-color: #444;}
 }
 
 #service h2 {
+	font-size: 18px;
+	line-height: 24px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-weight: bold;
@@ -773,6 +785,8 @@ background-color: #444;}
 
 
 #cards {
+	margin-top: 10px;
+	height: 160px;
 }
 
 #testimonial {
@@ -900,7 +914,7 @@ div.clearallrule {
 
 /* @group Footer */
 #footer {
-	height: 40px;
+	height: 30px;
 	color: #7e7e7e;
 	font-size: 1em;
 	position: relative;

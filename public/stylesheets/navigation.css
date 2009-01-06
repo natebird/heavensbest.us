@@ -132,7 +132,7 @@
 
 /* @group Area Menubar */
 
-#area_menubar { margin: 18px auto; z-index: 9998; position: absolute; left: 215px; top: 25px; }
+#area_menubar { margin: 18px auto; z-index: 9998; position: absolute; left: 275px; top: 25px; }
 #area_menubar { margin: 0px; padding: 0; }
 #area_menubar li { display: inline;}
 #area_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
