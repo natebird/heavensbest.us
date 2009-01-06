@@ -1,14 +1,24 @@
-<% title "Photos", :h1 %>
 
-<table>
-  <% for photo in @photos %>
-    <tr>
-      <td><%= photo.name %> &nbsp;</td>
-      <td><%= link_to "View", [:admin, photo] %> &nbsp;</td>
-      <td><%= link_to "Edit", edit_admin_photo_path(photo) %></td>
-    </tr>
-  <% end %>
-</table>
 
-<br />
-<p><%= link_to 'New photo', new_admin_photo_path %></p>
+<div class="clear"></div>
+<div id="grid16-top" class="indent10">&nbsp;</div>
+
+<div id="grid16-middle" class="indent10">
+	<div class="indent20">
+		<%= title "Photos", :h1 %>
+
+		<table>
+		  <% for photo in @photos %>
+		    <tr>
+		      <td width="175"><%= photo.name %> &nbsp;</td>
+		      <td><%= link_to "View", [:admin, photo] %> &nbsp;</td>
+		      <td><%= link_to "Edit", edit_admin_photo_path(photo) %></td>
+		    </tr>
+		  <% end %>
+		</table>
+		<br />
+		<p><%= link_to "New Photo", new_admin_photo_path %></p>
+	</div>
+</div>
+
+<div id="grid16-bottom" class="indent10">&nbsp;</div>
