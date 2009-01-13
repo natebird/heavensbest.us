@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  # include ExceptionNotifiable
   include HoptoadNotifier::Catcher
   include AuthenticatedSystem
   include RoleRequirementSystem
