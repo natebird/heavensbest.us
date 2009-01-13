@@ -40,7 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # Admin Resources
   map.namespace :admin do |admin|
-    admin.resources :accounts, :users, :pages, :tickets, :tips, :photos
+    admin.resources :users, :pages, :tips, :photos
   end
 
   # Public Help Rewrites
