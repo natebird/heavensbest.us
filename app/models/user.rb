@@ -22,7 +22,6 @@ class User < ActiveRecord::Base
   
   # Relationships
   has_many :accounts
-  has_many :tickets, :through => :accounts
   has_and_belongs_to_many :roles
 
   # prevents a user from submitting a crafted form that bypasses activation
