@@ -19,8 +19,10 @@
 <div><%= f.label :postal_code, "State & Zip Code" %>
 	 <span class="hint">Enter the state and postal code where your business is located.
 		<span class="pointer">&nbsp;</span></span>
-	 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
-	 <%= f.text_field :postal_code, :size => '10px' %></div>
+		<%= f.us_state_select :region_id %>
+		
+	 <% f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
+	 <%= f.text_field :postal_code, :size => '8' %></div>
 
 <div><%= f.label :company %>
 	 <span class="hint">Enter the name of your company. This field is optional.<span class="pointer">&nbsp;</span></span>

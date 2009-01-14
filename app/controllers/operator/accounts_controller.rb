@@ -1,6 +1,6 @@
 class Operator::AccountsController < ApplicationController
   layout "operator"
-  before_filter :authorize
+  # before_filter :authorize
   include ModelControllerMethods
   
   before_filter :load_billing, :only => [ :new, :create, :billing, :paypal ]
@@ -109,7 +109,11 @@ class Operator::AccountsController < ApplicationController
   protected
   
     def scoper
-      current_user.accounts
+      if admin?
+        Account
+      else
+        current_user.accounts
+      end
     end
     
     def redirect_url

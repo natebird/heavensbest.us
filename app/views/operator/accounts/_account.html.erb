@@ -1,7 +1,8 @@
 <div class="grid_5">
 	<div class="top">&nbsp;</div>
 	<div class="middle">
-		<h1><%= account.name %>, <%= account.region.name %></h1>
+		<h1><%= link_to(account.name + ",", edit_operator_account_url(account) ) %>
+			<%= link_to(account.region.name, edit_operator_account_url(account) ) %></h1>
 		<div class="area">
 			<p><label><% if account.subscription.state == 'trial' %>Trial <% end %>Subscription:</label>
 			<b><%= account.subscription.subscription_plan.name %> Plan</b>
@@ -12,12 +13,6 @@
 
 			<p><label>Next billing date: </label>
 			<b><%= account.subscription.next_renewal_at.to_s(:short_day) %></b></p>
-		</div>
-		
-		<div class="area center">
-			<%= link_to('Settings', edit_operator_account_url(account) ) %> |
-			<%= link_to('Subscription', plan_path(account) ) %> |
-			<%= link_to('Billing', billing_path(account) ) %>
 		</div>
 	</div>
 	<div class="bottom"></div>
