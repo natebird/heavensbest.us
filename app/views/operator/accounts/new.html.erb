@@ -17,26 +17,20 @@
 	    <% fields_for :account do |f| %>
 		<div><%= f.label :plan_id, 'Plan' %>
 			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
-			 <%= link_to "Features", page_path('features'), :popup => true %></div>
+			 <% link_to "Features", page_path('features'), :popup => true %></div>
 
 			<%= render :partial => 'fields', :locals => {:f => f} %>   
 	    <% end %>
 	  </fieldset>
   
-	  <% if @account.needs_payment_info? %>
-	  	  <fieldset class="indent10"><legend>Payment Information</legend>
-		    <%= render :partial => "shared/credit_card_form" %>
-		  </fieldset>
-	  <% end %>
-
 	  <br />
 	
 	  <fieldset class="indent10"><legend>Review and Accept terms</legend>
 		<% render :partial => "shared/gdseal" %>
 		
-		<p> You have a 30 day free trial. Before your 30 day trial ends you will be asked for 
-			billing information to continue your site. If you decide to continue using heavensbest.us your credit card 
-			will be charged $30/month. You can cancel at anytime.</p><br />
+		<p> This area qualifies for a 30 day free trial. If you decide to continue using heavensbest.us 
+			you need to send a check made out to Lucidius LLC for as many months as you would like to prepay. 
+			The cost is $30/month for service. A year of service is $360.</p><br />
 		
 		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
 			<%= link_to "Privacy Policy", page_path('privacy') %> for details. <br />

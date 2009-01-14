@@ -14,7 +14,7 @@ class Operator::AccountsController < ApplicationController
   end
   
   def new
-    # @account = current_user.accounts.build
+    @account = current_user.accounts.build
     @account.phones.build
     @account.operators.build
   end
