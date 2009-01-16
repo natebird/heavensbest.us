@@ -56,15 +56,18 @@ namespace :deploy do
     EOF
     
     put db_config, "#{release_path}/config/database.yml"
-    
+  end
+  
+  # desc "Install ruby gems in environment"
+  # task :install_gems  do
+  #   run "rake gems:install"
+  # end
+  
     # desc "Symlink the upload directories"
     # task :before_symlink do
     #   run "mkdir -p #{shared_path}/uploads"
     #   run "ln -s #{shared_path}/uploads #{release_path}/public/uploads"
-    # end
-  
-  end
-    
+    # end    
 
 #############################################################
 #	Passenger
