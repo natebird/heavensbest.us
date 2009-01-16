@@ -31,12 +31,12 @@ h1. To-do list
 [x] Add favicon (version on heavensbest.biz)
 [x] Add acceptance to Terms and Policies on account creation
 [x] Fix account and service permalink problems
-[] Outline text for Tiffany to write and edit
+[x] Outline text for Tiffany to write and edit
 [] Write/Format email to be sent on account creation
 [] Write/Format emails to be received on successful billing/area setup
 [] render final artwork (gifs)
 [] Separate CSS files into progressive system
-[] Check into creating account without payment information
+[x] Check into creating account without payment information
 [] Setup staging domain on slice (staging.heavensbest.us)
 [] Testing in Firefox
 [] Testing in IE 6 & 7 
