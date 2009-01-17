@@ -1,27 +1,33 @@
-<div class="grid_7 prefix_4">
-  <% form_for([:operator, @account, @service]) do |f| %>
-	<%= f.error_messages %>
+<% form_for([:operator, @account, @service]) do |f| %>
 
-	<%= f.hidden_field :account_id, :value => current_account.id %>
+<div class="grid_4">
 
-	<%= f.label :title, {}, :class=> "twohundred" %>
-	<%= f.label :photo_id, "Choose an image", :class=> "twohundred" %>
+	<%= f.hidden_field :account_id, :value => current_account.id %>&nbsp;
 
-	<%= f.text_field :title, :size => 18 %>&nbsp;
-	<%= f.collection_select :photo_id, Photo.all, :id, :name %>
+	<%= f.label :title, "Sidebar name" %>
+	<%= f.text_field :title, :size => 24 %>&nbsp;
 
-	<%= f.label :body, {}, :class=> "twohundred" %>
-	<%= f.text_area :body, :cols => 37, :rows => 10 %>
+	<%= f.label :photo_id, "Choose an image" %>
+	<%= f.collection_select :photo_id, Photo.all, :id, :name %><br /><br />
+	
+	<%= f.select(:active, { "Not Published" => false, "Published" => true } ) %>
+	
+	<br /><br />
+    
+	<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
+		[:operator, @account, @service], :confirm => 'Are you sure?', :method => :delete) %>
 
-	<div class="clear"></div>
-	<br />
-		<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
-			[:operator, @account, @service], :confirm => 'Are you sure?', :method => :delete) %>
-	    <div class="up10"><%= f.select(:active, { "Not Published" => false, "Published" => true } ) %></div>
-
-		<%= link_to(image_tag("/images/buttons/cancel.png", :class => 'button' ), 
-			operator_account_services_path(@account) ) %>
-		<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
-  <% end %>
+	<%= link_to(image_tag("/images/buttons/cancel.png", :class => 'button' ), 
+		operator_account_services_path(@account) ) %>
+		
+	<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
 </div>
-<%= error_messages_for :service %>
+
+<div class="grid_7">
+	<%= f.error_messages %>
+	
+	<%= f.label :body %>
+	<%= f.text_area :body, :cols => 50, :rows => 10 %>
+</div>
+
+<% end %>

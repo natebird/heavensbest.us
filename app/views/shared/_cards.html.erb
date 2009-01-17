@@ -32,7 +32,7 @@
 <div class="grid_5 testimonial">
 	<% if @testimonial %>
 		<div class="top">&nbsp;</div>
-		<div class="middle" style="height:93px">
+		<div class="middle" style="height:99px">
 			<p><%= truncate(@testimonial.quote, :length => 195, :ommission => "…") %>
 			   <%= link_to "Read More", testimonials_path(params[:region], params[:accountlink]) %></p></div>
 		<div class="bottom"></div>
@@ -40,7 +40,7 @@
 		<span class="location">in <%= @testimonial.location %></span>
 	<% else %>
 		<div class="top">&nbsp;</div>
-		<div class="middle" style="height:93px">
+		<div class="middle" style="height:99px">
 			<p>Heaven’s Best did the impossible with the carpet in a rental property that we own. 
 				I really thought we would have to rip them out.	I am so glad I called Heaven’s Best. </p></div>
 		<div class="bottom"></div>
