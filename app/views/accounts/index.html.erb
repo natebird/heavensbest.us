@@ -21,7 +21,7 @@
 	
 	<div id="tips" class="grid_5">
 		<h2><%= Tip.random.title %></h2>
-			<%= simple_format(Tip.random.body) %>
+			<%= textilize(Tip.random.body) %>
 	</div>
 
 	<div id="ad" class="grid_6">

@@ -4,7 +4,7 @@
 <div id="grid16-middle-sidebar" class="indent10">
 	<%= render :partial => 'sidebar' %>
 
-	<div id="text"  class="grid_5 indent-20"><%= simple_format(@tip.body) %></div>
+	<div id="text"  class="grid_5 indent-20"><%= textilize(@tip.body) %></div>
 	<div class="clear"></div>
 </div>
 
