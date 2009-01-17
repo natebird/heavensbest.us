@@ -1,17 +1,17 @@
 <div id="welcome">
 	You've experienced the rest now experience the Best!</div>
 
-<div id="grid14-top" class="indent70">&nbsp;</div>
+<div id="grid16-top-sidebar" class="indent10">&nbsp;</div>
 
-<div id="grid14-middle" class="indent70">
+<div id="grid16-middle-sidebar" class="indent10">
 	<%= render :partial => 'sidebar' %>
-	<div id="service">
-		<div id="text" class="grid_5"><%= textilize(@service.body) %></div>
-		<div id="image" class="grid_5"><%= image_tag @service.photo.image.url if @service.photo %> </div>
+	<div id="service" class="grid_11">
+		<%= textilize(@service.body) %>
+		<%= image_tag @service.photo.image.url if @service.photo %>
 	</div>
 	<div class="clearfix"></div>
 </div>
-<div id="grid14-bottom" class="indent70">&nbsp;</div>
+<div id="grid16-bottom-sidebar" class="indent10">&nbsp;</div>
 
 
 <div id="cards">

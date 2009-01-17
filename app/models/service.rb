@@ -4,6 +4,6 @@ class Service < ActiveRecord::Base
 
   has_permalink :title, :servicelink
   
-  validates_length_of :title, :maximum=>22, :message=>"less than {{count}} or it won't fit"
+  validates_length_of :title, :maximum=>28, :message=>"less than {{count}} or it won't fit"
   validates_presence_of :photo_id, :body, :title
 end
