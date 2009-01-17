@@ -6,7 +6,7 @@
 <div id="grid14-middle" class="indent70">
 	<%= render :partial => 'sidebar' %>
 	<div id="service">
-		<div id="text" class="grid_5"><%= simple_format(@service.body) %></div>
+		<div id="text" class="grid_5"><%= textilize(@service.body) %></div>
 		<div id="image" class="grid_5"><%= image_tag @service.photo.image.url if @service.photo %> </div>
 	</div>
 	<div class="clearfix"></div>

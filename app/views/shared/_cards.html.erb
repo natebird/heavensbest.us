@@ -1,6 +1,6 @@
 <div id="tips" class="grid_5">
 	<h2 class="blur2"><%= Tip.random.title %></h2>
-		<%= simple_format(Tip.random.body) %></div>
+		<%= textilize(Tip.random.body) %></div>
 
 <% if @special %>
 	<div class="grid_6">
@@ -11,7 +11,7 @@
 
 			<div class="text">
 				<div class="title"><%= @special.title %></div>
-				<p><%= simple_format (@special.body) %></p>
+				<p><%= textilize (@special.body) %></p>
 				<div class="phone"><%= number_to_phone(@special.phone) %></div>
 			</div>
 
