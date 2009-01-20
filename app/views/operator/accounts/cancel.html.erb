@@ -9,7 +9,9 @@
 
 <!-- <h2>Another Option</h2>
 <p>Instead of canceling your account, perhaps you'd like to just <%#= link_to "switch your plan", cancel_path %>.</p> -->
-	<p>You are about to cancel your account. This will permanently delete all your billing information. However your area will become “inactive” meaning your data will remain in place if you decide to activate it again. Your login and password will also remain the same.</p>
+	<p>You are about to cancel your account. This will permanently delete all your billing information. However your area will become "inactive" meaning your data will remain in place if you decide to activate it again. Your login and password will also remain the same.</p>
+	<br />
+	<p>An area can be reactivated by emailing <%= mail_to "billing@heavensbest.us" %></p>
 	<br /><br />
 
 	<h2>CANCEL CONFIRMATION</h2>
@@ -20,9 +22,9 @@
 		
 		<br />
 	
-		<%= link_to 'Back', :back %>
-		<%= submit_tag "Cancel Subscription" %>
-		<% image_submit_tag("/images/buttons/cancel_subscription.png", :class => 'button') %>
+		<%= link_to(image_tag("/images/buttons/back.gif"), :back) %>
+		<% submit_tag "Cancel Subscription", :class => 'revert_input' %>
+		<%= image_submit_tag("/images/buttons/cancel_plan.gif", :class => 'button') %>
 	<% end %>
 </div>
 </div>

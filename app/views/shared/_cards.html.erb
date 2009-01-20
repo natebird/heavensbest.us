@@ -5,8 +5,8 @@
 <% if @special %>
 	<div class="grid_6">
 		<div class="special">
-			<div class="print"><% link_to "Printable coupon", special_path(params[:region], 
-				params[:accountlink], @special), :popup => [@special.title, 'height=300,width=600'] %></div>
+			<div class="print"><%= link_to "Printable coupon", specials_path(params[:region], 
+				params[:accountlink]) %></div>
 			<div class="logo">&nbsp;</div>
 
 			<div class="text">
@@ -33,7 +33,7 @@
 	<% if @testimonial %>
 		<div class="top">&nbsp;</div>
 		<div class="middle" style="height:99px">
-			<p><%= truncate(@testimonial.quote, :length => 195, :ommission => "…") %>
+			<p><%= truncate(@testimonial.quote, :length => 190, :ommission => "…") %>
 			   <%= link_to "Read More", testimonials_path(params[:region], params[:accountlink]) %></p></div>
 		<div class="bottom"></div>
 		<span class="name"><%= @testimonial.name %></span>
