@@ -17,7 +17,7 @@
 	    <% fields_for :account do |f| %>
 		<div><%= f.label :plan_id, 'Plan' %>
 			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
-			 <% link_to "Features", page_path('features'), :popup => true %></div>
+			 <%= link_to "Features", page_path('features'), :popup => true %></div>
 
 			<%= render :partial => 'fields', :locals => {:f => f} %>   
 	    <% end %>
@@ -29,9 +29,10 @@
 		<% render :partial => "shared/gdseal" %>
 		
 		<p> This area qualifies for a 30 day free trial. If you decide to continue using heavensbest.us 
-			you need to send a check made out to Lucidius LLC for as many months as you would like to prepay
-			before the end of your free trial on <%= date.today + 30 %>. 
-			The cost is $35/month for service. 6 months of service is $200 ($10 discount). 
+			you need to send payment before the end of your free trial on <%= (Date.today + 30).to_s(:long) %>. 
+			Checks can be made out to "Lucidius LLC" and mailed to 176 Hidden Lake Cir., Canton, GA 30114</p><br />
+			
+		<p> The cost is $35/month for service. Six months of service is $200 ($10 discount). 
 			A year of service is $400 ($20 discount).</p><br />
 		
 		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
