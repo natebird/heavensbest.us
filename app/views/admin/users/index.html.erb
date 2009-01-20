@@ -9,7 +9,7 @@
 	    <tr>
 	      <td width="125"><%= link_to user.name, edit_admin_user_path(user) %></td>
 	      <td width="225"><%= mail_to user.email, user.email %></td>
-	      <td><%= link_to "Areas (#{user.accounts.count})", edit_admin_user_path(user) %>&nbsp;|&nbsp;</td>
+	      <td>Areas (<%= user.accounts.count %>) &nbsp;|&nbsp;</td>
 		  <td><%= link_to 'Remove', [:admin, user], :confirm => 'Are you sure?', :method => :delete %></td>
 	    </tr>
 	  <% end %>
