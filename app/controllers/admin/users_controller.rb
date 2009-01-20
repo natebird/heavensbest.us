@@ -22,7 +22,7 @@ class Admin::UsersController < ApplicationController
     @user = current_user if !admin?
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated service."
+      flash[:notice] = "Successfully updated profile"
       redirect_to :action => 'edit'
     else
       render :action => 'edit'
