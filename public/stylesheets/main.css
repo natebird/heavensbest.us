@@ -789,7 +789,7 @@ background-color: #444;}
 }
 
 #tips ul {
-	padding: 10px 10px 10px 30px;
+	padding: 5px 10px 10px 30px;
 }
 
 #tips li {
@@ -800,7 +800,7 @@ background-color: #444;}
 }
 
 #tips p {
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 16px;
 	padding: 8px 15px;
 }
