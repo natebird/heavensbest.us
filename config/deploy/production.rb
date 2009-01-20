@@ -56,6 +56,7 @@ namespace :deploy do
     EOF
     
     put db_config, "#{release_path}/config/database.yml"
+    run "rake gems:build"
   end
   
   # desc "Install ruby gems in environment"
