@@ -5,4 +5,4 @@ doc/api
 doc/app
 coverage
 db/*.sqlite3
-public/images/services/images
+public/system

@@ -19,7 +19,7 @@ class Account < ActiveRecord::Base
   # validate_on_create :valid_payment_info?
   validate_on_create :valid_subscription?
     
-  # after_create :seed_data
+  after_create :seed_data
   
   # attr_accessible :name, :plan, :plan_start, :creditcard, :address
   attr_accessor :plan, :plan_start, :creditcard, :address
@@ -90,12 +90,12 @@ class Account < ActiveRecord::Base
     end
     
     # # called after validations and after the account has been persisted to the database
-    # def seed_data
-    #   # background it in case it is slow
-    #   spawn do 
-    #     # call the background script you have and pass in the account id
-    #     seed_it_script self.id
-    #   end
-    # end
+    def seed_data
+      # background it in case it is slow
+      # spawn do 
+        # call the background script you have and pass in the account id
+        populate_defaults (self.id)
+      # end
+    end
     
 end
