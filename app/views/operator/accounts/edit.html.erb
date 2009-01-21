@@ -4,20 +4,20 @@
 	<div id="grid12-middle">
 		<h1 class="indent20"><%= @page_title = 'Area Settings' %></h1>
 
-		<fieldset class="indent10"><legend>Basic Information</legend>
+		<fieldset class="indent10"><legend>Area Information</legend>
 			<% form_for @account, :url => { :action => 'update' }, :html => { :method => :put } do |f| %>
 				<%= f.error_messages %>	
 				<% f.label :plan_id, 'Plan' %>
 				<% select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.find(:all), :id, :name ) %>
 				<%= render :partial => 'fields', :locals => {:f => f} %>
-		</fieldset>
-				<span class="prefix_3 grid_4">
-					<% link_to "Cancel Plan", cancel_path %>
+				<span class="prefix_2 grid_4">
+					<%= label_tag "" %>
 					<%= link_to(image_tag("/images/buttons/cancel_plan.gif"), cancel_path ) %>
 			
 					<%= image_submit_tag("/images/buttons/save.png", :class => 'button right' ) %>
 				</span>
 			<% end %>
+		</fieldset>
 		<div class="clear"></div>
 	</div>
 

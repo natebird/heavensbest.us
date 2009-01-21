@@ -13,13 +13,44 @@
 	      <ul><%= @account.errors.full_messages.map {|m| content_tag('li', m)} %></ul>
 	    </div>
 	  <% end %>
-  
+  		
+		<p>Enter the information for your area below. <br/>
+		Instructions will be shown on the right when you select each box.</p><br />
+		
 	    <% fields_for :account do |f| %>
 		<div><%= label :plan_id, 'Plan' %>
 			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
 			 <%= link_to "Features", page_path('features'), :popup => true %></div>
 
-			<%= render :partial => 'fields', :locals => {:f => f} %>   
+			<div><%= f.label :name, "Area name" %>
+				 <%= f.text_field :name, :size => 28 %>
+				 <span class="hint">Enter the name of your AREA. 
+					It is usually the name of the major city where your business operates.
+					<span class="pointer">&nbsp;</span></span></div>
+
+
+			<div><%= f.label :region_id, "State" %>
+				 <span class="hint">Enter the state where your business is located.
+					<span class="pointer">&nbsp;</span></span>		
+				 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.name, p.id ] } ) %> </div>
+
+			<div><%= f.label :email, "Area email" %>
+				 <span class="hint">Enter the email address for this area. You can use your own address or
+					use the address created for your area on the left.
+					<span class="pointer">&nbsp;</span></span>
+				 <%= f.text_field :email, :size => 28, :value => "areaname.state@heavensbest.us" %></div>
+
+			<div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
+			<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %>
+
+			<div id="operators" class="attribute" ><%= f.render_associated_form(@account.operators) %></div>
+			<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
+
+			<div><%= f.label :locations %>
+				 <span class="hint">Enter postal codes and city names that this area services. 
+					Separate locations with a comma. (city1, city2, zip1, etc.)
+					<span class="pointer">&nbsp;</span></span>
+				 <%= f.text_area :locations, :size => "26x6" %></div>
 	    <% end %>
 	  </fieldset>
   
@@ -29,11 +60,10 @@
 		<% render :partial => "shared/gdseal" %>
 		
 		<p> This area qualifies for a 30 day free trial. If you decide to continue using heavensbest.us 
-			you need to send payment before the end of your free trial on <%= (Date.today + 30).to_s(:long) %>. 
-			Checks can be made out to "Lucidius LLC" and mailed to 176 Hidden Lake Cir., Canton, GA 30114</p><br />
+			you need to send payment before the end of your free trial on <%= (Date.today + 30).to_s(:long) %>.
+			The cost is $35/month for service.</p><br />
 			
-		<p> The cost is $35/month for service. Six months of service is $200 ($10 discount). 
-			A year of service is $400 ($20 discount).</p><br />
+		<p> Payment options are available on the area settings page.</p><br />
 		
 		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
 			<%= link_to "Privacy Policy", page_path('privacy') %> for details. <br />

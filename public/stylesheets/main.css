@@ -117,10 +117,18 @@ textarea.LV_invalid_field:active {
     border: 1px solid #0069AA;
     width: 170px;
     padding: 10px 12px;
-    background: #d6e8fe url(/images/signup/pointer.gif) no-repeat -10px 5px;
+    background: #c3dafd url(/images/signup/pointer.gif) no-repeat -10px 5px;
 	display: none;
 	position: absolute;
 	left: 400px;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.hint_wide {
+	width: 325px;
+	left: 425px;
+
 }
 
 .hint .pointer {
@@ -203,6 +211,7 @@ select {
 	padding: 2;
 	background-color: #cc0d0c;
 	color: white;
+	margin-bottom: 10px;
 }
 
 input, textarea {
@@ -210,7 +219,7 @@ input, textarea {
 	background-color: #ffffff;
 	color: #595959;
 	font: 16px Helvetica, Arial, Verdana, sans-serif;
-	/*margin-bottom: 10px;*/
+	margin-bottom: 10px;
 }
  
 input:hover, textarea:hover,

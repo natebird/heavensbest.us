@@ -12,7 +12,7 @@ class Account < ActiveRecord::Base
   has_permalink :name, :accountlink
   
   validates_uniqueness_of :name
-  validates_presence_of :name, :email, :street, :city, :region_id, :postal_code, :locations
+  validates_presence_of :name, :email, :region_id, :locations
   validates_acceptance_of :accept, :on => :create, :message => "must be checked"
 
   validate_on_create :valid_plan?
