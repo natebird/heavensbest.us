@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090121033419) do
+ActiveRecord::Schema.define(:version => 20090121181358) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -134,6 +134,37 @@ ActiveRecord::Schema.define(:version => 20090121033419) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "sitemap_settings", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "xml_location"
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sitemap_static_links", :force => true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.float    "priority"
+    t.string   "frequency"
+    t.string   "section"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sitemap_widgets", :force => true do |t|
+    t.string   "widget_model"
+    t.string   "index_named_route"
+    t.string   "frequency_index"
+    t.string   "frequency_show"
+    t.float    "priority"
+    t.string   "custom_finder"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "specials", :force => true do |t|
     t.string   "title"
