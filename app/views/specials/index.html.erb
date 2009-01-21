@@ -8,8 +8,10 @@
 		<% for special in @specials %>
 			<div class="grid_6 prefix_1">
 				<div class="special">
-					<div class="print"><%= link_to "Printable coupon", special_path(params[:region], 
-						params[:accountlink], special), :popup => [special.title, 'height=300,width=600'] %></div>
+					<div class="print">Printable coupon
+					<% link_to_function("Print this coupon", "javascript:print()") %>
+					<% link_to "Printable coupon", special_path(params[:region], params[:accountlink], special), 
+					:popup => [special.title, 'height=300,width=600'] %></div>
 					<div class="logo">&nbsp;</div>
 
 					<div class="text">
