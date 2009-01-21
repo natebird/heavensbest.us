@@ -15,7 +15,7 @@
 	  <% end %>
   
 	    <% fields_for :account do |f| %>
-		<div><%= f.label :plan_id, 'Plan' %>
+		<div><%= label :plan_id, 'Plan' %>
 			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
 			 <%= link_to "Features", page_path('features'), :popup => true %></div>
 
@@ -40,10 +40,8 @@
 			If you have questions please email <%= mail_to "billing@heavensbest.us", "billing@heavensbest.us", 
 			:encode => :hex, :subject => "Question about policies" %>.</p><br />
 
-		<% fields_for :account do |f| %>
-		<p> <%= f.check_box :accept %>
-			<%= f.label :accept, "I agree to the Terms of Service & Privacy Policy", :class => "accept" %></p>
-		<% end %>
+		<p> <%= check_box_tag :accept %>
+			<%= label_tag :accept, "I agree to the Terms of Service & Privacy Policy", :class => "accept" %></p>
 		
 		<input type="submit" value="Create my area" />
 	  </fieldset>
