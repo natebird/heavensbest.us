@@ -130,10 +130,10 @@ class Operator::AccountsController < ApplicationController
       @subscription = @account.subscription
     end
     
-    def authorize
-      authenticate_or_request_with_http_basic do |username, password|
-        username == "admin" && password == "secret"
-      end
-    end
+    # def authorize
+    #   authenticate_or_request_with_http_basic do |username, password|
+    #     username == "admin" && password == "secret"
+    #   end
+    # end
   
 end

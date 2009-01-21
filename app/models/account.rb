@@ -4,7 +4,7 @@ class Account < ActiveRecord::Base
   has_one :subscription, :dependent => :destroy
   has_many :subscription_payments
   has_many :phones, :attributes => true
-  has_many :operators, :attributes => true, :discard_if => :blank?
+  has_many :operators, :attributes => true, :discard_if => proc { |operator| operator.name.blank? }
   has_many :services
   has_many :specials
   has_many :testimonials
@@ -13,7 +13,7 @@ class Account < ActiveRecord::Base
   
   validates_uniqueness_of :name
   validates_presence_of :name, :email, :street, :city, :region_id, :postal_code, :locations
-  # validates_acceptance_of :accept
+  validates_acceptance_of :accept, :on => :create
 
   validate_on_create :valid_plan?
   # validate_on_create :valid_payment_info?
@@ -22,7 +22,7 @@ class Account < ActiveRecord::Base
   after_create :seed_data
   
   # attr_accessible :name, :plan, :plan_start, :creditcard, :address
-  attr_accessor :plan, :plan_start, :creditcard, :address
+  # attr_protected :plan
   
   acts_as_paranoid
   

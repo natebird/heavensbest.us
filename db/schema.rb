@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081219205931) do
+ActiveRecord::Schema.define(:version => 20090121033419) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20081219205931) do
     t.string   "keywords"
     t.string   "permalink"
     t.string   "accountlink"
+    t.integer  "accept"
   end
 
   create_table "countries", :force => true do |t|
@@ -81,7 +82,7 @@ ActiveRecord::Schema.define(:version => 20081219205931) do
   end
 
   create_table "phones", :force => true do |t|
-    t.integer  "number"
+    t.string   "number"
     t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -98,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20081219205931) do
   create_table "regions", :force => true do |t|
     t.string   "name"
     t.string   "abbreviation"
-    t.integer  "country_id"
+    t.integer  "country_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
