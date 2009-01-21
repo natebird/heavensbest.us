@@ -1,7 +1,7 @@
 class TestimonialsController < ApplicationController
 
   def index
-    @testimonials = current_account.testimonials.find(:all, :conditions => [ "active = ?", "t" ] )
+    @testimonials = current_account.testimonials.find(:all, :conditions => [ "active = ?", true ] )
   end
 
 
