@@ -4,10 +4,7 @@ class UserMailer < ActionMailer::Base
     @subject << 'Invitation to www.HeavensBest.us'
     @body[:url] = "#{APP_CONFIG[:site_url]}/signup/#{user.activation_code}"
   end
-  
-  def activation(user)
-  end
-  
+    
   protected
   
   def setup_email(user)
