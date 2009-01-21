@@ -1,34 +1,29 @@
-<div><%= f.label :name %>
+<div><%= f.label :name, "Area name" %>
 	 <%= f.text_field :name, :size => 28 %>
-	 <span class="hint">Enter the name of your area. This name will be used in many spots in the website and 
-		needs to be unique. It is usually the name of the major city where your business operates.
+	 <span class="hint">Enter the name of your AREA. It is usually the name of the major city where your business operates.
 		<span class="pointer">&nbsp;</span></span></div>
 	
-<div><%= f.label :street %>
+<div><% f.label :street %>
 	<span class="hint">Enter the street address where your business is located. 
 		The second line is optional.<span class="pointer">&nbsp;</span></span>
-	<%= f.text_field :street, :size => 28 %>
-	<%= f.label :street2, "&nbsp;" %>
-	<%= f.text_field :street2, :size => 28 %></div>
+	<% f.text_field :street, :size => 28 %>
+	<% f.label :street2, "&nbsp;" %>
+	<% f.text_field :street2, :size => 28 %></div>
 	
-<div><%= f.label :city, "City" %>
+<div><% f.label :city, "City" %>
 	<span class="hint">Enter the city where your business is located.
 	<span class="pointer">&nbsp;</span></span>
-	<%= f.text_field :city, :size => 28 %></div>
+	<% f.text_field :city, :size => 28 %></div>
 
-<div><%= f.label :postal_code, "State & Zip Code" %>
-	 <span class="hint">Enter the state and postal code where your business is located.
+<div><%= f.label :region_id, "State" %>
+	 <span class="hint">Enter the state where your business is located.
 		<span class="pointer">&nbsp;</span></span>		
-	 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.abbreviation, p.id ] } ) %> 
-	 <%= f.text_field :postal_code, :size => '8' %></div>
+	 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.name, p.id ] } ) %> 
+	 <% f.text_field :postal_code, :size => '8' %></div>
 
-<div><%= f.label :company %>
-	 <span class="hint">Enter the name of your company. This field is optional.<span class="pointer">&nbsp;</span></span>
-	 <%= f.text_field :company, :size => 28 %></div>
-
-<div><%= f.label :email %>
-	 <span class="hint">Enter the email address for this area. If you have a Premium plan you 
-		will receive an email address in the form of areaname.state@heavensbest.us
+<div><%= f.label :email, "Area email" %>
+	 <span class="hint">Enter the email address for this area. If you want to use the email address provided
+		by heavensbest.us it will be in the form of atlanta.ga@heavensbest.us
 		<span class="pointer">&nbsp;</span></span>
 	 <%= f.text_field :email, :size => 28 %></div>
 
@@ -42,7 +37,7 @@
 	 <span class="hint">Enter postal codes and city names that your area services. A specific list will produce 
 		accurate search results. Separate locations with a comma. (city1, city2, zip1, etc.)
 		<span class="pointer">&nbsp;</span></span>
-	 <%= f.text_area :locations, :size => "26x4" %></div>
+	 <%= f.text_area :locations, :size => "26x6" %></div>
 	
 <div><% f.label :keywords %>
 	 <span class="hint">Enter any custom keywords you want to be displayed to search engines.
