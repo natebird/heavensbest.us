@@ -15,11 +15,7 @@ class Operator::TestimonialsController < ApplicationController
 
 
   def new
-    @testimonial = @account.testimonials.new do |t|
-      t.name = "Name"
-      t.location = "City, Region"
-      t.quote = "Quote"
-    end 
+    @testimonial = @account.testimonials.new 
     @testimonials = @account.testimonials.find(:all)
   end
 
