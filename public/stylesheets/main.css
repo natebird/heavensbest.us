@@ -276,6 +276,15 @@ label {
 	margin-bottom: 10px;
 }
 
+.arealink {
+	position: absolute;
+	top: 43px;
+	right: 20px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
 #contact {
 	color: #fff;
 	position: absolute;
