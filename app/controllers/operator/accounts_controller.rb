@@ -41,7 +41,11 @@ class Operator::AccountsController < ApplicationController
   end
   
   def update
-    @account = current_user.accounts.find(params[:id])
+    if admin?
+      @account = Account.find(params[:id])
+    else
+      @account = current_user.accounts.find(params[:id])
+    end
 
     if @account.update_attributes(params[:account])
       flash[:notice] = 'Area was successfully updated.'
