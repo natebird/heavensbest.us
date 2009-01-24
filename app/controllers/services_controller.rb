@@ -10,6 +10,7 @@ class ServicesController < ApplicationController
   def show
     @service = current_account.services.find_by_servicelink(params[:id])
     @services = current_account.services.find(:all, :conditions => [ "active = ?", true ] )
+    @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
   end
 
 end

@@ -3,6 +3,7 @@ class SpecialsController < ApplicationController
   
   def index
     @specials = current_account.specials.find(:all, :conditions => [ "start <= ? and end >= ?", Date.today, Date.today ] )
+    @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
   end
 
 
