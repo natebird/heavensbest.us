@@ -17,7 +17,7 @@
 #tab_nav li a { float: left; width: 104px; height: 0; padding-top: 42px; overflow: hidden; }
 #tab_nav li a.login, 
 #tab_nav li a.features { width: 103px; }
-#tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs-trans.png); background-repeat: no-repeat; }
+#tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs.png); background-repeat: no-repeat; }
 
  /*BUTTONS*/ 
 #tab_nav li a.login { background-position: 0px 0px; }
@@ -73,7 +73,7 @@
 #operator_menubar li { display: inline;}
 #operator_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
 #operator_menubar li a.home, #operator_menubar li a.settings { width: 103px; }
-#operator_menubar li a { background-image: url(/images/nav/operator_menubar-trans.png); background-repeat: no-repeat;}
+#operator_menubar li a { background-image: url(/images/nav/operator_menubar.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #operator_menubar li a.home { background-position: 0px 0px; }
@@ -105,7 +105,7 @@
 #home_menubar li { display: inline;}
 #home_menubar li a { float: left; width: 100px; height: 0; padding-top: 35px; overflow: hidden; }
 #home_menubar li a.home, #home_menubar li a.contact { width: 103px; }
-#home_menubar li a { background-image: url(/images/nav/home_menubar-trans.png); background-repeat: no-repeat;}
+#home_menubar li a { background-image: url(/images/nav/home_menubar.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #home_menubar li a.home { background-position: 0px 0px; }
@@ -137,7 +137,7 @@
 #area_menubar li { display: inline;}
 #area_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
 #area_menubar li a.home, #area_menubar li a.schedule { width: 103px; }
-#area_menubar li a { background-image: url(/images/nav/area_menubar-trans.png); background-repeat: no-repeat;}
+#area_menubar li a { background-image: url(/images/nav/area_menubar.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #area_menubar li a.home { background-position: 0px 0px; }

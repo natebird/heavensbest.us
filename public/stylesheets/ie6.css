@@ -1,19 +1,38 @@
-* html img,
+img, div { behavior: url(/stylesheets/iepngfix.htc) }
 
-* html .png{
+/*#admin_logo { background: url(/images/logos/HB_small.gif) no-repeat;}
+*/
+#header { background: url(/images/nav/admin_header.gif) no-repeat;}
 
-    position:relative;
+#p-header {	background: url(/images/nav/header.gif) no-repeat;}
 
-    behavior: expression((this.runtimeStyle.behavior="none")&&(this.pngSet?this.pngSet=true:(this.nodeName == "IMG" && this.src.toLowerCase().indexOf('.png')>-1?(this.runtimeStyle.backgroundImage = "none",
+#tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs.gif); background-repeat: no-repeat; }
+#operator_menubar li a { background-image: url(/images/nav/operator_menubar.gif); background-repeat: no-repeat;}
+#home_menubar li a { background-image: url(/images/nav/home_menubar.gif); background-repeat: no-repeat;}
+#area_menubar li a { background-image: url(/images/nav/area_menubar.gif); background-repeat: no-repeat;}
 
-        this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')",
+.special .text { width: 180px; }
 
-        this.src = "transparent.gif"):(this.origBg = this.origBg? this.origBg :this.currentStyle.backgroundImage.toString().replace('url("','').replace('")',''),
+.clearfix {height:1px;}
 
-        this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.origBg + "', sizingMethod='crop')",
+#sidebar li { display: inline; }
 
-        this.runtimeStyle.backgroundImage = "none")),this.pngSet=true)
+#homepage, #sidebar { height: 400px;}
 
-    );
+.special .logo { background: url(/images/logos/HB_small.gif) no-repeat; }
 
+#contact { right: 5px; }
+
+#sidebar {
+	margin-left: 7px;
+	width: 221px;
 }
+
+#sidebar h1 {
+	position:relative;
+	padding-top: 10px;
+}
+
+#grid5-middle {	margin-top: -3px; }
+
+select { margin-bottom: 0px;}

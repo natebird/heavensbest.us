@@ -45,6 +45,9 @@ a {
 	text-decoration: none;
 } 
 
+.link {
+	text-decoration: underline;
+}
 
 .attribute {
 	display: inline-block;
@@ -196,9 +199,6 @@ fieldset #login_box li {
 	margin-bottom: 1em;
 }
 
-fieldset #login_box label.remember {
-	float: none;
-}
 
 .select_menu {
 	width: 180px;
@@ -209,7 +209,7 @@ select {
 	font-weight: normal;
 	border: 0 solid white;
 	padding: 2;
-	background-color: #cc0d0c;
+	background-color: #666;
 	color: white;
 	margin-bottom: 10px;
 }
@@ -257,22 +257,21 @@ label {
 #admin_logo {
 	margin-top: 8px;
 	margin-left: 20px;
-	/*width: 129px;*/
 	height: 120px;
-	background: url(/images/logos/HB_small-trans.png) no-repeat;
+	background: url(/images/logos/HB_small.png) no-repeat;
 	z-index: 1;
 }
 
 #header {
 	height: 140px;
-	background: url(/images/nav/admin_header-trans.png) no-repeat;
+	background: url(/images/nav/admin_header.png) no-repeat;
 	position: relative;
 }
 
 #p-header {
 	height: 160px;
 	width: 965px;
-	background: url(/images/nav/header-trans.png) no-repeat;
+	background: url(/images/nav/header.png) no-repeat;
 	margin-bottom: 10px;
 }
 
@@ -374,90 +373,98 @@ label {
 	left: -20px;
 }
 
-.grid_5 .top {
-	background: url(/images/content/280-top-trans.png) no-repeat;
+#grid5-top {
+	background: url(/images/content/280-top.jpg) no-repeat;
 	height: 15px;
 }
 
-.grid_5 .middle {
-	background: url(/images/content/280-middle-trans.png) repeat-y;
+#grid5-middle {
+	background: url(/images/content/280-middle.jpg) repeat-y;
+	height: 100%;
+	margin-top: -3px;
 }
 
-.grid_5 .bottom {
-	background: url(/images/content/280-bottom-trans.png) no-repeat;
+#grid5-bottom {
+	background: url(/images/content/280-bottom.jpg) no-repeat;
 	height: 15px;
 }
 
 #grid8-top {
-	background: url(/images/content/460-top-trans.png) no-repeat;
+	background: url(/images/content/460-top.jpg) no-repeat;
 	height: 15px;
 }
 
 #grid8-middle {
-	background: url(/images/content/460-middle-trans.png) repeat-y;
+	background: url(/images/content/460-middle.jpg) repeat-y;
+	height: 100%;
 }
 
 #grid8-bottom {
-	background: url(/images/content/460-bottom-trans.png) no-repeat;
+	background: url(/images/content/460-bottom.jpg) no-repeat;
 	height: 15px;
 }
 
 #grid12-top {
-	background: url(/images/content/640-top-trans.png) no-repeat;
+	background: url(/images/content/640-top.jpg) no-repeat;
 	height: 15px;
 	width: 640px;
 }
 
 #grid12-middle {
-	background: url(/images/content/640-middle-trans.png) repeat-y;
+	background: url(/images/content/640-middle.jpg) repeat-y;
 	width: 640px;
+	height: 100%;
 }
 
 #grid12-bottom {
-	background: url(/images/content/640-bottom-trans.png) no-repeat;
+	background: url(/images/content/640-bottom.jpg) no-repeat;
 	height: 15px;
 	width: 640px;
 }
 
 #grid14-top {
-	background: url(/images/content/890-top-trans.png) no-repeat;
+	background: url(/images/content/890-top.jpg) no-repeat;
 	height: 15px;
 }
 
 #grid14-middle {
-	background: url(/images/content/890-middle-trans.png) repeat-y;
+	background: url(/images/content/890-middle.jpg) repeat-y;
+	height: 100%;
 }
 
 #grid14-bottom {
-	background: url(/images/content/890-bottom-trans.png) no-repeat;
+	background: url(/images/content/890-bottom.jpg) no-repeat;
 	height: 20px;
+	height: 100%;
 }
 
 #grid16-top {
-	background: url(/images/content/940-top-trans.png) no-repeat;
+	background: url(/images/content/940-top.jpg) no-repeat;
 	height: 15px;
 }
 
 #grid16-middle {
-	background: url(/images/content/940-middle-trans.png) repeat-y;
+	background: url(/images/content/940-middle.jpg) repeat-y;
+	height: 100%;
 }
 
 #grid16-bottom {
-	background: url(/images/content/940-bottom-trans.png) no-repeat;
+	background: url(/images/content/940-bottom.jpg) no-repeat;
 	height: 20px;
 }
 
 #grid16-top-sidebar {
-	background: url(/images/content/940-top-sidebar-trans.png) no-repeat;
+	background: url(/images/content/940-top-sidebar.jpg) no-repeat;
 	height: 15px;
 }
 
 #grid16-middle-sidebar {
-	background: url(/images/content/940-middle-sidebar-trans.png) repeat-y;
+	background: url(/images/content/940-middle-sidebar.jpg) repeat-y;
+	height: 100%;
 }
 
 #grid16-bottom-sidebar {
-	background: url(/images/content/940-bottom-sidebar-trans.png) no-repeat;
+	background: url(/images/content/940-bottom-sidebar.jpg) no-repeat;
 	height: 15px;
 }
 
@@ -652,11 +659,11 @@ div.auto_complete ul strong.highlight {
 
 #sidebar ul {
 	position: relative;
-	display: inline;
+	list-style-type: none;
+	width:auto;
 }
 
 #sidebar li {
-	list-style-type: none;
 	text-align: left;
 	margin-bottom: 1px;
 	margin-top: 1px;
@@ -700,17 +707,17 @@ div.auto_complete ul strong.highlight {
 	text-align: center;
 	background-color: #1479c5;
 	margin-left: -1px;
-	-moz-border-top-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
 	-webkit-border-top-left-radius: 3px;
-
-}	
-.full {
-background-color: #444;}
+}
 
 #sidebar h1 a {
 	color: #fff;
-	/*font: 18px/20px Helvetica, Arial, Verdana, sans-serif;*/
 }
+
+.full {
+background-color: #444;}
+
 /* @end */
 
 
@@ -760,11 +767,10 @@ background-color: #444;}
 	font: 13px/18px Helvetica, Arial, Verdana, sans-serif;
 }
 
-.testimonial .bottom {
+#testimonial-bottom {
 	height: 24px;
-	background: url(/images/content/testimonial-bottom-trans.png) no-repeat;
+	background: url(/images/content/testimonial-bottom.jpg) no-repeat;
 	text-align: center;
-	/*margin-top: -5px;*/
 }
 
 .testimonial .name {
@@ -791,7 +797,7 @@ background-color: #444;}
 
 #tips {
 	height: 160px;
-	background: url(/images/content/tip_box-trans.png) no-repeat;
+	background: url(/images/content/tip_box.jpg) no-repeat;
 }
 
 #tips h2 {
@@ -842,7 +848,7 @@ background-color: #444;}
 	height: 160px;
 	position: relative;
 	text-align: center;
-	background: url(/images/content/ad-trans.png);
+	background: url(/images/content/ad.jpg);
 }
 
 .ad h2 {
@@ -862,13 +868,14 @@ background-color: #444;}
 	width: 340px;
 	position: absolute;
 	bottom: 10px;
+	left: 0px;
 }
 
 .special {
 	height: 160px;
 	position: relative;
 	text-align: center;
-	background: url(/images/content/ad-trans.png);
+	background: url(/images/content/ad.jpg);
 }
 .special .print {
 	padding-top: 5px;
@@ -880,7 +887,7 @@ background-color: #444;}
 	width: 130px;
 	height: 130px;
 	position: relative;
-	background: url(/images/logos/HB_small-trans.png) no-repeat;
+	background: url(/images/logos/HB_small.png) no-repeat;
 	margin-left: 10px;
 	margin-top: -5px;
 }
@@ -890,7 +897,6 @@ background-color: #444;}
 	width: 190px;
 	height: 110px;
 	position: relative;
-	/*padding-right: 10px;*/
 	padding-left: 0;
 }
 
@@ -914,6 +920,7 @@ background-color: #444;}
 	font-weight: bold;
 	position: absolute;
 	bottom: 0px;
+	left: 0px;
 	width: 190px
 ;}
 .special .footer {
@@ -1024,6 +1031,7 @@ legend {
 	font: 16px/18px Helvetica, Arial, Verdana, sans-serif;
 	color: #0069AA;
 	text-transform: none;
+	display: inline;
 }
 
 fieldset {
@@ -1043,7 +1051,7 @@ fieldset p {
 
 fieldset select {
 	/*font-size: 14px;*/
-	background-color: #gray;
+	background-color: #666;
 	/*color: fff;*/
 	/*margin-bottom: .5em;*/
 }
@@ -1060,9 +1068,6 @@ fieldset select {
 	margin: auto;
 }
 
-#login_box .button {
-	float: right;
-}
 
 #login_box .remember {
 	width: 100px;	

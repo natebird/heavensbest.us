@@ -47,10 +47,12 @@ ActionController::Routing::Routes.draw do |map|
   map.page 'page/:permalink', :controller => 'pages', :action => 'show'
   map.support '/support', :controller => 'pages', :action => 'show', :permalink => 'support'
 
-  # Account Rewrites
-  map.area ":region/:accountlink", :controller => "accounts", :action => "show"
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
+  # Account Rewrites
+  map.area ":region/:accountlink", :controller => "accounts", :action => "show"
+  
 end

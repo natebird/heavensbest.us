@@ -88,8 +88,8 @@ EXTSTATIC =
 STATIC_LIB = 
 
 RUBYCOMMONDIR = $(sitedir)$(target_prefix)
-RUBYLIBDIR = /Users/me/Sites/hbapp/vendor/gems/RedCloth-4.1.1/lib$(target_prefix)
-RUBYARCHDIR = /Users/me/Sites/hbapp/vendor/gems/RedCloth-4.1.1/lib$(target_prefix)
+RUBYLIBDIR = /Users/Nate/Sites/hbapp/vendor/gems/RedCloth-4.1.1/lib$(target_prefix)
+RUBYARCHDIR = /Users/Nate/Sites/hbapp/vendor/gems/RedCloth-4.1.1/lib$(target_prefix)
 
 TARGET_SO     = $(DLLIB)
 CLEANLIBS     = $(TARGET).bundle $(TARGET).il? $(TARGET).tds $(TARGET).map
