@@ -6,20 +6,10 @@
 <%= render :partial => @accounts %>
 
 <div class="grid_5">
-	<div class="top">&nbsp;</div>
-	<div class="middle" style="height:154px">
+	<div id="grid5-top">&nbsp;</div>
+	<div id="grid5-middle" class="middle" style="height:144px">
 		<br /><br />
 		<h1><%= link_to('Add an area', new_operator_account_url) %></h1>
-		<h1><% mail_to "support@heavensbest.us", "Add an area", :subject => "Add an area for #{current_user.name}", 
-				:body => "Fill out the basic information about your area below to get started.
-
-Area Information
-
-Area Name:
-Phone number:
-Operator name:
-Locations:
-(city names and zip codes of your area)"%></h1>
 	</div>
-	<div class="bottom"></div>
+	<div id="grid5-bottom"></div>
 </div>

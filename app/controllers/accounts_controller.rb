@@ -4,6 +4,11 @@ class AccountsController < ApplicationController
     @accounts ||= Account.find(:all, :conditions => ['locations LIKE ?', "%#{params[:search]}%"])
   end
   
+  def auto_complete_for_account_locations
+    @accounts = Account.find(:all, :conditions => ['locations LIKE ?', "%#{params[:search]}%"])
+    render :partial => 'accounts'
+  end  
+  
   def show
     @account ||= Account.find_by_accountlink(params[:accountlink])
     @region ||= Region.find_by_abbreviation(params[:region].upcase)

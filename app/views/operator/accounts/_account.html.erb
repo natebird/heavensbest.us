@@ -1,8 +1,8 @@
 <div class="grid_5">
-	<div class="top">&nbsp;</div>
-	<div class="middle">
-		<h1><%= link_to(account.name + ",", edit_operator_account_url(account) ) %>
-			<%= link_to(account.region.name, edit_operator_account_url(account) ) %></h1>
+	<div id="grid5-top">&nbsp;</div>
+	<div id="grid5-middle" class="middle">
+		<h1><%= link_to(account.name + ", ", edit_operator_account_url(account), :class => "link" ) %>
+			<%= link_to(account.region.name, edit_operator_account_url(account), :class => "link" ) %></h1>
 		<div class="area">
 			<p><label><% if account.subscription.state == 'trial' %>Trial <% end %>Subscription:</label>
 			<b><%= account.subscription.subscription_plan.name %> Plan</b>
@@ -18,12 +18,12 @@
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="center">
 			<input type="hidden" name="cmd" value="_s-xclick">
 			<input type="hidden" name="hosted_button_id" value="2660407">
-			<input type="image" src="http://hbapp.local/images/buttons/extend-subscription.gif" class="button" border="0" name="submit" alt="">
+			<input type="image" src="/images/buttons/extend_subscription.gif" class="button" border="0" name="submit" alt="">
 			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 			</form>
 				
 		</div>
 	</div>
-	<div class="bottom"></div>
+	<div id="grid5-bottom"></div>
 	<br />
 </div>

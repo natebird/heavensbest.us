@@ -81,3 +81,4 @@ Rails::Initializer.run do |config|
 end
 
 require 'association_proxy'
+require 'RedCloth'

@@ -10,11 +10,11 @@
 				<% f.label :plan_id, 'Plan' %>
 				<% select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.find(:all), :id, :name ) %>
 				<%= render :partial => 'fields', :locals => {:f => f} %>
-				<span class="prefix_2 grid_4">
+				<span class="prefix_2 grid_5">
 					<%= label_tag "" %>
 					<%= link_to(image_tag("/images/buttons/cancel_plan.gif"), cancel_path ) %>
 			
-					<%= image_submit_tag("/images/buttons/save.png", :class => 'button right' ) %>
+					<%= image_submit_tag("/images/buttons/save.gif", :class => 'button' ) %>
 				</span>
 			</fieldset>		
 		<% end %>

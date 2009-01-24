@@ -5,7 +5,7 @@
 	<%= f.hidden_field :account_id, :value => current_account.id %>
 	
 	<%= f.label :title %><br />
-	<%= f.text_field :title, :size => 30 %><br />
+	<%= f.text_field :title, :style => "width:100%" %><br />
 
 	<%= f.label :start, "Start Date" %><br />
 	<%= f.date_select :start, :order => [:day, :month, :year] %><br />
@@ -14,12 +14,12 @@
 	<%= f.date_select :end, :order => [:day, :month, :year] %><br />
 
 	<%= f.label :phone, "Phone Number" %><br />
-	<%= f.text_field :phone, :size => 30 %><br />
+	<%= f.text_field :phone, :style => "width:100%" %><br />
 
 	<%= f.label :body, "Text" %><br />	
-	<%= f.text_area :body, :cols => 28, :rows => 7 %><br />
+	<%= f.text_area :body, :rows => 7, :style => "width:100%" %><br />
 	
-	<div class="right">
+	<div>
 	<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), [:operator, @account, @special],
 		:confirm => 'Are you sure?', :method => :delete) %>
 	
