@@ -5,6 +5,7 @@ class Operator::SpecialsController < ApplicationController
 
   def index
     @specials = @account.specials.find(:all)
+    redirect_to edit_operator_account_special_path(@account, @specials.first)
   end
 
 

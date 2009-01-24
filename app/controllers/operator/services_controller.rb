@@ -4,6 +4,7 @@ class Operator::ServicesController < ApplicationController
 
   def index
     @services = current_account.services.find(:all)
+    redirect_to edit_operator_account_service_path(@account, @services.first)
   end
   
   def show
