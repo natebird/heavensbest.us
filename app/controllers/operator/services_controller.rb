@@ -38,9 +38,9 @@ class Operator::ServicesController < ApplicationController
     @service = @account.services.find(params[:id])
     if @service.update_attributes(params[:service])
       flash[:notice] = "Successfully updated service."
-      redirect_to :action => 'edit'
+      redirect_to(edit_operator_account_service_url(@account, @service))
     else
-      render :action => 'edit'
+      render :url => 'edit'
     end
   end
   
