@@ -20,10 +20,15 @@ class Admin::UsersController < ApplicationController
   
   def update
     @user = current_user if !admin?
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) if !admin?
+
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated profile"
-      redirect_to :action => 'edit'
+      if admin?
+        redirect_to admin_users_path
+      else
+        redirect_to profile_path(current_user)
+      end
     else
       render :action => 'edit'
     end
