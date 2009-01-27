@@ -38,8 +38,8 @@ h1. To-do list
 [] Separate CSS files into progressive system
 [x] Check into creating account without payment information
 [] Setup staging domain on slice (staging.heavensbest.us)
-[] Testing in Firefox
-[] Testing in IE 6 & 7 
+[x] Testing in Firefox
+[x] Testing in IE 6 & 7 
 [] setup backup slice in case of server overload.
 [] set up a CRON job to run script/daily_mailer
 [] Setup monitoring service (pingdom, exception notifyer.)
