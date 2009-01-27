@@ -1,5 +1,7 @@
 class Operator::ServicesController < ApplicationController
   layout "operator"
+  before_filter :login_required
+  before_filter :current_account
   include ModelControllerMethods
 
   def index
