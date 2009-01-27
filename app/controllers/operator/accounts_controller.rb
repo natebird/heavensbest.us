@@ -1,6 +1,7 @@
 class Operator::AccountsController < ApplicationController
   layout "operator"
-  # before_filter :authorize
+  before_filter :login_required
+  before_filter :current_account
   include ModelControllerMethods
   
   before_filter :load_billing, :only => [ :new, :create, :billing, :paypal ]
