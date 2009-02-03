@@ -4,12 +4,15 @@
 <div id="grid16-middle" class="indent10">
 	<h1 class="indent20"><%= @page_title = 'Active Users' %></h1>
 
-	<table id="users" class="indent20">
+	<table class="users indent20">
 	  <% for user in @users %>
 	    <tr>
 	      <td width="125"><%= link_to user.name, edit_admin_user_path(user) %></td>
+	      <td width="115"><%= number_to_phone(user.phone) %></td>
 	      <td width="225"><%= mail_to user.email, user.email %></td>
-	      <td>Areas (<%= user.accounts.count %>) &nbsp;|&nbsp;</td>
+	      <td><%= select_tag(nil, options_for_select(["#{user.accounts.count} area(s)"] + user.accounts.to_dropdown, 
+			  @account ? @account.id : nil), {:class => "grid_3", :onchange => "jumpToArea(this);"} ) %>
+		  </td>
 		  <td><%= link_to 'Remove', [:admin, user], :confirm => 'Are you sure?', :method => :delete %></td>
 	    </tr>
 	  <% end %>
@@ -18,10 +21,11 @@
 	<br /><br />
 	<% if @users %>
 	<h1 class="indent20">Inactive Applicants</h1>
-	<table class="indent20">
+	<table class="users indent20">
 		<% for user in @inactive_users %>
 	  	<tr>
 			<td width="125px"><%= link_to user.name, edit_admin_user_path(user) %></td>
+	      	<td width="115"><%= number_to_phone(user.phone) %></td>
 			<td width="225px"><%= mail_to user.email, user.email %></td>
 			<td><%= link_to "Remove", [:admin, user], :confirm => 'Are you sure?', :method => :delete %></td>
 		</tr>

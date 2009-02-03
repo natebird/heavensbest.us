@@ -484,29 +484,47 @@ label {
 
 /* @end */
 
+.users {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.users select {
+	margin-bottom: 0px;
+}
+
+.users a {
+	color: #666;
+	font-size: 14px;
+}
 
 /* @group Autocomplete */
-div.auto_complete ul{   
+div.auto_complete {
+	background: #fff;
+}
+
+div.auto_complete ul {
 	margin: 5px;
 	padding: 0px;
-	width: 95%;
+	width: 96%;
 	list-style-type: none;
-}   
-	
-div.auto_complete ul li {   
-	list-style: none; 
+}
+
+div.auto_complete ul li {
 	margin: 2px 0px;
 	padding: 0px;
 	background-color: #0069AA;
-}   
-	
-div.auto_complete ul li.selected {   
-	background-color: #0069AA;
-}   
+}
 
-div.auto_complete ul li a:hover {   
+div.auto_complete ul li.selected {
 	background-color: #1684ca;
-}   
+}
+
+div.auto_complete ul strong.highlight {
+	background-color: #1684ca;
+	margin:0;
+	padding:0;
+}
 
 div.auto_complete ul li a	{
 	display: block;
@@ -514,11 +532,6 @@ div.auto_complete ul li a	{
 	color: white;
 	font: bold 18px Helvetica, Arial, Verdana, sans-serif;
 }
-
-div.auto_complete ul strong.highlight {   
-	margin: 0px;
-	padding: 0px;   
-}   
 /* @end */
  
 /* @group layouts */
