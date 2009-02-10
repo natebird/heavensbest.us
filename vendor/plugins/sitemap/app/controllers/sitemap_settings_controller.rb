@@ -1,5 +1,5 @@
 class SitemapSettingsController < SitemapPluginController
-
+  
   def index
     @settings = SitemapSetting.find(:first) || SitemapSetting.create()
   end
