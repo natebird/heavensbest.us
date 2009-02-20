@@ -11,6 +11,7 @@
 					<li>&nbsp;<%= render :partial => "error" if flash[:error] %></li><br />
 					<li><label for="login">Username</label>
 						<%= text_field_tag 'login', '', :size => 30 %></li><br />
+						<%= javascript_tag "$('login').focus()" %>
 					<li><label for="password">Password</label>
 						<%= password_field_tag 'password', '', :size => 30 %></li><br />
 					<li><%= label_tag "remember_me", "Remember me", :class => "remember" %>
