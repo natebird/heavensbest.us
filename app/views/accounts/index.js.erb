@@ -1,0 +1,8 @@
+<ul>
+  <% for account in @accounts.to_a -%>
+    <li><%= link_to account.name, area_path(account.region.abbreviation.downcase, account.accountlink) %></li>
+  <% end -%>
+	<% if !params[:search.blank?] && @accounts.blank? -%>
+		<li><a>No Areas Found</a></li>
+	<% end -%>
+</ul>
