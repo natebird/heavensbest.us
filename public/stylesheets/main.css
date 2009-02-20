@@ -1,3 +1,5 @@
+/* @override http://hbapp.local/stylesheets/main.css?1235152978 */
+
 
 /*Colors:
 	Dark Blue:	0069AA	(links, input borders,)
@@ -59,6 +61,7 @@ a {
 
 .right {
 	float: right;
+	display: inline;
 }
 
 .center {
@@ -655,6 +658,7 @@ div.auto_complete ul li a	{
 #search input.button {
 	height: 35px;
 	margin-bottom: -9px;
+	display: inline;
 }
 
 /* @end */
