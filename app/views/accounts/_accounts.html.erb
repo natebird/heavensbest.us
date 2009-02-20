@@ -1,9 +1,0 @@
-<ul class="autocomplete_list">
-  <% for account in @accounts.to_a -%>
-    <li class="autocomplete_item">
-		<%= link_to account.name, area_path(account.region.abbreviation.downcase, account.accountlink) %></li>
-  <% end -%>
-	<% if !params[:search.blank?] && @accounts.blank? %>
-		<li class="autocomplete_item"><a>No Areas Found</a></li>
-	<% end%>
-</ul>

@@ -11,10 +11,12 @@
 		<h2>Find Your Local Area</h2>
 		<p><q>Enter your zip code or city name</q></p>
 		
-		<%= text_field_with_auto_complete :account, :locations, { :size => 20 }, :skip_style => true, 
-			:method => :get, :auto_complete => :off, :with => "Object.toQueryString({search: element.value})" %>
+		<% form_tag :action => "area_search" do -%>
+			<%= text_field_with_auto_complete :account, :locations, { :size => 17 }, 
+			:url => formatted_accounts_path(:js), :method => :get, :param_name => 'search', :skip_style => true %>
+			<%= image_submit_tag("/images/buttons/go.gif", :class => 'button' ) %>
+		<% end -%>
 	</div>
-	
 </div>
 
 <div id="cards">

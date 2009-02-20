@@ -1,12 +1,12 @@
 class AccountsController < ApplicationController
   
   def index
-    @accounts ||= Account.find(:all, :conditions => ['locations LIKE ?', "%#{params[:search]}%"])
+    @accounts ||= Account.find(:all, :conditions => ['locations LIKE ?', "%#{params[:search]}%"], :limit => 9)
   end
   
-  def auto_complete_for_account_locations
-    @accounts = Account.find(:all, :conditions => ['locations LIKE ?', "%#{params[:search]}%"])
-    render :partial => 'accounts'
+  def area_search
+    @account = Account.find_by_name(params[:account][:locations])
+    redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
   end  
   
   def show
@@ -15,7 +15,7 @@ class AccountsController < ApplicationController
     @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
     @special ||= current_account.specials.find(:first, :conditions => [ "start <= ? and end >= ?", 
               Date.today, Date.today ], :order => APP_CONFIG[:random_query])
-
+    @services = @account.services.find(:all)
     rescue
       redirect_to :action => "index"
   end
