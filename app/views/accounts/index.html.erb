@@ -16,6 +16,7 @@
 			:url => formatted_accounts_path(:js), :method => :get, :param_name => 'search', :skip_style => true %>
 			<%= image_submit_tag("/images/buttons/go.gif", :class => 'button' ) %>
 		<% end -%>
+		<% if flash[:notice] %><div class='notice' style="margin-right: 50px"><%= flash[:notice] %></div><% end %>
 	</div>
 </div>
 

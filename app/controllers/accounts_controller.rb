@@ -7,6 +7,9 @@ class AccountsController < ApplicationController
   def area_search
     @account = Account.find_by_name(params[:account][:locations])
     redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
+  rescue
+    redirect_to :action => "index"
+    flash[:notice] = "No areas found"    
   end  
   
   def show
