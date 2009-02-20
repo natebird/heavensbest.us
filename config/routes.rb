@@ -23,8 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.plan '/operator/areas/:id/plan', :controller => 'operator/accounts', :action => 'plan'
 
   # Account Resources
-  map.resources :accounts, :collection => { :auto_complete_for_account_locations => :get }, 
-  :has_many => [:services, :specials, :testimonials]
+  map.resources :accounts, :member => { :area_search => :get }, :has_many => [:services, :specials, :testimonials]
   map.resources :services, :specials, :testimonials, :path_prefix => ":region/:accountlink"
                 
 

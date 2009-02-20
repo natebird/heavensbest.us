@@ -42,7 +42,7 @@ h1. To-do list
 [x] Testing in IE 6 & 7 
 [] setup backup slice in case of server overload.
 [] set up a CRON job to run script/daily_mailer
-[] Setup monitoring service (pingdom, exception notifyer.)
+[x] Setup monitoring service (pingdom, exception notifyer.)
 [] Check that analytics is running
 [] Add feature to change welcome text on services, testimonials, homepage, and specials
 [] Add feature to show contact information when clicking on operator name

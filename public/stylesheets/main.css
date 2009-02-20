@@ -641,16 +641,20 @@ div.auto_complete ul li a	{
 }
 
 #search q {
-	/*padding-left: 30px;*/
+	line-height: 14px;
 }
 
 #search h2 {
 	font: 24px/32px Helvetica, Arial, Verdana, sans-serif;
-	/*padding-left: 30px;*/
 }
 
 #search #account_locations {
 	font-size: 24px;
+}
+
+#search input.button {
+	height: 35px;
+	margin-bottom: -9px;
 }
 
 /* @end */
@@ -979,6 +983,11 @@ div.clearallrule {
 	font-size: 1em;
 	position: relative;
 	margin-top: 10px;
+}
+
+#footer a {
+	color: #7e7e7e;
+	text-decoration: underline;
 }
 
 #footer a img {
