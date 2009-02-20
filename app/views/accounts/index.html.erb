@@ -12,7 +12,7 @@
 		<p><q>Enter your zip code or city name</q></p>
 		
 		<% form_tag :action => "area_search" do -%>
-			<%= text_field_with_auto_complete :account, :locations, { :size => 17 }, 
+			<%= text_field_with_auto_complete :account, :locations, { :size => 16 }, 
 			:url => formatted_accounts_path(:js), :method => :get, :param_name => 'search', :skip_style => true %>
 			<%= javascript_tag "$('account_locations').focus()" %>
 			<%= image_submit_tag("/images/buttons/go.gif", :class => 'button' ) %>
