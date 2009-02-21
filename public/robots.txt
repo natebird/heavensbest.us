@@ -5,3 +5,4 @@ User-Agent: *
 Disallow: /tmp/ # these will soon disappear
 Disallow: /login
 Disallow: /operator
+SITEMAP: http://www.heavensbest.us/sitemap.xml

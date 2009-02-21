@@ -44,6 +44,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Public Help Rewrites
   map.page 'page/:permalink', :controller => 'pages', :action => 'show'
+  map.resources :pages
   map.support '/support', :controller => 'pages', :action => 'show', :permalink => 'support'
 
 
