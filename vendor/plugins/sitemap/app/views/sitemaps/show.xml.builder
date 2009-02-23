@@ -35,7 +35,7 @@ xml.urlset "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance", "xsi:sche
   
   widget.find_children.each do |child|
       xml.url do
-        xml.loc         polymorphic_url(child)
+        xml.loc         area_url(child.region.abbreviation.downcase, child.accountlink)
         xml.lastmod     w3c_date(child.updated_at || Time.now)
         xml.changefreq  widget.frequency_show
         xml.priority    widget.priority

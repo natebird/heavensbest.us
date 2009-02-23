@@ -71,7 +71,7 @@
 
 			<ul>
 				<% widget.find_children.each do |child| %>
-				<li><%= link_to child.to_param, child %></li>
+				<li><%= link_to [child, " ", child.region.name], area_path(child.region.abbreviation.downcase, child.accountlink) %></li>
 				<% end %>
 			</ul>
 		</dd>
