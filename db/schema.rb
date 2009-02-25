@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090121181358) do
+ActiveRecord::Schema.define(:version => 20090225181608) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -23,11 +23,12 @@ ActiveRecord::Schema.define(:version => 20090121181358) do
     t.string   "postal_code"
     t.integer  "user_id"
     t.integer  "region_id"
-    t.integer  "country_id",                             :default => 1
+    t.integer  "country_id",                              :default => 1
     t.string   "company"
     t.string   "email"
-    t.string   "locations"
+    t.text     "locations",                :limit => 255
     t.string   "keywords"
+    t.string   "permalink"
     t.string   "accountlink"
     t.integer  "accept"
   end
@@ -98,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20090121181358) do
   create_table "regions", :force => true do |t|
     t.string   "name"
     t.string   "abbreviation"
-    t.integer  "country_id"
+    t.integer  "country_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20090121181358) do
     t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
     t.integer  "photo_id"
     t.string   "servicelink"
   end
@@ -201,7 +203,7 @@ ActiveRecord::Schema.define(:version => 20090121181358) do
     t.string   "name"
     t.decimal  "amount",                       :precision => 10, :scale => 2
     t.integer  "special_limit",  :limit => 11
-    t.integer  "renewal_period", :limit => 11,                                :default => 1
+    t.integer  "renewal_period", :limit => 11,                                :default => 12
     t.decimal  "setup_amount",                 :precision => 10, :scale => 2
     t.integer  "trial_period",   :limit => 11,                                :default => 1
     t.datetime "created_at"
@@ -231,6 +233,16 @@ ActiveRecord::Schema.define(:version => 20090121181358) do
     t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.integer  "account_id"
+    t.string   "status"
+    t.string   "priority"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name",       :default => "NULL"
   end
 
   create_table "tips", :force => true do |t|
