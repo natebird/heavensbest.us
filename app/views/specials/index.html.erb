@@ -3,7 +3,16 @@
 
 <div id="homepage">
 	<% if @specials.empty? %>
-		There are currently no specials running. Check back later.
+	<div class="grid_8 prefix_4 suffix_4">
+		<br /><br /><br /><br />
+
+		<div id="grid8-top"></div>
+		<div id="grid8-middle">
+			<p class="center"> There are currently no specials running. Please check back later.</p>
+		</div>
+		<div id="grid8-bottom"></div>
+		<br /><br /><br /><br />
+	</div>
 	<% else %>
 		<% for special in @specials %>
 			<div class="grid_6 prefix_1">
@@ -36,4 +45,3 @@
 <div id="cards">
 	<%= render :partial => "shared/cards" %>
 </div>
-
