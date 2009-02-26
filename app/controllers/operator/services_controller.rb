@@ -20,6 +20,7 @@ class Operator::ServicesController < ApplicationController
   end
   
   def create
+    @services = @account.services.find(:all)
     @service = @account.services.new(params[:service])
     if @service.save
       flash[:notice] = "Successfully created service."
