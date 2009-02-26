@@ -27,6 +27,7 @@ class Operator::TestimonialsController < ApplicationController
 
 
   def create
+    @testimonials = @account.testimonials.find(:all)
     @testimonial = @account.testimonials.new(params[:testimonial])
 
     if @testimonial.save
