@@ -4,9 +4,9 @@
 		<div class="logo">&nbsp;</div>
 		
 		<div class="text">
-			<div class="title"><%= special.title %></div>
-			<%= special.body %>
-			<div class="phone"><%= number_to_phone(special.phone) %></div>
+			<div class="title"><%= @special.title %></div>
+			<p><%= textilize (@special.body) %></p>
+			<div class="phone"><%= number_to_phone(@special.phone) %></div>
 		</div>
 		
 		<div class="footer">
