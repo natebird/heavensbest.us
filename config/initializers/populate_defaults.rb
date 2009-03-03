@@ -161,18 +161,18 @@ Ask your cleaning technician to demonstrate how the Heaven's Best fabric protect
 
 #### Specials ####
   Special.create do |s|
-    s.title = "10% Off!"
+    s.title = "New Customer Discount"
     s.phone = "8885551234"
-    s.body = "Get 10% off your total bill when you have any 3 or more rooms cleaned!"
+    s.body = "First time customers receive $20 OFF their first cleaning"
     s.start = "2009-01-01"
     s.end = "2009-01-15"
     s.account_id = account
   end
 
   Special.create do |s|
-    s.title = "$25 Off!"
+    s.title = "Vacant Home Discount"
     s.phone = "8885551234"
-    s.body = "Get $25 off when you refer a neighbor or friend!"
+    s.body = "Receive 15% OFF our normal cleaning rates"
     s.start = "2009-01-01"
     s.end = "2009-01-15"
     s.account_id = account
