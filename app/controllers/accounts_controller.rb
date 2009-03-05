@@ -21,6 +21,7 @@ class AccountsController < ApplicationController
     @services = @account.services.find(:all)
     rescue
       redirect_to :action => "index"
+      flash[:notice] = "Area not available"    
   end
 
   protected
