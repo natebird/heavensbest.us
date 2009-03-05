@@ -9,6 +9,9 @@ class TestimonialsController < ApplicationController
   def show
     @testimonial = current_account.testimonials.find(params[:id])
     @services = @account.services.find(:all)
+    rescue
+      redirect_to root_path
+      flash[:notice] = "No areas found"
   end
 
 end
