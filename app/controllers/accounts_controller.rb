@@ -8,8 +8,8 @@ class AccountsController < ApplicationController
     @account = Account.find_by_name(params[:account][:locations])
     redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
   rescue
-    redirect_to :action => "index"
-    flash[:notice] = "No areas found"    
+    redirect_to root_path
+    flash[:notice] = "Area not available"    
   end  
   
   def show
@@ -20,7 +20,7 @@ class AccountsController < ApplicationController
               Date.today, Date.today ], :order => APP_CONFIG[:random_query])
     @services = @account.services.find(:all)
     rescue
-      redirect_to :action => "index"
+      redirect_to root_path
       flash[:notice] = "Area not available"    
   end
 

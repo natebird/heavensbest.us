@@ -6,8 +6,8 @@ class SpecialsController < ApplicationController
     @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
     @services = @account.services.find(:all)
     rescue
-      redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
-      flash[:notice] = "No services found"
+      redirect_to root_path
+      flash[:notice] = "Area not found"
   end
 
 
