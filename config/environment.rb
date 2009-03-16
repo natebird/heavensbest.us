@@ -17,7 +17,7 @@ Rails::Initializer.run do |config|
   # -- all .rb files in that directory are automatically loaded.
   # See Rails::Configuration for more options.
 
-  config.load_paths.unshift "#{RAILS_ROOT}/vendor/gems/RedCloth-4.1.1/ext/redcloth_scan"
+  # config.load_paths.unshift "#{RAILS_ROOT}/vendor/gems/RedCloth-4.1.1/ext/redcloth_scan"
 
   # Skip frameworks you're not going to use. To use Rails without a database
   # you must remove the Active Record framework.
@@ -32,8 +32,9 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem "capistrano-ext", :lib => "capistrano"
   config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com', :version => '2.0.2'
+  config.gem 'newrelic_rpm'
   config.gem 'lockfile'
-  config.gem "RedCloth", :version => ">= 4.1.1", :source => "http://code.whytheluckystiff.net"
+  config.gem 'RedCloth', :version => ">= 4.1.9", :source => "http://code.whytheluckystiff.net"
   
   # These cause problems with irb. Left in for reference
   # config.gem 'rspec-rails', :lib => 'spec/rails', :version => '1.1.11'
