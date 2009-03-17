@@ -17,29 +17,17 @@ Rails::Initializer.run do |config|
   # -- all .rb files in that directory are automatically loaded.
   # See Rails::Configuration for more options.
 
-  # config.load_paths.unshift "#{RAILS_ROOT}/vendor/gems/RedCloth-4.1.1/ext/redcloth_scan"
-
   # Skip frameworks you're not going to use. To use Rails without a database
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
 
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
-  # You have to specify the <tt>:lib</tt> option for libraries, where the Gem name (<em>sqlite3-ruby</em>) differs from the file itself (_sqlite3_)
-  # config.gem "bj"
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  # config.gem "aws-s3", :lib => "aws/s3"
-  # config.gem "capistrano-ext", :lib => "capistrano"
   config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com', :version => '2.0.2'
   config.gem 'newrelic_rpm'
   config.gem 'lockfile'
   config.gem 'RedCloth', :version => ">= 4.1.9", :source => "http://code.whytheluckystiff.net"
-  
-  # These cause problems with irb. Left in for reference
-  # config.gem 'rspec-rails', :lib => 'spec/rails', :version => '1.1.11'
-  # config.gem 'rspec', :lib => 'spec', :version => '1.1.11'
-  
+    
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
