@@ -59,7 +59,7 @@
 		<dd class="pages">
 			<ul>
 				<% links.each do |static_link| %>
-				<li><%= link_to static_link.name, url_for(send(static_link.url.to_sym)) %></li>
+				<li><%= link_to static_link.name, static_link.url %></li>
 				<% end %>
 			</ul>
 		</dd>

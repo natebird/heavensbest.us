@@ -4,16 +4,14 @@
 		<h1><%= link_to(account.name + ", ", edit_operator_account_url(account), :class => "link" ) %>
 			<%= link_to(account.region.name, edit_operator_account_url(account), :class => "link" ) %></h1>
 		<div class="area">
-			<p><label><% if account.subscription.state == 'trial' %>Trial <% end %>Subscription:</label>
-			<b><%= account.subscription.subscription_plan.name %> Plan</b>
-			</p>
+			<label><% if account.subscription.state == 'trial' %>Trial <% end %>Subscription:</label>
+			   <b><%= account.subscription.subscription_plan.name %> Plan</b><br /><br />
 		
-			<p><label>Cost:</label>
-			<b>(<%= number_to_currency(account.subscription.subscription_plan.amount) %>/month)</b></p>
+			<label>Cost:</label>
+			<b>(<%= number_to_currency(account.subscription.subscription_plan.amount) %>/month)</b><br /><br />
 
-			<p><label>Next billing date: </label>
-			<b><%= account.subscription.next_renewal_at.to_s(:short_day) %></b></p>
-			<br />
+			<label>Next billing date: </label>
+			<b><%= account.subscription.next_renewal_at.to_s(:short_day) %></b><br /><br />
 			
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="center">
 			<input type="hidden" name="cmd" value="_s-xclick">
