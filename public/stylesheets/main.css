@@ -485,11 +485,16 @@ label {
 
 .area {
 	font-size: 13px;
+	padding-left: 15px;
 }
 
 .area a {
 	font-size: 14px;
 	line-height: 30px;
+}
+
+.grid_5 h1 {
+	text-align: center;
 }
 
 /* @end */
