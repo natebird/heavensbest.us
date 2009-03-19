@@ -17,7 +17,7 @@
 <div class="container_16">
 
 	<div id="header" class="grid_16">
-		<a href="/"><div id="admin_logo" class="grid_3"></div></a>
+		<div id="admin_logo" class="grid_3"><a href="/">&nbsp;</a></div>
 		<% if logged_in? %> 
 			<% if admin? %>
 				<%= render :partial => "shared/admin_nav" %>
@@ -47,6 +47,6 @@
 
 
 <% render :partial => "shared/analytics" if RAILS_ENV == 'production' %>	
-<%= render :partial => "shared/getsatisfaction" if RAILS_ENV == 'production' %>
+<%= render :partial => "shared/getsatisfaction" %>
 </body>
 </html>

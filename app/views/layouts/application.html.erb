@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<% if @account %>
 		<title>Heaven's Best in <%= @account.name %><%= " | " + request.path_parameters['controller'].capitalize %></title>
-		<meta name="keywords" content="<% for service in @services %><%= service.title.downcase %>, <% end %>rug cleaning, area rug cleaning, carpet cleaning companies, carpet stain removal, wood floor cleaning, leather cleaning, furniture cleaning, couch cleaning, water damage restoration, commercial cleaning, business cleaning, auto interior cleaning, cleaning experts, dry in one hour, dry cleaning, steam cleaning, steam cleaners">
+		<meta name="keywords" content="<% for service in @services %><%= service.title.downcase %>, <% end %>rug cleaning, area rug cleaning, carpet cleaning companies, carpet stain removal, wood floor cleaning, leather cleaning, furniture cleaning, couch cleaning, water damage restoration, commercial cleaning, business cleaning, auto interior cleaning, cleaning experts, dry in one hour, dry cleaning, steam cleaning, steam cleaners" />
 		<meta name="zipcode" content="<%= @account.locations %>" />
 			<% else %>
 			<title><%= "Heaven's Best Carpet and Upholstery Cleaning" %></title>
@@ -29,7 +29,7 @@
 
 	<div id="container" class="container_16">
 		<div id="p-header">	
-			<div class="logo"><a href="/"><div class="logo"></div></a></div>		
+			<div class="logo"><a href="/">&nbsp;</a></div>		
 			<% if @account %>
 				<%= render :partial => "shared/area_menubar" if @account %>
 			
