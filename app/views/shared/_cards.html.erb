@@ -30,19 +30,19 @@
 
 <div class="grid_5 testimonial">
 	<% if @testimonial %>
-		<div id="grid5-top">&nbsp;</div>
-		<div id="grid5-middle" class="middle" style="height:99px">
+		<div class="grid5-top">&nbsp;</div>
+		<div class="grid5-middle" class="middle" style="height:99px">
 			<p><%= truncate(@testimonial.quote, :length => 185, :ommission => "…") %>
 			   <%= link_to "Read More", testimonials_path(params[:region], params[:accountlink]) %></p></div>
-		<div id="testimonial-bottom"></div>
+		<div class="testimonial-bottom"></div>
 		<span class="name"><%= @testimonial.name %></span>
 		<span class="location">in <%= @testimonial.location %></span>
 	<% else %>
-		<div id="grid5-top">&nbsp;</div>
-		<div id="grid5-middle" class="middle" style="height:99px">
+		<div class="grid5-top">&nbsp;</div>
+		<div class="grid5-middle" class="middle" style="height:99px">
 			<p>Heaven’s Best did the impossible with the carpet in a rental property that we own. 
 				I really thought we would have to rip them out.	I am so glad I called Heaven’s Best. </p></div>
-		<div id="testimonial-bottom"></div>
+		<div class="testimonial-bottom"></div>
 		<span class="name">Barbara Grubbs</span>
 		<span class="location">in Tobyhanna, PA</span>
 	<% end %>

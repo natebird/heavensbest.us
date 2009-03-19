@@ -383,18 +383,18 @@ label {
 	left: -20px;
 }
 
-#grid5-top {
+.grid5-top {
 	background: url(/images/content/280-top.jpg) no-repeat;
 	height: 15px;
 }
 
-#grid5-middle {
+.grid5-middle {
 	background: url(/images/content/280-middle.jpg) repeat-y;
 	height: 100%;
 	margin-top: -3px;
 }
 
-#grid5-bottom {
+.grid5-bottom {
 	background: url(/images/content/280-bottom.jpg) no-repeat;
 	height: 15px;
 }
@@ -797,10 +797,15 @@ background-color: #444;}
 	font: 13px/18px Helvetica, Arial, Verdana, sans-serif;
 }
 
-#testimonial-bottom {
+.testimonial-bottom {
 	height: 24px;
 	background: url(/images/content/testimonial-bottom.jpg) no-repeat;
 	text-align: center;
+}
+
+.testimonial p {
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .testimonial .name {
