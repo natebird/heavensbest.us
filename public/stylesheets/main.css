@@ -881,6 +881,10 @@ background-color: #444;}
 	background: url(/images/content/ad.jpg);
 }
 
+.ad a {
+	padding: 0 165px 140px;
+}
+
 .ad h2 {
 	font: bold 24px/30px Helvetica, Arial, Verdana, sans-serif;
 	color: #C32127;
