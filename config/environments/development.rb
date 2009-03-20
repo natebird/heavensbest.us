@@ -24,3 +24,13 @@ REST_AUTH_DIGEST_STRETCHES = 10
 config.after_initialize do
   ActiveMerchant::Billing::Base.gateway_mode = :test
 end
+
+# Gmail SMTP Settings
+ActionMailer::Base.smtp_settings = {
+  :address        => "smtp.gmail.com",
+  :port           => 587,
+  :domain         => "heavensbest.us",
+  :authentication => :plain,
+  :user_name      => "natebird@heavensbest.us",
+  :password       => "hbatr2yu3" 
+}

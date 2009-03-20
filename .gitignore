@@ -1,5 +1,6 @@
 log/*.log
 tmp/**/*
+tmp/restart.txt
 .DS_Store
 doc/api
 doc/app

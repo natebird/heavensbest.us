@@ -28,10 +28,10 @@ REST_AUTH_SITE_KEY = 'f5945d1c74d3502f8a3de8562e5bf21fe3fec887'
 REST_AUTH_DIGEST_STRETCHES = 10
 
 # Gmail SMTP Settings
-config.action_mailer.smtp_settings = {
+ActionMailer::Base.smtp_settings = {
   :address        => "smtp.gmail.com",
   :port           => 587,
-  :domain         => "support@heavensbest.us",
+  :domain         => "heavensbest.us",
   :authentication => :plain,
   :user_name      => "natebird@heavensbest.us",
   :password       => "hbatr2yu3" 
