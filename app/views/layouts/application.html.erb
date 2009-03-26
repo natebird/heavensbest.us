@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<% if @account %>
-		<title><%= h(@page_title + " | " || "") %>Heaven's Best in <%= @account.name %></title>
+		<title><%= h(@page_title + " | " || "") %>Heaven's Best in <%= @account.name %>, <%= @account.region.abbreviation %></title>
 		<meta name="keywords" content="<% for service in @services %><%= h service.title.downcase %>, <% end %>rug cleaning, area rug cleaning, carpet cleaning companies, carpet stain removal, wood floor cleaning, leather cleaning, furniture cleaning, couch cleaning, water damage restoration, commercial cleaning, business cleaning, auto interior cleaning, cleaning experts, dry in one hour, dry cleaning, steam cleaning, steam cleaners" />
 		<meta name="zipcode" content="<%= @account.locations %>" />
 			<% else %>

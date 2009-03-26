@@ -9,7 +9,7 @@
 	<%= render :partial => 'sidebar' %>
 	<div id="service" class="grid_11">
 		<%= textilize(@service.body) %>
-		<%= image_tag @service.photo.image.url if @service.photo %>
+		<%= image_tag(@service.photo.image.url, :alt => @service.photo.name) if @service.photo %>
 	</div>
 	<div class="clearfix"></div>
 </div>
