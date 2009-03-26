@@ -26,7 +26,6 @@ h1 {
 h2 {
 	font: 14px/16px Helvetica, Arial, Verdana, sans-serif;
 	font-weight: bold;
-	color: 0069AA;
 	padding-bottom: 10px;
 }
  
@@ -175,9 +174,6 @@ textarea.LV_invalid_field:active {
 	top: -10px;
 }
 
-#content form {
-}
-
 fieldset label {
 	width: 125px;
 	float: left;
@@ -319,6 +315,11 @@ label {
 	width: 900px;
 	top: 115px;
 	left: 70px;
+}
+
+#welcome h1 {
+	font: 28px/36px Helvetica, Arial, Verdana, sans-serif;
+	color: #595959;	
 }
 
 /* @end */
@@ -604,14 +605,6 @@ div.auto_complete ul li a	{
 
 .page li {
 	padding-bottom: 5px;
-}
-
-#content {
-}
-
-#content h1 {
-	padding-top: 15px;
-	padding-left: 15px;
 }
 
 .middle h1 {
@@ -1103,6 +1096,11 @@ fieldset select {
 	background-color: #666;
 	/*color: fff;*/
 	/*margin-bottom: .5em;*/
+}
+
+#new_password fieldset {
+	width: 380px;
+	margin: auto;
 }
 
 #login_box {
