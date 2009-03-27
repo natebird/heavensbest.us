@@ -46,6 +46,8 @@ ActionController::Routing::Routes.draw do |map|
   map.page 'page/:permalink', :controller => 'pages', :action => 'show'
   map.resources :pages
   map.support '/support', :controller => 'pages', :action => 'show', :permalink => 'support'
+  map.general_services '/services', :controller => 'pages', :action => 'show', :permalink => 'services'
+  map.general_testimonials '/testimonials', :controller => 'pages', :action => 'show', :permalink => 'testimonials'
 
 
   # Install the default routes as the lowest priority.
