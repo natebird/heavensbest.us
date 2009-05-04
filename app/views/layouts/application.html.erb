@@ -33,10 +33,10 @@
 				<%= render :partial => "shared/area_menubar" if @account %>
 			
 				<div id="contact" class="grid_4">
+					<div class="email">Call or <%= mail_to @account.email, "email", :encode => "hex"%> today!</div>
 					<span class="phone">
 						<%= number_to_phone(@account.phones.first.number, :area_code => true) %></span><br />
 					<span class="name"><%= @account.operators.first.name %> </span>
-					<span class="title">(<%= @account.operators.first.title %>) </span>
 				</div>
 				<% else %>
 				<%= render :partial => "shared/home_menubar" %>
