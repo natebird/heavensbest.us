@@ -1,7 +1,9 @@
 <% title @service.title %>
 
 <div id="welcome">
-	You've experienced the rest now experience the Best!</div>
+	You've tried the rest now experience the Best!</div>
+	<%= request.path %>
+	<%= url_for(request.path_parameters['controller']) %>
 
 <div id="grid16-top-sidebar" class="indent10">&nbsp;</div>
 
