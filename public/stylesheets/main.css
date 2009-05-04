@@ -68,6 +68,11 @@ a {
 	display: none;
 }
 
+.codedirection { 
+	unicode-bidi: bidi-override; 
+	direction: rtl; 
+}
+
 /* @end */
 
 /* @group Forms */
@@ -294,7 +299,7 @@ label {
 	color: #fff;
 	position: absolute;
 	right: 0px;
-	top: 15px;
+	top: 10px;
 }
 
 #contact .phone {
@@ -302,12 +307,19 @@ label {
 }
 
 #contact .name {
-	font: 16px/22px Helvetica, Arial, Verdana, sans-serif;
+	font: 18px/22px Helvetica, Arial, Verdana, sans-serif;
 }
 
-#contact .title {
- 	font: 14px/18px Helvetica, Arial, Verdana, sans-serif;
+#contact .email {
+ 	font: 16px/16px Helvetica, Arial, Verdana, sans-serif;
+	color: #fff;
 }
+
+#contact .email a {
+	color: #fff;
+	text-decoration: underline;
+}
+
 #welcome {
 	font: 28px/36px Helvetica, Arial, Verdana, sans-serif;
 	position: absolute;
