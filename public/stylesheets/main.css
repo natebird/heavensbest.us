@@ -338,6 +338,12 @@ label {
 	min-height: 400px;
 }
 
+#homepage h2 {
+	font: 18px/20px Helvetica, Arial, Verdana, sans-serif;
+	color: #C32127;
+	padding-bottom: 15px;
+}
+
 #homepage p {
 	font-size: 14px;
 	line-height: 20px;
