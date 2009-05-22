@@ -707,6 +707,7 @@ div.auto_complete ul li a	{
 	position: relative;
 	list-style-type: none;
 	width:auto;
+	padding-bottom: 3em;
 }
 
 #sidebar li {
