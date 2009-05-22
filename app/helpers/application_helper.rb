@@ -17,21 +17,24 @@ module ApplicationHelper
     messages
   end
 
-  # Sets a link with a class of current when the url is matched
-  def layout_link_to(link_text, path, extra_class)
-    curl = url_for(:controller => request.path_parameters['controller'], :action => request.path_parameters['action'])
+  # Sets a link with a class of current when the @current_tab instance is 
+  # available and matches the link name
+  # This needs to be refactored from 6 lines to 2  
+  def tab_for(tab, link, label=nil)
+    if @current_tab == tab
+      options = {:class => "current #{tab}"} 
+    else
+      options = {:class => tab}
+    end
+    content_tag :li, link_to(tab, link, options)
+  end
+
+  def link_for(link_text, path, extra_class=nil)
     html = ''
-    options = path == curl ? {:class => "current #{extra_class}"} : {:class => extra_class}
+    options = path == request.request_uri ? {:class => "current #{extra_class}"} : {:class => extra_class}
     html << content_tag("li", link_to(link_text, path, options))
   end
 
-  # Creates a list of links and sets the css class to current when the url is matches  
-  def tab_for(link_text, path, extra_class)
-    curl = url_for(:controller => request.path_parameters['controller'])
-    html = ''
-    options = path == curl ? {:class => "current #{extra_class}"} : {:class => extra_class}
-    html << content_tag("li", link_to(link_text, path, options))
-  end
 
   # Render a submit button and cancel link
   def submit_or_cancel(cancel_url = session[:return_to] ? session[:return_to] : url_for(:action => 'index'), label = 'save')

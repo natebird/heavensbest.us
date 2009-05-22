@@ -4,6 +4,11 @@ class Operator::ServicesController < ApplicationController
   before_filter :current_account
   include ModelControllerMethods
 
+  before_filter :set_current_tab
+    def set_current_tab
+      @current_tab = "services"
+    end
+
   def index
     @services = current_account.services.find(:all)
     redirect_to edit_operator_account_service_path(@account, @services.first)

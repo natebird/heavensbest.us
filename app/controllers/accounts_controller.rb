@@ -19,6 +19,7 @@ class AccountsController < ApplicationController
     @special ||= current_account.specials.find(:first, :conditions => [ "start <= ? and end >= ?", 
               Date.today, Date.today ], :order => APP_CONFIG[:random_query])
     @services = @account.services.find(:all)
+    @current_tab = "home"
     rescue
       redirect_to root_path
       flash[:notice] = "Area not available"    

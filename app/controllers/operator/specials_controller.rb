@@ -3,6 +3,11 @@ class Operator::SpecialsController < ApplicationController
   before_filter :login_required
   before_filter :current_account
 
+  before_filter :set_current_tab
+    def set_current_tab
+      @current_tab = "specials"
+    end
+
   def index
     @specials = @account.specials.find(:all)
     redirect_to edit_operator_account_special_path(@account, @specials.first)

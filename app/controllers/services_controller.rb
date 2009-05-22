@@ -16,14 +16,10 @@ class ServicesController < ApplicationController
     @special ||= current_account.specials.find(:first, :conditions => [ "start <= ? and end >= ?", 
               Date.today, Date.today ], :order => APP_CONFIG[:random_query])
     @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
+    @current_tab = "services"
     rescue
       redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
       flash[:notice] = "No services found"
-  end
-  
-  def set_current_tab
-    @current_tab = :services
-  end
-  
+  end  
 
 end

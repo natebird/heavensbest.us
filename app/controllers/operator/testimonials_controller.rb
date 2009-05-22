@@ -3,6 +3,10 @@ class Operator::TestimonialsController < ApplicationController
   before_filter :login_required
   before_filter :current_account
 
+  before_filter :set_current_tab
+    def set_current_tab
+      @current_tab = "testimonials"
+    end
 
   def index
     @testimonials = @account.testimonials.find(:all)

@@ -1,10 +1,9 @@
 <div class="home_menubar" id="home_menubar">
 	<ul>
-		<li><%= link_to "Home", root_path, :class => 'home' %></li>
-		<li><%= link_to "Services", page_path('services'), :class => 'services' %></li>
-		<li><%= link_to "Testimonials", page_path('testimonials'), :class => 'testimonials' %></li>
-		<li><%= link_to "Franchises", "http://bit.ly/y4ZE", 
-				:popup => true, :class => 'franchising' %></li>
-		<li><%= link_to "Contact Us", page_path('about'), :class => 'contact' %></li>
+		<%= tab_for "home", root_path %>
+		<%= tab_for "services", general_services_path %>
+		<%= tab_for "testimonials", general_testimonials_path %>
+		<li><%= link_to "franchises", "http://bit.ly/y4ZE", :popup => true, :class => 'franchising' %></li>
+		<%= tab_for "contact", page_path('about') %>
 	</ul>
 </div>

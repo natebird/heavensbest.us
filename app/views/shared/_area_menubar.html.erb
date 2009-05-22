@@ -1,9 +1,9 @@
 <div class="area_menubar" id="area_menubar">
 	<ul>
-		<%= layout_link_to "home", area_path(params[:region], params[:accountlink]), 'home' %>
-		<%= tab_for "services", services_path(params[:region], params[:accountlink]), 'services' %>
-		<%= tab_for "specials", specials_path(params[:region], params[:accountlink]), 'specials' %>
-		<%= tab_for "testimonials", testimonials_path(params[:region], params[:accountlink]), 'testimonials' %>
-		<% tab_for "", area_path(params[:region], params[:accountlink]), 'schedule' %>
+		<%= tab_for "home", area_path(params[:region], params[:accountlink]) %>
+		<%= tab_for "services", services_path(params[:region], params[:accountlink]) %>
+		<%= tab_for "specials", specials_path(params[:region], params[:accountlink]) %>
+		<%= tab_for "testimonials", testimonials_path(params[:region], params[:accountlink]) %>
+		<% tab_for "estimate", area_path(params[:region], params[:accountlink]) %>
 	</ul>
 </div>
