@@ -9,6 +9,7 @@ class Operator::AccountsController < ApplicationController
   ssl_required :billing, :cancel, :new, :create
   ssl_allowed :plans, :canceled, :paypal
 
+
   def index
     @accounts = current_user.accounts.find(:all)
   end
@@ -22,6 +23,7 @@ class Operator::AccountsController < ApplicationController
   def edit
     @account.phones.build if @account.phones.blank?
     @account.operators.build if @account.operators.blank?
+    @current_tab = "settings"
   end
   
   def create

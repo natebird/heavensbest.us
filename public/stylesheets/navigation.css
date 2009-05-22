@@ -121,8 +121,8 @@
 #home_menubar li a:hover.franchising { background-position: -303px -35px; }
 #home_menubar li a:hover.contact { background-position: -403px -35px; }
 
-/* PRESSED STATES */
-#home_menubar li a.current.home { background-position: 0px -70px; }
+/* Current STATES */
+#home_menubar li a.current.home { background-position: 0px 0px; }
 #home_menubar li a.current.services { background-position: -103px -70px; }
 #home_menubar li a.current.testimonials { background-position: -203px -70px; }
 #home_menubar li a.current.franchising { background-position: -303px -70px; }
