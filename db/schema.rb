@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090225181608) do
+ActiveRecord::Schema.define(:version => 20090522215122) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20090225181608) do
     t.string   "permalink"
     t.string   "accountlink"
     t.integer  "accept"
+    t.string   "ganalytics"
   end
 
   create_table "countries", :force => true do |t|
