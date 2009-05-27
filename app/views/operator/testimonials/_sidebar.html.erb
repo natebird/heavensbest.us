@@ -2,7 +2,7 @@
 	<h1><%= link_to 'Testimonials', operator_account_testimonials_path(@account) %></h1>
 		<ul>
 			<% for testimonial in @testimonials %>
-				<li><%= tab_for testimonial.name, edit_operator_account_testimonial_path(@account, testimonial), "" %></li>
+			  <%= textilize(link_for testimonial.name, edit_operator_account_testimonial_path(@account, testimonial), "") %>
 			<% end %>
 			<li class="add"><%= link_to 'Add a testimonial', new_operator_account_testimonial_path(@account) %></li>
 		</ul>
