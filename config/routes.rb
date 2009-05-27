@@ -25,7 +25,7 @@ ActionController::Routing::Routes.draw do |map|
   # Account Resources
   map.resources :accounts, :member => { :area_search => :get }, :has_many => [:services, :specials, :testimonials]
   map.resources :services, :specials, :testimonials, :path_prefix => ":region/:accountlink"
-                
+  map.locations 'locations', :controller => "accounts", :action => "locations"              
 
   # Operator Resources
   map.operator '/operator', :controller => 'sessions', :action => 'new'

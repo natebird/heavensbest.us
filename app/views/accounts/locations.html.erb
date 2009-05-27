@@ -1,0 +1,59 @@
+<% title "Locations" %>
+
+<div id="welcome"><h1>Find Your Local Heaven's Best Operator</h1></div>
+
+<div id="frontpage">
+	<div id="locations" class="grid_10 prefix_1">
+		<h2>Currently serving the following areas</h2>
+			
+		<% @account_regions.sort.each do |region, accounts| %>
+		  <div class="region">
+			<h3><%= region %></h3>
+			<ul>
+			<% for account in accounts %>
+			  <li class="area"><%= link_to account.name, area_path(account.region.abbreviation.downcase, account.accountlink) %></li>
+			<% end %>
+			</ul>
+		  </div>
+		<% end %>
+	</div>	
+	
+	<div id="search" class="grid_5">
+		<h2>Quick Finder</h2>
+		<p><q>Enter your zip code or city name</q></p>
+		
+		<% form_tag :action => "area_search" do -%>
+			<%= text_field_with_auto_complete :account, :locations, { :size => 19 }, 
+			:url => formatted_accounts_path(:js), :method => :get, :param_name => 'search', :skip_style => true %>
+			<%= javascript_tag "$('account_locations').focus()" %>
+			<% image_submit_tag("/images/buttons/go.gif", :class => 'button' ) %>
+		<% end -%>
+		<% if flash[:notice] %><div class='notice' style="margin-right: 50px"><%= flash[:notice] %></div><% end %>
+	</div>
+
+</div>
+<div class="clear"></div>
+
+<div id="cards">
+	
+	<div id="tips" class="grid_5">
+		<h2><%= Tip.random.title %></h2>
+			<%= textilize(Tip.random.body) %>
+	</div>
+
+	<div id="ad" class="grid_6">
+		<%= render :partial => "shared/ad" %>
+	</div>
+	
+	<div class="grid_5 testimonial">
+			<div class="grid5-top">&nbsp;</div>
+			<div class="grid5-middle" class="middle" style="height:100px">
+				<p>We tried several carpet cleaning companies and were always unsatisfied with the results. Heaven’s Best is prompt, professional, and courteous. We are completely satisfied with their services.</p>
+			</div>
+			<div class="testimonial-bottom"></div>
+			<span class="name">Teresa Ardoin</span>
+			<span class="location">in Port Aransas, TX</span>
+	</div>
+
+</div>
+<div class="clear"></div>

@@ -11,6 +11,12 @@ class AccountsController < ApplicationController
     redirect_to root_path
     flash[:notice] = "Area not available"    
   end  
+
+  def locations
+    # @accounts ||= Account.find(:all, :group => "region_id")
+    @accounts = Account.find(:all)
+    @account_regions = @accounts.group_by { |a| a.region.name }
+  end
   
   def show
     @account ||= Account.find_by_accountlink(params[:accountlink])

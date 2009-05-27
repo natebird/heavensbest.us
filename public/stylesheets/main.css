@@ -688,6 +688,31 @@ div.auto_complete ul li a	{
 
 /* @end */
 
+/* @group Locations */
+#locations h2 {
+	font: 24px/32px Helvetica, Arial, Verdana, sans-serif;
+}
+
+#locations h3 {
+	font: 14px/16px Helvetica, Arial, Verdana, sans-serif;
+	font-weight: bold;
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+
+.region {
+	float: left;
+	width: 190px;
+}
+
+.region .area {
+	/*display: none;*/
+}
+
+/* @end */
+
+
+
 /* @group Sidebar */	
 
 #sidebar {
