@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
 
   def locations
     # @accounts ||= Account.find(:all, :group => "region_id")
-    @accounts = Account.find(:all)
+    @accounts = Account.find(:all, :order => "name asc")
     @account_regions = @accounts.group_by { |a| a.region.name }
   end
   
