@@ -678,6 +678,8 @@ div.auto_complete ul li a	{
 
 #search #account_locations {
 	font-size: 24px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 }
 
 #search input.button {
