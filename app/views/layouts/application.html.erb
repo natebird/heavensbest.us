@@ -4,12 +4,12 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<% if @account %>
-		<title><%= h(@page_title + " | " || "") %>Heaven's Best in <%= @account.name %>, <%= @account.region.abbreviation %></title>
+		<title><%= h(@page_title + " | ") if @page_title %>Heaven's Best in <%= @account.name %>, <%= @account.region.abbreviation %></title>
 		<meta name="description" content="Heaven's Best Carpet and Upholstery Cleaning provides quality dry in 1 hour services for customers throughout the <%= @account.name %>, <%= @account.region.abbreviation %> area" />
 		<meta name="keywords" content="<% for service in @services %><%= h service.title.downcase %>, <% end %> cleaning experts, dry in one hour, dry cleaning, steam cleaning, steam cleaners, healthy home, safe carpet cleaning, eco-friendly, enviromentally friendly, nontoxic" />
 		<meta name="zipcode" content="<%= @account.locations %>" />
 			<% else %>
-			<title><%= h(@page_title + " | " || "") %>Heaven's Best Carpet and Upholstery Cleaning</title>
+			<title><%= h(@page_title + " | ") if @page_title %>Heaven's Best Carpet and Upholstery Cleaning</title>
 			<meta name="description" content="Heaven's Best Carpet and Upholstery Cleaning provides quality dry in 1 hour services for commercial and residential customers" />
 			<meta name="keywords" content="carpet cleaning, upholstery cleaning, tile and grout cleaning, carpet cleaners, hardwood floor refinishing, rug cleaning, carpet cleaning companies, stain removal, wood floor cleaning, leather cleaning, couch cleaning, commercial cleaning, business cleaning, cleaning experts, dry in one hour, steam cleaning, steam cleaners, healthy home, safe carpet cleaning, eco-friendly, enviromentally friendly, nontoxic" />
 		<% end %>
@@ -35,9 +35,9 @@
 			
 				<div id="contact" class="grid_4">
 					<div class="email">Call or <%= mail_to @account.email, "email", :encode => "hex"%> today!</div>
-					<span class="phone">
-						<%= number_to_phone(@account.phones.first.number, :area_code => true) %></span><br />
-					<span class="name"><%= @account.operators.first.name %> </span>
+					<div class="phone">
+						<%= number_to_phone(@account.phones.first.number, :area_code => true) %></div>
+					<div class="name"><%= @account.operators.first.name %> </div>
 				</div>
 				<% else %>
 				<%= render :partial => "shared/home_menubar" %>
