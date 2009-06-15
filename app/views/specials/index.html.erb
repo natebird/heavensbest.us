@@ -18,21 +18,16 @@
 		<% for special in @specials %>
 			<div class="grid_6 prefix_1">
 				<div class="special">
-					<div class="print">Printable coupon
-					<% link_to_function("Print this coupon", "javascript:print()") %>
-					<% link_to "Printable coupon", special_path(params[:region], params[:accountlink], special), 
-					:popup => [special.title, 'height=300,width=600'] %></div>
-					<div class="logo">&nbsp;</div>
 
 					<div class="text">
-						<div class="title"><%= special.title %></div>
-						<%= textilize (special.body) %>
-						<div class="phone"><%= number_to_phone(special.phone) %></div>
+					  <div class="title"><%= special.title %></div>
+					  <%= textilize (special.body) %>
+					  <div class="phone"><%= number_to_phone(special.phone) %></div>
 					</div>
 
 					<div class="footer">
-						<span style="float:left">www.heavensbest.us</span>
-						<span style="float:right">Expires <%= special.end.to_s(:long) %></span>
+					  <span style="float:left">www.heavensbest.us</span>
+					  <span style="float:right">Expires <%= special.end.to_s(:long) %></span>
 					</div>
 				</div>
 				<br /><br />

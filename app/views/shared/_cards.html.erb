@@ -6,10 +6,6 @@
 <% if @special %>
 	<div class="grid_6">
 		<div class="special">
-			<div class="print"><%= link_to "Printable coupon", specials_path(params[:region], 
-				params[:accountlink]) %></div>
-			<div class="logo">&nbsp;</div>
-
 			<div class="text">
 				<div class="title"><%= @special.title %></div>
 				<%= textilize (@special.body) %>
