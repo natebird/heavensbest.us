@@ -1,8 +1,8 @@
 <div id="tab_nav">
 	<ul>
-		<%= tab_for "", login_path, 'login' %>
-		<%= tab_for "", support_path, 'support' %>
-		<% tab_for "", page_path('faq'), 'faq' %>
-		<%= tab_for "", page_path('features'), 'features' %>
+		<%= tab_for "login", login_path %>
+		<%= tab_for "support", support_path %>
+		<% tab_for "faq", page_path('faq') %>
+		<%= tab_for "features", page_path('features') %>		
 	</ul>
 </div>
