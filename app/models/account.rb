@@ -9,7 +9,7 @@ class Account < ActiveRecord::Base
   has_many :specials
   has_many :testimonials
   
-  has_permalink :name, :accountlink
+  has_permalink :name, :accountlink, :update => true
   
   validates_uniqueness_of :name
   validates_presence_of :name, :email, :region_id, :locations
