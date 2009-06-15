@@ -973,28 +973,30 @@ background-color: #444;}
 	background: url(/images/logos/HB_small.png) no-repeat;
 	margin-left: 10px;
 	margin-top: -5px;
+	display: none;
 }
 
 .special .text {
-	float: left;
-	width: 190px;
-	height: 110px;
+	width: 300px;
+	height: 125px;
 	position: relative;
-	padding-left: 0;
+	margin: auto;
 }
 
 .special .title {
-	font-weight: bold;
-	font-size: 18px;
-	margin-bottom: 5px;
+	margin-bottom: 3px;
 	text-align: center;
-	padding-top: 5px;
+	padding-top: 10px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 20px;
+	font-size: 18px;
 }
 
 .special p {
 	text-align: center;
-	font-size: 14px;
 	line-height: 18px;
+	font-size: 14px;
 }
 
 .special .phone {
@@ -1003,15 +1005,14 @@ background-color: #444;}
 	font-weight: bold;
 	position: absolute;
 	bottom: 0px;
-	left: 0px;
-	width: 190px
-;}
+	width: 300px;
+}
 .special .footer {
-	left: 15px;
-	right: 15px;
+	left: 20px;
+	right: 20px;
 	/*color: #0069AA;*/
 	position: absolute;
-	bottom: 10px;
+	bottom: 12px;
 }
 
 .notice {
