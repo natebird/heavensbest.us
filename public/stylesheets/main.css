@@ -983,14 +983,14 @@ background-color: #444;}
 	margin: auto;
 }
 
-.special .title {
-	margin-bottom: 3px;
+#homepage .special h2, .special h2 {
 	text-align: center;
-	padding-top: 10px;
-	font-style: normal;
+	padding-top: 12px;
+	padding-bottom: 3px;
+	line-height: 26px;
+	font-size: 22px;
 	font-weight: bold;
-	line-height: 20px;
-	font-size: 18px;
+	color: #595959;
 }
 
 .special p {
