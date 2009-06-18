@@ -8,8 +8,8 @@ class AccountsController < ApplicationController
     @account = Account.find_by_name(params[:account][:locations])
     redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
   rescue
-    redirect_to root_path, :status => 301
-    flash[:notice] = "Area not available"    
+    flash[:notice] = "Area not found"    
+    render :action => :index, :status => :not_found  
   end  
 
   def locations
@@ -27,9 +27,6 @@ class AccountsController < ApplicationController
               Date.today, Date.today ], :order => APP_CONFIG[:random_query])
     @services = @account.services.find(:all)
     @current_tab = "home"
-    rescue
-      redirect_to root_path, :status => 301
-      flash[:notice] = "Area not available"    
   end
 
   protected
