@@ -9,6 +9,7 @@ class AccountsController < ApplicationController
     redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
   rescue
     redirect_to root_path
+    headers["Status"] = "301 Moved Permanently"
     flash[:notice] = "Area not available"    
   end  
 
@@ -16,6 +17,7 @@ class AccountsController < ApplicationController
     # @accounts ||= Account.find(:all, :group => "region_id")
     @accounts = Account.find(:all, :order => "name asc")
     @account_regions = @accounts.group_by { |a| a.region.name }
+    @current_tab = "locations"
   end
   
   def show
@@ -28,6 +30,7 @@ class AccountsController < ApplicationController
     @current_tab = "home"
     rescue
       redirect_to root_path
+      headers["Status"] = "301 Moved Permanently"
       flash[:notice] = "Area not available"    
   end
 
