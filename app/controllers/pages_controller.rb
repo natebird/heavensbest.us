@@ -7,8 +7,8 @@ class PagesController < ApplicationController
   def show
     if params[:permalink]
       @page = Page.find_by_permalink(params[:permalink])
-      @current_tab = @page.permalink
       raise ActiveRecord::RecordNotFound, "Page not found" if @page.nil?
+      @current_tab = @page.permalink
       render :layout => @page.category
     else
       @page = Page.find(params[:id])
