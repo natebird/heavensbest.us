@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   layout "operator"
   
   def new
+    @current_tab = "login"
   end
 
   def create

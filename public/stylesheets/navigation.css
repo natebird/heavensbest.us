@@ -8,31 +8,31 @@
 	color: white;
 }
 
-/* @group Tabbed Navigation */
+/* @group Login Navigation */
 
 /* Public Tabbed Navigation */
-#tab_nav { width: 310; margin: 18px auto; position: relative; z-index: 9998; top: 100px; right: 25px; float: right; }
+#tab_nav { width: 309; margin: 18px auto; position: relative; z-index: 9998; top: 100px; right: 25px; float: right; }
 #tab_nav { margin: 0px; padding: 0; }
 #tab_nav li { display: inline; }
-#tab_nav li a { float: left; width: 104px; height: 0; padding-top: 42px; overflow: hidden; }
+#tab_nav li a { float: left; width: 103px; height: 0; padding-top: 42px; overflow: hidden; }
 #tab_nav li a.login, 
 #tab_nav li a.features { width: 103px; }
 #tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs.png); background-repeat: no-repeat; }
 
  /*BUTTONS*/ 
-#tab_nav li a.login { background-position: 0px 0px; }
-#tab_nav li a.features { background-position: -104px 0px; }
-#tab_nav li a.support { background-position: -208px 0px; }
+#tab_nav li.login a { background-position: 0px 0px; }
+#tab_nav li.features a { background-position: -104px 0px; }
+#tab_nav li.support a { background-position: -208px 0px; }
 
 /* Hover States */
-#tab_nav li a:hover.login { background-position: 0px -41px; }
-#tab_nav li a:hover.features { background-position: -104px -41px; }
-#tab_nav li a:hover.support { background-position: -208px -41px; }
+#tab_nav li.login a:hover { background-position: 0px -41px; }
+#tab_nav li.features a:hover { background-position: -104px -41px; }
+#tab_nav li.support a:hover { background-position: -208px -41px; }
 
 /* Current States */
-#tab_nav li a.current.login { background-position: 0px -41px; }
-#tab_nav li a.current.features { background-position: -104px -41px; }
-#tab_nav li a.current.support { background-position: -208px -41px; }
+#tab_nav li.current.login a { background-position: 0px -41px; }
+#tab_nav li.current.features a { background-position: -104px -41px; }
+#tab_nav li.current.support a { background-position: -208px -41px; }
 
 /* @end */
 
@@ -97,39 +97,6 @@
 #operator_menubar li a.current.settings { background-position: -403px -70px; }
 /* @end */
 
-
-/* @group Home Menubar */
-
-#home_menubar { width: 520px; margin: 18px auto; position: absolute; z-index: 9998; top: 25px; left: 280px; }
-#home_menubar { margin: 0px; padding: 0; }
-#home_menubar li { display: inline;}
-#home_menubar li a { float: left; width: 100px; height: 0; padding-top: 35px; overflow: hidden; }
-#home_menubar li a.home, #home_menubar li a.contact { width: 103px; }
-#home_menubar li a { background-image: url(/images/nav/home_menubar.png); background-repeat: no-repeat;}
-
- /*BUTTONS*/ 
-#home_menubar li a.home { background-position: 0px 0px; }
-#home_menubar li a.services { background-position: -103px 0px; }
-#home_menubar li a.testimonials { background-position: -203px 0px; }
-#home_menubar li a.franchising { background-position: -303px 0px; }
-#home_menubar li a.contact { background-position: -403px 0px; }
-
-/* OVER STATES */
-#home_menubar li a:hover.home { background-position: 0px -35px;}
-#home_menubar li a:hover.services { background-position: -103px -35px; }
-#home_menubar li a:hover.testimonials { background-position: -203px -35px; }
-#home_menubar li a:hover.franchising { background-position: -303px -35px; }
-#home_menubar li a:hover.contact { background-position: -403px -35px; }
-
-/* Current STATES */
-#home_menubar li a.current.home { background-position: 0px 0px; }
-#home_menubar li a.current.services { background-position: -103px -70px; }
-#home_menubar li a.current.testimonials { background-position: -203px -70px; }
-#home_menubar li a.current.franchising { background-position: -303px -70px; }
-#home_menubar li a.current.contact { background-position: -403px -70px; }
-
-/* @end */
-
 /* @group Area Menubar */
 
 #area_menubar { margin: 18px auto; z-index: 9998; position: absolute; left: 275px; top: 25px; }
@@ -159,5 +126,181 @@
 #area_menubar li a.current.specials { background-position: -203px -70px; }
 #area_menubar li a.current.testimonials { background-position: -303px -70px; }
 #area_menubar li a.current.schedule { background-position: -403px -70px; }
+
+/* @end */
+
+
+
+/* @group Homepage Navigation */
+
+.nav {
+	width: 520px;
+	height: 46px;
+	background: url(/images/nav/homemenu.png) no-repeat;
+	position: absolute; 
+	top: 25px; 
+	left: 280px
+}
+.nav li {
+	display: inline;
+}
+.nav li a:link, .nav li a:visited {
+	position: absolute;
+	top: 0;
+	height: 45px;
+	text-indent: -9000px;
+	overflow: hidden;
+	z-index: 10;
+}
+
+/* @group Home */
+
+	.nav .home a:link, .nav .home a:visited {
+		width: 110px;
+	}
+	.nav .home a:hover, .nav .home a:focus {
+		background: url(/images/nav/homemenu.png) no-repeat -0px -46px;
+	}
+	.nav .home a:active {
+		background: url(/images/nav/homemenu.png) no-repeat -0px -86px;
+	}
+	.current-home .home a:link, .current-home .home a:visited {
+		background: url(/images/nav/homemenu.png) no-repeat -0px -126px;
+		cursor: default;
+	}
+	.nav-home, .nav-home-click {
+		position: absolute;
+		top: 0;
+		left: 0px;
+		width: 110px;
+		height: 46px;
+		background: url(/images/nav/homemenu.png) no-repeat -0px -46px;
+	}
+	.nav-home-click {
+		background: url(/images/nav/homemenu.png) no-repeat -0px -86px;
+	}
+
+/* @end */
+
+/* @group Locations */
+
+	.nav .locations a:link, .nav .locations a:visited {
+		left: 110px;
+		width: 100px;
+	}
+	.nav .locations a:hover, .nav .locations a:focus {
+		background: url(/images/nav/homemenu.png) no-repeat -110px -46px;
+	}
+	.nav .locations a:active {
+		background: url(/images/nav/homemenu.png) no-repeat -110px -86px;
+	}
+	.current-locations .locations a:link, .current-locations .locations a:visited {
+		background: url(/images/nav/homemenu.png) no-repeat -110px -126px;
+		cursor: default;
+	}
+	.nav-locations, .nav-locations-click {
+		position: absolute;
+		top: 0;
+		left: 110px;
+		width: 100px;
+		height: 46px;
+		background: url(/images/nav/homemenu.png) no-repeat -110px -46px;
+	}
+	.nav-locations-click {
+		background: url(/images/nav/homemenu.png) no-repeat -110px -86px;
+	}
+
+/* @end */
+
+/* @group Services */
+
+	.nav .services a:link, .nav .services a:visited {
+		left: 210px;
+		width: 100px;
+	}
+	.nav .services a:hover, .nav .services a:focus {
+		background: url(/images/nav/homemenu.png) no-repeat -210px -46px;
+	}
+	.nav .services a:active {
+		background: url(/images/nav/homemenu.png) no-repeat -210px -86px;
+	}
+	.current-services .services a:link, .current-services .services a:visited {
+		background: url(/images/nav/homemenu.png) no-repeat -210px -126px;
+		cursor: default;
+	}
+	.nav-services, .nav-services-click {
+		position: absolute;
+		top: 0;
+		left: 210px;
+		width: 100px;
+		height: 46px;
+		background: url(/images/nav/homemenu.png) no-repeat -210px -46px;
+	}
+	.nav-services-click {
+		background: url(/images/nav/homemenu.png) no-repeat -210px -86px;
+	}
+
+/* @end */
+
+/* @group Testimonials */
+
+	.nav .testimonials a:link, .nav .testimonials a:visited {
+		left: 310px;
+		width: 100px;
+	}
+	.nav .testimonials a:hover, .nav .testimonials a:focus {
+		background: url(/images/nav/homemenu.png) no-repeat -310px -46px;
+	}
+	.nav .testimonials a:active {
+		background: url(/images/nav/homemenu.png) no-repeat -310px -86px;
+	}
+	.current-testimonials .testimonials a:link, .current-testimonials .testimonials a:visited {
+		background: url(/images/nav/homemenu.png) no-repeat -310px -126px;
+		cursor: default;
+	}
+	.nav-testimonials, .nav-testimonials-click {
+		position: absolute;
+		top: 0;
+		left: 310px;
+		width: 100px;
+		height: 46px;
+		background: url(/images/nav/homemenu.png) no-repeat -310px -46px;
+	}
+	.nav-testimonials-click {
+		background: url(/images/nav/homemenu.png) no-repeat -310px -86px;
+	}
+
+
+/* @end */
+
+/* @group Franchises */
+
+	.nav .franchises a:link, .nav .franchises a:visited {
+		left: 410px;
+		width: 110px;
+	}
+	.nav .franchises a:hover, .nav .franchises a:focus {
+		background: url(/images/nav/homemenu.png) no-repeat -410px -46px;
+	}
+	.nav .franchises a:active {
+		background: url(/images/nav/homemenu.png) no-repeat -410px -86px;
+	}
+	.current-franchises .franchises a:link, .current-franchises .franchises a:visited {
+		background: url(/images/nav/homemenu.png) no-repeat -410px -126px;
+		cursor: default;
+	}
+	.nav-franchises, .nav-franchises-click {
+		position: absolute;
+		top: 0;
+		left: 410px;
+		width: 110px;
+		height: 46px;
+		background: url(/images/nav/homemenu.png) no-repeat -410px -46px;
+	}
+	.nav-franchises-click {
+		background: url(/images/nav/homemenu.png) no-repeat -410px -86px;
+	}
+/* @end */
+
 
 /* @end */
