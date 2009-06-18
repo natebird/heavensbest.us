@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
   # They can then be installed with "rake gems:install" on new installations.
   config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
   config.gem 'newrelic_rpm'
+  config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source  => 'http://gems.github.com', :version => '>= 2.2.9'  
   config.gem 'lockfile'
   config.gem 'RedCloth', :version => ">= 4.2.0", :source => "http://code.whytheluckystiff.net"
     
