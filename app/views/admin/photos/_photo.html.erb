@@ -1,15 +1,16 @@
 <% form_for [:admin, @photo], :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
-  <p>
-	<%= f.label :name %>
-	<%= f.text_field :name %></p>
+  <p><%= image_tag @photo.image.url unless @photo.new_record? %></p>
+
+  <p><%= f.text_field :name %></p>
 	
-  <p>	
-	<%= f.label :image %>
-	<%= f.file_field :image %></p>
+  <p><%= f.file_field :image %></p>
     
-  <p>
-    <%= f.submit "Save" %></p>
+  <p><%= f.submit "Save" %></p>
 
 <% end %>
+
+<p> <%= link_to 'Back', admin_photos_path %> |
+	<%= link_to "View", [:admin, @photo] %>
+	<%= link_to " | Remove", [:admin, @photo], :confirm => 'Are you sure?', :method => :delete unless @photo.new_record? %></p>
