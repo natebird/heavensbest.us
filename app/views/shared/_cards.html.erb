@@ -4,20 +4,7 @@
 </div>
 
 <% if @special %>
-	<div class="grid_6">
-		<div class="special">
-			<div class="text">
-				<h2><%= @special.title %></h2>
-				<%= textilize (@special.body) %>
-				<div class="phone"><%= number_to_phone(@special.phone) %></div>
-			</div>
-
-			<div class="footer">
-				<span style="float:left">www.heavensbest.us</span>
-				<span style="float:right">Expires <%= @special.end.to_s(:long) %></span>
-			</div>
-		</div>
-	</div>
+	<%= render :partial => "specials/special" %>
 	
 	<% else %>
 	<div id="ad" class="grid_6">
