@@ -4,7 +4,7 @@
 
 <div id="frontpage">
 	<div id="locations" class="grid_10 prefix_1">
-		<h2>Currently serving the following areas</h2>
+		<h2>Now Serving The Following Areas*</h2>
 			
 		<% @account_regions.sort.each do |region, accounts| %>
 		  <div class="region">
@@ -19,7 +19,7 @@
 	</div>	
 	
 	<div id="search" class="grid_5">
-		<h2>Quick Finder</h2>
+		<h2>Quick Locator</h2>
 		<p><q>Enter your zip code or city name</q></p>
 		
 		<% form_tag :action => "area_search" do -%>
@@ -32,6 +32,7 @@
 	</div>
 
 </div>
+<div class="grid_10 prefix_1">*We list only areas hosted on this site. A full list of Heaven's Best areas can be found at <a href="http://www.heavensbest.com/index.php?customernumber=337758300460383&pr=Locations">heavensbest.com</a>.</div>
 <div class="clear"></div>
 
 <div id="cards">

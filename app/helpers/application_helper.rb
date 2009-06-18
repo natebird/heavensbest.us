@@ -26,7 +26,7 @@ module ApplicationHelper
     else
       options = {:class => tab}
     end
-    content_tag :li, link_to(tab, link, options)
+    content_tag(:li, link_to(tab, link, options), options)
   end
 
   def link_for(link_text, path, extra_class=nil)
