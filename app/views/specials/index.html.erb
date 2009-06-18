@@ -16,7 +16,9 @@
 	</div>
 	<% else %>
 		<% for special in @specials %>
-		<%= render :partial => special %>	
+		<div class="prefix_2">
+			<%= render :partial => special %>	
+		</div>
 		<% end %>
 	<% end %>
 </div>
