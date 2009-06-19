@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<% if @account %>
-		<title><%= h(@page_title + " | ") if @page_title %>Heaven's Best in <%= @account.name %>, <%= @account.region.abbreviation %></title>
+		<title><%= h(@page_title + " | ") if @page_title %>Heaven's Best in <%= @account.name %>, <%= @account.region.name %></title>
 		<meta name="description" content="Heaven's Best Carpet and Upholstery Cleaning provides quality dry in 1 hour services for customers throughout the <%= @account.name %>, <%= @account.region.abbreviation %> area" />
 		<meta name="keywords" content="<% for service in @services %><%= h service.title.downcase %>, <% end %> cleaning experts, dry in one hour, dry cleaning, steam cleaning, steam cleaners, healthy home, safe carpet cleaning, eco-friendly, enviromentally friendly, nontoxic" />
 		<meta name="zipcode" content="<%= @account.locations %>" />
