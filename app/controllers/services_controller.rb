@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
 
 
   def show
-    @service = current_account.services.find_by_permalink(params[:servicelink])
+    @service = current_account.services.find_by_servicelink(params[:id])
     @special ||= current_account.specials.find(:first, :conditions => [ "start <= ? and end >= ?", 
                  Date.today, Date.today ], :order => APP_CONFIG[:random_query])
     @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
