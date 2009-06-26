@@ -4,7 +4,7 @@
 </div>
 
 <% if @special %>
-	<%= render :partial => "specials/special" %>
+	<%= render :partial => "specials/special", :object => @special %>
 	
 	<% else %>
 	<div id="ad" class="grid_6">
