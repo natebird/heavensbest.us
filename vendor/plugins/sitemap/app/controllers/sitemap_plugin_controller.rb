@@ -1,7 +1,7 @@
 class SitemapPluginController < ActionController::Base
   layout 'sitemap_plugin'
   before_filter :check_sitemap_auth
-  protect_from_forgery :secret => 'b0a876313f3f9195e9bd01473bc5cd06'
+  protect_from_forgery
   
   def check_sitemap_auth
     settings = SitemapSetting.find(:first)
