@@ -1,7 +1,8 @@
 class AccountsController < ApplicationController
   
   def index
-    @accounts ||= Account.find(:all, :conditions => ['locations LIKE ?', "%#{params[:search]}%"], :limit => 9)
+    @accounts ||= Account.find(:all, :limit => 7, 
+    :conditions => ['locations LIKE ? OR keywords LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%"])
   end
   
   def area_search
