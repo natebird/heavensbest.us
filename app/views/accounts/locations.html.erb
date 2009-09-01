@@ -32,29 +32,8 @@
 	</div>
 
 </div>
-<div class="grid_10 prefix_1">*We list only areas hosted on this site. A full list of Heaven's Best areas can be found at <a href="http://www.heavensbest.com/index.php?customernumber=337758300460383&pr=Locations">heavensbest.com</a>.</div>
-<div class="clear"></div>
-
-<div id="cards">
-	
-	<div id="tips" class="grid_5">
-		<h2><%= Tip.random.title %></h2>
-			<%= textilize(Tip.random.body) %>
-	</div>
-
-	<div id="ad" class="grid_6">
-		<%= render :partial => "shared/ad" %>
-	</div>
-	
-	<div class="grid_5 testimonial">
-			<div class="grid5-top">&nbsp;</div>
-			<div class="grid5-middle" class="middle" style="height:100px">
-				<p>We tried several carpet cleaning companies and were always unsatisfied with the results. Heaven’s Best is prompt, professional, and courteous. We are completely satisfied with their services.</p>
-			</div>
-			<div class="testimonial-bottom"></div>
-			<span class="name">Teresa Ardoin</span>
-			<span class="location">in Port Aransas, TX</span>
-	</div>
-
-</div>
+<div class="grid_10 prefix_1">*This is an incomplete list of Heaven's Best operators. A complete list may be found at 
+	<a href="http://www.heavensbest.com/locations.html"> heavensbest.com</a>.<br />
+	If you are an operator and would like to have your site listed please contact 
+	<%= mail_to "natebird@heavensbest.us", "Nate at Lucidius", :encode => :hex %>.</div>
 <div class="clear"></div>
