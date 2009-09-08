@@ -33,7 +33,7 @@ set :scm, :git
 set :branch, "master"
 # set :scm_user, 'etandrib'
 # set :scm_passphrase, "PASSWORD"
-set :repository, "git@github.com:etandrib/heavensbest.us.git"
+set :repository, "git@github.com:natebird/heavensbest.us.git"
 set :deploy_via, :remote_cache
 
 #############################################################
