@@ -5,7 +5,6 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -24,10 +23,11 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
   config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
+  config.gem 'semanticart-is_paranoid', :lib => 'is_paranoid', :version => ">= 0.9.0", :source => 'http://gems.github.com'
   config.gem 'newrelic_rpm'
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source  => 'http://gems.github.com', :version => '>= 2.2.9'  
   config.gem 'lockfile'
-  config.gem 'RedCloth', :version => ">= 4.2.0", :source => "http://code.whytheluckystiff.net"
+  config.gem 'RedCloth', :version => ">= 4.2.2", :source => "http://code.whytheluckystiff.net"
     
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
