@@ -29,6 +29,7 @@ REST_AUTH_DIGEST_STRETCHES = 10
 
 # Gmail SMTP Settings
 ActionMailer::Base.smtp_settings = {
+  :enable_starttls_auto => true,
   :address        => "smtp.gmail.com",
   :port           => 587,
   :domain         => "heavensbest.us",
