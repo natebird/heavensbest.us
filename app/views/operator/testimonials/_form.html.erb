@@ -17,7 +17,7 @@
 	<br />
 			<%= link_to(image_tag("/images/buttons/delete.png", :class => 'button' ), 
 			[:operator, @account, @testimonial], :confirm => 'Are you sure?', :method => :delete) %>
-			<div class="up10"><%= f.select(:active, { "Published" => true, "Not Published" => false } ) %></div>&nbsp;
+			<div class="up10"><%= f.select(:active, { "Published" => true, "Not Published" => false }, :selected => true ) %></div>&nbsp;
 			<%= link_to(image_tag("/images/buttons/cancel.png", :class => 'button' ), 
 			operator_account_testimonials_path(@account) ) %>&nbsp;
 			<%= image_submit_tag("/images/buttons/save.png", :class => 'button' ) %>
