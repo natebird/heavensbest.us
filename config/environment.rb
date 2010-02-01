@@ -22,14 +22,18 @@ Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
-  config.gem 'aasm',              :source => 'http://gemcutter.org'
-  config.gem 'newrelic_rpm',      :source => 'http://gemcutter.org'
-  config.gem 'paperclip',         :source => 'http://gemcutter.org'
-  config.gem 'lockfile',          :source => 'http://gemcutter.org'
-  config.gem 'RedCloth',          :source => 'http://gemcutter.org'
+  config.gem 'aasm'
+  config.gem 'newrelic_rpm'
+  config.gem 'paperclip'
+  config.gem 'lockfile'
+  config.gem 'RedCloth'
   config.gem 'hoptoad_notifier'
-  # config.gem 'wysihat-engine',    :source => 'http://gemcutter.org'
+  config.gem "authlogic"
+  config.gem "haml"
+  config.gem "compass"
+  # config.gem 'is_paranoid',  :source => 'http://gemcutter.org'
   # config.gem 'acts_as_paranoid',  :source => 'http://gemcutter.org'
+  # config.gem 'wysihat-engine',    :source => 'http://gemcutter.org'
     
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.

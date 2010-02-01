@@ -27,11 +27,25 @@
 		<span class="pointer">&nbsp;</span></span>
 	 <%= f.text_field :email, :size => 28 %></div>
 
-<div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
-<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %>
+<div>
+  <% fields_for :phones do |p| %>
+  	<%= p.label :number, "Phone number" %>
+  	<span class="hint">Enter a phone number for this area. This will be displayed prominently on each page of your site.
+  		<span class="pointer">&nbsp;</span></span>
+    <%= p.text_field :number, :size => 28 %>
+  <% end %>
+</div>
 
-<div id="operators" class="attribute" ><%= f.render_associated_form(@account.operators) %></div>
-<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
+<div id="operators" class="fields">
+  <% fields_for :operators do |o| %>
+  	<%= o.label :name, "Operator name" %>
+  	<%= o.text_field :name, :size => 28 %>
+  	<span class="hint">The name and title of the operator for this area. Both will be displayed prominently on each page of your site.<span class="pointer">&nbsp;</span></span>
+
+  	<%= o.label :title, "Operator title" %>
+  	<%= o.text_field :title, :size => 28 %>
+  <% end %>
+</div>
 
 <div><%= f.label :ganalytics, "Google Analytics" %>
 	 <span class="hint">(Optional) Enter the account number of your google analytics account. It should look something like "1234567-1"
@@ -39,13 +53,13 @@
 	 <%= f.text_field :ganalytics, :size => 28 %></div>
 
 <div><%= f.label :locations %>
-	 <span class="hint">Enter postal codes and city names that your area services. A specific list will produce 
-		accurate search results. Separate locations with a comma. (city1, city2, zip1, etc.)
+	 <span class="hint">Enter the city names that your area services. A specific list will produce 
+		accurate search results. Separate locations with a comma. (city1, city2, etc.)
 		<span class="pointer">&nbsp;</span></span>
 	 <%= f.text_area :locations, :rows => "6", :style => "width: 47%" %></div>
 	
 
-<div><% f.label :keywords %>
+<div><%= f.label :zip_codes %>
 	 <span class="hint">Enter any custom keywords you want to be displayed to search engines.
 		<span class="pointer">&nbsp;</span></span>
-	 <% f.text_area :keywords, :size => "23x3" %></div>
+	 <%= f.text_area :zip_codes, :rows => "6", :style => "width: 47%" %></div>

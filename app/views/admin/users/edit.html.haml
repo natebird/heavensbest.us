@@ -1,0 +1,14 @@
+.clear
+#grid16-top.indent10
+  &nbsp;
+  
+#grid16-middle.indent10
+  %h1.indent20
+    = @page_title = 'Edit User Information'
+  
+  - form_for([:admin, @user]) do |f|
+    = f.error_messages
+    = render :partial => "form", :locals => { :f => f }
+
+#grid16-bottom.indent10
+  &nbsp;

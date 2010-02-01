@@ -1,0 +1,17 @@
+= title "Forgot Your Password?"
+
+#.grid_8.prefix_4.suffix_4
+
+  #grid8-top
+  #grid8-middle
+    - form_for @password do |f|
+      = f.error_messages
+      %fieldset
+        %legend Enter your email address to reset your password
+        %ol
+          %li
+            = f.text_field :email, :size => 37
+          %li
+          	= f.submit "Submit"
+          	= link_to "Back", login_url
+  #grid8-bottom

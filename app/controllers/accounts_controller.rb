@@ -33,11 +33,6 @@ class AccountsController < ApplicationController
 
   protected
       
-    def load_subscription
-      load_object
-      @subscription = @account.subscription
-    end
-
     def redirect_to_external
       redirect_to @account.externalsite, :status=>301
     end

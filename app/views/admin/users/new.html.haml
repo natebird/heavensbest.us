@@ -1,0 +1,36 @@
+.clear
+#grid16-top.indent10
+  &nbsp;
+  
+#grid16-middle.indent10
+  %h1.indent20
+    = @page_title = 'Create a User'
+    
+  %fieldset
+    - form_for [:admin, @user] do |f|
+      = f.error_messages
+      
+      = f.label :name
+      = f.text_field :name
+      %br
+      
+      = f.label :login, 'Username'
+      = f.text_field :login
+      %br
+      
+      = f.label :email
+      = f.text_field :email
+      %br
+      
+      = f.label :phone
+      = f.text_field :phone
+      %br
+      
+      = f.hidden_field :password, :value => "123456"
+      = f.hidden_field :password_confirmation, :value => "123456"
+      
+      %label &nbsp;
+      = submit_or_cancel
+      
+#grid16-bottom.indent10
+  &nbsp;

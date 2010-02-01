@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090522215122) do
+ActiveRecord::Schema.define(:version => 20100201174013) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -27,16 +27,56 @@ ActiveRecord::Schema.define(:version => 20090522215122) do
     t.string   "company"
     t.string   "email"
     t.text     "locations",                :limit => 255
-    t.string   "keywords"
+    t.string   "zip_codes"
     t.string   "permalink"
     t.string   "accountlink"
     t.integer  "accept"
     t.string   "ganalytics"
+    t.string   "externalsite"
+    t.integer  "homepage_id"
   end
 
   create_table "countries", :force => true do |t|
     t.string   "name"
     t.string   "abbreviation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "estimates", :force => true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
+    t.text     "address"
+    t.date     "day"
+    t.text     "services"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "frontpages", :force => true do |t|
+    t.integer  "account_id",     :limit => 11
+    t.integer  "avatar_id",      :limit => 11
+    t.integer  "photo_id",       :limit => 11
+    t.string   "estimate_title"
+    t.string   "blurb_title"
+    t.string   "profile_title"
+    t.text     "estimate_body"
+    t.text     "blurb_body"
+    t.text     "profile_body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "homepages", :force => true do |t|
+    t.integer  "avatar_id",      :limit => 11
+    t.integer  "photo_id",       :limit => 11
+    t.string   "estimate_title"
+    t.string   "blurb_title"
+    t.string   "profile_title"
+    t.text     "estimate_body"
+    t.text     "blurb_body"
+    t.text     "profile_body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,11 +98,15 @@ ActiveRecord::Schema.define(:version => 20090522215122) do
 
   create_table "operators", :force => true do |t|
     t.string   "name"
-    t.string   "photo"
     t.string   "title"
     t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "photo"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "pages", :force => true do |t|
@@ -260,8 +304,8 @@ ActiveRecord::Schema.define(:version => 20090522215122) do
     t.string   "name",                      :limit => 100, :default => ""
     t.string   "email",                     :limit => 100
     t.string   "phone",                     :limit => 20
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
+    t.string   "crypted_password",          :limit => 128, :default => "",        :null => false
+    t.string   "salt",                      :limit => 128, :default => "",        :null => false
     t.string   "remember_token",            :limit => 40
     t.string   "activation_code",           :limit => 40
     t.string   "state",                                    :default => "passive", :null => false
@@ -270,8 +314,20 @@ ActiveRecord::Schema.define(:version => 20090522215122) do
     t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "persistence_token",                        :default => "",        :null => false
+    t.string   "single_access_token",                      :default => "",        :null => false
+    t.string   "perishable_token",                         :default => "",        :null => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "wysihat_files", :force => true do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

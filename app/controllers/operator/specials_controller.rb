@@ -1,6 +1,6 @@
 class Operator::SpecialsController < ApplicationController
   layout "operator"
-  before_filter :login_required
+  before_filter :require_user
   before_filter :current_account
 
   before_filter :set_current_tab

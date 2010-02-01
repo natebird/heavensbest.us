@@ -1,0 +1,22 @@
+= title "Reset Your Password", :h2
+
+#.grid_8.prefix_4.suffix_4
+  #grid8-top
+  #grid8-middle
+    - form_for :user, :url => { :controller => "passwords", :action => 'update_after_forgetting' } do |f|
+      = f.error_messages
+      %p Please enter a new password and confirm it.
+      %fieldset
+        %legend Update Password
+        %ol
+          %li
+            = f.label :password
+            = f.password_field :password
+          %li
+            = f.label :password_confirmation
+            = f.password_field :password_confirmation
+        
+        = hidden_field_tag :reset_code, params[:reset_code]
+        #.buttons
+          = f.submit "Submit"
+  #grid8-bottom
