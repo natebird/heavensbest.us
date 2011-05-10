@@ -12,7 +12,7 @@ class Subscription < ActiveRecord::Base
   # renewal_period is the number of months to bill at a time
   # default is 1
   validates_numericality_of :renewal_period, :only_integer => true, :greater_than => 0
-  validate_on_create :card_storage
+  validate :card_storage, :on => :create
   
   Limits = {
     # Proc.new {|account, plan| !plan.special_limit || plan.special_limit >= Account::Limits['special_limit'].call(account) } => 

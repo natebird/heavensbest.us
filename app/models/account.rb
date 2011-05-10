@@ -15,9 +15,9 @@ class Account < ActiveRecord::Base
   validates_presence_of :name, :email, :region_id, :locations
   validates_acceptance_of :accept, :on => :create, :message => "must be checked"
 
-  validate_on_create :valid_plan?
+  validate :valid_plan?, :on => :create
   # validate_on_create :valid_payment_info?
-  validate_on_create :valid_subscription?
+  validate :valid_subscription?, :on => :create
     
   after_create :seed_data
   
