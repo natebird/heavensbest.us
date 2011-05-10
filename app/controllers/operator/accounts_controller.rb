@@ -11,7 +11,7 @@ class Operator::AccountsController < ApplicationController
 
 
   def index
-    @accounts = current_user.accounts.find(:all)
+    @accounts = current_user.accounts.all
   end
   
   def new

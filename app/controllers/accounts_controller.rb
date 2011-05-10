@@ -27,7 +27,7 @@ class AccountsController < ApplicationController
     @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
     @special ||= current_account.specials.find(:first, :conditions => [ "start <= ? and end >= ?", 
               Date.today, Date.today ], :order => APP_CONFIG[:random_query])
-    @services = @account.services.find(:all)
+    @services = @account.services
     @current_tab = "home"
   end
 

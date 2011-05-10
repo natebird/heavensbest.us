@@ -4,19 +4,19 @@ class Admin::TipsController < ApplicationController
   before_filter :admin?
 
   def index
-    @tips = Tip.find(:all)
+    @tips = Tip.all
   end
 
 
   def new
     @tip = Tip.new
-    @tips = Tip.find(:all)
+    @tips = Tip.all
   end
 
 
   def edit
     @tip = Tip.find(params[:id])
-    @tips = Tip.find(:all)
+    @tips = Tip.all
   end
 
 end

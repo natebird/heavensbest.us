@@ -10,22 +10,22 @@ class Operator::ServicesController < ApplicationController
     end
 
   def index
-    @services = current_account.services.find(:all)
+    @services = current_account.services.all
     redirect_to edit_operator_account_service_path(@account, @services.first)
   end
   
   def show
     @service = @account.services.find(params[:id])
-    @services = @account.services.find(:all)
+    @services = @account.services.all
   end
   
   def new
     @service = @account.services.new
-    @services = @account.services.find(:all)
+    @services = @account.services.all
   end
   
   def create
-    @services = @account.services.find(:all)
+    @services = @account.services.all
     @service = @account.services.new(params[:service])
     if @service.save
       flash[:notice] = "Successfully created service."
@@ -37,7 +37,7 @@ class Operator::ServicesController < ApplicationController
   
   def edit
     @service = @account.services.find(params[:id])
-    @services = @account.services.find(:all)
+    @services = @account.services.all
   end
   
   def update

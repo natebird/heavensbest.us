@@ -18,7 +18,7 @@
 <div><%= f.label :region_id, "State" %>
 	 <span class="hint">Enter the state where your business is located.
 		<span class="pointer">&nbsp;</span></span>		
-	 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.name, p.id ] } ) %> 
+	 <%= f.select(:region_id, Region.all.collect {|p| [ p.name, p.id ] } ) %> 
 	 <% f.text_field :postal_code, :size => '8' %></div>
 
 <div><%= f.label :email, "Area email" %>

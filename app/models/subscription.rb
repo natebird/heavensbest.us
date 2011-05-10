@@ -31,7 +31,7 @@ class Subscription < ActiveRecord::Base
     (self.next_renewal_at.to_i - Time.now.to_i) / 86400
   end
   
-  def amount_in_pennies
+    def amount_in_pennies
     (amount * 100).to_i
   end
   

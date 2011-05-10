@@ -9,31 +9,31 @@ class Operator::SpecialsController < ApplicationController
     end
 
   def index
-    @specials = @account.specials.find(:all)
+    @specials = @account.specials.all
     redirect_to edit_operator_account_special_path(@account, @specials.first)
   end
 
 
   def show
     @special = @account.specials.find(params[:id])
-    @specials = @account.specials.find(:all)
+    @specials = @account.specials.all
   end
 
 
   def new
     @special = @account.specials.new
-    @specials = @account.specials.find(:all)
+    @specials = @account.specials.all
   end
 
 
   def edit
     @special = @account.specials.find(params[:id])
-    @specials = @account.specials.find(:all)
+    @specials = @account.specials.all
   end
 
 
   def create
-    @specials = @account.specials.find(:all)
+    @specials = @account.specials.all
     @special = @account.specials.new(params[:special])
 
     if @special.save
@@ -46,7 +46,7 @@ class Operator::SpecialsController < ApplicationController
 
 
   def update
-    @specials = @account.specials.find(:all)
+    @specials = @account.specials.all
     @special = @account.specials.find(params[:id])
 
     if @special.update_attributes(params[:special])

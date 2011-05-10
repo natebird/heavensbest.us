@@ -3,11 +3,9 @@ Heavensbest::Application.routes.draw do
   match '/logout' => 'sessions#destroy', :as => :logout
   match '/login' => 'sessions#new', :as => :login
   match '/register' => 'admin/users#create', :as => :register
-  match '/signup/:activation_code' => 'admin/users#activate', :as => :activate, :activation_code => 
+  match '/signup/:activation_code' => 'admin/users#activate', :as => :activate, :activation_code => nil 
   match '/forgot_password' => 'passwords#new', :as => :forgot_password
   match '/change_password/:reset_code' => 'passwords#reset', :as => :change_password
-  match '/opensession' => 'sessions#create', :as => :open_id_complete, :constraints => { :method => get }
-  match '/opencreate' => 'users#create', :as => :open_id_create, :constraints => { :method => get }
   resources :passwords
   resource :session
   match '/operator/areas/:id/cancel' => 'operator/accounts#cancel', :as => :cancel
@@ -26,25 +24,25 @@ Heavensbest::Application.routes.draw do
   match '/operator' => 'sessions#new', :as => :operator
   match '/operator/profile/:id' => 'admin/users#edit', :as => :profile
   namespace :operator do
-      resources :accounts do
-        collection do
-    get :canceled
-    end
-        member do
-    any :billing
-    any :plan
-    any :paypal
-    any :cancel
-    end
-    
+    resources :accounts do
+      collection do
+        get :canceled
+      end
+      
+      member do
+        get :billing
+        get :plan
+        get :paypal
+        post :cancel
+      end
     end
   end
 
   namespace :admin do
-      resources :users
-      resources :pages
-      resources :tips
-      resources :photos
+    resources :users
+    resources :pages
+    resources :tips
+    resources :photos
   end
 
   match 'page/:permalink' => 'pages#show', :as => :page

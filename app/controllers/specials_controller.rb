@@ -5,7 +5,7 @@ class SpecialsController < ApplicationController
     @specials = current_account.specials.find(:all, :conditions => [ "start <= ? and end >= ?", Date.today, Date.today ] )
     redirect_to_external unless @account.externalsite.blank?
     @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
-    @services = @account.services.find(:all)
+    @services = @account.services.all
     @current_tab = "specials"
     rescue
       redirect_to root_path

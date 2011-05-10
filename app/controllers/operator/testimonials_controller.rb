@@ -9,7 +9,7 @@ class Operator::TestimonialsController < ApplicationController
     end
 
   def index
-    @testimonials = @account.testimonials.find(:all)
+    @testimonials = @account.testimonials.all
   end
 
 
@@ -20,18 +20,18 @@ class Operator::TestimonialsController < ApplicationController
 
   def new
     @testimonial = @account.testimonials.new 
-    @testimonials = @account.testimonials.find(:all)
+    @testimonials = @account.testimonials.all
   end
 
 
   def edit
     @testimonial = @account.testimonials.find(params[:id])
-    @testimonials = @account.testimonials.find(:all)
+    @testimonials = @account.testimonials.all
   end
 
 
   def create
-    @testimonials = @account.testimonials.find(:all)
+    @testimonials = @account.testimonials.all
     @testimonial = @account.testimonials.new(params[:testimonial])
 
     if @testimonial.save

@@ -17,7 +17,7 @@
 		<p>Enter the information for your area below. <br/>
 		Instructions will be shown on the right when you select each box.</p><br />
 		
-	    <% fields_for :account do |f| %>
+	    <%= fields_for :account do |f| %>
 		<div><%= label :plan_id, 'Plan' %>
 			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
 			 <%= link_to "Features", page_path('features'), :popup => true %></div>
@@ -32,7 +32,7 @@
 			<div><%= f.label :region_id, "State" %>
 				 <span class="hint">Enter the state where your business is located.
 					<span class="pointer">&nbsp;</span></span>		
-				 <%= f.select(:region_id, Region.find(:all).collect {|p| [ p.name, p.id ] } ) %> </div>
+				 <%= f.select(:region_id, Region.all.collect {|p| [ p.name, p.id ] } ) %> </div>
 
 			<div><%= f.label :email, "Area email" %>
 				 <span class="hint">Enter the email address for this area. You can use your own address or
