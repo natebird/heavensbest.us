@@ -4,7 +4,7 @@
 <div id="grid16-middle" class="indent10">
 	<h1 class="indent20"><%= @page_title = 'Create a new area' %></h1>
 
-	<% form_tag :action => 'create' do %>
+	<%= form_tag :action => 'create' do %>
 
 	  <fieldset class="indent10"><legend>Area Information</legend>
 	  <% if @account.errors.any? %>

@@ -4,7 +4,7 @@
 <div id="grid16-middle" class="indent10">
 	<h1 class="indent20"><%= @page_title = 'Edit User Information' %></h1>
 
-	<% form_for([:admin, @user]) do |f| %>
+	<%= form_for([:admin, @user]) do |f| %>
 		<%= f.error_messages %>
 	 	<%= render :partial => "user", :locals => { :f => f } %>
 	<% end -%>

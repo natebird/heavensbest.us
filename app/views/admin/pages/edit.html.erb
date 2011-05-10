@@ -4,7 +4,7 @@
 <div id="grid16-middle" class="indent10">
 	<h1 class="indent20"><%= @page_title = 'Edit Page' %></h1>
 
-	<% form_for([:admin, @page]) do |f| %>
+	<%= form_for([:admin, @page]) do |f| %>
 		<%= render :partial => @page, :locals => { :f => f } %>
 	<br />
 	<p class="indent20">

@@ -5,7 +5,7 @@
 	<h1 class="indent20"><%= @page_title = 'Create a User' %></h1>
 
 	<fieldset>
-	<% form_for [:admin, @user] do |f| -%>
+	<%= form_for [:admin, @user] do |f| -%>
 		<%= f.error_messages %>
 
 		<%= f.label :name %>

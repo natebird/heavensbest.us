@@ -4,7 +4,7 @@
 	<br /><br /><br /><br />
 	<div id="grid8-top"></div>
 	<div id="grid8-middle">
-		<% form_for :user, :url => { :controller => "passwords", :action => 'update_after_forgetting' } do |f| %>
+		<%= form_for :user, :url => { :controller => "passwords", :action => 'update_after_forgetting' } do |f| %>
 		  <%= f.error_messages %>
 		  <p>Please enter a new password and confirm it.</p>
 			<fieldset>

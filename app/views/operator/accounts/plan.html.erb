@@ -18,7 +18,7 @@
 				and you will be billed the new subscription price beginning 
 				<b><%= @account.subscription.next_renewal_at.to_s(:short_day) %></b>.</p><br />
 
-			<% form_tag plan_operator_account_url do %>
+			<%= form_tag plan_operator_account_url do %>
 				<% if @subscription.card_number %>
 					<label>Card ends with </label> <%= @subscription.card_number %>
 					<%= link_to "Change Billing", billing_path %>

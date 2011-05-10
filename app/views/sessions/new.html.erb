@@ -6,7 +6,7 @@
 	<div id="grid8-middle">
 		<% if !current_user %>
 			<fieldset id="login_box">
-				<% form_tag session_path do -%>
+				<%= form_tag session_path do -%>
 				<ol>
 					<li>&nbsp;<%= render :partial => "error" if flash[:error] %></li><br />
 					<li><label for="login">Username</label>
