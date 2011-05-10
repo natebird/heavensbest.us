@@ -159,7 +159,7 @@ class Subscription < ActiveRecord::Base
       self.next_renewal_at = Time.now.advance(:months => self.renewal_period)
     end
     
-    def validate_on_update
+    validate :on => :update do
       return unless self.subscription_plan.updated?
       Limits.each do |rule, message|
         unless rule.call(self.account, self.subscription_plan)
@@ -193,6 +193,6 @@ class Subscription < ActiveRecord::Base
     end
     
     def config_from_file(file)
-      YAML.load_file(File.join(RAILS_ROOT, 'config', file))[RAILS_ENV].symbolize_keys
+      YAML.load_file(File.join(Rails.env, 'config', file))[Rails.env].symbolize_keys
     end
 end
