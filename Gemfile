@@ -4,6 +4,7 @@ gem 'rails', '3.0.7'
 
 
 # Utilities
+gem 'hoptoad_notifier', '~> 2.3'
 gem 'newrelic_rpm'
 gem 'capistrano'
 
@@ -12,7 +13,6 @@ gem 'sqlite3'
 
 gem 'aasm'
 gem 'paperclip'
-gem 'lockfile'
 
 
 
@@ -33,6 +33,6 @@ gem 'lockfile'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-group :development, :test do
-  gem 'rspec-rails'
-end
+# group :development, :test do
+#   gem 'rspec-rails'
+# end

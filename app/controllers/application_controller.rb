@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include HoptoadNotifier::Catcher
   include AuthenticatedSystem
   include RoleRequirementSystem
   include SslRequirement
@@ -23,7 +22,7 @@ class ApplicationController < ActionController::Base
       if params[:account_id]
         @account = Account.find(params[:account_id])
       else
-        @account = current_user.accounts.find(:first)
+        @account = current_user.accounts.first
         raise ActiveRecord::RecordNotFound unless @accounts
       end
     end
