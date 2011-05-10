@@ -1,11 +1,4 @@
-log/*.log
-tmp/**/*
-tmp/restart.txt
-.DS_Store
-hbapp.esproj
-doc/api
-doc/app
-coverage
+.bundle
 db/*.sqlite3
-public/system
-vendor/gems
+log/*.log
+tmp/
