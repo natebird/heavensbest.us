@@ -1,8 +1,7 @@
 class AccountsController < ApplicationController
   
   def index
-    @accounts ||= Account.find(:all, :limit => 7, 
-    :conditions => ['locations LIKE ? OR zip_codes LIKE ?', "%#{params[:search]}%", "%#{params[:search]}%"])
+    @accounts ||= Account.where("locations LIKE ? OR zip_codes LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]).limit(7)
   end
   
   def area_search
@@ -15,7 +14,7 @@ class AccountsController < ApplicationController
 
   def locations
     # @accounts ||= Account.find(:all, :group => "region_id")
-    @accounts = Account.find(:all, :order => "name asc")
+    @accounts = Account.order("name asc")
     @account_regions = @accounts.group_by { |a| a.region.name }
     @current_tab = "locations"
   end
@@ -24,9 +23,8 @@ class AccountsController < ApplicationController
     @account ||= Account.find_by_accountlink(params[:accountlink])
     redirect_to_external unless @account.externalsite.blank?
     @region ||= Region.find_by_abbreviation(params[:region].upcase)
-    @testimonial ||= current_account.testimonials.find(:first, :order => APP_CONFIG[:random_query])
-    @special ||= current_account.specials.find(:first, :conditions => [ "start <= ? and end >= ?", 
-              Date.today, Date.today ], :order => APP_CONFIG[:random_query])
+    @testimonial ||= current_account.testimonials.order(APP_CONFIG[:random_query]).first
+    @special ||= current_account.specials.where("start <= ? and end >= ?", Date.today, Date.today).order(APP_CONFIG[:random_query]).first
     @services = @account.services
     @current_tab = "home"
   end

@@ -20,7 +20,7 @@ class PasswordsController < ApplicationController
 
   def reset
     begin
-      @user = Password.find(:first, :conditions => ['reset_code = ? and expiration_date > ?', params[:reset_code], Time.now]).user
+      @user = Password.where("reset_code = ? and expiration_date > ?", params[:reset_code], Time.now]).first.user
     rescue
       flash[:notice] = 'The change password URL you visited is either invalid or expired.'
       redirect_to new_password_path

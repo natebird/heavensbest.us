@@ -5,8 +5,8 @@ class Admin::UsersController < ApplicationController
   layout "operator"
 
   def index
-    @users = User.find(:all, :conditions => [ "state = ?", "active" ] )
-    @inactive_users = User.find(:all, :conditions => [ "state = ?", "pending" ] )
+    @users = User.where("state = ?", "active")
+    @inactive_users = User.where("state = ?", "pending")
   end
     
   def new

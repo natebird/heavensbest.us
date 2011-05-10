@@ -27,12 +27,6 @@
 					<%= link_to "Add a credit card?", billing_path %>
 				<% end %><br />
 
-			    <!-- <label>Plan</label> -->
-				<!-- <% #@subscription.subscription_plan.name %> -->
-			    <!-- <select name="plan_id" onChange="enableButton()">
-				 	<option value=""></option>
-			    	<% #SubscriptionPlan.find(:all, :conditions => ['id <> ?', @subscription.subscription_plan_id], :order => 'amount desc').map {|p| content_tag(:option, p, :value => p.id) } %>
-			    </select> #, :disabled => !current_account.qualifies_for?(p) -->
 				<label>Next Billing Date</label>
 				<%= @subscription.next_renewal_at.to_s(:short_day) %>
 	

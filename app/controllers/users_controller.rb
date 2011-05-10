@@ -4,7 +4,7 @@ class UsersController < ApplicationController
      
   def new
     @user = User.new
-    @users = User.find(:all, :conditions => [ "state = ?", "pending" ] )
+    @users = User.where("state = ?", "pending")
   end
  
   def create
