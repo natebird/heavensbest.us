@@ -49,6 +49,6 @@
 		<%= render :partial => "shared/footer" %>
 	</div>
 
-	<%= render :partial => "shared/analytics" if RAILS_ENV == 'production' %>
+	<%= render :partial => "shared/analytics" if Rails.env == 'production' %>
 	</body>
 </html>

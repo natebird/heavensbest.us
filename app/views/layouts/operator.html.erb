@@ -46,7 +46,7 @@
 </div>
 
 
-<% render :partial => "shared/analytics" if RAILS_ENV == 'production' %>	
+<% render :partial => "shared/analytics" if Rails.env == 'production' %>	
 <%= render :partial => "shared/uservoice" %>
 </body>
 </html>
