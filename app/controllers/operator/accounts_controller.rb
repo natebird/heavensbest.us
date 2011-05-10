@@ -5,10 +5,6 @@ class Operator::AccountsController < ApplicationController
   # before_filter :login_required
   before_filter :load_billing, :only => [ :new, :create, :billing, :paypal ]
   before_filter :load_subscription, :only => [ :billing, :plan, :paypal ]
-    
-  ssl_required :billing, :cancel, :new, :create
-  ssl_allowed :plans, :canceled, :paypal
-
 
   def index
     @accounts = current_user.accounts.all
