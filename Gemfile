@@ -1,20 +1,21 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
-
+gem 'mysql'
 
 # Utilities
 gem 'hoptoad_notifier', '~> 2.3'
 gem 'newrelic_rpm'
 gem 'capistrano'
 
-
-gem 'sqlite3'
+# Authentication
+gem 'omniauth'
 
 gem 'aasm'
 gem 'paperclip'
+gem 'RedCloth'
 
-
+gem 'friendly_id'
 
 # Use unicorn as the web server
 # gem 'unicorn'

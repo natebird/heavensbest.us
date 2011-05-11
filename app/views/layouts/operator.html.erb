@@ -18,7 +18,7 @@
 
 	<div id="header" class="grid_16">
 		<div id="admin_logo" class="grid_3"><a href="/">&nbsp;</a></div>
-		<% if logged_in? %> 
+		<% if current_user %> 
 			<% if admin? %>
 				<%= render :partial => "shared/admin_nav" %>
 				<%= select_tag(nil, options_for_select(["No Area Selected"] + Account.to_dropdown, 
@@ -33,7 +33,7 @@
 			
 			<%= render :partial => "shared/operator_bar" if @account ? @account.id : nil %>
 		<% else %>
-			<%= render :partial => "shared/operator_tabs" if !logged_in? %>
+			<%= render :partial => "shared/operator_tabs" if !current_user %>
 		<% end %>
 	</div>
 

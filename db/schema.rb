@@ -1,37 +1,48 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of Active Record to incrementally modify your database, and
-# then regenerate this schema definition.
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your database schema. If you need
-# to create the application database on another system, you should be using db:schema:load, not running
-# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090910160304) do
+ActiveRecord::Schema.define(:version => 20110511025656) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
-    t.integer  "subscription_discount_id", :limit => 11
+    t.integer  "subscription_discount_id"
     t.string   "street"
     t.string   "street2"
     t.string   "city"
     t.string   "postal_code"
     t.integer  "user_id"
     t.integer  "region_id"
-    t.integer  "country_id",                              :default => 1
+    t.integer  "country_id",               :default => 1
     t.string   "company"
     t.string   "email"
-    t.text     "locations",                :limit => 255
+    t.text     "locations"
     t.string   "zip_codes"
     t.string   "accountlink"
     t.integer  "accept"
     t.string   "ganalytics"
     t.string   "externalsite"
+  end
+
+  create_table "auth_services", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "uname"
+    t.string   "uemail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "countries", :force => true do |t|
@@ -166,6 +177,18 @@ ActiveRecord::Schema.define(:version => 20090910160304) do
     t.datetime "updated_at"
   end
 
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
   create_table "specials", :force => true do |t|
     t.string   "title"
     t.string   "phone"
@@ -190,9 +213,9 @@ ActiveRecord::Schema.define(:version => 20090910160304) do
   end
 
   create_table "subscription_payments", :force => true do |t|
-    t.integer  "account_id",      :limit => 11
-    t.integer  "subscription_id", :limit => 11
-    t.decimal  "amount",                        :precision => 10, :scale => 2, :default => 0.0
+    t.integer  "account_id"
+    t.integer  "subscription_id"
+    t.decimal  "amount",          :precision => 10, :scale => 2, :default => 0.0
     t.string   "transaction_id"
     t.boolean  "setup"
     t.datetime "created_at"
@@ -201,25 +224,25 @@ ActiveRecord::Schema.define(:version => 20090910160304) do
 
   create_table "subscription_plans", :force => true do |t|
     t.string   "name"
-    t.decimal  "amount",                       :precision => 10, :scale => 2
-    t.integer  "special_limit",  :limit => 11
-    t.integer  "renewal_period", :limit => 11,                                :default => 1
-    t.decimal  "setup_amount",                 :precision => 10, :scale => 2
-    t.integer  "trial_period",   :limit => 11,                                :default => 1
+    t.decimal  "amount",         :precision => 10, :scale => 2
+    t.integer  "special_limit"
+    t.integer  "renewal_period",                                :default => 12
+    t.decimal  "setup_amount",   :precision => 10, :scale => 2
+    t.integer  "trial_period",                                  :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "subscriptions", :force => true do |t|
-    t.decimal  "amount",                             :precision => 10, :scale => 2
+    t.decimal  "amount",               :precision => 10, :scale => 2
     t.datetime "next_renewal_at"
     t.string   "card_number"
     t.string   "card_expiration"
-    t.string   "state",                                                             :default => "trial"
-    t.integer  "subscription_plan_id", :limit => 11
-    t.integer  "account_id",           :limit => 11
-    t.integer  "specials_limit",       :limit => 11
-    t.integer  "renewal_period",       :limit => 11,                                :default => 1
+    t.string   "state",                                               :default => "trial"
+    t.integer  "subscription_plan_id"
+    t.integer  "account_id"
+    t.integer  "specials_limit"
+    t.integer  "renewal_period",                                      :default => 1
     t.string   "billing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -231,6 +254,16 @@ ActiveRecord::Schema.define(:version => 20090910160304) do
     t.text     "quote"
     t.boolean  "active"
     t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "status"
+    t.string   "priority"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

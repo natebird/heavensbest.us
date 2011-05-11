@@ -3,13 +3,13 @@ class Account < ActiveRecord::Base
   belongs_to :region
   has_one :subscription, :dependent => :destroy
   has_many :subscription_payments
-  has_many :phones, :attributes => true
-  has_many :operators, :attributes => true, :discard_if => :blank?
+  has_many :phones
+  has_many :operators
   has_many :services
   has_many :specials
   has_many :testimonials
   
-  has_permalink :name, :accountlink, :update => true
+  has_friendly_id :name, :use_slug => true, :scope => :region
   
   validates_uniqueness_of :name
   validates_presence_of :name, :email, :region_id, :locations
@@ -24,7 +24,6 @@ class Account < ActiveRecord::Base
   # attr_accessible :name, :plan, :plan_start, :creditcard, :address
   attr_accessor :plan, :plan_start, :creditcard, :address
   
-  acts_as_paranoid
   
   Limits = {
     # 'special_limit' => Proc.new {|a| a.specials.count }

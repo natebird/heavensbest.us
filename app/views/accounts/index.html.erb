@@ -11,10 +11,10 @@
 		<h2>Find Your Local Area</h2>
 		<p><q>Enter your zip code or city name</q></p>
 		
-		<%= form_tag :action => "area_search" do -%>
+		<%= form_tag :action => "search" do -%>
 			<%= text_field_with_auto_complete :account, :locations, { :size => 19 }, 
 			:url => accounts_path(:format => :js), :method => :get, :param_name => 'search', :skip_style => true %>
-			<%= javascript_tag "$('account_locations').focus()" %>
+			<%= javascript_tag("$('account_locations').focus()").html_safe %>
 			<% image_submit_tag("/images/buttons/go.gif", :class => 'button' ) %>
 		<% end -%>
 		<% if flash[:notice] %><div class='notice' style="margin-right: 50px"><%= flash[:notice] %></div><% end %>
@@ -25,7 +25,7 @@
 	
 	<div id="tips" class="grid_5">
 		<h2><%= Tip.random.title %></h2>
-			<%= textilize(Tip.random.body) %>
+		<%= textilize(Tip.random.body).html_safe %>
 	</div>
 
 	<div id="ad" class="grid_6">

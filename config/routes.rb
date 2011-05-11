@@ -1,28 +1,50 @@
 Heavensbest::Application.routes.draw do
-  match '/' => 'accounts#index'
-  match '/logout' => 'sessions#destroy', :as => :logout
-  match '/login' => 'sessions#new', :as => :login
-  match '/register' => 'admin/users#create', :as => :register
-  match '/signup/:activation_code' => 'admin/users#activate', :as => :activate, :activation_code => nil 
-  match '/forgot_password' => 'passwords#new', :as => :forgot_password
-  match '/change_password/:reset_code' => 'passwords#reset', :as => :change_password
-  resources :passwords
-  resource :session
+  root :to => 'accounts#index'
+
+  # Authentication
+  match "/signin" => "auth_services#signin"
+  match "/signout" => "auth_services#signout"
+
+  match '/auth/:auth_service/callback' => 'auth_services#create' 
+  match '/auth/failure' => 'auth_services#failure'
+
+  resources :auth_services, :only => [:index, :create, :destroy] do
+    collection do
+      get 'signin'
+      get 'signout'
+      get 'signup'
+      post 'newaccount'
+      get 'failure'
+    end
+  end
+
+  match 'page/:permalink' => 'pages#show', :as => :page
+  match 'support' => 'pages#show', :as => :support, :permalink => 'support'
+  match 'services' => 'pages#show', :as => :general_services, :permalink => 'services'
+  match 'testimonials' => 'pages#show', :as => :general_testimonials, :permalink => 'testimonials'
+  match 'locations' => 'accounts#locations'
+  resources :pages
+
+  
   match '/operator/areas/:id/cancel' => 'operator/accounts#cancel', :as => :cancel
   match '/operator/areas/:id/billing' => 'operator/accounts#billing', :as => :billing
   match '/operator/areas/:id/plan' => 'operator/accounts#plan', :as => :plan
+
   resources :accounts do
-  
-    member do
-  get :area_search
-  end
-  
+    collection do
+      get 'search'
+    end
   end
 
-  resources :services
-  match 'locations' => 'accounts#locations', :as => :locations
-  match '/operator' => 'sessions#new', :as => :operator
-  match '/operator/profile/:id' => 'admin/users#edit', :as => :profile
+
+  match '/:region/:accountlink/services' => 'services#index', :as => 'services'
+  match '/:region/:accountlink/specials' => 'specials#index', :as => 'specials'
+  match '/:region/:accountlink/testimonials' => 'testimonials#index', :as => 'testimonials'
+  match '/:region/:accountlink/:servicelink' => 'services#show', :as => 'service'
+  
+  match '/operator' => 'auth_services#signin'
+  match '/operator/profile/:id' => 'admin/users#edit'
+
   namespace :operator do
     resources :accounts do
       collection do
@@ -45,13 +67,8 @@ Heavensbest::Application.routes.draw do
     resources :photos
   end
 
-  match 'page/:permalink' => 'pages#show', :as => :page
-  resources :pages
-  match '/support' => 'pages#show', :as => :support, :permalink => 'support'
-  match '/services' => 'pages#show', :as => :general_services, :permalink => 'services'
-  match '/testimonials' => 'pages#show', :as => :general_testimonials, :permalink => 'testimonials'
-  match '/:controller(/:action(/:id))'
   match ':region/:accountlink' => 'accounts#show', :as => :area
+  match '/:controller(/:action(/:id))'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

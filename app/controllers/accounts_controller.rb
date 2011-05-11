@@ -1,10 +1,10 @@
 class AccountsController < ApplicationController
   
   def index
-    @accounts ||= Account.where("locations LIKE ? OR zip_codes LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]).limit(7)
+    @accounts ||= Account.where("locations LIKE ? OR zip_codes LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%").limit(7)
   end
   
-  def area_search
+  def search
     @account = Account.find_by_name(params[:account][:locations])
     redirect_to area_path(@account.region.abbreviation.downcase, @account.accountlink)
   rescue
@@ -15,13 +15,13 @@ class AccountsController < ApplicationController
   def locations
     # @accounts ||= Account.find(:all, :group => "region_id")
     @accounts = Account.order("name asc")
-    @account_regions = @accounts.group_by { |a| a.region.name }
+    @account_regions = @accounts.includes(:region).group_by { |a| a.region.name }
     @current_tab = "locations"
   end
   
   def show
     @account ||= Account.find_by_accountlink(params[:accountlink])
-    redirect_to_external unless @account.externalsite.blank?
+    redirect_to_external if @account.externalsite.present?
     @region ||= Region.find_by_abbreviation(params[:region].upcase)
     @testimonial ||= current_account.testimonials.order(APP_CONFIG[:random_query]).first
     @special ||= current_account.specials.where("start <= ? and end >= ?", Date.today, Date.today).order(APP_CONFIG[:random_query]).first
