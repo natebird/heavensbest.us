@@ -9,10 +9,10 @@ class ServicesController < ApplicationController
 
 
   def show
-    @service = current_account.services.find_by_servicelink(params[:id])
-    redirect_to_external unless @account.externalsite.blank?
-    @special ||= current_account.specials.where("start <= ? and end >= ?", Date.today, Date.today).order(APP_CONFIG[:random_query]).first
-    @testimonial ||= current_account.testimonials.order(APP_CONFIG[:random_query]).first
+    @service = @account.services.find_by_servicelink(params[:servicelink])
+    redirect_to_external if @account.externalsite.present?
+    @special ||= @account.specials.where("start <= ? and end >= ?", Date.today, Date.today).order(APP_CONFIG[:random_query]).first
+    @testimonial ||= @account.testimonials.order(APP_CONFIG[:random_query]).first
     @current_tab = "services"
     # rescue_from NoMethodError, :with => service_path(@region, @account.accountlink, @services.first.servicelink)
   end  

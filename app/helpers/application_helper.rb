@@ -31,7 +31,7 @@ module ApplicationHelper
 
   def link_for(link_text, path, extra_class=nil)
     html = ''
-    options = path == request.request_uri ? {:class => "current #{extra_class}"} : {:class => extra_class}
+    options = path == request.url ? {:class => "current #{extra_class}"} : {:class => extra_class}
     html << content_tag("li", link_to(link_text, path, options))
   end
 

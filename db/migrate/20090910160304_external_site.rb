@@ -4,6 +4,6 @@ class ExternalSite < ActiveRecord::Migration
   end
 
   def self.down
-    drop_column :accounts, :externalsite
+    remove_column :accounts, :externalsite
   end
 end

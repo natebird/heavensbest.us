@@ -2,7 +2,7 @@
 	<div class="special">		
 		<div class="text">
 		  <h2><%= special.title %></h2>
-		  <p><%= textilize (special.body) %></p>
+		  <p><%= textilize(special.body).html_safe %></p>
 		  <div class="phone"><%= number_to_phone(special.phone) %></div>
 		</div>
 		

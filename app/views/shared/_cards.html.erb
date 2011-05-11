@@ -1,6 +1,6 @@
 <div id="tips" class="grid_5">
 	<h2><%= Tip.random.title %></h2>
-	<%= textilize(Tip.random.body) %>
+	<%= textilize(Tip.random.body).html_safe %>
 </div>
 
 <% if @special %>
