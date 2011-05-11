@@ -22,7 +22,7 @@
 		<h2>Quick Locator</h2>
 		<p><q>Enter your zip code or city name</q></p>
 		
-		<%= form_tag :action => "area_search" do -%>
+		<%= form_tag :action => "search" do -%>
 			<%= text_field_with_auto_complete :account, :locations, { :size => 19 }, 
 			:url => accounts_path(:format => :js), :method => :get, :param_name => 'search', :skip_style => true %>
 			<%= javascript_tag "$('account_locations').focus()" %>
