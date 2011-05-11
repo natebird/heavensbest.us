@@ -6,7 +6,7 @@ development:
   gateway: 'brain_tree'
   base_domain: 'heavensbest.us'
   require_payment_info_for_trials: 'false'
-  random_query: 'RANDOM()'
+  random_query: 'RAND()'
   
 test:
   <<: *non_production_settings
