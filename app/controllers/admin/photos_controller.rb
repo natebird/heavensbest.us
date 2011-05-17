@@ -1,6 +1,5 @@
-class Admin::PhotosController < ApplicationController
+class Admin::PhotosController < InheritedResources::Base
   layout "operator"
-  include ModelControllerMethods
   before_filter :admin?
   
 end

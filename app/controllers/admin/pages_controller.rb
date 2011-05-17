@@ -1,6 +1,5 @@
-class Admin::PagesController < ApplicationController
+class Admin::PagesController < InheritedResources::Base
   layout "operator"
-  include ModelControllerMethods
   before_filter :admin?
   
 end

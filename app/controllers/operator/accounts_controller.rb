@@ -1,6 +1,5 @@
-class Operator::AccountsController < ApplicationController
+class Operator::AccountsController < InheritedResources::Base
   layout "operator"
-  include ModelControllerMethods
 
   # before_filter :login_required
   before_filter :load_billing, :only => [ :new, :create, :billing, :paypal ]

@@ -1,7 +1,6 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < InheritedResources::Base
   before_filter :admin?, :except => [:edit, :activate]
   skip_before_filter :verify_authenticity_token, :only => :create
-  include ModelControllerMethods
   layout "operator"
 
   def index

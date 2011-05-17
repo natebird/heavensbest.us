@@ -1,6 +1,5 @@
-class Admin::TipsController < ApplicationController
+class Admin::TipsController < InheritedResources::Base
   layout "operator"
-  include ModelControllerMethods
   before_filter :admin?
 
   def index

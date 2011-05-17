@@ -7,6 +7,7 @@ gem 'mysql'
 gem 'hoptoad_notifier', '~> 2.3'
 gem 'newrelic_rpm'
 gem 'capistrano'
+gem 'inherited_resources'
 
 # Authentication
 gem 'omniauth'

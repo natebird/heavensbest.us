@@ -1,8 +1,7 @@
-class Operator::ServicesController < ApplicationController
+class Operator::ServicesController < InheritedResources::Base
   layout "operator"
   before_filter :login_required
   before_filter :current_account
-  include ModelControllerMethods
 
   before_filter :set_current_tab
     def set_current_tab

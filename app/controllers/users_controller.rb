@@ -1,6 +1,5 @@
-class UsersController < ApplicationController
+class UsersController < InheritedResources::Base
   skip_before_filter :verify_authenticity_token, :only => :create
-  include ModelControllerMethods
      
   def new
     @user = User.new
