@@ -35,6 +35,7 @@ Heavensbest::Application.routes.draw do
       get 'search'
     end
   end
+  get 'accounts/autocomplete_account_name'
 
 
   match '/:region/:accountlink/services' => 'services#index', :as => 'services'
@@ -67,8 +68,8 @@ Heavensbest::Application.routes.draw do
     resources :photos
   end
 
-  match ':region/:accountlink' => 'accounts#show', :as => :area
   match '/:controller(/:action(/:id))'
+  match ':region/:accountlink' => 'accounts#show', :as => :area
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

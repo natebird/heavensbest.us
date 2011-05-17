@@ -17,6 +17,9 @@ gem 'RedCloth'
 
 gem 'friendly_id'
 
+gem 'jquery-rails'
+gem 'rails3-jquery-autocomplete'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
