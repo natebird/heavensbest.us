@@ -1,13 +1,21 @@
 <div id="footer">
-		<div class="grid_12">
+		<div class="grid_11">
 			&#169; <%= Date.today.year %> WeCan Inc. All rights reserved. 
 			A service of <a href="http://www.lucidi.us">Lucidius</a>. <br />
-			<%= link_to "Terms of Service", page_path('terms'), :rel => "nofollow" %> |
-			<%= link_to "Privacy Policy", page_path('privacy'), :rel => "nofollow" %> 
-			<%# link_to "Sitemap", sitemap_url, :rel => "nofollow" %>		
 		</div>
-
-		<div class="grid_4">
-			<%= link_to(image_tag("/images/buttons/operator_login.gif"), signin_path, :rel => "nofollow") %>
-		</div>
+		
+		<% if user_signed_in? %>
+		  Hello <%= current_user.name %>
+		<% else %>
+  		<div class="grid_5">
+  			<%= link_to "Terms of Service", page_path('terms'), :rel => "nofollow" %> |
+  			<%= link_to "Privacy Policy", page_path('privacy'), :rel => "nofollow" %> |
+  			<% if user_signed_in? %>
+  			  <%= link_to "Manage Account", profile_path %>
+  			<% else %>
+  			  <%= link_to "Operator Login", signin_path, :rel => "nofollow" %>
+  			<% end %>
+  			<%# link_to "Sitemap", sitemap_url, :rel => "nofollow" %>		
+  		</div>
+  	<% end %>
 </div>
