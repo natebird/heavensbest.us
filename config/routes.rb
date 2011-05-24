@@ -28,16 +28,6 @@ Heavensbest::Application.routes.draw do
       resources :services
       resources :testimonials
       resources :specials
-      
-      collection do
-        get :canceled
-      end
-      
-      member do
-        get :billing
-        get :plan
-        get :paypal
-        post :cancel
       end
     end
   end
