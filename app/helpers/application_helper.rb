@@ -38,7 +38,7 @@ module ApplicationHelper
 
   # Render a submit button and cancel link
   def submit_or_cancel(cancel_url = session[:return_to] ? session[:return_to] : url_for(:action => 'index'), label = 'save')
-    content_tag(:div, link_to(image_tag("/images/buttons/cancel.gif"), :back) + "&nbsp;" + image_submit_tag("/images/buttons/#{label}.gif", :class => 'button'), 
+    content_tag(:div, link_to(image_tag("/images/buttons/cancel.gif"), :back) + " " + image_submit_tag("/images/buttons/#{label}.gif", :class => 'button'), 
     :id => 'submit_or_cancel', :class => 'submit')
   end
   

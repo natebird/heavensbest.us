@@ -27,7 +27,7 @@ class Admin::UsersController < InheritedResources::Base
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated profile"
       if admin?
-        redirect_to admin_users_path
+        redirect_to edit_admin_user_path(params[:id])
       else
         redirect_to edit_admin_user_path(current_user)
       end
