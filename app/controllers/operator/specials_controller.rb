@@ -1,34 +1,27 @@
-class Operator::SpecialsController < ApplicationController
+class Operator::SpecialsController < InheritedResources::Base
   layout "operator"
-  before_filter :login_required
+  before_filter :authenticate_user!
   before_filter :current_account
-
+  before_filter :load_specials, :only => [:index, :show, :new, :edit]
   before_filter :set_current_tab
-    def set_current_tab
-      @current_tab = "specials"
-    end
 
   def index
-    @specials = @account.specials.all
     redirect_to edit_operator_account_special_path(@account, @specials.first)
   end
 
 
   def show
     @special = @account.specials.find(params[:id])
-    @specials = @account.specials.all
   end
 
 
   def new
     @special = @account.specials.new
-    @specials = @account.specials.all
   end
 
 
   def edit
     @special = @account.specials.find(params[:id])
-    @specials = @account.specials.all
   end
 
 
@@ -63,4 +56,15 @@ class Operator::SpecialsController < ApplicationController
     @special.destroy
     redirect_to(operator_account_specials_url(@account))
   end
+  
+  protected
+    
+    def load_specials
+      @specials = current_account.specials
+    end
+  
+    def set_current_tab
+      @current_tab = "specials"
+    end
+  
 end

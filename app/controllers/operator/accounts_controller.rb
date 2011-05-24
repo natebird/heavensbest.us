@@ -1,12 +1,8 @@
 class Operator::AccountsController < InheritedResources::Base
   layout "operator"
 
-  # before_filter :login_required
-  before_filter :load_billing, :only => [ :new, :create, :billing, :paypal ]
-  before_filter :load_subscription, :only => [ :billing, :plan, :paypal ]
-
   def index
-    @accounts = current_user.accounts.all
+    @accounts = current_user.accounts
   end
   
   def new
@@ -16,27 +12,20 @@ class Operator::AccountsController < InheritedResources::Base
   end
 
   def edit
-    @account.phones.build if @account.phones.blank?
-    @account.operators.build if @account.operators.blank?
+    @account = Account.find(params[:id])
+    @account.phones.build if @account.phones.nil?
+    @account.operators.build if @account.operators.nil?
     @current_tab = "settings"
   end
   
-  def create
-    if @account.needs_payment_info?
-      @address.first_name = @creditcard.first_name
-      @address.last_name = @creditcard.last_name
-      @account.address = @address
-      @account.creditcard = @creditcard
-    end
-    @account.plan = SubscriptionPlan.find(params[:plan_id])
-    
+  def create    
     if @account.save
       redirect_to operator_accounts_url
     else
       render :action => 'new'
     end
   end
-  
+
   def update
     if admin?
       @account = Account.find(params[:id])
@@ -46,56 +35,9 @@ class Operator::AccountsController < InheritedResources::Base
 
     if @account.update_attributes(params[:account])
       flash[:notice] = 'Area was successfully updated.'
-      redirect_to(edit_operator_account_url(@account))
+      redirect_to(edit_operator_account_path(@account))
     else
       render :action => "edit"
-    end
-  end
-
-  def billing
-    if request.post?
-      if params[:paypal].blank?
-        @address.first_name = @creditcard.first_name
-        @address.last_name = @creditcard.last_name
-        if @creditcard.valid? & @address.valid?
-          if @subscription.store_card(@creditcard, :billing_address => @address.to_activemerchant, :ip => request.remote_ip)
-            flash[:notice] = "Your billing information has been updated."
-            redirect_to :action => "billing"
-          end
-        end
-      else
-        if redirect_url = @subscription.start_paypal(paypal_operator_account_url(@account), billing_operator_account_url(@account))
-          redirect_to redirect_url
-        end
-      end
-    end
-  end
-  
-  # Handle the redirect return from PayPal
-  def paypal
-    if params[:token]
-      if @subscription.complete_paypal(params[:token])
-        flash[:notice] = 'Your billing information has been updated'
-        redirect_to :action => "billing"
-      else
-        render :action => 'billing'
-      end
-    else
-      redirect_to :action => "billing"
-    end
-  end
-
-  def plan
-    if request.post?
-      @old_plan = @subscription.subscription_plan
-      @plan = SubscriptionPlan.find(params[:plan_id])
-      if @subscription.update_attributes(:plan => @plan)
-        flash[:notice] = "Your subscription has been changed."
-        SubscriptionNotifier.deliver_plan_changed(@subscription)
-        redirect_to :action => "plan"
-      else
-        @subscription.plan = @old_plan
-      end
     end
   end
 

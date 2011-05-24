@@ -1,30 +1,25 @@
 class Operator::ServicesController < InheritedResources::Base
   layout "operator"
-  before_filter :login_required
+  before_filter :authenticate_user!
   before_filter :current_account
-
+  before_filter :load_services, :only => [:index, :show, :new, :edit]
   before_filter :set_current_tab
-    def set_current_tab
-      @current_tab = "services"
-    end
 
   def index
-    @services = current_account.services.all
     redirect_to edit_operator_account_service_path(@account, @services.first)
   end
   
   def show
+    @services = @account.services
+    
     @service = @account.services.find(params[:id])
-    @services = @account.services.all
   end
   
   def new
     @service = @account.services.new
-    @services = @account.services.all
   end
   
   def create
-    @services = @account.services.all
     @service = @account.services.new(params[:service])
     if @service.save
       flash[:notice] = "Successfully created service."
@@ -36,7 +31,6 @@ class Operator::ServicesController < InheritedResources::Base
   
   def edit
     @service = @account.services.find(params[:id])
-    @services = @account.services.all
   end
   
   def update
@@ -53,7 +47,7 @@ class Operator::ServicesController < InheritedResources::Base
     @service = @account.services.find(params[:id])
     @service.destroy
     flash[:notice] = "Successfully deleted service."
-    redirect_to :action => 'index'
+    redirect_to edit_operator_account_service_path(@account, @services.first)
   end
 
   def preview
@@ -62,7 +56,12 @@ class Operator::ServicesController < InheritedResources::Base
 
   protected
   
-    def scoper
-      current_account.services
+    def load_services
+      @services = @account.services
     end
+  
+    def set_current_tab
+      @current_tab = "services"
+    end
+
 end

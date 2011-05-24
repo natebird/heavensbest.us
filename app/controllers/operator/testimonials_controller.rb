@@ -1,15 +1,12 @@
-class Operator::TestimonialsController < ApplicationController
+class Operator::TestimonialsController < InheritedResources::Base
   layout "operator"
-  before_filter :login_required
+  before_filter :authenticate_user!
   before_filter :current_account
-
+  before_filter :load_testimonials, :only => [:index, :show, :new, :edit]
   before_filter :set_current_tab
-    def set_current_tab
-      @current_tab = "testimonials"
-    end
 
   def index
-    @testimonials = @account.testimonials.all
+    redirect_to edit_operator_account_testimonial_path(@account, @testimonials.first)
   end
 
 
@@ -61,4 +58,15 @@ class Operator::TestimonialsController < ApplicationController
 
     redirect_to operator_account_testimonials_url
   end
+  
+  protected
+    
+    def load_testimonials
+      @testimonials = current_account.testimonials
+    end
+    
+    def set_current_tab
+      @current_tab = "testimonials"
+    end
+    
 end
