@@ -20,15 +20,15 @@ Heavensbest::Application.routes.draw do
   get 'accounts/autocomplete_account_name'
 
 
-  match '/:region/:accountlink/services' => 'services#index', :as => 'services'
-  match '/:region/:accountlink/specials' => 'specials#index', :as => 'specials'
-  match '/:region/:accountlink/testimonials' => 'testimonials#index', :as => 'testimonials'
-  match '/:region/:accountlink/:servicelink' => 'services#show', :as => 'service'
   
   match '/operator/profile/:id' => 'admin/users#edit', :as => :profile
 
   namespace :operator do
-    resources :accounts, :as => :areas do
+    resources :accounts do
+      resources :services
+      resources :testimonials
+      resources :specials
+      
       collection do
         get :canceled
       end
@@ -49,8 +49,13 @@ Heavensbest::Application.routes.draw do
     resources :photos
   end
 
-  # match '/:controller(/:action(/:id))'
+  match ':region/:accountlink/services' => 'services#index', :as => 'services'
+  match ':region/:accountlink/specials' => 'specials#index', :as => 'specials'
+  match ':region/:accountlink/testimonials' => 'testimonials#index', :as => 'testimonials'
+  match ':region/:accountlink/:servicelink' => 'services#show', :as => 'service'
   match ':region/:accountlink' => 'accounts#show', :as => :area
+
+  # match '/:controller(/:action(/:id))'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
