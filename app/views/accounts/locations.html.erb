@@ -23,7 +23,7 @@
 		<p><q>Enter your zip code or city name</q></p>
 		
 		<%= form_tag :action => :search do %>
-      <%= autocomplete_field :account_name, '', accounts_autocomplete_account_name_path %>
+      <%#= autocomplete_field :account_name, '', accounts_autocomplete_account_name_path %>
     <% end %>
 		<% if flash[:notice] %><div class='notice' style="margin-right: 50px"><%= flash[:notice] %></div><% end %>
 	</div>

@@ -1,5 +1,4 @@
 class AccountsController < ApplicationController
-  autocomplete :account, :name
   
   def index
     @accounts = Account.where("locations LIKE ? OR zip_codes LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%").limit(7)
