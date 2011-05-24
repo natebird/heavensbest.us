@@ -1,0 +1,21 @@
+<div><%= f.label :ganalytics, "Google Analytics" %>
+	 <span class="hint">(Optional) Enter the account number of your google analytics account. It should look something like "1234567-1"
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_field :ganalytics, :size => 28 %></div>
+
+<div><%= f.label :externalsite, "External Site" %>
+	 <span class="hint">(Optional) Only enter a web address if you want your site redirected to a site other than heavensbest.us.
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_field :externalsite, :size => 28 %></div>
+
+<div><%= f.label :locations %>
+	 <span class="hint">Enter postal codes and city names that your area services. A specific list will produce 
+		accurate search results. Separate locations with a comma. (city1, city2, zip1, etc.)
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_area :locations, :rows => "6", :style => "width: 50%" %></div>
+	
+
+<div><%= f.label :zip_codes %>
+	 <span class="hint">Enter any custom keywords you want to be displayed to search engines.
+		<span class="pointer">&nbsp;</span></span>
+	 <%= f.text_area :zip_codes, :rows => '6', :style => "width: 50%"  %></div>

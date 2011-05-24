@@ -4,74 +4,23 @@
 <div id="grid16-middle" class="indent10">
 	<h1 class="indent20"><%= @page_title = 'Create a new area' %></h1>
 
-	<%= form_tag :action => 'create' do %>
+	<%= form_for([:operator, @account]) do |f| %>
+		<fieldset class="indent10"><legend>Area Information</legend>
+			<%= render :partial => 'fields', :locals => {:f => f} %>
+		</fieldset>		
 
-	  <fieldset class="indent10"><legend>Area Information</legend>
-	  <% if @account.errors.any? %>
-	    <div class="errorExplanation">
-	      <h2>Errors encountered with your area information:</h2>
-	      <ul><%= @account.errors.full_messages.map {|m| content_tag('li', m)} %></ul>
-	    </div>
-	  <% end %>
-  		
-		<p>Enter the information for your area below. <br/>
-		Instructions will be shown on the right when you select each box.</p><br />
-		
-	    <%= fields_for :account do |f| %>
-		<div><%= label :plan_id, 'Plan' %>
-			 <%= select_tag :plan_id, options_from_collection_for_select(SubscriptionPlan.all, :id, :to_s ) %>
-			 <%= link_to "Features", page_path('features'), :popup => true %></div>
+		<fieldset class="indent10"><legend>Search Information</legend>
+			<%= render :partial => 'search', :locals => {:f => f} %>
+		</fieldset>		
+  	
+	  <fieldset class="indent10"><legend>Review and Accept terms</legend>				
+  		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
+  			<%= link_to "Privacy Policy", page_path('privacy') %> for details. <br />
+  			If you have questions please email <%= mail_to "natebird@heavensbest.us", "natebird@heavensbest.us", 
+  			:encode => :hex, :subject => "Question about policies" %>.</p><br />
 
-			<div><%= f.label :name, "Area name" %>
-				 <%= f.text_field :name, :size => 28 %>
-				 <span class="hint">Enter the name of your AREA. 
-					It is usually the name of the major city where your business operates.
-					<span class="pointer">&nbsp;</span></span></div>
-
-
-			<div><%= f.label :region_id, "State" %>
-				 <span class="hint">Enter the state where your business is located.
-					<span class="pointer">&nbsp;</span></span>		
-				 <%= f.select(:region_id, Region.all.collect {|p| [ p.name, p.id ] } ) %> </div>
-
-			<div><%= f.label :email, "Area email" %>
-				 <span class="hint">Enter the email address for this area. You can use your own address or
-					use the address created for your area on the left.
-					<span class="pointer">&nbsp;</span></span>
-				 <%= f.text_field :email, :size => 28, :value => "areaname.state@heavensbest.us" %></div>
-
-			<div id="phones" class="attribute"><%= f.render_associated_form(@account.phones) %></div>
-			<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.phones.build) %>
-
-			<div id="operators" class="attribute" ><%= f.render_associated_form(@account.operators) %></div>
-			<% f.add_associated_link(image_tag("/images/buttons/add.gif"), @account.operators.build) %>
-
-			<div><%= f.label :locations %>
-				 <span class="hint">Enter postal codes and city names that this area services. 
-					Separate locations with a comma. (city1, city2, zip1, etc.)
-					<span class="pointer">&nbsp;</span></span>
-				 <%= f.text_area :locations, :size => "26x6" %></div>
-	    <% end %>
-	  </fieldset>
-  
-	  <br />
-	
-	  <fieldset class="indent10"><legend>Review and Accept terms</legend>
-		<% render :partial => "shared/gdseal" %>
-		
-		<p> This area qualifies for a 30 day free trial. If you decide to continue using heavensbest.us 
-			you need to send payment before the end of your free trial on <%= (Date.today + 30).to_s(:long) %>.
-			The cost is $35/month for service.</p><br />
-			
-		<p> Payment options are available on the area settings page.</p><br />
-		
-		<p> Please review our <%= link_to "Terms of Service", page_path('terms') %> and  
-			<%= link_to "Privacy Policy", page_path('privacy') %> for details. <br />
-			If you have questions please email <%= mail_to "billing@heavensbest.us", "billing@heavensbest.us", 
-			:encode => :hex, :subject => "Question about policies" %>.</p><br />
-
-		<p> <%= check_box_tag :accept %>
-			<%= label_tag :accept, "I agree to the Terms of Service & Privacy Policy", :class => "accept" %></p>
+  		<p> <%= check_box_tag :accept %>
+  			<%= label_tag :accept, "I agree to the Terms of Service & Privacy Policy", :class => "accept" %></p>
 		
 		<input type="submit" value="Create my area" />
 	  </fieldset>

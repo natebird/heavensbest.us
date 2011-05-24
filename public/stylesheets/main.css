@@ -121,10 +121,10 @@ textarea.LV_invalid_field:active {
 }
 
 .hint {
-    border: 1px solid #0069AA;
-    width: 170px;
-    padding: 10px 12px;
-    background: #c3dafd url(/images/signup/pointer.gif) no-repeat -10px 5px;
+  border: 1px solid #0069AA;
+  width: 350px;
+  padding: 10px 12px;
+  background: #c3dafd url(/images/signup/pointer.gif) no-repeat -10px 5px;
 	display: none;
 	position: absolute;
 	left: 400px;
