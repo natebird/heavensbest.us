@@ -8,7 +8,7 @@
 	
 	<div id="tips" class="grid_5 indent-20">
 		<h2><%= @tip.title %></h2>
-			<%= textilize(@tip.body) %>
+			<%= textilize(@tip.body).html_safe %>
 	</div>
 	<div class="clear"></div>
 	

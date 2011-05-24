@@ -2,7 +2,7 @@
 	<h1><%= link_to 'Tips', admin_tips_path %></h1>
 		<ul>
 			<% for tip in @tips %>
-				<%= textilize(link_for tip.title, edit_admin_tip_path(tip), "") %>
+				<%= (link_for tip.title, edit_admin_tip_path(tip), "").html_safe %>
 			<% end %>
 			<li class="add"><%= link_to 'Add a Tip', new_admin_tip_path %></li>
 			
