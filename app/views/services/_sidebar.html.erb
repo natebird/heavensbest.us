@@ -1,7 +1,7 @@
 <div id="sidebar" class="grid_4">
 	<h1>Services</h1>
 	<ul><% for service in @services %>
-		<%= link_for service.title, service_path(params[:region], params[:accountlink], service.servicelink), "").html_safe %>
+		<%= (link_for service.title, service_path(params[:region], params[:accountlink], service.servicelink), "").html_safe %>
 		<% end %>
 	</ul>
 </div>
