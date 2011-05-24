@@ -1,6 +1,8 @@
 class Testimonial < ActiveRecord::Base
   belongs_to :account
 
-  validates_presence_of :quote, :name, :location
+  validates :quote,     :presence => true
+  validates :name,      :presence => true
+  validates :location,  :presence => true
     
 end

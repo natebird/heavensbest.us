@@ -4,6 +4,8 @@ class Service < ActiveRecord::Base
 
   has_friendly_id :servicelink, :use_slug => true
   
-  validates_length_of :title, :maximum=>28, :message=>"less than {{count}} or it won't fit"
-  validates_presence_of :photo_id, :body, :title
+  validates :title,     :length => { :maximum => 28 }, :message => "less than {{count}} or it won't fit"
+  validates :title,     :presence => true
+  validates :photo_id,  :presence => true
+  validates :body,      :presence => true
 end

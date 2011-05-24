@@ -1,8 +1,5 @@
 class Operator < ActiveRecord::Base
+  belongs_to :account
   validates_presence_of :name, :title
 
-
-  def blank?
-    name.blank?
-  end
 end
