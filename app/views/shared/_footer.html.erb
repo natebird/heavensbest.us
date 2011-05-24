@@ -8,9 +8,6 @@
 			<%= link_to "Terms of Service", page_path('terms'), :rel => "nofollow" %> |
 			<%= link_to "Privacy Policy", page_path('privacy'), :rel => "nofollow" %> |
 			<% if user_signed_in? %>
-			  <% if current_user.has_role?('admin') %>
-			    Hi Admin
-			  <% end %>
 			  <%= link_to "Manage Account", profile_path(current_user) %>
 			<% else %>
 			  <%= link_to "Operator Login", new_user_session_path, :rel => "nofollow" %>

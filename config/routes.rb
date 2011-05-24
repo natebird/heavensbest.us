@@ -2,7 +2,9 @@ Heavensbest::Application.routes.draw do
   root :to => 'accounts#index'
 
   # Authentication
-  devise_for :users
+  devise_for :users do
+    get "operator", :to => "devise/sessions#new"
+  end
 
   match 'page/:permalink' => 'pages#show', :as => :page
   match 'support' => 'pages#show', :as => :support, :permalink => 'support'
@@ -23,11 +25,10 @@ Heavensbest::Application.routes.draw do
   match '/:region/:accountlink/testimonials' => 'testimonials#index', :as => 'testimonials'
   match '/:region/:accountlink/:servicelink' => 'services#show', :as => 'service'
   
-  match '/operator' => 'auth_services#signin'
   match '/operator/profile/:id' => 'admin/users#edit', :as => :profile
 
   namespace :operator do
-    resources :accounts do
+    resources :accounts, :as => :areas do
       collection do
         get :canceled
       end
