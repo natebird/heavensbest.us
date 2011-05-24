@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.1.0.rc1'
 gem 'mysql'
 
 # Utilities
@@ -10,6 +10,7 @@ gem 'capistrano'
 gem 'inherited_resources'
 
 # Authentication
+gem 'devise'
 gem 'omniauth'
 
 gem 'aasm'
@@ -19,7 +20,6 @@ gem 'RedCloth'
 gem 'friendly_id'
 
 gem 'jquery-rails'
-gem 'rails3-jquery-autocomplete'
 
 # Use unicorn as the web server
 # gem 'unicorn'

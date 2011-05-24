@@ -1,43 +1,18 @@
 class User < ActiveRecord::Base
 
-  # Validations
-  validates_presence_of :login
-  validates_length_of :login, :within => 3..40
-  validates_uniqueness_of :login, :case_sensitive => false
-  validates_format_of :login, :with => RE_LOGIN_OK, :message => MSG_LOGIN_BAD
-  validates_format_of :name, :with => RE_NAME_OK, :message => MSG_NAME_BAD, :allow_nil => true
-  validates_length_of :name, :maximum => 100
-  validates_presence_of :email
-  validates_length_of :email, :within => 6..100
-  validates_uniqueness_of :email, :case_sensitive => false
-  validates_format_of :email, :with => RE_EMAIL_OK, :message => MSG_EMAIL_BAD
+  devise :database_authenticatable, :omniauthable, :recoverable, :rememberable, :validatable,
+         :confirmable, :encryptable, :encryptor => :restful_authentication_sha1
   
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+
   # Relationships
   has_many :accounts
-  has_many :auth_services
   has_and_belongs_to_many :roles
-
-  # prevents a user from submitting a crafted form that bypasses activation
-  # anything else you want your user to change should be added here.
-  attr_accessible :name, :email#, :phone, :name, :password, :password_confirmation
-
-  # # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
-  # def self.authenticate(login, password)
-  #   u = find_in_state :first, :active, :conditions => { :login => login } # need to get the salt
-  #   u && u.authenticated?(password) ? u : nil
-  # end
-  # 
-  # # Check if a user has a role.
-  # def has_role?(role)
-  #   list ||= self.roles.map(&:name)
-  #   list.include?(role.to_s) || list.include?('admin')
-  # end
-
-  protected
-    
-  def make_activation_code
-    self.deleted_at = nil
-    self.activation_code = self.class.make_token
+  
+  def has_role?(role)
+    list ||= self.roles.map(&:name)
+    list.include?(role.to_s) || list.include?('admin')
   end
-
+  
 end

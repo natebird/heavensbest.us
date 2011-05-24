@@ -2,21 +2,7 @@ Heavensbest::Application.routes.draw do
   root :to => 'accounts#index'
 
   # Authentication
-  match "/signin" => "auth_services#signin"
-  match "/signout" => "auth_services#signout"
-
-  match '/auth/:auth_service/callback' => 'auth_services#create' 
-  match '/auth/failure' => 'auth_services#failure'
-
-  resources :auth_services, :only => [:index, :create, :destroy] do
-    collection do
-      get 'signin'
-      get 'signout'
-      get 'signup'
-      post 'newaccount'
-      get 'failure'
-    end
-  end
+  devise_for :users
 
   match 'page/:permalink' => 'pages#show', :as => :page
   match 'support' => 'pages#show', :as => :support, :permalink => 'support'
