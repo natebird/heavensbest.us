@@ -3,11 +3,13 @@ class Account < ActiveRecord::Base
   belongs_to :region
   has_one :subscription, :dependent => :destroy
   has_many :subscription_payments
-  has_many :phones
-  has_many :operators
   has_many :services
   has_many :specials
   has_many :testimonials
+  has_many :phones
+  has_many :operators
+  accepts_nested_attributes_for :phones, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :operators, :allow_destroy => true, :reject_if => :all_blank
   
   has_friendly_id :name, :use_slug => true, :scope => :region
   
