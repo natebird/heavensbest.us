@@ -7,7 +7,7 @@
 	<table class="users indent20">
 	  <% for user in @users %>
 	    <tr>
-	      <td width="125"><%= link_to user.name, edit_admin_user_path(user) %></td>
+	      <td width="125"><%= link_to user.name, profile_path(user) %></td>
 	      <td width="115"><%= number_to_phone(user.phone) %></td>
 	      <td width="225"><%= mail_to user.email, user.email %></td>
 	      <td><%= select_tag(nil, options_for_select(["#{user.accounts.count} area(s)"] + user.accounts.to_dropdown, 

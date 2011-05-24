@@ -9,12 +9,6 @@ Heavensbest::Application.routes.draw do
   match 'services' => 'pages#show', :as => :general_services, :permalink => 'services'
   match 'testimonials' => 'pages#show', :as => :general_testimonials, :permalink => 'testimonials'
   match 'locations' => 'accounts#locations'
-  resources :pages
-
-  
-  match '/operator/areas/:id/cancel' => 'operator/accounts#cancel', :as => :cancel
-  match '/operator/areas/:id/billing' => 'operator/accounts#billing', :as => :billing
-  match '/operator/areas/:id/plan' => 'operator/accounts#plan', :as => :plan
 
   resources :accounts do
     collection do
@@ -30,7 +24,7 @@ Heavensbest::Application.routes.draw do
   match '/:region/:accountlink/:servicelink' => 'services#show', :as => 'service'
   
   match '/operator' => 'auth_services#signin'
-  match '/operator/profile/:id' => 'admin/users#edit'
+  match '/operator/profile/:id' => 'admin/users#edit', :as => :profile
 
   namespace :operator do
     resources :accounts do
@@ -54,7 +48,7 @@ Heavensbest::Application.routes.draw do
     resources :photos
   end
 
-  match '/:controller(/:action(/:id))'
+  # match '/:controller(/:action(/:id))'
   match ':region/:accountlink' => 'accounts#show', :as => :area
 
   # The priority is based upon order of creation:
