@@ -27,4 +27,7 @@ class ApplicationController < ActionController::Base
     end
     helper_method :current_account
 
+    def after_sign_in_path_for(resource_or_scope)
+       operator_accounts_path
+    end
 end
