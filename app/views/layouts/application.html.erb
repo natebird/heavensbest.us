@@ -15,15 +15,9 @@
 		<meta name="author" content="Lucidius LLC. www.lucidi.us" />
 		<meta name="copyright" content="(c)<%= Date.today.year %> Lucidius LLC. All rights reserved." />
 		
-		<%= stylesheet_link_tag 'reset', 'main', 'navigation', '960', :cache => true %>
-		<%= javascript_include_tag 'jquery.min', 'jquery-ui.min', 'rails', 'autocomplete-rails', 'application', :cache => true %>
-		<!--[if lt IE 7]>
-			<link rel="stylesheet" type="text/css" href="/stylesheets/ie6.css" />
-		<![endif]-->
-		<!--[if IE 7]>
-			<link rel="stylesheet" type="text/css" href="/stylesheets/ie7.css" />
-		<![endif]-->
-		<%= csrf_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
 	</head>
 	<body>
 

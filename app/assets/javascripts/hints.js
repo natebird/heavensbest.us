@@ -1,19 +1,3 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-
-// Area drop down selector
-function jumpToArea(sel) {
-    if (sel.selectedIndex < 1) return;
-    area = sel.options[sel.selectedIndex].value;
-    
-    if (document.location.pathname.match(/^\/accounts\/\d+/)) {
-        document.location.href = document.location.pathname.replace(/\d+/, area)
-    } else {
-        document.location.href = '/operator/accounts/' + area + '/edit'
-    }
-}
-
-// Hints code
 function prepareInputsForHints() {
     var inputs = document.getElementsByTagName("input");
     var selects = document.getElementsByTagName("select");

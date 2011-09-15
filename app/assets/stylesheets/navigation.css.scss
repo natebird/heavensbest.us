@@ -8,34 +8,6 @@
 	color: white;
 }
 
-/* @group Login Navigation */
-
-/* Public Tabbed Navigation */
-#tab_nav { width: 309; margin: 18px auto; position: relative; z-index: 9998; top: 100px; right: 25px; float: right; }
-#tab_nav { margin: 0px; padding: 0; }
-#tab_nav li { display: inline; }
-#tab_nav li a { float: left; width: 103px; height: 0; padding-top: 42px; overflow: hidden; }
-#tab_nav li a.login, 
-#tab_nav li a.features { width: 103px; }
-#tab_nav li a, #tab_nav { background-image: url(/images/nav/operator_tabs.png); background-repeat: no-repeat; }
-
- /*BUTTONS*/ 
-#tab_nav li.login a { background-position: 0px 0px; }
-#tab_nav li.features a { background-position: -104px 0px; }
-#tab_nav li.support a { background-position: -208px 0px; }
-
-/* Hover States */
-#tab_nav li.login a:hover { background-position: 0px -41px; }
-#tab_nav li.features a:hover { background-position: -104px -41px; }
-#tab_nav li.support a:hover { background-position: -208px -41px; }
-
-/* Current States */
-#tab_nav li.current.login a { background-position: 0px -41px; }
-#tab_nav li.current.features a { background-position: -104px -41px; }
-#tab_nav li.current.support a { background-position: -208px -41px; }
-
-/* @end */
-
 /* @group Account navigation */
 #account_navigation {
 	float: right;
@@ -73,7 +45,7 @@
 #operator_menubar li { display: inline;}
 #operator_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
 #operator_menubar li a.home, #operator_menubar li a.settings { width: 103px; }
-#operator_menubar li a { background-image: url(/images/nav/operator_menubar.png); background-repeat: no-repeat;}
+#operator_menubar li a { background-image: url(/assets/nav/operator_menubar.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #operator_menubar li a.home { background-position: 0px 0px; }
@@ -104,7 +76,7 @@
 #area_menubar li { display: inline;}
 #area_menubar li a { float: left; width: 100px; height: 0px; padding-top: 35px; overflow: hidden; }
 #area_menubar li a.home, #area_menubar li a.schedule { width: 103px; }
-#area_menubar li a { background-image: url(/images/nav/area_menubar.png); background-repeat: no-repeat;}
+#area_menubar li a { background-image: url(/assets/nav/area_menubar.png); background-repeat: no-repeat;}
 
  /*BUTTONS*/ 
 #area_menubar li a.home { background-position: 0px 0px; }
@@ -136,7 +108,7 @@
 .nav {
 	width: 520px;
 	height: 46px;
-	background: url(/images/nav/homemenu.png) no-repeat;
+	background: url(/assets/nav/homemenu.png) no-repeat;
 	position: absolute; 
 	top: 25px; 
 	left: 280px
@@ -159,13 +131,13 @@
 		width: 110px;
 	}
 	.nav .home a:hover, .nav .home a:focus {
-		background: url(/images/nav/homemenu.png) no-repeat -0px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -0px -46px;
 	}
 	.nav .home a:active {
-		background: url(/images/nav/homemenu.png) no-repeat -0px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -0px -86px;
 	}
 	.current-home .home a:link, .current-home .home a:visited {
-		background: url(/images/nav/homemenu.png) no-repeat -0px -126px;
+		background: url(/assets/nav/homemenu.png) no-repeat -0px -126px;
 		cursor: default;
 	}
 	.nav-home, .nav-home-click {
@@ -174,10 +146,10 @@
 		left: 0px;
 		width: 110px;
 		height: 46px;
-		background: url(/images/nav/homemenu.png) no-repeat -0px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -0px -46px;
 	}
 	.nav-home-click {
-		background: url(/images/nav/homemenu.png) no-repeat -0px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -0px -86px;
 	}
 
 /* @end */
@@ -189,13 +161,13 @@
 		width: 100px;
 	}
 	.nav .locations a:hover, .nav .locations a:focus {
-		background: url(/images/nav/homemenu.png) no-repeat -110px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -110px -46px;
 	}
 	.nav .locations a:active {
-		background: url(/images/nav/homemenu.png) no-repeat -110px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -110px -86px;
 	}
 	.current-locations .locations a:link, .current-locations .locations a:visited {
-		background: url(/images/nav/homemenu.png) no-repeat -110px -126px;
+		background: url(/assets/nav/homemenu.png) no-repeat -110px -126px;
 		cursor: default;
 	}
 	.nav-locations, .nav-locations-click {
@@ -204,10 +176,10 @@
 		left: 110px;
 		width: 100px;
 		height: 46px;
-		background: url(/images/nav/homemenu.png) no-repeat -110px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -110px -46px;
 	}
 	.nav-locations-click {
-		background: url(/images/nav/homemenu.png) no-repeat -110px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -110px -86px;
 	}
 
 /* @end */
@@ -219,13 +191,13 @@
 		width: 100px;
 	}
 	.nav .services a:hover, .nav .services a:focus {
-		background: url(/images/nav/homemenu.png) no-repeat -210px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -210px -46px;
 	}
 	.nav .services a:active {
-		background: url(/images/nav/homemenu.png) no-repeat -210px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -210px -86px;
 	}
 	.current-services .services a:link, .current-services .services a:visited {
-		background: url(/images/nav/homemenu.png) no-repeat -210px -126px;
+		background: url(/assets/nav/homemenu.png) no-repeat -210px -126px;
 		cursor: default;
 	}
 	.nav-services, .nav-services-click {
@@ -234,10 +206,10 @@
 		left: 210px;
 		width: 100px;
 		height: 46px;
-		background: url(/images/nav/homemenu.png) no-repeat -210px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -210px -46px;
 	}
 	.nav-services-click {
-		background: url(/images/nav/homemenu.png) no-repeat -210px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -210px -86px;
 	}
 
 /* @end */
@@ -249,13 +221,13 @@
 		width: 100px;
 	}
 	.nav .testimonials a:hover, .nav .testimonials a:focus {
-		background: url(/images/nav/homemenu.png) no-repeat -310px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -310px -46px;
 	}
 	.nav .testimonials a:active {
-		background: url(/images/nav/homemenu.png) no-repeat -310px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -310px -86px;
 	}
 	.current-testimonials .testimonials a:link, .current-testimonials .testimonials a:visited {
-		background: url(/images/nav/homemenu.png) no-repeat -310px -126px;
+		background: url(/assets/nav/homemenu.png) no-repeat -310px -126px;
 		cursor: default;
 	}
 	.nav-testimonials, .nav-testimonials-click {
@@ -264,10 +236,10 @@
 		left: 310px;
 		width: 100px;
 		height: 46px;
-		background: url(/images/nav/homemenu.png) no-repeat -310px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -310px -46px;
 	}
 	.nav-testimonials-click {
-		background: url(/images/nav/homemenu.png) no-repeat -310px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -310px -86px;
 	}
 
 
@@ -280,13 +252,13 @@
 		width: 110px;
 	}
 	.nav .franchises a:hover, .nav .franchises a:focus {
-		background: url(/images/nav/homemenu.png) no-repeat -410px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -410px -46px;
 	}
 	.nav .franchises a:active {
-		background: url(/images/nav/homemenu.png) no-repeat -410px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -410px -86px;
 	}
 	.current-franchises .franchises a:link, .current-franchises .franchises a:visited {
-		background: url(/images/nav/homemenu.png) no-repeat -410px -126px;
+		background: url(/assets/nav/homemenu.png) no-repeat -410px -126px;
 		cursor: default;
 	}
 	.nav-franchises, .nav-franchises-click {
@@ -295,10 +267,10 @@
 		left: 410px;
 		width: 110px;
 		height: 46px;
-		background: url(/images/nav/homemenu.png) no-repeat -410px -46px;
+		background: url(/assets/nav/homemenu.png) no-repeat -410px -46px;
 	}
 	.nav-franchises-click {
-		background: url(/images/nav/homemenu.png) no-repeat -410px -86px;
+		background: url(/assets/nav/homemenu.png) no-repeat -410px -86px;
 	}
 /* @end */
 

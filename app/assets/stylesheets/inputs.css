@@ -1,0 +1,27 @@
+input, textarea {
+  font-size:12px;
+  width:154px;
+  padding:3px 3px 3px 23px;
+  font-family:Helvetica,Arial,freesans,sans-serif;
+  border:1px solid #ddd;
+  border-top-color:#ccc;
+  border-bottom-color:#eaeaea;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+/*  background:url(/images/modules/home/search_icon.png) 5px 50% no-repeat #fff;*/
+}
+
+/*input, textarea {
+  border: 2px solid #999;
+  background-color: #ffffff;
+  color: #595959;
+  font: 16px Helvetica, Arial, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+ 
+textarea:hover,
+input:focus, textarea:focus {
+  border: 2px solid #0069AA;
+}
+*/

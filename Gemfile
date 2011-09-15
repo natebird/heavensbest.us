@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc1'
+gem 'rails', '3.1.0'
 gem 'mysql'
 
 # Utilities
@@ -19,7 +19,21 @@ gem 'RedCloth'
 
 gem 'friendly_id'
 
+gem 'json'
+gem 'haml'
+gem 'compass', :require => false
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
 gem 'jquery-rails'
+
+
+# Views
+gem 'formtastic'
 
 # Use unicorn as the web server
 # gem 'unicorn'
